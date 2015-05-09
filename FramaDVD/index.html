@@ -1,0 +1,416 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+        <title>FramDVD</title>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+          <script src="pace.min.js"></script>
+            <link href="pace-theme-barber-shop.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="glisse.css" />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="home"><a href="..">H</a></div>
+
+                <div class="menu">
+                    
+                       <div> 
+                            <li>
+                                <input type="radio" name="menu" id="F" checked onclick="scroll('#FramaDVD');" />
+                                <label for="F">F</label>
+                                <span>FramaDVD</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="menu" id="C" onclick="scroll('#Inside');" />
+                                <label for="C">C</label>
+                                <span>Collection</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="menu" id="G" onclick="scroll('#Gallery');" />
+                                <label for="G">G</label>
+                                <span>Gallery</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="menu" id="T" onclick="scroll('#Download');" />
+                                <label for="T">T</label>
+                                <span>Téléchargement</span>
+                            </li>
+                            <li>
+                                <input type="radio" name="menu" id="A" onclick="scroll('#AboutUs');" />
+                                <label for="A">A</label>
+                                <span>A propos</span>
+                            </li>
+                        
+                        <div class="cursor"><img src=""/></div>
+                    </div>
+                </div>        
+                <div class="ForkIt">
+                    <a href="http://www.github.com/lejenome/FramaDVD">F</a>
+                </div>
+            </nav>
+        </header>
+        <div class="browser">
+            <nav>
+                <form>
+                    <div>
+                        <input type="radio" name="progress" value="FramaDVD" id="radFramaDVD" checked />
+                        <label for="radFramaDVD"></label>
+                        <span>FramaDVD</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="progress" value="Inside" id="radInside" />
+                        <label for="radInside"></label>
+                        <span>Inside</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="progress" value="Gallery" id="radGallery" />
+                        <label for="radGallery"></label>
+                        <span>Gallery</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="progress" value="Download" id="radDownload" />
+                        <label for="radDownload"></label>
+                        <span>Ubuntu</span>
+                    </div>
+                    <div>
+                        <input type="radio" name="progress" value="AboutUs" id="radAboutUs" />
+                        <label for="radAboutUs"></label>
+                        <span>About Us</span>
+                    </div>
+                </form>
+            </nav>
+            <div class="fullscreen">
+                <input type="checkbox" name="isFullScreen" id="chkfullscreen"/>
+                <label for="chkfullscreen"></label>
+            </div>
+        </div>
+        <div class="content">
+            <section id="FramaDVD">
+                <div class="title">
+                    <div><span>Frama</span><span>DVD</span></div>
+                    <div>Le libre s'installe chez vous</div>
+                </div>
+                <aside>
+                    <video height="360" width="560" src="../img/FLUVORE_presentation_du_framadvd.webm" controls></video>
+                </aside>
+                <article>
+                    <h1>FramaDVD ?</h1>
+                    <p>
+                        FramaDVD est une compilation de ressources et logiciels libres réalisées par Framasoft.
+                        Le DVD contient :
+                    </p>
+                    <ul>
+                        <li>
+                            une centaine de logiciels libres à installer (pour Windows) ;
+                        </li>
+                        <li>
+                            un "liveCD" GNU/Linux (Ubuntu) ;
+                        </li>
+                        <li>
+                            une sélection de ressources libres (textes, photos, vidéos, etc) adaptée au public du DVD.
+                        </li>
+                    </ul>
+                    <p>
+                        Vous pouvez télécharger gratuitement le DVD, en faire autant de copies que nécessaire, et même en produire des versions adaptées à vos besoins !
+                    </p>
+                    <hr />
+                    <h1>Comment sont répartis ces logiciels ?</h1>
+                    <ul>
+                        <li>
+                            Les logiciels indispensables, accessibles à tous et explicités.
+                        </li>
+                        <li>
+                            Les logiciels indispensables, accessibles à tous et explicités.
+                        </li>
+                        <li>
+                            Les logiciels avancés, si vous n’êtes plus un novice !
+                        </li>
+                        <li>
+                            Les jeux.
+                        </li>
+                        <li>
+                            Les logiciels destinés à l’éducation.
+                        </li>
+                    </ul>
+                    <hr />
+                    <h1>À qui s’adresse le FramaDVD Standard ?</h1>
+                    <p>
+                        Le FramaDVD est accessible à tous. Le DVD a été conçu avec une grande diversité des contenus : des logiciels de graphisme, des jeux ou des programmes pour les plus petits…<br />
+                        Que vous soyez novices, avancés ou experts, nous espérons que vous trouverez ce que vous recherchez.
+                    </p>
+                </article>
+            </section>
+            <section id="Inside">
+                <article>
+                    <h1>Listes des logiciels et des contenus ?</h1>
+                    <ul>
+                        <li>
+                            Plus de 90 logiciels pour Windows présentés par un texte explicatif, des captures d’écran ou des vidéos et pour, pour certains, des tutoriels ;
+                        </li>
+                        <li>
+                            Une distribution Linux, Ubuntu-Linux 11.10, francisée par nos amis d’Ubuntu-fr.
+                        </li>
+                    </ul>
+                    <h2>Liste des logiciels présents sur le FramaDVD</h2>
+                    <div>
+                        <span>Essentiel</span>
+                        <dl>
+                            <dt>Bureautiqu
+                            <dd>LibreOffice
+                            <dd>PDFCreator
+                            <dd>Sumatra PDF
+                            <dd>Gnu Cash
+                            <dd>Sunbird
+                            <dd>Ditto
+                        </dl>
+                        <dl>
+                            <dt>Graphisme
+                            <dd>Album Shaper
+                            <dd>Pinta
+                        </dl>
+                        <dl>
+                            <dt>Internet
+                            <dd>Firefox
+                            <dd>Free Download Manager
+                            <dd>Pidgin
+                            <dd>RSSOwl
+                            <dd>Thunderbird
+                        </dl>
+                        <dl>
+                            <dt>Multimédia
+                            <dd>Audacity
+                            <dd>Avidemux
+                            <dd>Cdex
+                            <dd>InfraRecorder
+                            <dd>Songbird
+                            <dd>VLC
+                            <dd>Zinf
+                        </dl>
+                    </div>
+                    <div>
+                        <span>Expert</span>
+                        <dl>
+                            <dt>Bureautique
+                            <dd>Abiword
+                            <dd>Freemind
+                            <dd>GanttProject
+                            <dd>Scribus
+                        </dl>
+                        <dl>
+                            <dt>Graphisme
+                            <dd>Blender
+                            <dd>Dia
+                            <dd>Gimp
+                            <dd>Inkscape
+                            <dd>SweetHome3D
+                        </dl>
+                        <dl>
+                            <dt>Multimédia
+                            <dd>Camstudio
+                            <dd>WinFF
+                            <dd>Mixxx
+                            <dd>TuxGuitar
+                            <dd>HandBrake
+                        </dl>
+                        <dl>
+                            <dt>Internet
+                            <dd>eMule
+                            <dd>FileZilla
+                            <dd>BlueGriffon
+                            <dd>Putty
+                            <dd>ThightVNC
+                            <dd>Vuze
+                            <dd>WinHTTrack
+                            <dd>WinSCP
+                        </dl>
+                        <dl>
+                            <dt>Utilitaires
+                            <dd>7-Zip
+                            <dd>Abakt
+                            <dd>Ant Renamer
+                            <dd>ClamWin
+                            <dd>ClamSentinel
+                            <dd>Notepad++
+                            <dd>Keepass
+                            <dd>Really Slick
+                            <dd>Screensaver
+                            <dd>TrueCrypt
+                            <dd>WampServer
+                            <dd>Workrave
+                        </dl>
+                        <dl>
+                            <dt>Applications web
+                            <dd>SPIP
+                            <dd>WordPress
+                            <dd>Joomla
+                            <dd>Drupal
+                        </dl>
+                    </div>
+                    <div>
+                        <span>Jeux</span>
+                        <dl>
+                            <dt>Réflexion
+                            <dd>Enigma
+                            <dd>LBreakout 2
+                            <dd>WinBoard Chess
+                            <dd>PokerTH
+                        </dl>
+                        <dl>
+                            <dt>Stratégie
+                            <dd>FreeCiv
+                            <dd>FreeCol
+                            <dd>Battle of Westnoth
+                            <dd>Yo Frankie !
+                        </dl>
+                        <dl>
+                            <dt>Plate-formes
+                            <dd>Neverball
+                            <dd>Secret Maryo Chronicles
+                            <dd>SuperTux
+                        </dl>
+                        <dl>
+                            <dt>Divers
+                            <dd>Fret’s on Fire
+                            <dd>Sokoban
+                        </dl>
+                    </div>
+                    <div>
+                        <span>Education</span>
+                        <dl>
+                            <dt>Calcul
+                            <dd>Graph Calc
+                            <dd>Tux Math
+                            <dd>Maxima
+                        </dl>
+                        <dl>
+                            <dt>Astronomie
+                            <dd>NASA World Wind
+                            <dd>Stellarium
+                            <dd>Celestia
+                        </dl>
+                        <dl>
+                            <dt>Géométrie
+                            <dd>CarMetal
+                            <dd>GeoGebra
+                        </dl>
+                        <dl>
+                            <dt>Eveil
+                            <dd>GCompris
+                            <dd>Guido Van Robot
+                            <dd>Tux Paint
+                            <dd>Tux Typing
+                        </dl>
+                    </div>
+                    <div>
+                        <span>Handicap</span>
+                        <dl>
+                            <dt>Clavier virtuel, prédiction
+                            <dd>ChewingWord
+                            <dd>ClavicomNG
+                        </dl>
+                        <dl>
+                            <dt>Aveugle, mal-voyant
+                            <dd>NVDA
+                            <dd>VirtualMagnifyingGlass
+                        </dl>
+                    </div>
+                </article>
+            </section>
+            <section id="Gallery">
+                <div>
+                    <span>FramaDVD</span>
+                    <div>
+                        <div class="FramaDVDLiveDemo">
+                            <span onclick="window.open('http://iso.framadvd.org/standard/content/FramaDVD/FramaKiosk/FramaKioskPages/','_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, menuBar=0, width=720, height=570');return(false)">Live Demo</span>
+                        </div>
+                        <div class="FramaDVDGallery">
+                            <span>Image Gallery</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <span>Ubuntu</span>
+                    <div>
+                        <div class="UbuntuGallery">
+                            <span>Image Gallery</span>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u1.png" rel="group1"/>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u2.jpg" rel="group1"/>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u3.png" rel="group1"/>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u4.png" rel="group1"/>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u5.jpg" rel="group1"/>
+<img class="pics" src="../img/thumb.jpg" data-glisse-big="../img/u6.jpg" rel="group1"/>
+                        </div>
+                        <div class="UbuntuAd">
+                            <div></div>
+                        </div>
+                        <div class="UbuntuTour">
+                            <span onclick="window.open('http://www.ubuntu.com/tour/en/','_blank','toolbar=0, location=0, directories=0, status=0, scrollbars=0, resizable=0, copyhistory=0, menuBar=0,, ');return(false)">Online Demo</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="Download">
+                <div><img src="../img/Burnaware_logo.png"/>
+                <div><a href="">Téléchargement Direct</a></div>
+                <div>
+                    <span>Remarques :</span>
+                    <ul>
+                        <li>
+                            Le fichier a télécharger fait &gt;4Go, comptez donc plusieurs heures de téléchargements.
+                        </li>
+                        <li>
+                            Rappel: les partitions FAT32 (clé USB, certains disques durs externes), ne supportent pas les fichiers &gt;4Go.
+                        </li>
+                        <li>
+                            Ce fichier est une image de DVD au format .iso, utilisez un logiciel de gravure pour graver cette image sur DVD. <a href="http://www.commentcamarche.net/faq/sujet-3942-gravure-graver-une-image-disque-iso-nrg">(explications)</a>
+                        </li>
+                        <li>
+                            Vérifier l’intégrité : somme MD5 = XXXXXXXXXXXXXXXXXXX <a href="http://www.framasoft.net/article2914.html">(qu’est-ce que c’est ?)</a>
+                        </li>
+                        <li>
+                            Configuration minimale : Windows XP / MacOS X 10.3 – LiveCD Ubuntu 13.04 inclus
+                        </li>
+                    </ul>
+                </div></div>
+            </section>
+<!--            <section id="AboutUs"> -->
+<section id="AboutUs">
+<article><br /><br /><br /><h1>Qui est à l’origine du FramaDVD ?</h1>
+                <p>
+                    FramaDVD est un projet de l’association Framasoft. Il a été développé en partie par une équipe d’étudiants motivés, dans le cadre d’un projet de fin d’année du Master 2 Communication et Multimédia de Paris II.
+                    <br />Un deuxième mise à jour (2.0, novembre 2011) a été grâce au travail de Cyrille Largillier.
+                </p>
+                <p>
+                    Le mise à jour actuel (3.0, Mai 2013) est mis par un groupe d'etudiants Tunisians en temps qu'une partie du projet de Bac
+                </p>
+                <h1>Copie et modifications encouragées !</h1>
+                <p>
+                    Le FramaDVD, comme toutes les productions Framasoft, est publié sous licence libre. Vous pouvez donc légalement copier, distribuer, modifier ce DVD à volonté.
+                </p>
+                <p>
+                    Vous souhaitez contribuer à ce projet en nous proposant des logiciels ou des ressources libres ? Vous aimeriez participer à la création d’un autre FramaDVD thématique (collège / lycée, université…) ? Alors contactez-nous, nous nous ferons un plaisir de vous accueillir.
+                </p>
+<h1>Licence du site</h1>
+<p>Le site est crée par <a href="http://github.com/lejenome">Bouhlel Moez</a>.
+<br />Ce site utilise les standards du web ouverts (HTML5,JS,CSS3) avec le framework libre jquery.
+<br />Le code source de ce site est trouvable dans <a href="http://github.com/lejenome/lejenome.github.io">github</a> sous la licence libre GPL.</p></article>
+<section>
+         <!--   </section> -->
+        </div>
+        <script src="../jquery-1.8.2.min.js"></script>
+        <script src="main.js"></script>
+	<script src="glisse.js"></script>
+<script>
+    $(function () {
+        $('.pics').glisse({
+            changeSpeed: 550, 
+            speed: 500,
+            effect:'bounce',
+            fullscreen: true
+        }); 
+    });
+</script>
+    </body>
+</html>

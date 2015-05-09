@@ -1,0 +1,24 @@
+{
+  "name": "Jukax",
+  "version": "0.2.0",
+  "description": "Sample Calendar/To-Do app",
+  "launch_path": "/index.html",
+  "icons": {
+    "16": "/img/jukax-firefox-16x16.png",
+    "32": "/img/jukax-firefox-32x32.png",
+    "60": "/img/jukax-firefox-60x60.png",
+    "90": "/img/jukax-firefox-90x90.png",
+    "120": "/img/jukax-firefox-120x120.png",
+    "128": "/img/jukax-firefox-128x128.png",
+    "256": "/img/jukax-firefox-256x256.png"
+  },
+  "developer": {
+    "name": "Moez Bouhlel",
+    "url": "https://github.com/lejenome"
+  },
+  "default_locale": "en"
+  ,
+  "package_path": "http://lejenome.github.io/jukax-about/app/jukax.zip",
+  "size": 941313,
+  "release_notes": "Stable release"
+}

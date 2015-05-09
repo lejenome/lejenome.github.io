@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LinkedIn Settings Setup</title>
+</head>
+<body>
+	<script>
+     function submit() {
+	var blog_url = document.getElementById("blog_url").value;
+
+	var url = "https://www.googleapis.com/blogger/v3/blogs/byurl?url=" +
+		blog_url.replace("&", "%26").replace("#", "%23") +
+		"&fields=id&key=AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA";
+	console.log(url);
+
+	location = url;
+     }
+	</script>
+
+	<p>
+		<label for="blog_url">Client Secret</label>
+		<input id="blog_url" name="blog_url" />
+	</p><p>
+		<button onclick="submit()">Submit</button>
+	</p>
+</body>
+</html>
+

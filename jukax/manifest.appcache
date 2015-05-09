@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# 2014-01-22:04:07:v0.2.0
+CACHE:
+js/jquery.min.js
+js/jquery.mobile.min.js
+#js/jquery.nicescroll.min.js
+#js/jukax.min.js
+#js/localForage.min.js
+js/main.min.js
+css/jquery.mobile.min.css
+css/main.css
+css/images/ajax-loader.gif
+img/jukax-icon-16x16.png
+img/jukax-icon-32x32.png
+img/jukax-icon-96x96.png
+img/jukax-icon-160x160.png
+img/jukax-icon-196x196.png
+
+NETWORK:
+https://api.kii.com/api
+https://api-jp.kii.com/api
+https://api-cn2.kii.com/api
+js/KiiSDK.min.js
+manifest.appcache

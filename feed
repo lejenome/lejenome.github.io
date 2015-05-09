@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><atom:link href="http://lejenome.me/feed" rel="self" type="application/rss+xml" /><title>Moez Bouhlel [lejenome]</title><description>Write Code For Fun</description><link>http://lejenome.me</link><item><title>[Syteup] creating a basic plugin, segment as an example</title><description>&lt;p&gt;Here, we will add Segment support to Syteup.&lt;/p&gt;
+&lt;p&gt;Segment is &amp;#8220;a customer data hub&amp;#8221;. It makes it easy to integrate third-party tools (analytics, advertising,&amp;#8230;) to your application throw a all-in-one single library.&lt;/p&gt;
+&lt;p&gt;To add Segment plugin support to Syteup, we needs just 3 simple steps:&lt;/p&gt;
+&lt;p&gt;1- create &lt;code&gt;plugins/segment.js&lt;/code&gt; plugin code file that will export the plugin module to the window object:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+(function (window) {
+    &quot;use strict&quot;;
+    function setupSegment(settings) {
+        window.analytics = window.analytics || [];
+        window.analytics.methods = [
+            &quot;identify&quot;,
+            &quot;group&quot;,
+            &quot;track&quot;,
+            &quot;page&quot;,
+            &quot;pageview&quot;,
+            &quot;alias&quot;,
+            &quot;ready&quot;,
+            &quot;on&quot;,
+            &quot;once&quot;,
+            &quot;off&quot;,
+            &quot;trackLink&quot;,
+            &quot;trackForm&quot;,
+            &quot;trackClick&quot;,
+            &quot;trackSubmit&quot;
+        ];
+        window.analytics.factory = function (method) {
+            return function () {
+                var args = Array.prototype.slice.call(arguments);
+                args.unshift(method);
+                window.analytics.push(args);
+                return window.analytics;
+            };
+        };
+        for (var i = 0; i &amp;lt; window.analytics.methods.length; i++) {
+            var key = window.analytics.methods[i];
+            window.analytics[key] = window.analytics.factory(key);
+        }
+        window.analytics.load = function (key) {
+            if (document.getElementById(&quot;analytics-js&quot;))
+                return;
+            var script = document.createElement(&quot;script&quot;);
+            script.type = &quot;text/javascript&quot;;
+            script.id = &quot;analytics-js&quot;;
+            script.async = true;
+            script.src = (&quot;https:&quot; === document.location.protocol ? &quot;https://&quot; : &quot;http://&quot;) + &quot;cdn.segment.com/analytics.js/v1/&quot; + key + &quot;/analytics.min.js&quot;;
+            var first = document.getElementsByTagName(&quot;script&quot;)[0];
+            first.parentNode.insertBefore(script, first);
+        };
+        // Add a version to keep track of what&apos;s in the wild.
+        window.analytics.SNIPPET_VERSION = &quot;2.0.9&quot;;
+        // Load Analytics.js with your key, which will automatically
+        // load the tools you&apos;ve enabled for your account. Boosh!
+        window.analytics.load(settings[&quot;write_key&quot;]);
+        // Make the first page call to load the integrations. If
+        // you&apos;d like to manually name or tag the page, edit or
+        // move this call however you&apos;d like.
+        window.analytics.page({ title: &quot;Syteup&quot; });
+    }
+    window.segmentPlugin = { setup: setupSegment };
+}(window));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;what we did is to add segment code (copied from segment tutorial) into the &lt;code&gt;setupSegment&lt;/code&gt; function, then we export it as &lt;code&gt;setup&lt;/code&gt; item on the plugin module which should be named &lt;code&gt;segmentPlugin&lt;/code&gt;. As you note, the user depending write_key is readed from the &lt;code&gt;settings&lt;/code&gt; object of the plugin which will be added on the third step.&lt;/p&gt;
+&lt;p&gt;2- we add a script tag to the &lt;code&gt;index.html&lt;/code&gt; file that will load the plugin code.&lt;/p&gt;
+&lt;p&gt;the script tag should be included on the plugins section just before &lt;code&gt;js/plugins.js&lt;/code&gt; tag and it should be loaded on defer mode&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;script defer src=&quot;plugins/segment.js&quot;&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;3- Finally, we add the plugin settings to the configuration file &lt;code&gt;config.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;option to turn on/off the plugin inside the &lt;code&gt;plugins&lt;/code&gt; option:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&quot;plugins&quot;: {
+    &quot;segment&quot;: true
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;the plugin settings object that includes all user depending settings (here we will need the user&amp;#8217;s write_key) on the &lt;code&gt;plugins_settings option&lt;/code&gt;:&lt;/p&gt;
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;
+&quot;plugins_settings&quot;: {
+    &quot;segment&quot;: {
+        &quot;write_key&quot;: &quot;?????????&quot;
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;All Done! we are ready to test our plugin.&lt;/p&gt;
+&lt;p&gt;Don&amp;#8217;t be lazy, and send me a pull request with your plugins code and other patches to &lt;a href=&quot;https://github.com/lejenome/syteup&quot; rel=&quot;nofollow&quot;&gt;https://github.com/lejenome/syteup&lt;/a&gt; !&lt;/p&gt;
+</description><link>http://lejenome.me#!post/60</link><pubDate>Tue, 04 Nov 2014 23:28:16 GMT</pubDate><guid>http://lejenome.me,lejenome.wordpress.com,60</guid></item><item><title>Presenting DWD, a Candidate for KDE Window Decorations</title><description>&lt;div class=&quot;wpcom-reblog-snapshot&quot;&gt; &lt;div class=&quot;reblog-post&quot;&gt;&lt;p class=&quot;reblog-from&quot;&gt;&lt;img alt=&apos;&apos; src=&apos;https://0.gravatar.com/avatar/9257d7ea17c5fc1c8919aa719478284b?s=48&amp;#038;d=identicon&amp;#038;r=G&apos; class=&apos;avatar avatar-48&apos; height=&apos;48&apos; width=&apos;48&apos; /&gt;Originally posted on &lt;a href=&quot;http://kver.wordpress.com/2014/10/25/presenting-dwd-a-candidate-for-kde-window-decorations&quot;&gt;Ken Vermette&lt;/a&gt;:&lt;/p&gt;&lt;div class=&quot;reblogged-content&quot;&gt;
+&lt;p&gt;When the first CSD “what if” was made in the KDE community forums it became the catalyst that got me in touch with some of the fine developers who really do make KDE happen, from them and members of the VDG I was educated on a new method of decorating windows with clean yet powerful widgets, and I have the privilege of presenting the idea we have worked and iterated on for some weeks now today;&lt;/p&gt;
+
+&lt;h1&gt;Foreword&lt;/h1&gt;
+
+&lt;p&gt;Client-Side Decorations (CSD) and Server-Side Decorations (SSD) are two methods for displaying the frames around our windows; and as history gets written it would be noted that KDE would back SSD, and Gnome would embrace CSD.&lt;/p&gt;
+
+&lt;p&gt;As a primer for those uninformed about what these two things are; lets begin by saying the window manager is the “server” and the applications are “clients”. “Server side decorations”, make the display server or window manager…&lt;/p&gt;
+&lt;/div&gt;&lt;p class=&quot;reblog-source&quot;&gt;&lt;a href=&quot;http://kver.wordpress.com/2014/10/25/presenting-dwd-a-candidate-for-kde-window-decorations&quot;&gt;View original&lt;/a&gt; &lt;span class=&quot;more-words&quot;&gt;1,788 more words&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;</description><link>http://lejenome.me#!post/46</link><pubDate>Sun, 26 Oct 2014 14:20:19 GMT</pubDate><guid>http://lejenome.me,lejenome.wordpress.com,46</guid></item><item><title>[Syteup] control panel plugin</title><description>&lt;p&gt;Just added this control panel to show/hide Syteup Menu Items by the reader&lt;/p&gt;
+&lt;p&gt;It&amp;#8217;s helpful on dev deployment mode when a lot of services are enabled, just set &lt;code&gt;plugins.control_panel&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt; on config.json and add
+&lt;pre class=&quot;prettyprint&quot;&gt;&lt;code class=&quot;language-html&quot;&gt;&amp;lt;div id=&quot;control-panel&quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt; to a post on you blogging platform on text mode&lt;/p&gt;
+&lt;p&gt;Control Panel (click to show/hide Items):&lt;/p&gt;
+&lt;div id=&quot;control-panel&quot;&gt;&lt;/div&gt;
+</description><link>http://lejenome.me#!post/25</link><pubDate>Fri, 26 Sep 2014 20:05:10 GMT</pubDate><guid>http://lejenome.me,lejenome.wordpress.com,25</guid></item><item><title>test 1</title><description>&lt;p&gt;just an other test post.&lt;/p&gt;
+&lt;p&gt;syteup still on early pre-alpha testing&lt;/p&gt;
+&lt;p&gt;a lot of of future and function still not implemented yet&lt;/p&gt;
+&lt;p&gt;you should be reading this post from my testing syteup page[1] and not from my wordpress site&lt;/p&gt;
+&lt;p&gt;note: disqus comments not working probably yet&lt;/p&gt;
+&lt;p&gt;have good day &lt;span class=&apos;wp-smiley wp-emoji wp-emoji-wink&apos; title=&apos;;)&apos;&gt;;)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;[1] &lt;a href=&quot;http://lejenome.github.io/tests/syteup/&quot; rel=&quot;nofollow&quot;&gt;http://lejenome.github.io/tests/syteup/&lt;/a&gt;&lt;/p&gt;
+</description><link>http://lejenome.me#!post/8</link><pubDate>Tue, 23 Sep 2014 07:12:51 GMT</pubDate><guid>http://lejenome.me,lejenome.wordpress.com,8</guid></item><item><title>Welcome to my blog</title><description>&lt;p&gt;This blog is still not ready and will be replaced on future by other solutions&lt;/p&gt;
+&lt;p&gt;See you soon &lt;span class=&apos;wp-smiley wp-emoji wp-emoji-wink&apos; title=&apos;;)&apos;&gt;;)&lt;/span&gt;&lt;/p&gt;
+</description><link>http://lejenome.me#!post/3</link><pubDate>Sat, 20 Sep 2014 16:50:10 GMT</pubDate><guid>http://lejenome.me,lejenome.wordpress.com,3</guid></item></channel></rss>

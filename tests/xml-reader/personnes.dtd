@@ -1,0 +1,14 @@
+<!ELEMENT personnes (personne+)>
+<!ELEMENT personne (about,address)>
+<!ELEMENT address (country,city,zip)>
+
+<!ELEMENT about (#PCDATA)>
+<!ELEMENT country (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT zip (#PCDATA)>
+
+<!ATTLIST personne
+	name CDATA #REQUIRED
+	prenom CDATA #REQUIRED
+	sexe (homme|famme) #REQUIRED
+>

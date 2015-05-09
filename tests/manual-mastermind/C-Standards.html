@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<!-- This manual is part of mastermind project.
+
+Copyright (C) 2015 - Dev2Space team and contributors.
+Licence GPLv3 -->
+<!-- Created by GNU Texinfo 5.2, http://www.gnu.org/software/texinfo/ -->
+<head>
+<title>Mastermind Manual: C Standards</title>
+
+<meta name="description" content="Mastermind Manual: C Standards">
+<meta name="keywords" content="Mastermind Manual: C Standards">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<meta name="Generator" content="makeinfo">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href="index.html#Top" rel="start" title="Top">
+<link href="Index.html#Index" rel="index" title="Index">
+<link href="index.html#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="index.html#Top" rel="up" title="Top">
+<link href="Third-party-libraries.html#Third-party-libraries" rel="next" title="Third party libraries">
+<link href="General-Presentation.html#General-Presentation" rel="prev" title="General Presentation">
+<style type="text/css">
+<!--
+a.summary-letter {text-decoration: none}
+blockquote.smallquotation {font-size: smaller}
+div.display {margin-left: 3.2em}
+div.example {margin-left: 3.2em}
+div.indentedblock {margin-left: 3.2em}
+div.lisp {margin-left: 3.2em}
+div.smalldisplay {margin-left: 3.2em}
+div.smallexample {margin-left: 3.2em}
+div.smallindentedblock {margin-left: 3.2em; font-size: smaller}
+div.smalllisp {margin-left: 3.2em}
+kbd {font-style:oblique}
+pre.display {font-family: inherit}
+pre.format {font-family: inherit}
+pre.menu-comment {font-family: serif}
+pre.menu-preformatted {font-family: serif}
+pre.smalldisplay {font-family: inherit; font-size: smaller}
+pre.smallexample {font-size: smaller}
+pre.smallformat {font-family: inherit; font-size: smaller}
+pre.smalllisp {font-size: smaller}
+span.nocodebreak {white-space:nowrap}
+span.nolinebreak {white-space:nowrap}
+span.roman {font-family:serif; font-weight:normal}
+span.sansserif {font-family:sans-serif; font-weight:normal}
+ul.no-bullet {list-style: none}
+-->
+</style>
+
+
+</head>
+
+<body lang="en" bgcolor="#FFFFFF" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+<a name="C-Standards"></a>
+<div class="header">
+<p>
+Next: <a href="Third-party-libraries.html#Third-party-libraries" accesskey="n" rel="next">Third party libraries</a>, Previous: <a href="General-Presentation.html#General-Presentation" accesskey="p" rel="prev">General Presentation</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+<hr>
+<a name="C-Standards-1"></a>
+<h2 class="chapter">2 C Standards</h2>
+
+<p>While writing the code, we used C standard API and syntax to easily support multi compilers and platforms and to simplify the code.
+Currently, mastermind code base compiles well on the five main compilers
+(Visual Studio C compiler, GCC, Clang, AppleClang, Intel Compiler) with at least six offical supported platforms.
+</p>
+<a name="Standard-API"></a>
+<h3 class="section">2.1 Standard API</h3>
+
+<p>We made use of C89 and C99 standard API on first class with some use of POSIX standard APIs and fallback to MS Windows specific functions when no standard alternative is provided on Windows.
+</p>
+<a name="index-C89_002fC99-APIs"></a>
+<a name="C89_002fC99-APIs"></a>
+<h4 class="subsection">2.1.1 C89/C99 APIs</h4>
+
+<ul>
+<li> stdio.h: fopen, fclose, printf, fprintf, scanf, fscanf, FILE, ...
+</li><li> time.h: time
+</li><li> stdlib.h: malloc, free, rand, srand, ...
+
+<ul class="no-bullet">
+<li>- getenv: get environement variable
+</li><li>- strtol: convert string to long int
+</li></ul>
+
+</li><li> string.h: strcmp, strlen, ...
+</li><li> errno.h: errno (last system call error value)
+</li><li> stdin.h: uint8_t (force variable memory size to be 8 bits)
+</li><li> assert.h: assert
+</li></ul>
+
+<a name="index-POSIX-APIs"></a>
+<a name="POSIX-APIs"></a>
+<h4 class="subsection">2.1.2 POSIX APIs</h4>
+
+<ul>
+<li> unistd.h: mkdir (make directory with specified permission)
+</li><li> sys/stat.h: access (check application access permission to specified path)
+</li><li> sys/utsname.h:
+
+<ul class="no-bullet">
+<li>- uname: get system uname value
+</li><li>- struct utsname: system uname representation struct
+</li></ul>
+
+</li><li> string.h: strndup (deplicate string on new malloced memory with n char at most)
+</li><li> stdlib.h: srandom, random (POSIX rand more secure rand alternative)
+</li></ul>
+
+<a name="index-Windows-APIs"></a>
+<a name="WINDOWS-APIs"></a>
+<h4 class="subsection">2.1.3 WINDOWS APIs</h4>
+
+<ul>
+<li> windows.h: CreateDirectory (create direcotry)
+</li></ul>
+
+<a name="index-Syntax-and-Types"></a>
+<a name="Syntax-and-Types"></a>
+<h3 class="section">2.2 Syntax and Types</h3>
+
+<ul>
+<li> enum: when defining several related constants.
+</li><li> struct: when defining several related variables.
+</li><li> union: when defining several related types and only one to use.
+</li><li> #define
+
+<ul class="no-bullet">
+<li>- define a standalone constant
+</li><li>- define a macro (inlined function without call overhead)
+</li><li>- Include Guards to not include header file more than once
+</li></ul>
+
+</li><li> Conditionals (build time conditions to only include code needed on target platform or selected features)
+</li><li> Bitwise operators (flags support to pass more than a state on same variable)
+</li></ul>
+<hr>
+<div class="header">
+<p>
+Next: <a href="Third-party-libraries.html#Third-party-libraries" accesskey="n" rel="next">Third party libraries</a>, Previous: <a href="General-Presentation.html#General-Presentation" accesskey="p" rel="prev">General Presentation</a>, Up: <a href="index.html#Top" accesskey="u" rel="up">Top</a> &nbsp; [<a href="index.html#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="Index.html#Index" title="Index" rel="index">Index</a>]</p>
+</div>
+
+
+
+</body>
+</html>

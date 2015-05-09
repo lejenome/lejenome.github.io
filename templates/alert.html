@@ -1,0 +1,13 @@
+<div class="alert">
+<div>
+    <button class="close" data-dismiss="modal">×</button>
+<section class="main-section">
+  <article>
+    <h2>Oops!</h2>
+    <p>An error occurred. Please try again later.</p>
+    {{#if error}}<p>Error: {{ error }}.</p>{{/if}}
+    {{#if error_message}}<p>Error Message: {{ error_message }}.</p>{{/if}}
+  </article>
+</section>
+</div>
+</div>

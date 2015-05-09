@@ -1,0 +1,39 @@
+<article id="{{ id }}">
+  <hgroup>
+    <h2><a class="post-link" data-id="{{ id }}" href="#!post/{{ id }}">Quote</a></h2>
+    <h3><a href="#{{ id }}">{{ formated_date }}</a></h3>
+ </hgroup>
+ <div class="post-body">
+	 <blockquote>
+	     	 {{{text}}}
+       	 </blockquote>
+       	 {{#if source}}
+       	 <p>{{{ source }}}</p>
+       	 {{/if}}
+ </div>
+  <footer>
+    {{#if tags }}
+    <h4>Tags</h4>
+    <ul class="tags">
+      {{#each tags}}
+      <li><a class="tags-link" href="#!tag/{{ this }}">{{ this }}</a></li>
+      {{/each}}
+    </ul>
+    {{/if}}
+    {{#if disqus_enabled }}
+    {{#if disqus_just_count}}
+    <div id="disqus_thread" class="disqus-thread">
+      <a data-id="{{ id }}" href="#!post/{{ id }}#disqus_thread" class="comments post-link"></a>
+    </div>
+    {{else}}
+     {{#if disqus_open}}
+    <div id="disqus_thread"></div>
+    {{else}}
+    <div class="disqus_show_comments" data-id="{{id}}">
+	    <a>Show Comments</a>
+    </div>
+    {{/if}}
+    {{/if}}
+    {{/if}}
+  </footer>
+</article>

@@ -1,0 +1,13 @@
+<menu>
+  <menu label="File">
+    <menuitem label="alert" function="alert" params='"hi"' />
+    <menuitem label="confirm" function="confirm" params='"hi"' />
+  </menu>
+  <menu label="menus">
+    <menu label="submenu">
+      <menuitem label="item1" />
+      <menuitem label="item2" />
+    </menu>
+    <menuitem label="menuitem" />
+  </menu>
+</menu>

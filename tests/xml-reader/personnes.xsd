@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="personnes" type="personnesType" />
+	<xsd:complexType name="addressType">
+		<xsd:sequence>
+			<xsd:element name="country" type="xsd:string" />
+			<xsd:element name="city" type="xsd:string" />
+			<xsd:element name="zip" type="xsd:int" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="sexeType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="famme" />
+			<xsd:enumeration value="homme" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="personneType">
+		<xsd:sequence>
+			<xsd:element name="about" type="xsd:string" />
+			<xsd:element name="address" type="addressType" />
+		</xsd:sequence>
+		<xsd:attribute name="name" type="xsd:string" use="required" />
+		<xsd:attribute name="prenom" type="xsd:string" use="required" />
+		<xsd:attribute name="sexe" type="sexeType" use="required" />
+	</xsd:complexType>
+	<xsd:complexType name="personnesType">
+		<xsd:sequence>
+			<xsd:element name="personne" type="personneType" minOccurs="1" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

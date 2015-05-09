@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Facebook Settings Setup</title>
+</head>
+<body>
+	<script>
+var s = location.search;
+if(s) {
+	var code=s.match(/code=([^&#]*)/)[1];
+	var id=s.match(/client_id=([^&#]*)/)[1];
+	var secret=s.match(/client_secret=([^&#]*)/)[1];
+	location = "https://graph.facebook.com/oauth/access_token?client_id="+
+		id +
+		"&code=" +
+		code +
+		"&client_secret=" +
+		secret +
+		"&redirect_uri=" + location.origin + location.pathname + "?client_id=" + id + "%26client_secret=" + secret;
+	console.log(url);
+	location = url;
+} else {
+     function submit() {
+	var id = document.getElementById("client_id").value;
+	var secret = document.getElementById("client_secret").value;
+	var url = "https://www.facebook.com/dialog/oauth?client_id=" +
+		id +
+		"&display=popup" +
+		"&scope=public_profile,user_activities,user_about_me,user_status" +
+		"&redirect_uri=" + location.origin.replace(":", "%3A") + location.pathname +
+	       	"?client_id=" + id +
+	       	"%26client_secret=" + secret;
+	console.log(url);
+
+	location = url;
+     }
+}
+	</script>
+
+	<p>
+		<label for="client_id">Client ID</label>
+		<input id="client_id" name="client_id" />
+	</p><p>
+		<label for="client_secret">Client Secret</label>
+		<input id="client_secret" name="client_secret" />
+	</p><p>
+		<button onclick="submit()">Submit</button>
+	</p>
+</body>
+</html>
+

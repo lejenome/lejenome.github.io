@@ -1,0 +1,62 @@
+{{#with user_info }}
+<div class="profile gplus modal fade" id="gplus-profile">
+  <div class="profile-info">
+    <button class="close" data-dismiss="modal">×</button>
+    {{#if image}}
+    <a href="{{ url }}" class="profile-avatar">
+      <img src="{{ image.url }}" alt="{{displayName}}" />
+    </a>
+    {{/if}}
+    <div class="profile-name">
+        <h2><a href="{{ url }}">{{ displayName }}</a></h2>
+	{{#if nickname}}
+	<h3><a href="{{ url }}">{{ nickname }}</a></h3>
+	{{else}}
+	{{#if occupation}}
+	<h3><a href="{{ url }}">{{ occupation }}</a></h3>
+	{{/if}}
+	{{/if}}
+    </div>
+    {{#if tagline}}
+    <p class="profile-location-url">{{ tagline }}</p>
+    {{/if}}
+    <p class="profile-location-url">
+      {{#if currentLocation }}<span>{{ currentLocation }}</span>{{/if}}
+    </p>
+  </div>
+  <ul class="profile-stats">
+    {{#if circledByCount }}
+    <li><a href="{{ url }}"><strong>{{ circledByCount }}</strong> followers</a></li>
+    {{/if}}
+    {{#if plusOneCount}}
+    <li><a href="{{ url }}"><strong>{{ plusOneCount }}</strong> plus</a></li>
+    {{/if}}
+  </ul>
+  <div class="profile-info-footer">
+    <a href="{{ url }}" class="btn">View Google+ Profile</a>
+  </div>
+{{/with}}
+  <ul class="profile-plus-activities">
+    {{#each activities}}
+    <li>
+      <p class="plus-activity-verb">{{ verb }} {{#if object.actor }}<a href="{{ object.actor.url }}" class="plus-activity-actor">{{ object.actor.displayName }}</a>{{else}}a{{/if}} {{ object.objectType }}</p>
+    <p class="plus-activity-text">
+      {{ title }}
+    </p>
+    {{#if object.image }}
+    <a href="{{ url }}"><img src="{{ object.image }}"></a>
+    {{else}}
+    <p>{{ object.content }}</p>
+    {{/if}}
+    <div class="plus-activity-details">
+	    <ul class="plus-activity-stats">
+	      	    <li class="plus-activity-replies"><a class="profile-comments" href="{{ url }}">{{ replies }}</a></li>
+	      	    <li class="plus-activity-ones"><a class="profile-likes"  href="{{ url }}">{{ plusoners }}</a></li>
+	      	    <li class="plus-activity-reshares"><a class="profile-forks" href="{{ url }}">{{ resharers }}</a></li>
+	    </ul>
+	    <div class="plus-activity-time"><a href="{{ url }}">{{ published }}</a></div>
+    </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>

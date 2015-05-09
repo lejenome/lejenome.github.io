@@ -1,0 +1,44 @@
+{{#with channel}}
+<div class="profile youtube modal fade" id="youtube-profile">
+  <div class="profile-info">
+    <button class="close" data-dismiss="modal">×</button>
+    {{#if thumbnails}}
+    <a href="{{ url }}" class="profile-avatar">
+      <img src="{{ thumbnails.default.url }}" alt="{{title}}" />
+    </a>
+    {{/if}}
+    <div class="profile-name">
+        <h2><a href="{{ url }}">{{ title }}</a></h2>
+      <h3><a href="{{ url }}">{{ username }}</a></h3>
+    </div>
+    <p class="profile-location-url">
+      {{#if description }}<span>{{ description }}</span>{{/if}}
+    </p>
+  </div>
+{{/with}}
+{{#with statistics }}
+  <ul class="profile-stats">
+    <li><a href="{{ url }}"><strong>{{ viewCount }}</strong> views</a></li>
+    <li><a href="{{ url }}"><strong>{{ subscriberCount }}</strong> subscribers</a></li>
+    <li><a href="{{ url }}/videos"><strong>{{ videoCount }}</strong> videos</a></li>
+  </ul>
+  <div class="profile-info-footer">
+    <a href="{{ url }}" class="btn">View Youtube Profile</a>
+  </div>
+{{/with}}
+  <ul class="profile-activities">
+    {{#each activities}}
+      <li>
+        <a href="{{ url }}" class="activity-image">
+		<img src="{{ img }}" alt="{{ channelTitle }}{{#if title}} - {{ title }}{{/if}}" />
+        </a>
+	{{#if title }}
+        <p class="activity-detail">
+	    <a href="{{ url }}">{{ title }}</a>
+        </p>
+	{{/if}}
+	<p class="activity-date">{{type}} - {{ publishedAt }}</p>
+      </li>
+    {{/each}}
+  </ul>
+</div>

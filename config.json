@@ -1,0 +1,80 @@
+{
+  "version": "0.2.0",
+  "deployment_mode": "dev",
+  "blog_platform": "wordpress",
+  "fields": {
+    "username": "lejenome",
+    "realname": "Moez Bouhlel",
+    "description": "Write Code For Fun",
+    "url": "http://lejenome.me",
+    "contact": {
+      "email": "bmoez.j@gmail.com",
+      "address": "Sfax, Tunisia",
+      "pgp_url": "/pubkey.asc",
+      "fingerprint": "3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D"
+    }
+  },
+  "plugins": {
+    "segment": true,
+    "rss": true,
+    "control_panel": true,
+    "gratipay_widget": true,
+    "paypal_donate": true
+  },
+  "plugins_settings": {
+    "rss": {
+      "url": "feed"
+    },
+    "disqus": {
+      "url": "",
+      "shortname": "lejenome",
+      "just_count": false
+    },
+    "gratipay_widget": {
+      "username": "lejenome"
+    },
+    "segment": {
+      "write_key": "H1Kj0zlJBZ"
+    },
+    "paypal_donate": {
+      "encrypted": "-----BEGIN PKCS7-----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-----END PKCS7-----"
+    }
+  },
+  "blogs_settings": {
+    "plugins": {
+      "disqus": true
+    },
+    "wordpress": {
+      "blog_url": "lejenome.wordpress.com",
+      "tag_slug": ""
+    }
+  },
+  "services": {
+    "github": true,
+    "linkedin": true,
+    "stackoverflow": true,
+    "gplus": true,
+    "facebook": true
+  },
+  "services_settings": {
+    "github": {
+      "username": "lejenome"
+    },
+    "stackoverflow": {
+      "username": "lejenome",
+      "user_id": "2481592"
+    },
+    "gplus": {
+      "user_id": "115155902038983611068",
+      "api_key": "AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA"
+    },
+    "facebook": {
+      "username": "legenome",
+      "access_token": "CAAKpfrF3JjQBACCW79ZCs76u2E6ZCDWdaJg9K8qfksDsGtOZCLsmZBtaCizvdu0tGj9NBnZATe8IswoEwPFBOPeSgOJG0TjP3qwJc0fVFO8zP3H0xRsehZBbEmQPIi3HgIyVvHtk5Cqa7py4CeMrT7IeTuptBZAOjeaxW3u1skBw2etgg7RJmdbwJH6zZBG4vUfJtupB3KLCBWbUsofM4RPT"
+    },
+    "linkedin": {
+      "username": "lejenome",
+      "access_token": "AQUFwQC5WjtUJp8GSXsfcfpFqRMmT9EI_HJLnxzCVIlo5-oHZ_3nINDNneC4qsuIHTC0h9Knj-rdCs8zf5erxGZXPIxrji16a07IiKKWw-UGerFRgivN1RXRtCCnD0d-J3pszhkjL840tw0yUlsyI_W8hJc5wh0Rhb5Ic3_wsiFjSGhpJWM"
+    }
+  }
+}

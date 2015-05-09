@@ -1,0 +1,20 @@
+{
+    "name": "Jukax",
+    "description": "Sample Calendar/To-Do app",
+    "author": "Moez Bouhlel",
+    "manifest_version": 2,
+    "version": "0.2.0",
+    "app": {
+        "background": {
+            "scripts": ["background.js"]
+        }
+    },
+    "permissions": ["https://api.kii.com/*"],
+    "icons": {
+        "16": "/img/jukax-icon-16x16.png",
+        "48": "/img/jukax-icon-48x48.png",
+        "128": "/img/jukax-icon-128x128.png",
+        "256": "/img/jukax-icon-256x256.png"
+    },
+    "update_url": "http://lejenome.github.io/jukax/chrome-updates.xml"
+}

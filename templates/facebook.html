@@ -1,0 +1,56 @@
+<div class="profile facebook modal fade" id="facebook-profile">
+  <div class="profile-info">
+    <button class="close" data-dismiss="modal">×</button>
+    {{#if image}}
+    <a href="{{ url }}" class="profile-avatar">
+      <img src="{{ image }}" alt="{{name}}" />
+    </a>
+    {{/if}}
+    <div class="profile-name">
+        <h2><a href="{{ url }}">{{ name }}</a></h2>
+	{{#if work}}
+	<h3><a href="{{ url }}">{{ work }}</a></h3>
+	{{else}}
+	{{#if website}}
+	<h3><a href="{{ url }}">{{ website }}</a></h3>
+	{{/if}}
+	{{/if}}
+    </div>
+    <p class="profile-location-url">{{ about }}</p>
+  </div>
+  <ul class="profile-stats">
+    {{#if circledByCount }}
+    <li><a href="{{ url }}"><strong>{{ circledByCount }}</strong> followers</a></li>
+    {{/if}}
+    {{#if plusOneCount}}
+    <li><a href="{{ url }}"><strong>{{ plusOneCount }}</strong> plus</a></li>
+    {{/if}}
+  </ul>
+  <div class="profile-info-footer">
+    <a href="{{ url }}" class="btn">View Facebook Profile</a>
+  </div>
+  <ul class="profile-plus-activities">
+    {{#each posts}}
+    <li>
+    {{#if message}}
+    <p class="plus-activity-verb"><a href="{{ url }}">Posted a message</a></p>
+    <p class="plus-activity-text">
+      {{ message }}
+    </p>
+    {{else}}
+    <p class="plus-activity-verb"><a href="{{ url }}">Shared a link</a></p>
+    <p class="plus-activity-text">{{ name }}</p>
+    <a href="{{ link }}"><img src="{{ picture }}" /></a>
+    {{/if}}
+    <div class="plus-activity-details">
+	    <ul class="plus-activity-stats">
+	      	    <li class="plus-activity-replies"><a class="profile-comments" href="{{ url }}">{{ comments }}</a></li>
+	      	    <li class="plus-activity-ones"><a class="profile-likes"  href="{{ url }}">{{ likes }}</a></li>
+	      	    <li class="plus-activity-reshares"><a class="profile-forks" href="{{ url }}">{{ sharedposts }}</a></li>
+	    </ul>
+	    <div class="plus-activity-time"><a href="{{ url }}">{{ updated_time }}</a></div>
+    </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>

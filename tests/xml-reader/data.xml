@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--<!DOCTYPE personnes SYSTEM "personnes.dtd">-->
+<personnes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="personnes.xsd">
+	<personne name="haifa" prenom="chaaben" sexe="famme">
+		<about>Smart Man</about>
+		<address>
+			<country>Tunisie</country>
+			<city>Sfax</city>
+			<zip>34510</zip>
+		</address>
+	</personne>
+	<personne name="firas" prenom="chaaben" sexe="homme">
+		<about>Stupid Man</about>
+		<address>
+			<country>Tunisie</country>
+			<city>Sfax</city>
+			<zip>5420</zip>
+		</address>
+	</personne>
+</personnes>

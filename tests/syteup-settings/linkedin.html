@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>LinkedIn Settings Setup</title>
+</head>
+<body>
+	<script>
+var s = location.search;
+if(s) {
+	var code=s.match(/code=([^&]*)/)[1];
+	var secret=s.match(/client_secret=([^&]*)/)[1];
+	var id=s.match(/client_id=([^&]*)/)[1];
+	location = "https://www.linkedin.com/uas/oauth2/accessToken?grant_type=authorization_code&code=" +
+		code +
+		"&client_id=" +
+		id +
+		"&client_secret=" +
+		secret +
+		"&redirect_uri=" + location.origin + location.pathname + "?client_id=" + id + "%26client_secret=" + secret;
+} else {
+     function submit() {
+	var id = document.getElementById("client_id").value;
+	var secret = document.getElementById("client_secret").value;
+
+	var url = "https://www.linkedin.com/uas/oauth2/authorization?response_type=code&scope=r_fullprofile&state=1234fds5"+
+		"&client_id=" + id +
+		"&redirect_uri=" + location.origin.replace(":", "%3A") + location.pathname +
+	       	"?client_id=" + id +
+	       	"%26client_secret=" + secret;
+	console.log(url);
+
+	location = url;
+     }
+}
+	</script>
+
+	<p>
+		<label for="client_id">Client ID</label>
+		<input id="client_id" name="client_id" />
+	</p><p>
+		<label for="client_secret">Client Secret</label>
+		<input id="client_secret" name="client_secret" />
+	</p><p>
+		<button onclick="submit()">Submit</button>
+	</p>
+</body>
+</html>
+

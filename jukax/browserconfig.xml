@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square70x70logo src="img/jukax-msapplication-70x70.png" />
+            <square150x150logo src="img/jukax-msapplication-150x150.png" />
+            <square310x310logo src="img/jukax-msapplication-310x310.png" />
+            <wide310x150logo src="img/jukax-msapplication-310x150.png" />
+            <TileImage src="img/jukax-msapplication-288x288.png" />
+            <TileColor>#0092d8</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

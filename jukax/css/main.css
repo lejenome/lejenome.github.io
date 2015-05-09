@@ -1,0 +1,327 @@
+/** Jukax
+ * @author      Moez Bouhlel
+ * @license     MIT License
+ * @project     https://github.com/lejenome/jukax
+ */
+
+body {
+    height: 100%;
+    width: 100%;
+}
+/***********************************************/
+
+/*                 CALENDAR                    */
+
+/***********************************************/
+
+#cal-container>table {
+    margin: 0 auto 10px auto;
+    font-size: 20px;
+    font-family: Helvetica;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+}
+#cal-container>table td,
+#cal-container>table th {
+    width: 70px;
+    height: 70px;
+}
+#cal-container>table th {
+    height: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #444;
+}
+#cal-container>table>tbody {
+    background-image: -moz-linear-gradient(0deg, #327bcb, #70cbeb);
+    background-image: -ms-linear-gradient(0deg, #327bcb, #70cbeb);
+    background-image: -o-linear-gradient(0deg, #327bcb, #70cbeb);
+    background-image: linear-gradient(0deg, #327bcb, #70cbeb);
+    background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(0deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+    border-width: 0;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.3), -1px 0 rgba(0, 0, 0, 0.3);
+}
+#cal-container>table {
+    /*fix tbody issues on google chrome & IE engine*/
+    background-color: transparent;
+    background-image: -webkit-linear-gradient(270deg, rgba(0, 0, 0, 0) 33px, #70cbeb 0px, #327bcb);
+    background-image: -ms-linear-gradient(270deg, rgba(0, 0, 0, 0) 33px, #70cbeb 0px, #327bcb);
+}
+#cal-container>table tbody td {
+    transition: 0.4s;
+    text-shadow: 0 1px black;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-top-color: #6aacde;
+}
+#cal-container>table>tbody tr td:last-child {
+    border-right-width: 1px;
+}
+#cal-container>table>tbody tr:first-child td {
+    border-top-color: #6aacde;
+}
+#cal-container>table,
+#cal-container>table>tbody,
+#cal-container>table td,
+#cal-container>table tr {
+    position: relative;
+    padding: 0;
+    border-spacing: 0;
+    border-collapse: separate;
+    border: 0 solid #2f6288;
+}
+#cal-container>table .empty {
+    background-color: #72a0cb;
+}
+#cal-container>table .date-has-event {
+    background-color: rgba(0, 0, 150, 0.3);
+    border-top-width: 0;
+}
+#cal-container>table .today {
+    background-color: rgba(149, 218, 119, 0.7);
+    border-top-color: rgba(149, 118, 219, 0.5);
+}
+#cal-container>table td:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+#cal-container>table td:active,
+#cal-container>table .selected {
+    transition: 0.12s;
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2) inset;
+}
+#cal-container>table .date-has-event:active,
+#cal-container>table .date-has-event.selected {
+    background-color: rgba(100, 100, 250, 0.6);
+}
+@media only screen and (max-width: 480px),
+only screen and (max-device-width: 480px) {
+    #cal-container>table td,
+    #cal-container>table th {
+        width: 60px;
+    }
+    #cal-container>table td {
+        height: 60px;
+    }
+}
+@media only screen and (max-width: 480px),
+only screen and (max-device-width: 480px) {
+    #cal-container>table td,
+    #cal-container>table th {
+        width: 60px;
+    }
+    #cal-container>table td {
+        height: 50px;
+    }
+}
+@media only screen and (max-width: 370px),
+only screen and (max-device-width: 370px) {
+    #cal-container>table td,
+    #cal-container>table th {
+        width: 50px;
+    }
+    #cal-container>table td {
+        height: 40px;
+        font-size: 19px;
+    }
+    #cal-container>table {
+        margin: -10px;
+    }
+}
+/******************************************/
+
+/*               DELETE DIALOG            */
+
+/******************************************/
+
+/* Left transition */
+
+#listview li.left,
+#eventsList li.left {
+    -webkit-transition: -webkit-transform 250ms ease;
+    -moz-transition: -moz-transform 250ms ease;
+    -ms-transition: -ms-transform 250ms ease;
+    -o-transition: -o-transform 250ms ease;
+    transition: transform 250ms ease;
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+/* Right transition */
+
+#listview li.right,
+#eventsList li.right {
+    -webkit-transition: -webkit-transform 250ms ease;
+    -moz-transition: -moz-transform 250ms ease;
+    -ms-transition: -ms-transform 250ms ease;
+    -o-transition: -o-transform 250ms ease;
+    transition: transform 250ms ease;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+}
+/* Border bottom for the previous button during the transition*/
+
+#listview li.left a.ui-btn,
+#eventsList li.left a.ui-btn,
+#listview li.right a.ui-btn,
+#eventsList li.right a.ui-btn {
+    border-top-width: 0;
+    border-left-width: 1px;
+    border-right-width: 1px;
+}
+#listview li a.ui-btn.border-bottom,
+#eventsList li a.ui-btn.border-bottom {
+    border-bottom-width: 1px;
+}
+#listview.touch li.ui-li-has-alt a.ui-btn,
+#eventsList li.ui-li-has-alt a.ui-btn {
+    margin-right: 0;
+}
+/* Styling for the popup */
+
+#confirmDeleteFromEventsList p,
+#confirmDelete p {
+    text-align: center;
+    font-size: inherit;
+    margin-bottom: .75em;
+}
+/****************************************************/
+
+/********************************************\
+
+
+#cal-container{
+	position: relative;
+	width: 100%;		
+
+}
+#cal-container: before {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+#cal-container>table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+\********************************************/
+
+/*********************************************/
+
+/*                   TAGS                    */
+
+/*********************************************/
+
+.tag {} .tag span {
+    text-align: center;
+    padding: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: black;
+    text-shadow: none;
+    display: block;
+}
+#tag-A span {
+    background-color: #66CD00;
+}
+#tag-B span {
+    background-color: #CD661D;
+}
+#tag-C span {
+    background-color: #CDAA7D;
+}
+.events li:before {
+    position: absolute;
+    z-index: 1;
+    content: "";
+    top: 1px;
+    bottom: 1px;
+    left: 0;
+    width: 5px;
+    background-color: gray;
+}
+.events .ui-li-has-count:before {
+    background-color: transparent;
+}
+.events .tag-A:before {
+    background-color: #66CD00;
+}
+.events .tag-B:before {
+    background-color: #CD661D;
+}
+.events .tag-C:before {
+    background-color: #CDAA7D;
+}
+/* TODO: add transition when diaplying the list111111
+#listview{
+    transition: 5s;
+}
+.hidden li{
+    height:0;
+}
+*/
+
+.events li small {
+    color: #777;
+}
+/*******************************************/
+
+/*               SELECT DATE               */
+
+/*******************************************/
+
+#select-date {
+    display: none;
+}
+#select-date>div {
+    display: block;
+}
+#select-date>div:first-child {
+    margin: 0;
+}
+#select-date>div:last-child {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+#select-date>div:last-child>div {
+    width: 50%;
+}
+#events div:first-child form {
+    margin-left: 50px;
+    margin-right: 5px;
+}
+/*****************************************/
+
+html {
+    overflow: auto;
+    webkit-overflow-scrolling: touch;
+}
+#cal>div+div,
+#events>div+div {
+    text-overflow: ellipsis;
+    overflow: visible;
+    webkit-overflow-scrolling: touch;
+}
+/**********************************************/
+
+/*           Events Search List               */
+
+/*********************************************/
+
+#eventsList .ui-screen-hidden ~ li.ui-li-divider .ui-li-count {
+    visibility: hidden;
+    display: none;
+}

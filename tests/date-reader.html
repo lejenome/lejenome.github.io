@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8" /></head><body>
+<input type="text" id="date" />
+<input type="button" id="more" value="save and new" /><br />
+<div id="feedback"></div><br />
+<div id="dates">
+
+</div>
+<script>
+var more = document.getElementById("more");
+var input = document.getElementById("date");
+var feedback = document.getElementById("feedback");
+var dates = document.getElementById("dates");
+var isValid=false;
+var format = /^ *(mon|tue|fri|sun|wed|thu|sat) *([10][\d]|\d):(\d{1,2}) *(am|pm) *$/i;
+more.addEventListener("click",function(){
+    if(isValid){
+    var $=format.exec(input.value);
+    $[1]=$[1].toLowerCase();
+    $[4]=$[4].toUpperCase();
+    var span=document.createTextNode('Date: '+$[1]+' @ '+$[2]+':'+$[3]+' '+$[4]);
+    var div=document.createElement('DIV');
+    div.appendChild(span);
+    var button=document.createElement("BUTTON");
+    button.value="change date";
+    button.innerHTML="change date";
+    button.addEventListener("click",
+        function(){alert("no implemented yet");},false);
+    div.appendChild(button);
+    dates.insertBefore(div, dates.firstChild) ||
+      dates.appenChild(div);
+      }},false);
+input.addEventListener("keyup",function(){
+    if(format.test(input.value)){
+    isValid=true;
+    input.style.border='1px solid green';
+    }else{
+    isValid=false;
+    input.style.border='1px solid red';}
+    },false);
+
+
+</script>
+</body><html>
+

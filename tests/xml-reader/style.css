@@ -1,0 +1,34 @@
+body, html {
+	width: 100%;
+	height: 100%;
+}
+table {
+	width: 90%;
+	margin: 10px auto;
+}
+table tr {
+	height: 40px;
+}
+td {
+	border: 1px solid black;
+}
+.modifier, .supprimer {
+	width: 100px;
+	text-align: center;
+}
+#formulaire {
+	margin-top: 10px;
+}
+#formulaire  label {
+	display: block;
+	width: 300px;
+	height: 30px;
+}
+#formulaire label > input {
+	margin-right: 0;
+	float: right;
+	height: 20px;
+}
+#formulaire > input {
+	width: 140px;
+}

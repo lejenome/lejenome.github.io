@@ -1,0 +1,168 @@
+{
+  "version": "0.2.0",
+  "deployment_mode": "dev",
+  "blog_platform": "blogger",
+  "fields": {
+    "username": "lejenome",
+    "realname": "Moez Bouhlel",
+    "description": "FOSS and  IT fan",
+    "url": "lejenome.github.io",
+    "contact": {
+      "email": "bmoez.j@gmail.com",
+      "mobile": "(216) 00000000",
+      "tel": "(216) 00000000",
+      "fax": "(216) 1111111",
+      "address": "Sfax, Tunisia",
+      "pgp_url": "/pubkey.asc",
+      "fingerprint": "3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D",
+      "ssh_url": "/id_rsa.pub"
+    }
+  },
+  "plugins": {
+    "google_analytics": false,
+    "woopra": false,
+    "segment": true,
+    "rss": true,
+    "sitemap": false,
+    "control_panel": true,
+    "gratipay_widget": true
+  },
+  "plugins_settings": {
+    "google_analytics": {
+      "tracking_id": "UA-28759938-2"
+    },
+    "woopra": {
+      "tracking_domain": "",
+      "idle_timeout": 300000,
+      "include_query": false
+    },
+    "rss": {
+      "url": "http://lejenome.tumblr.com/rss"
+    },
+    "disqus": {
+      "url": "",
+      "shortname": "lejenome",
+      "just_count": false
+    },
+    "sharethis": {
+      "publisher_key": ""
+    },
+    "gratipay_widget": {
+      "username": "lejenome"
+    },
+    "segment": {
+      "write_key": "H1Kj0zlJBZ"
+    }
+  },
+  "blogs_settings": {
+    "plugins": {
+      "disqus": true,
+      "sharethis": false
+    },
+    "blogger": {
+      "blog_url": "http://blogsofnote.blogspot.com/",
+      "blog_id": "3024673",
+      "api_key": "AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA",
+      "tag_slug": ""
+    },
+    "tumblr": {
+      "blog_url": "lejenome.tumblr.com",
+      "api_key": "8DFsCxDWJckE1sOmMjaAjqV6TgbfbUnF01uGHNefhVMDbBpnLY",
+      "tag_slug": ""
+    },
+    "wordpress": {
+      "blog_url": "lejenome.wordpress.com",
+      "tag_slug": ""
+    }
+  },
+  "services": {
+    "instagram": true,
+    "dribbble": true,
+    "flickr": true,
+    "bitbucket": true,
+    "lastfm": true,
+    "youtube": true,
+    "soundcloud": true,
+    "github": false,
+    "gplus": false,
+    "facebook": false,
+    "linkedin": false,
+    "twitter": false,
+    "stackoverflow": false,
+    "tent": false,
+    "netfix": false,
+    "picasa": false,
+    "rdio": false,
+    "spotify": false,
+    "slideshare": false
+  },
+  "services_settings": {
+    "github": {
+      "url": "https://github.com/lejenome",
+      "client_id": "lejenome"
+    },
+    "stackoverflow": {
+      "url": "https://stackoverflow.com/users/2481592/lejenome",
+      "userid": "2481592"
+    },
+    "flickr": {
+      "url": "https://www.flickr.com/photos/shutterjack/",
+      "client_id": "18205706@N06"
+    },
+    "bitbucket": {
+      "url": "https://bitbucket.org/pypy",
+      "username": "pypy",
+      "show_forks": false
+    },
+    "soundcloud": {
+      "url": "https://soundcloud.com/olivianoelle",
+      "username": "olivianoelle",
+      "client_id": "eb58570acbacb769c818a49e0eeb7545",
+      "show_artwork": false,
+      "player_color": "ff912b"
+    },
+    "lastfm": {
+      "url": "https://www.last.fm/user/bmoezj",
+      "username": "bmoezj",
+      "api_key": "c52df19324d791fe6b22d1c80cad14dd"
+    },
+    "dribbble": {
+      "url": "https://dribbble.com/mbarvian",
+      "username": "mbarvian"
+    },
+    "youtube": {
+      "url": "https://www.youtube.com/user/minutephysics",
+      "username": "minutephysics",
+      "api_key": "AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA"
+    },
+    "gplus": {
+      "url": "https://plus.google.com/+LinusTorvalds",
+      "user_id": "102150693225130002912",
+      "api_key": "AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA"
+    },
+    "facebook": {
+      "url": "https://facebook.com/legenome",
+      "username": "legenome",
+      "access_token": "CAAKpfrF3JjQBAATK1p54yxf9X3wDvLvJ7WKXN5eUDczSrGpv2x0OvWVuRqZCMfiZAH8TxZBZCGywGZCMGItYCUjtu9S037FwyRQaEumyXYIiF8zZA2b9VzZBPVnZCEmXVmGDQZB0mVuh6wZAZAwg5udWzrmEvF41ePfRzvH6aXvDx3w7ODT3duQQFtl8oquFUiiseuyMfTlODs5yELZBNDjy4rBX"
+    },
+    "tent": {
+      "url": "https://daniel.cupcake.is",
+      "entity_url": "https://daniel.cupcake.is/tent",
+      "feed_url": "daniel.cupcake.is"
+    },
+    "twitter": {
+      "url": "https://twitter.com/lejenome",
+      "username": "lejenome",
+      "access_token": "AAAAAAAAAAAAAAAAAAAAAApbaQAAAAAAz5KjCEDpkb3t0cPW35s8%2BRq8CPE%3DNmV2v5myoSRvG5Hxootd4itQQ2HW4z4hZRe7s2QOmf7xrvjCaP"
+    },
+    "instagram": {
+      "url": "http://instagram.com/seanparkerphotography",
+      "access_token": "36902549.f030346.4d9979cd72094a2fb4963c9e707f894f",
+      "user_id": "19324936"
+    },
+    "linkedin": {
+      "url": "https://www.linkedin.com/in/lejenome",
+      "access_token": "AQVxdg4OCFjUnjqU3bYl2uWNnOf6votw8Y3JJ3BbmSex_5RbYJpWAmQuuA3UeDYeEisvC0EGOVAnUZaCG_YHCVcNUNQNBS-aftsPinGyg5ogRyw92JcTDpsgTQhYkx0O7lXFVEodJKWFbs1shD5GjrWzQljc5ZBKzxYF3cN8p5aFd4VfItU"
+    }
+  }
+}

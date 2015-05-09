@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>XML test</title>
+	<meta charset="UTF-8" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<form>
+		<div>
+			<label>Importer:
+				<input type="file" id="input-importer" />
+			</label>
+			<input type="button" value="Exporter en XML" id="input-exporter-xml" />
+			<input type="button" value="Exporter en HTML" id="input-exporter-html" />
+		</div>
+		<div id="formulaire">
+			<label>Nom:<input type="text" id="input-nom" /></label>
+			<label>Prenom:<input type="text" id="input-prenom" /></label>
+			<label>Sexe:<input type="text" id="input-sexe" /></label>
+			<label>A propos:<input type="text" id="input-apropos" /></label>
+			<label>Country<input type="text" id="input-country" /></label>
+			<label>City:<input type="text" id="input-city" /></label>
+			<label>Zip:<input type="text" id="input-zip" /></label>
+			<input type="button" value="Nouveau" id="input-nouveau" />
+			<input type="button" value="Modifier" id="input-modifier" />
+		</div>
+	</form>
+	<table>
+		<tr>
+			<th>Nom</th>
+			<th>Prenom</th>
+			<th>Sexe</th>
+			<th>A propos</th>
+			<th>Addresse</th>
+			<th class="modifier">Modifier</th>
+			<th class="supprimer">Supprimer</th>
+		</tr>
+	<tbody id="tab">
+		</tbody>
+	</table>
+	<script src="main.js" type="text/javascript"></script>
+</body>
+</html>

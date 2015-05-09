@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html manifest="manifest.appcache" manifest="manifest.appcache" itemscope itemtype="http://schema.org/WebApplication">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE">
+    <meta name="description" content="Simple Calendar Web Application." />
+    <meta name="author" content="Moez Bouhlel" />
+    <title>
+        Jukax
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="shortcut icon" href="img/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="256x256" href="img/jukax-256x256.png" />
+    <link rel="apple-touch-icon" sizes="128x128" href="img/jukax-128x128.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="img/jukax-114x114.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="img/jukax-72x72.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="img/jukax-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="img/jukax-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="img/jukax-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="img/jukax-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="img/jukax-152x152.png" />
+    <link rel="icon" type="image/png" href="img/jukax-icon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="img/jukax-icon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="img/jukax-icon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="img/jukax-icon-160x160.png" sizes="160x160" />
+    <link rel="icon" type="image/png" href="img/jukax-icon-196x196.png" sizes="196x196" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link href="img/jukax-startup-768x1004.png" media="(device-width: 768px) and (orientation: portrait)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-748x1024.png" media="(device-width: 768px) and (orientation: landscape)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-1536x2008.png" media="(device-width: 1536px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-1536x2008.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-1496x2048.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-768x1004.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-748x1024.png" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
+    <link href="img/jukax-startup-320x460.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image" />
+    <meta name="application-name" content="Jukax" />
+    <meta name="msapplication-config" content="browserconfig.xml" />
+    <meta name="msapplication-starturl" content="./" />
+    <meta name="msapplication-square70x70logo" content="img/jukax-msapplication-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="img/jukax-msapplication-150x150.png" />
+    <meta name="msapplication-square310x310logo" content="img/jukax-msapplication-310x310.png" />
+    <meta name="msapplication-wide310x150logo" content="img/jukax-msapplication-310x150.png" />
+    <meta name="msapplication-TileColor" content="#0092d8" />
+    <meta name="msapplication-TileImage" content="img/jukax-msapplication-288x288.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@lejenome" />
+    <meta name="twitter:creator" content="@lejenome" />
+    <meta name="twitter:domain" content="http://lejenome.github.io/jukax/" />
+    <meta name="twitter:image" content="http://lejenome.github.io/jukax/img/jukax-256x256.png" />
+    <meta property="og:title" content="Jukax" />
+    <meta property="og:site_name" content="Jukax" />
+    <meta property="og:description" content="Simple Calendar Web Application." />
+    <meta property="og:see_also" content="http://lejenome.github.io/jukax-about" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://lejenome.github.io/jukax/" />
+    <meta property="og:image" content="http://lejenome.github.io/jukax/img/jukax-600x300.png" />
+    <meta property="fb:admins" content="100002633224560" />
+    <meta itemprop="name" content="Jukax" />
+    <meta itemprop="description" content="Simple Calendar Web Application." />
+    <meta itemprop="image" content="http://lejenome.github.io/jukax/img/jukax.png" />
+    <meta itemprop="browserRequirements" content="requires HTML5 support" />
+    <meta itemprop="url" content="http://lejenome.github.io/jukax/" />
+    <meta itemprop="author" content="Moez Bouhlel" />
+    <meta itemprop="softwareVersion" content=0.2.0 />
+    <meta itemprop="installUrl" content="http://lejenome.github.io/jukax-about/" />
+    <meta itemprop="contributor" content="" />
+    <meta itemprop="inLanguage" content="en" />
+    <meta itemprop="applicationCategory" content="Productivity" />
+    <meta itemprop="applicationSubCategory" content="To-Do,Events,Calendar" />
+    <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/jquery.mobile.min.js" type="text/javascript"></script>
+    <script src="js/main.min.js" type="text/javascript" async></script>
+</head>
+<body>
+    <div data-role="page" id="login" data-theme="a">
+        <div data-role="header">
+            <h1>Jukax</h1>
+        </div>
+        <form data-role="content" data-ajax="false" action="https://api.kii.com/">
+            <p id="login-err-msg" style="display:none;" class="noteBar ui-bar ui-bar-a"></p>
+            <div style="margin:18px;">
+                <label for="username">Enter a Username:</label>
+                <input required id="username" type="text" name="name" value="" />
+            </div>
+            <div style="margin:18px;">
+                <label for="password">Enter a Password:</label>
+                <input required id="password" type="password" name="name" value="" />
+            </div>
+            <div class="ui-mini">
+                <label for="keepLogin">keep login</label>
+                <input type="checkbox" value="keepLogin" checked id="keepLogin">
+            </div>
+            <div style="margin:32px 18px;">
+                <button id="login-button" data-role="button" data-theme="b" data-shadow="false">Log in</button>
+                <button id="register-button" data-role="button" data-shadow="false" data-theme="a">Register</button>
+            </div>
+        </form>
+    </div>
+    <div id="cal" data-role="page" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <span class="ui-title"></span>
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right ui-mini ui-bar" id="controlgroup" data-shadow="false">
+                <a id="prevMonth" href="#" data-role="button" data-icon="arrow-l" data-iconpos="notext">Prev</a>
+                <input type="checkbox" id="monthCheckbox" data-role="button" name="monthCheckbox" value="" />
+                <label for="monthCheckbox" id="monthField">Login First</label>
+                <a id="nextMonth" href="#" data-role="button" data-icon="arrow-r" data-iconpos="notext">Next</a>
+            </div>
+        </div>
+        <div data-role="content">
+            <fieldset data-role="controlgroup" data-type="horizontal" id="select-date">
+                <legend class="ui-hidden-accessible">Change Date:</legend>
+                <label for="select-month">Month</label>
+                <select name="select-month" id="select-month" data-native-menu="true">
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                    <option value="Jul">Jul</option>
+                    <option value="Aug">Aug</option>
+                    <option value="Sep">Sep</option>
+                    <option value="Oct">Oct</option>
+                    <option value="Nov">Nov</option>
+                    <option value="Dec">Dec</option>
+                </select>
+                <label for="select-year">Year</label>
+                <select name="select-year" id="select-year" data-native-menu="true">
+                    <option value="2000">2000</option>
+                    <option value="2001">2001</option>
+                    <option value="2002">2002</option>
+                    <option value="2003">2003</option>
+                    <option value="2004">2004</option>
+                    <option value="2005">2005</option>
+                    <option value="2006">2006</option>
+                    <option value="2007">2007</option>
+                    <option value="2008">2008</option>
+                    <option value="2009">2009</option>
+                    <option value="2010">2010</option>
+                    <option value="2011">2011</option>
+                    <option value="2012">2012</option>
+                    <option value="2013">2013</option>
+                    <option value="2014">2014</option>
+                    <option value="2015">2015</option>
+                    <option value="2016">2016</option>
+                    <option value="2017">2017</option>
+                    <option value="2018">2018</option>
+                    <option value="2019">2019</option>
+                    <option value="2020">2020</option>
+                </select>
+            </fieldset>
+            <div id="cal-container">
+                <table data-role="none">
+                    <thead>
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <ul id="listview" class="events touch" data-role="listview" data-split-icon="gear" data-icon="false" data-split-theme="d" data-mini="true" style="margin-top:18px;"></ul>
+            <a href="#" id="new" data-role="button" data-icon="plus" data-mini="true" data-iconpos="notext" style="display: block;; margin: 40px auto 0px auto;">New Event</a>
+        </div>
+        <div id="confirmDelete" class="ui-content" data-role="popup">
+            <p class="question">Are you sure you want to delete event:</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a class="yes ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Yes</a>
+                </div>
+                <div class="ui-block-b">
+                    <a class="cancel ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancel</a>
+                </div>
+            </div>
+        </div>
+        <div data-role="panel" data-position-fixed="true" id="nav-panel" data-display="push">
+            <ul data-role="listview" class="nav-search">
+                <li data-icon="delete">
+                    <a href="#cal" data-rel="close">Close menu</a>
+                </li>
+                <li>
+                    <a id="gotoEvents" href="#">Events</a>
+                </li>
+                <li>
+                    <a href="#settings" data-rel="dialog" data-transition="slidedown">Settings</a>
+                </li>
+                <li>
+                    <a href="#" id="logout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="eventPage" data-role="page" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <a id="backbutton" href="#" data-icon="arrow-l">Back</a>
+            <span class="ui-title"></span>
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-right">
+                <a id="delete" href="#" data-icon="delete" data-role="button" style="display:none">Delete</a>
+                <a id="save" href="#" data-icon="check" data-role="button">Save</a>
+            </div>
+        </div>
+        <div data-role="content">
+            <form data-ajax="false" action="https://api.kii.com/">
+                <p id="event-err-msg" style="display:none;" class="noteBar ui-bar ui-bar-a"></p>
+                <label for="title" class="ui-hidden-accessible">Title:</label>
+                <input required name="title" id="title" pattern=".+" placeholder="Title" value="" type="text" />
+                <label for="where" class="ui-hidden-accessible">Where:</label>
+                <input name="where" id="where" placeholder="Where" value="" type="text" />
+                <label for="time" class="ui-hidden-accessible">Time:</label>
+                <input name="time" id="time" value="" type="time" />
+                <label for="note" class="ui-hidden-accessible">Note:</label>
+                <textarea cols="40" rows="8" name="note" id="note" placeholder="Note"></textarea>
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" id="level-radio">
+                    <legend id="level">Tag:</legend>
+                    <input name="level" id="level-A" value="A" type="radio" />
+                    <label for="level-A" id="tag-A" class="tag">
+                        <span>A</span>
+                    </label>
+                    <input name="level" id="level-B" value="B" type="radio" />
+                    <label for="level-B" id="tag-B" class="tag">
+                        <span>B</span>
+                    </label>
+                    <input name="level" id="level-C" value="C" type="radio" />
+                    <label for="level-C" id="tag-C" class="tag">
+                        <span>C</span>
+                    </label>
+                </fieldset>
+                <!--
+                                 <label for="repeat" class="select">Repeat:</label>
+                                 <select name="repeat" id="repeat">
+                                     <option value="once">Once</option>
+                                     <option value="dealy">Every Day</option>
+                                     <option value="weekly">Every Week</option>
+                                     <option value="monthly">Every Month</option>
+                                     <option value="yearly">Every Year</option>
+                                 </select>
+                                 <label for="reminder">Remind Me:</label>
+                                 <select name="reminder" id="reminder" data-role="slider" data-mini="true">
+                                     <option value="no" selected="">No</option>
+                                     <option value="yes">Yes</option>
+                                 </select>
+                 -->
+            </form>
+        </div>
+    </div>
+    <div id="events" data-role="page" data-theme="a">
+        <div data-role="header" data-position="fixed">
+            <a href="#nav-panel2" data-icon="bars" data-iconpos="notext">Menu</a>
+            <form class="ui-filterable ui-mini " data-ajax="false" action="https://api.kii.com/">
+                <input id="filterBasic-input" data-type="search">
+            </form>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" class="events" data-filter="true" data-input="#filterBasic-input" id="eventsList">
+            </ul>
+        </div>
+        <div data-role="panel" data-position-fixed="true" id="nav-panel2" data-display="push">
+            <ul data-role="listview" class="nav-search">
+                <li data-icon="delete">
+                    <a href="#cal" data-rel="close">Close menu</a>
+                </li>
+                <li>
+                    <a id="gotoCal" href="#">Calendar</a>
+                </li>
+                <li>
+                    <a href="#settings" data-rel="dialog" data-transition="slidedown">Settings</a>
+                </li>
+                <li>
+                    <a href="#" id="logout2">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <div id="confirmDeleteFromEventsList" class="ui-content" data-role="popup">
+            <p class="question">Are you sure you want to delete event:</p>
+            <div class="ui-grid-a">
+                <div class="ui-block-a">
+                    <a class="ui-btn yes ui-corner-all ui-mini ui-btn-a" data-rel="back">Yes</a>
+                </div>
+                <div class="ui-block-b">
+                    <a class="cancel ui-btn ui-corner-all ui-mini ui-btn-a" data-rel="back">Cancel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="min-height: 493px;" tabindex="0" data-role="page" id="settings" data-theme="a">
+        <div data-role="content">
+            <h3>Settings</h3>
+            <a class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#deletedata" data-rel="dialog" data-role="button" data-transition="slidedown">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Delete Data</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#updatepassword" data-rel="dialog" data-role="button" data-transition="slidedown">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Update password</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#deleteaccount" data-rel="dialog" data-role="button" data-transition="slidedown">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Delete account</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#" data-role="button" data-rel="back">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Cancel</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div data-role="page" id="deletedata" data-theme="a">
+        <div data-role="content">
+            <h3>Delete Data?</h3>
+            <p id="deletedatamessage" style="display:none;" class="noteBar ui-bar ui-bar-a"></p>
+            <a id="deletedatabutton" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#d" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Yes</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#settings" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Cancel</span>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div data-role="page" id="updatepassword" data-theme="a">
+        <form data-role="content" data-ajax="false" action="https://api.kii.com/">
+            <p id="updatepasswordmessage" style="display:none;" class="noteBar ui-bar ui-bar-a"></p>
+            <label for="updatepasswordold" class="ui-hidden-accessible">Old password:</label>
+            <input name="updatepasswordold" id="updatepasswordold" placeholder="Old password" value="" type="password" />
+            <label for="updatepasswordnew" class="ui-hidden-accessible">Title:</label>
+            <input name="updatepasswordnew" id="updatepasswordnew" placeholder="New password" value="" type="password" />
+            <a id="updatepasswordbutton" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Update</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#settings" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Cancel</span>
+                </span>
+            </a>
+        </form>
+    </div>
+    <div data-role="page" id="deleteaccount" data-theme="a">
+        <div data-role="content">
+            <h3>Delete account?</h3>
+            <p id="deleteaccountmessage" style="display:none;" class="noteBar ui-bar ui-bar-a"></p>
+            <a id="deleteaccountbutton" class="ui-btn ui-btn-up-b ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Delete</span>
+                </span>
+            </a>
+            <a class="ui-btn ui-btn-up-a ui-shadow ui-btn-corner-all" data-wrapperels="span" data-iconshadow="true" data-shadow="true" data-corners="true" href="#settings" data-role="button">
+                <span class="ui-btn-inner">
+                    <span class="ui-btn-text">Cancel</span>
+                </span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

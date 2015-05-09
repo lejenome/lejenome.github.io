@@ -1,0 +1,34 @@
+.bar {
+  fill: rgba(155, 15, 152, 0.7);
+    transition: 1s fill;
+}
+.bar:hover {
+  fill: rgb(145, 5, 142);
+}
+body > div {
+  display: inline-flex;
+}
+#tooltip {
+  opacity: 0;
+  transition: 0.2s all;  
+  position: absolute;
+  width: 50px;
+  height: 15px;
+  padding: 5px;
+  background-color: #e4685d;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 5px;
+  -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  font-size: 10px;
+  text-align: center;
+}
+#tooltip.visible {
+  opacity: 1;
+}
+.c3-chart-arcs-background {
+  fill: rgba(0,0,0,0.02) !important;
+}
