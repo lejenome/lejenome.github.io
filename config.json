@@ -51,7 +51,7 @@
   },
   "services": {
     "github": true,
-    "linkedin": true,
+    "linkedin": false,
     "stackoverflow": true,
     "gplus": true,
     "facebook": true
