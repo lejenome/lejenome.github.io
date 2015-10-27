@@ -12733,12 +12733,14 @@ var FlateStream = (function() {
 })(typeof self !== "undefined" && self || typeof window !== "undefined" && window || this);
 function printToPDF(el, name)
 {
-	html2canvas(el, {
+	html2canvas(el || document.body, {
 		onrendered : function(canvas) {
-			document.body.appendChild(canvas);
+			//document.body.appendChild(canvas);
+			console.log("Screenshot rendered", canvas.toDataURL());
 			var doc = new jsPDF();
 			doc.addImage(canvas.toDataURL(), 'PNG', 0, 0, 0, 0);
-			doc.save(name);
+			doc.save(name || "screenshot.pdf");
+			console.log("Screenshot saved");
 		}
 	});
 }
