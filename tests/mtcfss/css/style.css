@@ -1,0 +1,93 @@
+html, body {
+    min-height: 100%;
+    box-sizing: border-box;
+      position: relative;
+        background: #2A2730;
+}
+header, #articale {
+    background: white;
+}
+#nav-logo
+{
+    height: 2.3em;
+}
+#about {
+    padding: 10px;
+}
+#about i {
+    color: white;
+    margin: 5px 0;
+}
+#about a:hover {
+    text-decoration: none;
+}
+@media(max-width: 753px) {
+    #about i {
+        display: none;
+    }
+}
+header nav a {
+    border-bottom: 2px solid;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
+    margin-right: 5px;
+}
+header nav a:hover {
+    text-decoration: none;
+    border-bottom: 4px solid;
+}
+header .navbar-brand {
+    font-variant: petite-caps;
+}
+section {
+    margin-bottom: 50px;
+}
+
+#members {
+    margin-bottom: 0;
+    padding-bottom: 80px;
+}
+#about {
+	background: #6F5499;
+	color: #CDBFE3;
+}
+#about h4 {
+    color: white;
+}
+footer {
+    background: #2A2730;
+    text-align: center;
+    color: #99979C;
+    padding: 30px 10px !important;
+}
+
+footer a {
+    color: #99979C;
+}
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+.ext-links {
+    display: block;
+    width: 200px;
+    margin: auto;
+}
+.ext-links li {
+    display: inline-block;
+}
+.ext-links a{
+    text-align: center;
+    vertical-align: text-bottom;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    padding: 5px 0 0 0;
+    margin: 10px 15px;
+    text-decoration: none;
+     background: #0275D8;
+}
+.ext-links a:hover {
+    background: rgba(1, 1, 1, 0.5);
+    box-shadow: -1px -1px gray;
+}
