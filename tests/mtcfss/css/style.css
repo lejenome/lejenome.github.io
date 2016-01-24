@@ -1,14 +1,15 @@
-html, body {
+html,
+body {
     min-height: 100%;
     box-sizing: border-box;
-      position: relative;
-        background: #2A2730;
+    position: relative;
+    background: #2A2730;
 }
-header, #articale {
+header,
+#articale {
     background: white;
 }
-#nav-logo
-{
+#nav-logo {
     height: 2.3em;
 }
 #about {
@@ -26,12 +27,16 @@ header, #articale {
         display: none;
     }
 }
-header nav a {
+header .nav li {
+    display: inline-block;
+}
+header .navbar-link {
     border-bottom: 2px solid;
+    color: #563D7C;
     text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     margin-right: 5px;
 }
-header nav a:hover {
+header .nav a:hover {
     text-decoration: none;
     border-bottom: 4px solid;
 }
@@ -41,14 +46,13 @@ header .navbar-brand {
 section {
     margin-bottom: 50px;
 }
-
 #members {
     margin-bottom: 0;
     padding-bottom: 80px;
 }
 #about {
-	background: #6F5499;
-	color: #CDBFE3;
+    background: #6F5499;
+    color: #CDBFE3;
 }
 #about h4 {
     color: white;
@@ -59,7 +63,6 @@ footer {
     color: #99979C;
     padding: 30px 10px !important;
 }
-
 footer a {
     color: #99979C;
 }
@@ -75,7 +78,7 @@ footer a:hover {
 .ext-links li {
     display: inline-block;
 }
-.ext-links a{
+.ext-links a {
     text-align: center;
     vertical-align: text-bottom;
     color: white;
@@ -85,9 +88,20 @@ footer a:hover {
     padding: 5px 0 0 0;
     margin: 10px 15px;
     text-decoration: none;
-     background: #0275D8;
+    background: #0275D8;
 }
 .ext-links a:hover {
     background: rgba(1, 1, 1, 0.5);
     box-shadow: -1px -1px gray;
+}
+@media (max-width: 600px) {
+    header .navbar-nav {
+        margin: 15px 0px 10px 0px;
+        text-align: center;
+        width: 100%;
+    }
+    header a {
+        border: 0 !important;
+        ;
+    }
 }
