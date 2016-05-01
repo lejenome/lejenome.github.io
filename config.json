@@ -53,8 +53,7 @@
     "github": true,
     "linkedin": false,
     "stackoverflow": true,
-    "gplus": true,
-    "facebook": true
+    "gplus": true
   },
   "services_settings": {
     "github": {
@@ -67,10 +66,6 @@
     "gplus": {
       "user_id": "115155902038983611068",
       "api_key": "AIzaSyDf-Arn5LkBeSB6oLzR8Kj6kwXaFleR4GA"
-    },
-    "facebook": {
-      "username": "legenome",
-      "access_token": "CAAKpfrF3JjQBABTMaZCZCAOTPQ7pk16dDW5jftxdPsqJZBQXEWN4u2E7BALaGQcsGzn2bktsp6HAmtKxbGbIHrJDpqmuERlc5cefA8eiZAJdwcpZAKptIj8Bn5CZBIZCC0ZA4KQEgv18mH6qqbtELpFyiKQwkDZBBKtSL4fBBpZAZCV17hsdhvWwlNNggSWdjrk7Bo7WKClujuA8QZDZD"
     },
     "linkedin": {
       "username": "lejenome",
