@@ -15,7 +15,7 @@ body{
      top: 50%;
      left: 50%;
      margin-right: -50%;
-     transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%) scale(.3);
      /*other*/
      overflow: hidden;
      text-overflow: hidden;
@@ -34,6 +34,7 @@ body ul {
      padding-left: 0;
      list-style: inside;
      list-style-type: none;
+     font-weight: bold;
 }
 /* card */
 
@@ -56,13 +57,19 @@ body > div {
 .left-half h1 {
      font-size: 70px;
      padding-left: 50px;
-     text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
-     margin-bottom: 80px;
+     margin-bottom: 60px;
+     padding-bottom: 15px;
+     border-bottom-width: 9px;
+     border-bottom-style:  dashed;
+     font-weight: 900;
+}
+.family-name {
+     font-weight: 600;
 }
 .left-half ul {
      font-size: 38px;
      line-height: 2;
 }
 .right-half ul {
-     font-size: 30px;
+     font-size: 32px;
 }
