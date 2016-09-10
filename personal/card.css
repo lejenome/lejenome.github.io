@@ -1,0 +1,68 @@
+html {
+     background:#A6AB95;
+     text-align: center;
+     display: block;
+}
+body{
+     border: solid 1px rgba(255, 255, 255, 0.6);
+     background: rgb(255, 255, 255);
+     width: 294mm;
+     height: 186mm;
+     box-sizing: padding-box;
+     /* center */
+     margin :auto auto;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     margin-right: -50%;
+     transform: translate(-50%, -50%);
+     /*other*/
+     overflow: hidden;
+     text-overflow: hidden;
+     -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+     box-shadow: inset 0 -15px 0px;
+}
+body a,
+body a:hover,
+body a:active {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+body ul {
+     padding-left: 0;
+     list-style: inside;
+     list-style-type: none;
+}
+/* card */
+
+body > div {
+     text-align: left;
+     position: absolute;
+}
+.left-half {
+     
+}
+.right-half {
+     right: 20px;
+     bottom: 20px;
+}
+
+
+
+
+
+.left-half h1 {
+     font-size: 70px;
+     padding-left: 50px;
+     text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+     margin-bottom: 80px;
+}
+.left-half ul {
+     font-size: 38px;
+     line-height: 2;
+}
+.right-half ul {
+     font-size: 30px;
+}
