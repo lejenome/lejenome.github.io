@@ -53,16 +53,12 @@ function loadPosts()
 			    prevBtn.href =
 				location.toString().replace(location.hash, "");
 			    prevBtn.href += "#!page/" + (pageId - 1);
-			    prevBtn.onclick = (e) => window.location =
-				e.target.href;
 		    }
 		    if (posts.length === POSTS_MAX) {
 			    nextBtn.style.display = "inline";
 			    nextBtn.href =
 				location.toString().replace(location.hash, "");
 			    nextBtn.href += "#!page/" + ((pageId || 1) + 1);
-			    nextBtn.onclick = (e) => window.location =
-				e.target.href;
 		    }
 	    })
 	    .catch((err) => {
