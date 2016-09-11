@@ -1,77 +1,55 @@
+/* global fetchPost, fetchPage, prettyPrint */
 "use strict";
-var postOffset, postsOpts;
-function setupBlog(settings) {
-    registerPostLinkClick(settings);
-    registerTagLinkClick(settings);
-    registerHomeItemClick(settings);
-    window.sharethis_enabled = settings["blogs_settings"]["plugins"]["sharethis"] || false;
-    if (settings["blogs_settings"]["plugins"]["disqus"])
-        importM("disqusPlugin", "plugins/disqus").then(function ($plugin) {
-            $plugin.setup(settings["plugins_settings"]["disqus"]);
-        });
-    window.reachedEnd = false;
-    if (location.hash.substr(0, 7) === "#!post/")
-        postsOpts = { id: location.hash.slice(7).split("#")[0] };
-    else if (location.hash.substr(0, 6) === "#!tag/")
-        postsOpts = { tag: location.hash.slice(6).split("#")[0] };
-    return fetchBlogPosts(0, settings["blogs_settings"][settings["blog_platform"]], settings["blog_platform"], postsOpts).then(function (offset) {
-        postOffset = offset;
-        if (window.sharethis_enabled)
-            importM("sharethisPlugin", "plugins/sharethis").then(function ($plugin) {
-                $plugin.setup(settings["plugins_settings"]["sharethis"]);
-            });
-        return Promise.resolve();
+function post2html(post)
+{
+	let txt = `<article id="${post.id}">
+                 <hgroup>
+                   <h2><a data-id="${post.id}" href="#!post/${post.id}" class="post-link">${"post.title"}</a></h2>
+                   <h3 class="post-date"><a href="#${post.id}">${(new Date(post.date)).toDateString()}</a></h3>
+                 </hgroup>
+                 <div class="post-body">
+                   ${post.body}
+                 </div>
+               </article>`;
+	let oParser = new DOMParser();
+	let oDOM = oParser.parseFromString(txt, "text/html");
+	let el = oDOM.documentElement.children[1]
+		     .children[0]; // root -> body -> articale
+	el.getElementsByClassName("post-link")[0].textContent = post.title;
+	return el;
+}
+function loadPosts()
+{
+	let postId;
+	let pageId = 0;
+	let container = document.getElementById("articales");
+	if (location.hash.startsWith("#!")) {
+		let [type, id] = location.hash.slice(2).split("/");
+		try {
+			switch (type) {
+			case "page":
+				pageId = parseInt(id);
+				break;
+			case "post":
+				postId = parseInt(id);
+				break;
+			}
+		} catch (e) {
+		}
+	}
+	let loader;
+	if (postId)
+		loader = fetchPost(postId);
+	else
+		loader = fetchPage(pageId);
+	loader.then((posts) => {
+		while (container.children.length)
+			container.children[0].remove();
+		posts.forEach(post => container.appendChild(post2html(post)));
+		prettyPrint();
+	}).catch((err) => {
+        container.innerHTML = "<p>Oops! Error loading posts!</p>";
+        console.error(err);
     });
 }
-function registerPostLinkClick(settings) {
-    $(document).on("click", ".post-link", function () {
-        if (this.dataset["id"]) {
-            postsOpts = { id: this.dataset["id"] };
-            fetchBlogPosts(0, settings["blogs_settings"][settings["blog_platform"]], settings["blog_platform"], postsOpts);
-        }
-        postOffset = 0;
-    });
-}
-function registerTagLinkClick(settings) {
-    $(document).on("click", ".tag-link", function () {
-        if (this.textContent) {
-            window.reachedEnd = false;
-            postsOpts = { tag: this.textContent };
-            fetchBlogPosts(0, settings["blogs_settings"][settings["blog_platform"]], settings["blog_platform"], postsOpts).then(function (offset) {
-                postOffset = offset;
-            });
-        }
-    });
-}
-function registerHomeItemClick(settings) {
-    $("#home-item-link").on("click", function () {
-        if (location.hash.substr(0, 2) !== "#!")
-            return;
-        location.hash = "";
-        postsOpts = undefined;
-        window.reachedEnd = false;
-        fetchBlogPosts(0, settings["blogs_settings"][settings["blog_platform"]], settings["blog_platform"]).then(function (offset) {
-            postOffset = offset;
-        });
-    });
-}
-function registerScroll(settings) {
-    var resultsLoaded = false, scrollWait = false, scrollWaitDur = 250;
-    $(window).scroll(function () {
-        if (!window.reachedEnd && !resultsLoaded && !scrollWait && postOffset && $(window).scrollTop() + $(window).height() > $(document).height() / 1.2) {
-            resultsLoaded = true;
-            scrollWait = true;
-            fetchBlogPosts(postOffset, settings["blogs_settings"][settings["blog_platform"]], settings["blog_platform"], postsOpts).then(function (offset) {
-                postOffset = offset;
-                scrollWait = false;
-            });
-            // Only load posts at most every scrollWaitDur milliseconds.
-            setTimeout(function () {
-                scrollWait = false;
-            }, scrollWaitDur);
-        }
-        if (resultsLoaded && $(window).scrollTop() + $(window).height() < $(document).height() / 1.2) {
-            resultsLoaded = false;
-        }
-    });
-}
+loadPosts();
