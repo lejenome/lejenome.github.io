@@ -1,0 +1,26 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Bouhlel;Moez;;;
+FN:Moez Bouhlel
+TITLE:Développeur Logiciels
+TEL;TYPE=cell:23274587
+EMAIL:bmoez.j@gmail.com
+ADR;WORK:;;;Sfax;;;Tunisie
+URL:http://lejenome.github.io/
+KEY;TYPE=PGP:http://lejenome.github.io/key.pgp
+NICKNAME:lejenome
+NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serveurs.\nMaintenance PCs.
+PHOTO;TYPE=JPEG;VALUE=URI:http://lejenome.github.io/photo.jpg
+SOURCE:http://lejenome.github.io/vcard.vcf
+X-GENDER:Male
+GENDER:M
+SOCIALPROFILE;type=github:https://github.com/lejenome
+X-SOCIALPROFILE;type=github:https://github.com/lejenome
+X-GITHUB:lejenome
+SOCIALPROFILE;type=twitter:https://twitter.com/lejenome
+X-SOCIALPROFILE;type=twitter:https://twitter.com/lejenome
+X-TWITTER:lejenome
+SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/lejenome
+X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/lejenome
+X-LINKEDIN:lejenome
+END:VCARD

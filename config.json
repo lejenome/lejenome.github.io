@@ -10,7 +10,7 @@
     "contact": {
       "email": "bmoez.j@gmail.com",
       "address": "Sfax, Tunisia",
-      "pgp_url": "/pubkey.asc",
+      "pgp_url": "/key.pgp",
       "fingerprint": "3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D"
     }
   },
