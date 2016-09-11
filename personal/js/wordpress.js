@@ -3,21 +3,22 @@
 const API_URL = "https://public-api.wordpress.com/rest/v1.1";
 const BLOG_URL = "lejenome.wordpress.com";
 const TAG_SLUG = "";
-var nextId = 0;
-function _getPosts({postId, pageId, tag})
+const POSTS_MAX = 5;
+function getPosts({postId, pageId, tag})
 {
+	console.debug(arguments);
 	let post_id = "";
 	let params = "";
 	if (postId) {
-		postId = postId;
+		post_id = postId;
 	} else {
-		params = "?number=5";
+		params = "?number=" + POSTS_MAX;
 		if (tag)
 			params += "&tag=" + tag.replace(/\s/g, "-");
 		else if (TAG_SLUG)
 			params += "&tag=" + TAG_SLUG.replace(/\s/g, "-");
 		if (pageId)
-			params += "?page=" + pageId;
+			params += "&page=" + pageId;
 	}
 	let wpApiUrl = `${API_URL}/sites/${BLOG_URL}/posts/${post_id}${params}`;
 	return fetch(wpApiUrl)
@@ -48,10 +49,6 @@ function _getPosts({postId, pageId, tag})
 					0, p.date.lastIndexOf("-"));
 			    }
 		    });
-		    nextId += 20;
 		    return Promise.resolve(data.posts);
 	    });
 }
-const fetchPosts = (tag) => _getPosts({tag});
-const fetchPost = (postId) => _getPosts({postId});
-const fetchPage = (pageId, tag) => _getPosts({pageId, tag});

@@ -1,6 +1,7 @@
 html {
     width: 100%;
 }
+
 body {
     background-color: white;
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -9,48 +10,57 @@ body {
     margin: 0 auto;
     box-sizing: padding-box;
 }
+
 header a,
 header a:hover,
 header a:active,
 #articales article hgroup a,
 #articales article hgroup a:active,
-#articales article hgroup a:hover{
+#articales article hgroup a:hover {
     text-decoration: none;
     outline: none;
     color: inherit;
 }
+
 #articales article hgroup a:hover {
     color: #d75701;
 }
+
 header h1 {
     font-weight: 300;
     font-size: 36px;
-    color: rgb(85,85,85);
+    color: rgb(85, 85, 85);
 }
+
 header h1 small {
     font-size: 25px;
     font-weight: 100;
 }
+
 header nav ul {
     padding: 0;
     margin: 0;
 }
-header nav ul li{
+
+header nav ul li {
     color: #990000;
     font-size: 16px;
     display: inline-block;
-        line-height: 130%;
-    padding: 0  !important;
-    margin : 0 !important;
+    line-height: 130%;
+    padding: 0 !important;
+    margin: 0 !important;
 }
-header nav ul li :after {
+
+header nav ul li:after {
     content: '|';
     margin: 0 8px;
     color: black;
 }
-header nav ul li:last-child :after {
+
+header nav ul li:last-child:after {
     display: none;
 }
+
 header nav ul li:last-child {
     border-right: none;
     padding-right: 0;
@@ -58,10 +68,10 @@ header nav ul li:last-child {
 
 .post-date {
     color: #818a91;
-        margin-top: 0rem;
+    margin-top: 0rem;
     margin-bottom: 1rem;
     font-size: 0.9rem;
-    display:block;
+    display: block;
 }
 
 @media (min-width: 800px) {
@@ -75,8 +85,42 @@ header nav ul li:last-child {
         width: 1000px;
     }
 }
+
 @media (max-width: 799px) {
     .conainer {
         width: 100%;
     }
+}
+
+#posts-nav ul {
+    list-style-type: none;
+    width: 100;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#posts-nav ul li {
+    display: inline;
+}
+
+#posts-nav ul li a,
+#posts-nav ul li a:hover,
+#posts-nav ul li a:active {
+    padding: 5px;
+    text-decoration-style: double;
+    text-decoration-color: black;
+    color: inherit;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+#prev-post {
+    float: left;
+    display: none;
+}
+
+#next-post {
+    float: right;
+    display: none;
 }

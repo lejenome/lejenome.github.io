@@ -1,4 +1,4 @@
-/* global fetchPost, fetchPage, prettyPrint */
+/* global getPosts, prettyPrint, POSTS_MAX */
 "use strict";
 function post2html(post)
 {
@@ -20,9 +20,11 @@ function post2html(post)
 }
 function loadPosts()
 {
-	let postId;
+	let postId = 0;
 	let pageId = 0;
 	let container = document.getElementById("articales");
+	let nextBtn = document.getElementById("next-post");
+	let prevBtn = document.getElementById("prev-post");
 	if (location.hash.startsWith("#!")) {
 		let [type, id] = location.hash.slice(2).split("/");
 		try {
@@ -37,19 +39,40 @@ function loadPosts()
 		} catch (e) {
 		}
 	}
-	let loader;
-	if (postId)
-		loader = fetchPost(postId);
-	else
-		loader = fetchPage(pageId);
-	loader.then((posts) => {
-		while (container.children.length)
-			container.children[0].remove();
-		posts.forEach(post => container.appendChild(post2html(post)));
-		prettyPrint();
-	}).catch((err) => {
-        container.innerHTML = "<p>Oops! Error loading posts!</p>";
-        console.error(err);
-    });
+	getPosts({postId, pageId})
+	    .then((posts) => {
+		    while (container.children.length)
+			    container.children[0].remove();
+		    posts.forEach(post =>
+				      container.appendChild(post2html(post)));
+		    prettyPrint();
+		    if (posts.length === 0)
+			    container.innerHTML = "<p>Oops! 404 Error!</p>";
+		    if (pageId && pageId > 1) {
+			    prevBtn.style.display = "inline";
+			    prevBtn.href =
+				location.toString().replace(location.hash, "");
+			    prevBtn.href += "#!page/" + (pageId - 1);
+			    prevBtn.onclick = (e) => window.location =
+				e.target.href;
+		    }
+		    if (posts.length === POSTS_MAX) {
+			    nextBtn.style.display = "inline";
+			    nextBtn.href =
+				location.toString().replace(location.hash, "");
+			    nextBtn.href += "#!page/" + ((pageId || 1) + 1);
+			    nextBtn.onclick = (e) => window.location =
+				e.target.href;
+		    }
+	    })
+	    .catch((err) => {
+		    container.innerHTML = "<p>Oops! Error loading posts!</p>";
+		    console.error(err);
+	    });
 }
-loadPosts();
+function main()
+{
+	window.addEventListener("hashchange", (e) => location.reload());
+	loadPosts();
+}
+main();

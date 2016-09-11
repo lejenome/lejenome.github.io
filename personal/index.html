@@ -44,13 +44,10 @@
     <meta itemprop="inLanguage" content="en" />
     <meta itemprop="applicationCategory" content="Website" />
     <meta itemprop="applicationSubCategory" content="Website,Blog" />
-    <!-- import css, js -->
+    <!-- import css -->
     <link href="css/normalize.css" type="text/css" rel="stylesheet"></link>
     <link href="css/articales.css" type="text/css" rel="stylesheet"></link>
     <link href="css/style.css" type="text/css" rel="stylesheet"></link>
-    <script src="js/prettify.js" defer></script>
-    <script src="js/wordpress.js" defer></script>
-    <script src="js/blog.js" defer></script>
 </head>
 
 <body class="container">
@@ -70,7 +67,19 @@
         <section id="articales">
             <p class="loading">Loading...</p>
         </section>
-        <div id="badges"></div>
+        <nav id="posts-nav">
+            <ul>
+                <li>
+                    <a href="" id="prev-post">prev</a></li>
+                <li>
+                    <a href="" id="next-post">next</a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- import js -->
+    <script src="js/prettify.js " defer></script>
+    <script src="js/wordpress.js " defer></script>
+    <script src="js/blog.js " defer></script>
 </body>
 
 </html>
