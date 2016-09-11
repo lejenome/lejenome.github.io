@@ -73,3 +73,9 @@ body > div {
 .right-half ul {
      font-size: 32px;
 }
+.qrcode {
+     width: 280px;
+     position :absolute;
+     right: 25px;
+     top: 25px;
+}
