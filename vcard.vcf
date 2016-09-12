@@ -6,12 +6,12 @@ TITLE:Développeur Logiciel
 TEL;TYPE=cell:23274587
 EMAIL:bmoez.j@gmail.com
 ADR;WORK:;;;Sfax;;;Tunisie
-URL:http://lejenome.github.io/
-KEY;TYPE=PGP:http://lejenome.github.io/key.pgp
+URL:https://lejenome.github.io/
+KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
 NICKNAME:lejenome
 NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serveurs.\nMaintenance PCs.
-PHOTO;TYPE=JPEG;VALUE=URI:http://lejenome.github.io/photo.jpg
-SOURCE:http://lejenome.github.io/vcard.vcf
+PHOTO;TYPE=JPEG;VALUE=URI:https://lejenome.github.io/photo.jpg
+SOURCE:https://lejenome.github.io/vcard.vcf
 X-GENDER:Male
 GENDER:M
 SOCIALPROFILE;type=github:https://github.com/lejenome
