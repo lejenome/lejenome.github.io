@@ -69,62 +69,84 @@
         }
 
     </script>
+    <link href="css/normalize.css" type="text/css" rel="stylesheet"></link>
+    <link href="font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="css/style.css" type="text/css" rel="stylesheet"></link>
 </head>
-<section>
-    <!-- Photo with Caption -->
-    <figure class="vcard" itemscope="itemscope" itemtype="http://www.data-vocabulary.org/Person" title="Moez Bouhlel">
-        <!-- Photo -->
-        <img src="#" width="180" height="240" alt="" class="photo" itemprop="photo" src="logo.png" />
-        <!-- Caption -->
-        <figcaption>
-            <!-- Profile -->
-            <section class="profile">
-                <!-- Name -->
-                <header class="n" title="Name">
-                    <span class="fn" itemprop="name">
+
+<body class="container">
+    <header>
+        <h1><a href="https://lejenome.github.io">Moez Bouhlel <small>@lejenome</small></a></h1>
+        <nav>
+            <ul>
+                <li><a href="https://twitter.com/lejenome">Twitter</a></li>
+                <li><a href="https://github.com/lejenome">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
+                <li><a href="https://stackoverflow.com/cv/lejenome">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <!-- Photo with Caption -->
+        <figure class="vcard" itemscope="itemscope" itemtype="http://www.data-vocabulary.org/Person" title="Moez Bouhlel">
+            <!-- Photo -->
+            <img src="#" width="180" height="240" alt="" class="photo" itemprop="photo" src="logo.png" />
+            <!-- Caption -->
+            <figcaption>
+                <!-- Profile -->
+                <section class="profile">
+                    <!-- Name -->
+                    <header class="n" title="Name">
+                        <span class="fn" itemprop="name">
 								<span class="given-name" itemprop="givenName">Moez</span>
-                    <span class="family-name" itemprop="familyName">Bouhlel</span>
-                    </span>
-                    <!--/ .fn -->
-                    <span class="nickname" itemprop="nickname">lejenome</span>
-                </header>
-                <!--/ .n -->
-                <span class="title" itemprop="jobTitle">Software Developer</span>
+                        <span class="family-name" itemprop="familyName">Bouhlel</span>
+                        </span>
+                        <!--/ .fn -->
+                        <span class="nickname" itemprop="nickname">lejenome</span>
+                    </header>
+                    <!--/ .n -->
+                    <span class="title" itemprop="jobTitle">Software Developer</span>
+                    <!-- Contact -->
+                    <ul>
+                        <li title="email"><i class="fa fa-envelope"></i> <a href="mailto:bmoez.j@gmail.com" class="email" itemprop="email">bmoez.j@gmail.com</a></li>
+                        <li title="PGP key"><i class="fa fa-check-circle-o"></i> <a href="https://lejenome.github.io/key.gpg" class="key" type="pgp">3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D</a></li>
+                        <li title="mobile" class="tel"><i class="fa fa-phone"></i> <abbr class="type" title="mobile" hidden>Cell</abbr> <a class="value" itemprop="telephone" title="+216 23 274 587" href="tel:+2162374587">+216 23 274 587</a></li>
+                    </ul>
+                </section>
+                <!--/ .profile -->
+                <!-- Links -->
+                <section class="note">
+                    <ul>
+                        <li title="website"><i class="fa fa-globe"></i> <a href="https://lejenome.github.io/" class="url website" itemprop="sameAs" rel="me self external">Web Site</a></li>
+                        <li title="github"><i class="fa fa-github-alt"></i> <a href="https://github.com/lejenome" class="url github" itemprop="sameAs" rel="me self external">GitHub (lejenome)</a></li>
+                        <li title="twitter"><i class="fa fa-twitter"></i> <a href="https://twitter.com/lejenome" class="url twitter" itemprop="sameAs" rel="me self external">Twitter (@lejenome)</a></li>
+                        <li title="linkedin"><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/lejenome" class="url linkedin" itemprop="sameAs" rel="me self external">LinkedIn (lejenome)</a></li>
+                    </ul>
+                </section>
                 <!-- Location -->
-                <address class="adr" itemprop="address" title="Location" itemscope="itemscope" itemtype="http://data-vocabulary.org/Address/">
+                <ul>
+                    <li title="address">
+                        <address class="adr" itemprop="address" title="Location" itemscope="itemscope" itemtype="http://data-vocabulary.org/Address/">
+                        <i class="fa fa-map-marker"></i>
 							<!-- Address --><span class="street-address" itemprop="street-address">Rt. Manzel Chaker</span>
 							<!-- City --><span class="locality" itemprop="locality">Sfax</span>,
 							<!-- State --><abbr class="region" itemprop="region" title="Florida">Sfax</abbr>
 							<!-- Zip --><abbr class="postal-code" itemprop="postal-code" title="32303-9329">3072</abbr>
 							<!-- Country --><abbr class="country-name" itemprop="country-name" title="United States">Tunisia</abbr>
-							<!-- Lat/Lon (Metadata) -->
-						</address>
+                        </address>
+                    </li>
+                </ul>
                 <!--/ .adr -->
-                <!-- Contact -->
-                <a href="mailto:bmoez.j@gmail.com" class="email" itemprop="email">bmoez.j@gmail.com</a>
-                <ul>
-                    <li class="tel"><abbr class="type" title="mobile">Cell:</abbr> <a class="value" itemprop="telephone" title="+216 23 274 587" href="tel:+2162374587">+216 23 274 587</a></li>
-                </ul>
-            </section>
-            <!--/ .profile -->
-            <!-- Links -->
-            <section class="note">
-                <ul>
-                    <li><a href="https://lejenome.github.io/" class="url website" itemprop="sameAs" rel="me self external">Web Site</a></li>
-                    <li><a href="https://github.com/lejenome" class="url github" itemprop="sameAs" rel="me self external">GitHub (lejenome)</a></li>
-                    <li><a href="https://twitter.com/lejenome" class="url twitter" itemprop="sameAs" rel="me self external">Twitter (@lejenome)</a></li>
-                    <li><a href="https://www.linkedin.com/in/lejenome" class="url linkedin" itemprop="sameAs" rel="me self external">LinkedIn (lejenome)</a></li>
-                </ul>
-            </section>
-        </figcaption>
-        <!--/ .figcaption -->
-    </figure>
-    <!--/ .figure.vcard -->
+            </figcaption>
+            <!--/ .figcaption -->
+        </figure>
+        <!--/ .figure.vcard -->
 
-</section>
+    </section>
 
-<body>
+    <body>
 
-</body>
+    </body>
 
 </html>
