@@ -8,11 +8,13 @@ function getPosts({postId, pageId, tag})
 {
 	console.debug(arguments);
 	let post_id = "";
-	let params = "";
+	let params =
+	    "?fields=" +
+	    [ "ID", "title", "content", "type", "tags", "date" ].join(",");
 	if (postId) {
 		post_id = postId;
 	} else {
-		params = "?number=" + POSTS_MAX;
+		params += "&number=" + POSTS_MAX;
 		if (tag)
 			params += "&tag=" + tag.replace(/\s/g, "-");
 		else if (TAG_SLUG)
