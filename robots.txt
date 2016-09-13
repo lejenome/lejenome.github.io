@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /card.html
 Disallow: /card
