@@ -186,3 +186,13 @@ header nav ul li:last-child {
         display: none;
     }
 }
+
+@media (max-width: 500px) {
+    .vcard {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .vcard ul {
+        padding: 0;
+    }
+}
