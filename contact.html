@@ -45,27 +45,37 @@
     <link href="http://microformats.org/profile/rel-home" rel="profile" title="rel-home Microformat Profile" />
     <script type="application/ld+json">
         {
-            "@context": "http://schema.org/",
-            "@type": "Person",
-            "name": "Moez Bouhlel",
-            //"nickname": "lejenome",
-            "jobTitle": "Software Developer",
+            "@type": "LocalBusiness",
+            "name": "Software Developer",
+            "founder": "https://lejenome.github.io/resume",
+            "logo": "https://lejenome.github.io/logo.png",
             "telephone": "+216-23274587",
             "email": "bmoez.j@gmail.com",
-            "url": "https://lejenome.github.io",
-            "image": "https://lejenome.github.io/logo.png",
-            "gender": "Male",
-            //"country": "Tunisia",
-            //"locality": "Sfax",
-            //"region": "Sfax",
-            //"postalCode": 3072,
-            //"availableLanguage": ["Arabic", "English", "French"],
+            "paymentAccepted": "PayPal, Credit Card",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Rt. Manzel Chaker",
+                "addressLocality": "Sfax",
+                "addressRegion": "Sfax",
+                "addressCountry": "Tunisia",
+                "postalCode": "3072"
+            },
+            "openingHours": "Mo-Sa 09:00-18:00",
+            "url": "https://lejenome.github.io/",
             "sameAs": [
                 "https://github.com/lejenome",
                 "https://twitter.com/lejenome",
                 "https://www.linkedin.com/in/lejenome"
-            ]
-
+            ],
+            "makesOffer": [{
+                "@type": "Offer",
+                "name": "Desktop Software Developement",
+                "description": "Developing GUI and CLI software for Linux desktop on C, Python, Java, JavaScript"
+            }, {
+                "@type": "Offer",
+                "name": "System Administration",
+                "description": "Linux System Administration and Optimization"
+            }]
         }
 
     </script>
