@@ -130,7 +130,7 @@ header nav ul li:last-child {
 
 .vcard {
     color: white;
-    padding: 30px;
+    padding: 15px 30px;
     display: block;
     border-top: 15px solid #388ac1;
     background: #3498db;
@@ -139,60 +139,25 @@ header nav ul li:last-child {
     line-height: 2
 }
 
-.vcard .n {
-    font-weight: bold;
-}
-
-.vcard .nickname {
-    font-weight: 400;
-    font-size: 80%;
-    padding-left: 10px;
-}
-
-.vcard .nickname:before {
-    content: "(";
-}
-
-.vcard .nickname:after {
-    content: ")";
-}
-
-.vcard .title {
-    margin-bottom: 20px;
-    display: block;
-}
-
 .vcard ul {
     list-style: none;
     margin-left: 0;
-    padding-left: 20px;
     margin-top: 0;
+    padding: 0;
 }
 
 .vcard ul li {
     padding: 2px 0;
 }
 
-.vcard .photo {
-    width: 100px;
-    float: right;
-    border: solid 1px white;
-    border-radius: 50%;
-    box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 767px) {
-    .vcard .photo {
-        display: none;
-    }
+.vcard ul li .fa {
+    width: 20px;
+    text-align: center
 }
 
 @media (max-width: 500px) {
     .vcard {
         margin-left: 0;
         margin-right: 0;
-    }
-    .vcard ul {
-        padding: 0;
     }
 }
