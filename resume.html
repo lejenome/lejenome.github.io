@@ -43,6 +43,7 @@
     <link href="http://microformats.org/profile/rel-license" rel="profile" title="rel-licence Microformat Profile" />
     <link href="http://microformats.org/profile/rel-nofollow" rel="profile" title="rel-nofollow Microformat Profile" />
     <link href="http://microformats.org/profile/rel-home" rel="profile" title="rel-home Microformat Profile" />
+    <link href="http://microformats.org/profile/hresume" rel="profile" title="hResume Microformat" />
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
@@ -116,19 +117,121 @@
     <meta name="msapplication-square310x310logo" content="imgs/favicon/mstile-310x310.png" />
 
     <link href="css/normalize.css" type="text/css" rel="stylesheet"></link>
-    <link href="css/style.css" type="text/css" rel="stylesheet"></link>
+    <link href="css/font-awesome.css" type="text/css" rel="stylesheet"></link>
+    <link href="css/contact.css" type="text/css" rel="stylesheet"></link>
+    <link href="css/resume.css" type="text/css" rel="stylesheet"></link>
+    <link href="css/common.css" type="text/css" rel="stylesheet"></link>
 </head>
 
 <body class="container">
     <header>
         <h1><a href="https://lejenome.github.io">Moez Bouhlel <small>@lejenome</small></a></h1>
-        <nav>
-            <ul>
-                <li><a href="https://twitter.com/lejenome">Twitter</a></li>
-                <li><a href="https://github.com/lejenome">Github</a></li>
-                <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
-                <li><a href="https://stackoverflow.com/cv/lejenome">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
     </header>
+    <aside class="card">
+        <figure class="contact vcard">
+            <figcaption>
+                <span class="fn" hidden>Moez Bouhlel</span>
+                <span class="nickname" hidden>lejenome</span>
+                <span class="title" hidden>Software Developer</span>
+                <span class="note" hidden>Hire me for a part-time job or for an internship at https://lejenome.github.io/resume</span>
+                <span>Contact Me</span>
+                <ul>
+                    <li title="email"><i class="fa fa-envelope"></i> <a href="mailto:bmoez.j@gmail.com" class="email">bmoez.j@gmail.com</a></li>
+                    <li title="PGP key"><i class="fa fa-check-circle-o"></i> <a href="https://lejenome.github.io/key.pgp" class="key" type="pgp">3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D</a></li>
+                    <li title="mobile" class="tel"><i class="fa fa-phone"></i> <a class="value" href="tel:+2162374587">+216 23 274 587</a></li>
+                    <li title="website"><i class="fa fa-globe"></i> <a href="https://lejenome.github.io/" class="url website" rel="me self external">Website</a></li>
+                    <li title="github"><i class="fa fa-github-alt"></i> <a href="https://github.com/lejenome" class="url github" rel="me self external">GitHub</a></li>
+                    <li title="twitter"><i class="fa fa-twitter"></i> <a href="https://twitter.com/lejenome" class="url twitter" rel="me self external">Twitter</a></li>
+                    <li title="linkedin"><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/lejenome" class="url linkedin" rel="me self external">LinkedIn</a></li>
+                    <li title="address">
+                        <address class="adr">
+                            <i class="fa fa-map-marker"></i>
+                            <span class="street-address">Rt. Manzel Chaker</span>
+                            <span class="locality">Sfax</span>,
+                            <span class="region">Sfax</span>
+                            <span class="postal-code">3072</span>
+                            <span class="country-name">Tunisia</span>
+                        </address>
+                    </li>
+                </ul>
+            </figcaption>
+        </figure>
+    </aside>
+    <section class="hresume">
+        <h2 class="title">Student and Software Developer</h2>
+        <dl>
+            <dt>Summary</dt>
+            <dd class="summary">
+                <p>Self-taught programmer, CS student and FOSS contributor.</p>
+                <p>Interested on programming languages theory, compilers design and system programming.</p>
+                <p>Philosophies: DIY, RTFM and KISS.</p>
+            </dd>
+            <dt>Skills</dt>
+            <dd class="skills">
+                <p class="info">Abstract view of main skills; domain specific skills will be provided on demand.</p>
+                <h2>Software/Web Developement</h2>
+                <ul>
+                    <li class="skill">C</li>
+                    <li class="skill">Python</li>
+                    <li class="skill">JavaScript</li>
+                    <li class="skill">HTML5/CSS3</li>
+                </ul>
+                <h2>System Administration</h2>
+                <ul>
+                    <li class="skill">Linux</li>
+                    <li class="skill">Bash / ssh</li>
+                    <li class="skill">Docker</li>
+                    <li class="skill">KVM</li>
+                </ul>
+                <h2>Miscellaneous</h2>
+                <ul>
+                    <li class="skill">Git</li>
+                    <li class="skill">LLVM</li>
+                </ul>
+                <h2>Other</h2>
+                <ul>
+                    <li class="skill">Perl</li>
+                    <li class="skill">C++</li>
+                    <li class="skill">Ruby</li>
+                </ul>
+            </dd>
+            <dt>Portfolio</dt>
+            <dd></dd>
+            <dt>Education</dt>
+            <dd class="educations">
+                <ul class="vcalendar">
+                    <li class="education vevent">
+                        <div class="summary vcard">
+                            <div class="line1">
+                                <span class="speciality"><span class="degree">Bachelor</span> of <span class="field">Computer Science</span></span>
+                                <span class="duration"><span class="dtstart" title="2014">2014</span> - <span class="dtend" title="2017">2017</span></span>
+                            </div>
+                            <div class="line2">
+                                <a class="url fn org location" href="http://www.fss.rnu.tn/index.php?lang=en">Faculty of Sciences of Sfax</a> -
+                                <span class="adr"><span class="locality">Sfax</span>, <span class="region" title="Sfax">Tunisia</span></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </dd>
+            <dt>Notes</dt>
+            <dd class="notes">
+                <ul>
+                    <li><span class="term">Favorite Editor</span><span class="def">Vim</span</li>
+                    <li><span class="term">Favorite IDE</span><span class="def">Vim/Git/make/GDB (Unix as IDE)</span</li>
+                    <li><span class="term">Favorite Distribution</span><span class="def">Arch Linux</span</li>
+                </ul>
+            </dd>
+            <dt>Languages</dt>
+            <dd class="languages">
+                <ul>
+                    <li><span class="term">Arabic</span><span class="def">Native</span</li>
+                    <li><span class="term">English</span><span class="def">Reading/Listening (4/5), Writing/Speaking (3/5)</span</li>
+                    <li><span class="term">French</span><span class="def">Reading/Listening (4/5), Writing/Speaking (4/5)</span</li>
+                </ul>
+            </dd>
+        </dl>
+    </section>
+</body>
+
+</html>

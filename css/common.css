@@ -10,7 +10,7 @@ body {
     color: black;
     padding: 20px;
     margin: 0 auto;
-    box-sizing: padding-box;
+    box-sizing: border-box;
 }
 
 header a,
