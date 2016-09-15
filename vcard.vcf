@@ -12,6 +12,8 @@ NICKNAME:lejenome
 NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serveurs.\nMaintenance PCs.\nFormation Licence Info.\nEncadrement PFE.
 PHOTO;TYPE=JPEG;VALUE=URI:https://lejenome.github.io/photo.jpg
 SOURCE:https://lejenome.github.io/vcard.vcf
+X-GENDER:Male
+GENDER:M
 SOCIALPROFILE;type=github:https://github.com/lejenome
 X-SOCIALPROFILE;type=github:https://github.com/lejenome
 X-GITHUB:lejenome
