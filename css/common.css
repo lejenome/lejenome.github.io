@@ -1,3 +1,5 @@
+/* common */
+
 html {
     width: 100%;
 }
@@ -23,10 +25,6 @@ header a:active,
     text-decoration: none;
     outline: none;
     color: inherit;
-}
-
-#articales article hgroup a:hover {
-    color: #d75701;
 }
 
 header h1 {
@@ -69,14 +67,6 @@ header nav ul li:last-child {
     padding-right: 0;
 }
 
-.post-date {
-    color: #818a91;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-    display: block;
-}
-
 @media (min-width: 800px) {
     .container {
         width: 800px;
@@ -92,73 +82,5 @@ header nav ul li:last-child {
 @media (max-width: 799px) {
     .conainer {
         width: 100%;
-    }
-}
-
-#posts-nav ul {
-    list-style-type: none;
-    width: 100;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-#posts-nav ul li {
-    display: inline;
-}
-
-#posts-nav ul li a,
-#posts-nav ul li a:hover,
-#posts-nav ul li a:active {
-    padding: 5px;
-    text-decoration-style: double;
-    text-decoration-color: black;
-    color: inherit;
-    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-}
-
-#prev-post {
-    float: left;
-    display: none;
-}
-
-#next-post {
-    float: right;
-    display: none;
-}
-
-.vcard {
-    color: white;
-    padding: 15px 30px;
-    display: block;
-    border-top: 15px solid #388ac1;
-    background: #3498db;
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
-    line-height: 2;
-    box-shadow: 0 5px 10px #aaa;
-}
-
-.vcard ul {
-    list-style: none;
-    margin-left: 0;
-    margin-top: 0;
-    padding: 0;
-}
-
-.vcard ul li {
-    padding: 2px 0;
-}
-
-.vcard ul li .fa {
-    width: 20px;
-    text-align: center
-}
-
-@media (max-width: 500px) {
-    .vcard {
-        margin-left: 0;
-        margin-right: 0;
     }
 }

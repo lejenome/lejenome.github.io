@@ -1,0 +1,34 @@
+.contact.vcard {
+    color: white;
+    padding: 15px 30px;
+    display: block;
+    border-top: 15px solid #388ac1;
+    background: #3498db;
+    font-family: Roboto, sans-serif;
+    font-weight: 400;
+    line-height: 2;
+    box-shadow: 0 5px 10px #aaa;
+}
+
+.contact.vcard ul {
+    list-style: none;
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0;
+}
+
+.contact.vcard ul li {
+    padding: 2px 0;
+}
+
+.contact.vcard ul li .fa {
+    width: 20px;
+    text-align: center
+}
+
+@media (max-width: 500px) {
+    .contact.vcard {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

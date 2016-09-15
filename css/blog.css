@@ -1,0 +1,44 @@
+#articales article hgroup a:hover {
+    color: #d75701;
+}
+
+.post-date {
+    color: #818a91;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: block;
+}
+
+#posts-nav ul {
+    list-style-type: none;
+    width: 100;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+#posts-nav ul li {
+    display: inline;
+}
+
+#posts-nav ul li a,
+#posts-nav ul li a:hover,
+#posts-nav ul li a:active {
+    padding: 5px;
+    text-decoration-style: double;
+    text-decoration-color: black;
+    color: inherit;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+#prev-post {
+    float: left;
+    display: none;
+}
+
+#next-post {
+    float: right;
+    display: none;
+}

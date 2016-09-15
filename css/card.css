@@ -1,28 +1,30 @@
 html {
-     background:#A6AB95;
-     text-align: center;
-     display: block;
+    background: #A6AB95;
+    text-align: center;
+    display: block;
 }
-body{
-     border: solid 1px rgba(255, 255, 255, 0.6);
-     background: rgb(255, 255, 255);
-     width: 294mm;
-     height: 186mm;
-     box-sizing: padding-box;
-     /* center */
-     margin :auto auto;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     margin-right: -50%;
-     transform: translate(-50%, -50%) scale(.305);
-     /*other*/
-     overflow: hidden;
-     text-overflow: hidden;
-     -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
-     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
-     box-shadow: inset 0 -15px 0px;
+
+body {
+    border: solid 1px rgba(255, 255, 255, 0.6);
+    background: rgb(255, 255, 255);
+    width: 294mm;
+    height: 186mm;
+    box-sizing: padding-box;
+    /* center */
+    margin: auto auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) scale(.305);
+    /*other*/
+    overflow: hidden;
+    text-overflow: hidden;
+    -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: inset 0 -15px 0px;
 }
+
 body a,
 body a:hover,
 body a:active {
@@ -30,52 +32,55 @@ body a:active {
     outline: none;
     color: inherit;
 }
+
 body ul {
-     padding-left: 0;
-     list-style: inside;
-     list-style-type: none;
-     font-weight: bold;
+    padding-left: 0;
+    list-style: inside;
+    list-style-type: none;
+    font-weight: bold;
 }
+
+
 /* card */
 
-body > div {
-     text-align: left;
-     position: absolute;
+body> div {
+    text-align: left;
+    position: absolute;
 }
-.left-half {
-     
-}
+
+.left-half {}
+
 .right-half {
-     right: 20px;
-     bottom: 20px;
+    right: 20px;
+    bottom: 20px;
 }
-
-
-
-
 
 .left-half h1 {
-     font-size: 70px;
-     padding-left: 50px;
-     margin-bottom: 30px;
-     padding-bottom: 15px;
-     border-bottom-width: 9px;
-     border-bottom-style:  dashed;
-     font-weight: 900;
+    font-size: 70px;
+    padding-left: 50px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom-width: 9px;
+    border-bottom-style: dashed;
+    font-weight: 900;
 }
+
 .family-name {
-     font-weight: 600;
+    font-weight: 600;
 }
+
 .left-half ul {
-     font-size: 38px;
-     line-height: 2;
+    font-size: 38px;
+    line-height: 2;
 }
+
 .right-half ul {
-     font-size: 32px;
+    font-size: 32px;
 }
+
 .qrcode {
-     width: 280px;
-     position :absolute;
-     right: 25px;
-     top: 25px;
+    width: 280px;
+    position: absolute;
+    right: 25px;
+    top: 25px;
 }
