@@ -1,3 +1,34 @@
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/adobe-source-code-pro/SourceCodePro-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/adobe-source-code-pro/SourceCodePro-Bold.otf');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/adobe-source-code-pro/SourceCodePro-SemiBold.otf');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/adobe-source-code-pro/SourceCodePro-Medium.otf');
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Source Code Pro';
+  src: url('../fonts/adobe-source-code-pro/SourceCodePro-Black.otf');
+  font-weight: 900;
+  font-style: normal;
+}
+
 html {
     background: #A6AB95;
     text-align: center;
@@ -7,6 +38,7 @@ html {
 body {
     border: solid 1px rgba(255, 255, 255, 0.6);
     background: rgb(255, 255, 255);
+    color: rgb(85, 85, 85);
     width: 294mm;
     height: 186mm;
     box-sizing: padding-box;
@@ -23,6 +55,12 @@ body {
     -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 -15px 0px;
+    
+    
+  font-family: "Source Code Pro";
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body a,
