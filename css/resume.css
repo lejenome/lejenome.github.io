@@ -1,3 +1,7 @@
+body {
+    font-family: Source Code Pro, Arial, sans-serif !important;
+}
+
 @media (min-width: 768px) {
     aside.card {
         width: 35%;
@@ -32,17 +36,30 @@
 .hresume> dl> dt {
     line-height: 2;
     width: 100%;
-    border-bottom: solid 1px gainsboro;
+    border-bottom: solid 1px gray;
     font-size: 20px;
     font-weight: 600;
 }
 
 .hresume> dl> dd {
-    font-size: 14px;
+    font-size: 13px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+@media (max-width: 425px) {
+    .container {
+        width: 100% !important;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .hresume> dl> dd {
+        margin-left: 0;
+    }
 }
 
 .skills h2 {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 dd+ * {
@@ -59,7 +76,7 @@ dd> ul> li {
 }
 
 .notes .term {
-    width: 150px;
+    width: 180px;
     display: inline-block;
 }
 
