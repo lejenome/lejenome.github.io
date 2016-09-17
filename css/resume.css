@@ -1,7 +1,3 @@
-body {
-    font-family: Source Code Pro, Arial, sans-serif !important;
-}
-
 @media (min-width: 768px) {
     aside.card {
         width: 35%;

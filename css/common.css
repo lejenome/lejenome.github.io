@@ -6,7 +6,7 @@ html {
 
 body {
     background-color: white;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-family: Source Code Pro, Arial, sans-serif;
     color: black;
     padding: 20px;
     margin: 0 auto;
@@ -28,14 +28,14 @@ header a:active,
 }
 
 header h1 {
-    font-weight: 300;
+    font-weight: 600;
     font-size: 36px;
     color: rgb(85, 85, 85);
 }
 
 header h1 small {
     font-size: 25px;
-    font-weight: 100;
+    font-weight: 400;
 }
 
 header nav ul {
@@ -54,7 +54,7 @@ header nav ul li {
 
 header nav ul li:after {
     content: '|';
-    margin: 0 8px;
+    margin: 0 0 0 10px;
     color: black;
 }
 
