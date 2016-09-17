@@ -1,2 +1,7 @@
 User-agent: *
 Disallow: /card
+Disallow: /README.md
+Disallow: /.jsbeautifyrc
+Disallow: /.jshintrc
+Disallow: /LICENSE.md
+Disallow: /tests
