@@ -2,9 +2,9 @@
 "use strict";
 function post2html(post)
 {
-	let txt = `<article id="${post.id}">
+	let txt = `<article class="post" id="${post.id}">
                  <hgroup>
-                   <h2><a data-id="${post.id}" href="#!post/${post.id}" class="post-link">${"post.title"}</a></h2>
+                   <h2 class="post-title"><a data-id="${post.id}" href="#!post/${post.id}" class="post-link">${"post.title"}</a></h2>
                    <h3 class="post-date"><a href="#${post.id}">${(new Date(post.date)).toDateString()}</a></h3>
                  </hgroup>
                  <div class="post-body">

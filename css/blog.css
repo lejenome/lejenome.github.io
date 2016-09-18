@@ -1,12 +1,13 @@
-#articales article hgroup a:hover {
-    color: #d75701;
+.post-title {
+    color: steelblue;
 }
 
 .post-date {
     color: #818a91;
-    margin-top: 0rem;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
     display: block;
 }
 
