@@ -62,7 +62,13 @@ dd+ * {
     margin: 20px 0;
 }
 
-dd> ul {
+dd.skills> ul {
+    padding-left: 0;
+    list-style-position: inside;
+    list-style-type: lower-greek;
+}
+
+dd:not(.skills)> ul {
     padding-left: 0;
     list-style: none;
 }
@@ -73,14 +79,19 @@ dd> ul> li {
 
 .notes .term {
     width: 180px;
-    display: inline-block;
 }
 
 .languages .term {
-    width: 80px;
-    display: inline-block;
+    width: 75px;
 }
 
 .education .duration {
     float: right;
+}
+
+.notes .term,
+.notes .def,
+.languages .term,
+.languages .def {
+    display: table-cell;
 }
