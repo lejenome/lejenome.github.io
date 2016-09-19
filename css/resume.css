@@ -169,6 +169,12 @@ dd> ul> li {
     padding-bottom: 10px;
 }
 
+@media (max-width: 1000px) {
+    .line1 {
+        padding-bottom: 15px;
+    }
+}
+
 .portfolio .line2 {
     padding-bottom: 5px;
 }
