@@ -3,7 +3,7 @@
         width: 35%;
         float: right;
     }
-    section.hresume {
+    section.h-resume {
         width: 60%;
         float: left;
     }
@@ -23,13 +23,35 @@
     }
 }
 
+.card .more> span {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.card .more ul {
+    list-style-position: inside;
+    list-style-type: square;
+    padding-left: 0px;
+    font-size: 14px;
+}
+
 @media (max-width: 767px) {
-    .hresume .title {
+    .h-resume .title {
         margin-top: 50px;
+    }
+    .card .more ul li {
+        display: inline-block;
+        text-decoration: underline;
     }
 }
 
-.hresume> dl> dt {
+.h-resume a,
+.h-resume a:hover,
+.h-resume a:active {
+    text-decoration: underline;
+}
+
+.h-resume> dl> dt {
     line-height: 2;
     width: 100%;
     border-bottom: solid 1px gray;
@@ -37,7 +59,7 @@
     font-weight: 600;
 }
 
-.hresume> dl> dd {
+.h-resume> dl> dd {
     font-size: 13px;
     margin-left: 20px;
     font-weight: 500;
@@ -49,7 +71,7 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .hresume> dl> dd {
+    .h-resume> dl> dd {
         margin-left: 0;
     }
 }
@@ -65,7 +87,8 @@ dd+ * {
 dd.skills> ul {
     padding-left: 0;
     list-style-position: inside;
-    list-style-type: lower-greek;
+    list-style-type: square;
+    /*lower-greek;*/
 }
 
 dd:not(.skills)> ul {
@@ -85,13 +108,72 @@ dd> ul> li {
     width: 75px;
 }
 
-.education .duration {
+
+/* dates */
+
+.dt-start:before {
+    content: "(";
+}
+
+.dt-end:before {
+    content: " - ";
+}
+
+.dt-end:after {
+    content: ")";
+}
+
+.duration {
     float: right;
 }
+
+
+/* table */
 
 .notes .term,
 .notes .def,
 .languages .term,
 .languages .def {
     display: table-cell;
+}
+
+.p-experience,
+.p-education {
+    padding: 10px 0;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.p-experience:last-child,
+.p-education:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.p-experience ul {
+    padding-left: 10px;
+    list-style-position: inside;
+    list-style-type: square;
+}
+
+.p-experience .p-title,
+.p-experience .p-org,
+.p-education .speciality {
+    font-weight: 600;
+}
+
+.p-experience .p-org:before {
+    content: " - ";
+}
+
+.line1 {
+    padding-bottom: 10px;
+}
+
+.portfolio .line2 {
+    padding-bottom: 5px;
+}
+
+.portfolio .line2 {
+    font-size: 12px;
+    color: gray;
 }
