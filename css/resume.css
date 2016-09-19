@@ -3,11 +3,11 @@
         width: 35%;
         float: right;
     }
-    section.h-resume {
+    section.resume {
         width: 60%;
         float: left;
     }
-    aside.card .vcard {
+    aside.card .h-card {
         margin-left: 0;
         margin-right: 0;
         padding-left: 15px;
@@ -36,7 +36,7 @@
 }
 
 @media (max-width: 767px) {
-    .h-resume .title {
+    .resume .title {
         margin-top: 50px;
     }
     .card .more ul li {
@@ -45,13 +45,13 @@
     }
 }
 
-.h-resume a,
-.h-resume a:hover,
-.h-resume a:active {
+.resume a,
+.resume a:hover,
+.resume a:active {
     text-decoration: underline;
 }
 
-.h-resume> dl> dt {
+.resume> dl> dt {
     line-height: 2;
     width: 100%;
     border-bottom: solid 1px gray;
@@ -59,7 +59,7 @@
     font-weight: 600;
 }
 
-.h-resume> dl> dd {
+.resume> dl> dd {
     font-size: 13px;
     margin-left: 20px;
     font-weight: 500;
@@ -71,7 +71,7 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .h-resume> dl> dd {
+    .resume> dl> dd {
         margin-left: 0;
     }
 }
@@ -162,7 +162,7 @@ dd> ul> li {
     font-weight: 600;
 }
 
-.p-experience .p-org:before {
+.p-experience .p-location:before {
     content: " - ";
 }
 

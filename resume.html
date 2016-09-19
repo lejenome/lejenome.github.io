@@ -38,12 +38,13 @@
 
     <link href="http://www.w3.org/2005/11/profile" rel="profile" />
     <link href="http://gmpg.org/xfn/11" rel="profile" />
-    <link href="http://microformats.org/profile/hcard" rel="profile" />
-    <link href="http://microformats.org/profile/hlisting" rel="profile" />
     <link href="http://microformats.org/profile/rel-license" rel="profile" />
     <link href="http://microformats.org/profile/rel-nofollow" rel="profile" />
     <link href="http://microformats.org/profile/rel-home" rel="profile" />
-    <link href="http://microformats.org/profile/hresume" rel="profile" />
+    <link href="http://microformats.org/profile/h-resume" rel="profile" />
+    <link href="http://microformats.org/profile/h-card" rel="profile" />
+    <link href="http://microformats.org/profile/h-adr" rel="profile" />
+    <link href="http://microformats.org/profile/h-event" rel="profile" />
     <script type="application/ld+json">
         {
             "@context": "http://schema.org/",
@@ -124,34 +125,34 @@
     <link href="css/resume.css" type="text/css" rel="stylesheet"></link>
 </head>
 
-<body class="container">
+<body class="container h-resume">
     <header>
-        <h1><a href="https://lejenome.github.io">Moez Bouhlel <small>@lejenome</small></a></h1>
+        <h1><a href="https://lejenome.github.io"><span class="p-name">Moez Bouhlel</span> <small>@lejenome</small></a></h1>
     </header>
     <aside class="card">
-        <figure class="contact vcard">
+        <figure class="contact h-card">
             <figcaption>
-                <span class="fn" hidden>Moez Bouhlel</span>
-                <span class="nickname" hidden>lejenome</span>
-                <span class="title" hidden>Software Developer</span>
-                <span class="note" hidden>Hire me for a part-time job or for an internship at https://lejenome.github.io/resume</span>
+                <span class="p-fn p-name" hidden>Moez Bouhlel</span>
+                <span class="p-nickname" hidden>lejenome</span>
+                <span class="p-title" hidden>Software Developer</span>
+                <span class="p-note" hidden>Hire me for a part-time job or for an internship at https://lejenome.github.io/resume</span>
                 <span>contact me</span>
                 <ul>
-                    <li title="email"><i class="fa fa-envelope"></i> <a href="mailto:bmoez.j@gmail.com" class="email">bmoez.j@gmail.com</a></li>
-                    <li title="PGP key"><i class="fa fa-check-circle-o"></i> <a href="https://lejenome.github.io/key.pgp" class="key" type="pgp">3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D</a></li>
-                    <li title="mobile" class="tel"><i class="fa fa-phone"></i> <a class="value" href="tel:+2162374587">+216 23 274 587</a></li>
-                    <li title="website"><i class="fa fa-globe"></i> <a href="https://lejenome.github.io/" class="url website" rel="me self external">Website</a></li>
-                    <li title="github"><i class="fa fa-github-alt"></i> <a href="https://github.com/lejenome" class="url github" rel="me self external">GitHub</a></li>
-                    <li title="twitter"><i class="fa fa-twitter"></i> <a href="https://twitter.com/lejenome" class="url twitter" rel="me self external">Twitter</a></li>
-                    <li title="linkedin"><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/lejenome" class="url linkedin" rel="me self external">LinkedIn</a></li>
+                    <li title="email"><i class="fa fa-envelope"></i> <a href="mailto:bmoez.j@gmail.com" class="u-email">bmoez.j@gmail.com</a></li>
+                    <li title="PGP key"><i class="fa fa-check-circle-o"></i> <a href="https://lejenome.github.io/key.pgp" class="u-key" type="pgp">3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D</a></li>
+                    <li title="mobile"><i class="fa fa-phone"></i> <a class="p-tel" href="tel:+2162374587">+216 23 274 587</a></li>
+                    <li title="website"><i class="fa fa-globe"></i> <a href="https://lejenome.github.io/" class="p-url website" rel="me self external">Website</a></li>
+                    <li title="github"><i class="fa fa-github-alt"></i> <a href="https://github.com/lejenome" class="p-url github" rel="me self external">GitHub</a></li>
+                    <li title="twitter"><i class="fa fa-twitter"></i> <a href="https://twitter.com/lejenome" class="p-url twitter" rel="me self external">Twitter</a></li>
+                    <li title="linkedin"><i class="fa fa-linkedin"></i> <a href="https://www.linkedin.com/in/lejenome" class="p-url linkedin" rel="me self external">LinkedIn</a></li>
                     <li title="address">
-                        <address class="adr">
+                        <address class="p-adr h-adr">
                             <i class="fa fa-map-marker"></i>
-                            <span class="street-address">Rt. Manzel Chaker</span>
-                            <span class="locality">Sfax</span>,
-                            <span class="region">Sfax</span>
-                            <span class="postal-code">3072</span>
-                            <span class="country-name">Tunisia</span>
+                            <span class="p-street-address">Rt. Manzel Chaker</span>
+                            <span class="p-locality">Sfax</span>,
+                            <span class="p-region">Sfax</span>
+                            <span class="p-postal-code">3072</span>
+                            <span class="p-country-name">Tunisia</span>
                         </address>
                     </li>
                 </ul>
@@ -168,7 +169,7 @@
             </ul>
         </div>
     </aside>
-    <section class="h-resume">
+    <section class="resume">
         <h2 class="p-title">Student and Software Developer</h2>
         <dl>
             <dt>Summary</dt>
@@ -215,13 +216,13 @@
             <dt>Experience</dt>
             <dd class="experience">
                 <ul>
-                    <li class="p-experience h-card h-event">
+                    <li class="p-experience h-event">
                         <div class="line1">
-                            <span class="p-title">Technical Leader</span>
-                            <span class="p-org p-fn"><a class="u-url" href="http://mtcfss.azurewebsites.net">Microsoft Tech Club FSS</a></span>
+                            <span class="p-name">Technical Leader</span>
+                            <span class="p-location h-card"><a class="p-fn p-org u-url" href="http://mtcfss.azurewebsites.net">Microsoft Tech Club FSS</a></span>
                             <div class="duration">
-                                <span class="dt-start">2015</span>
-                                <span class="dt-end">2016</span>
+                                <time datetime="2015" class="dt-start">2015</time>
+                                <time datetime="2016" class="dt-end">2016</time>
                             </div>
                         </div>
                         <div class="line2 p-summary">
@@ -234,10 +235,10 @@
                     </li>
                     <li class="p-experience h-event">
                         <div class="line1">
-                            <span class="p-title">Freelancer</span>
+                            <span class="p-name">Freelancer</span>
                             <div class="duration">
-                                <span class="dt-start">2013</span>
-                                <span class="dt-end">present</span>
+                                <time datetime="2013" class="dt-start">2013</time>
+                                <time datetime="" class="dt-end">present</time>
                             </div>
                         </div>
                         <div class="line2 p-summary">
@@ -255,10 +256,10 @@
                 <ul>
                     <li class="p-experience h-event">
                         <div class="line1">
-                            <a class="p-title u-url" href="https://github.com/lejenome/mastermind">Mastermind</a>
+                            <a class="p-name u-url" href="https://github.com/lejenome/mastermind">Mastermind</a>
                             <div class="duration">
-                                <span class="dt-start">2015/03</span>
-                                <span class="dt-end">2015/05</span>
+                                <time datetime="2015-03" class="dt-start">2015/03</time>
+                                <time datetime="2015-05" class="dt-end">2015/05</time>
                             </div>
                         </div>
                         <div class="line2">
@@ -270,10 +271,10 @@
                     </li>
                     <li class="p-experience h-event">
                         <div class="line1">
-                            <a class="p-title u-url" href="https://github.com/lejenome/html5-video-everywhere">HTML5 Video Everywhere</a>
+                            <a class="p-name u-url" href="https://github.com/lejenome/html5-video-everywhere">HTML5 Video Everywhere</a>
                             <div class="duration">
-                                <span class="dt-start">2014/12</span>
-                                <span class="dt-end">2016/02</span>
+                                <time datetime="2014-12" class="dt-start">2014/12</time>
+                                <time datetime="2016-02" class="dt-end">2016/02</time>
                             </div>
                         </div>
                         <div class="line2">
@@ -285,10 +286,10 @@
                     </li>
                     <li class="p-experience h-event">
                         <div class="line1">
-                            <a class="p-title u-url" href="https://github.com/lejenome/image-analyzer">Satellite Analyzer</a>
+                            <a class="p-name u-url" href="https://github.com/lejenome/image-analyzer">Satellite Analyzer</a>
                             <div class="duration">
-                                <span class="dt-start">2016/04</span>
-                                <span class="dt-end">2016/05</span>
+                                <time datetime="2016-04" class="dt-start">2016/04</time>
+                                <time datetime="2016-05" class="dt-end">2016/05</time>
                             </div>
                         </div>
                         <div class="line2">
@@ -304,18 +305,16 @@
             <dd class="educations">
                 <ul>
                     <li class="p-education h-event">
-                        <div class="p-summary h-card">
-                            <div class="line1">
-                                <span class="speciality"><span class="degree">Bachelor</span> of <span class="field">Computer Science</span></span>
-                                <div class="duration">
-                                    <span class="dt-start" title="2014">2014</span>
-                                    <span class="dt-end" title="2017">2017</span>
-                                </div>
+                        <div class="line1">
+                            <span class="speciality p-name"><span class="degree">Bachelor</span> of <span class="field">Computer Science</span></span>
+                            <div class="duration">
+                                <time datetime="2014" class="dt-start">2014</time>
+                                <time datetime="2017" class="dt-end">2017</time>
                             </div>
-                            <div class="line2">
-                                <a class="u-url p-fn p-org p-location" href="http://www.fss.rnu.tn/index.php?lang=en">Faculty of Sciences of Sfax</a> -
-                                <span class="p-adr h-adr"><span class="p-locality">Sfax</span>, <span class="p-country-name">Tunisia</span></span>
-                            </div>
+                        </div>
+                        <div class="line2 p-location h-card">
+                            <a class="u-url p-fn p-org" href="http://www.fss.rnu.tn/index.php?lang=en">Faculty of Sciences of Sfax</a> -
+                            <span class="p-adr h-adr"><span class="p-locality">Sfax</span>, <span class="p-country-name">Tunisia</span></span>
                         </div>
                     </li>
                 </ul>

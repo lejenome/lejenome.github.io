@@ -1,4 +1,5 @@
-.contact.vcard {
+.contact.vcard,
+.contact.h-card{
     color: white;
     padding: 15px 30px;
     display: block;
@@ -9,24 +10,28 @@
     box-shadow: 0 5px 10px #aaa;
 }
 
-.contact.vcard ul {
+.contact.vcard ul,
+.contact.h-card ul{
     list-style: none;
     margin-left: 0;
     margin-top: 0;
     padding: 0;
 }
 
-.contact.vcard ul li {
+.contact.vcard ul li,
+.contact.h-card ul li{
     padding: 2px 0;
 }
 
-.contact.vcard ul li .fa {
+.contact.vcard ul li .fa,
+.contact.h-card ul li .fa{
     width: 20px;
     text-align: center
 }
 
 @media (max-width: 500px) {
-    .contact.vcard {
+    .contact.vcard,
+    .contact.h-card{
         margin-left: 0;
         margin-right: 0;
     }
