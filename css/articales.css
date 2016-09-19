@@ -119,6 +119,23 @@ b::selection,
     max-width: 700px;
 }
 
+.post-body a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+.post-body a:focus,
+.post-body a:hover {
+    color: #014c8c;
+    text-decoration: underline;
+}
+
+.post-body a:focus {
+    outline: thin dotted;
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}
+
 .post-body a.img-link {
     border-bottom: 0;
 }
