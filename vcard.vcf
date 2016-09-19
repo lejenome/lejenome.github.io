@@ -9,11 +9,12 @@ ADR;WORK:;;;Sfax;;;Tunisie
 URL:https://lejenome.github.io/
 KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
 NICKNAME:lejenome
-NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serveurs.\nMaintenance PCs.\nFormation Licence Info.\nEncadrement PFE.
-PHOTO;TYPE=JPEG;VALUE=URI:https://lejenome.github.io/photo.jpg
+NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serveurs.\nMaintenance PCs.\nFormation en informatique.\nEncadrement PFE.
+PHOTO;TYPE=PNG;VALUE=URI:https://lejenome.github.io/logo.png
 SOURCE:https://lejenome.github.io/vcard.vcf
 X-GENDER:Male
 GENDER:M
+TZ:+0100
 SOCIALPROFILE;type=github:https://github.com/lejenome
 X-SOCIALPROFILE;type=github:https://github.com/lejenome
 X-GITHUB:lejenome
