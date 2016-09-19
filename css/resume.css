@@ -97,7 +97,8 @@ dd:not(.skills)> ul {
 }
 
 dd> ul> li {
-    padding-top: 5px;
+    padding-top: 2.5px;
+    padding-bottom: 2.5px;
 }
 
 .notes .term {
@@ -185,28 +186,38 @@ dd> ul> li {
 }
 
 [data-rank]:after {
-  font-family: FontAwesome;
-  font-size: 14px;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: FontAwesome;
+    font-size: 14px;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     float: right;
 }
+
 [data-rank]:after {
     content: "\f006\f006\f006\f006\f006";
 }
+
 [data-rank="1"]:after {
     content: "\f005\f006\f006\f006\f006";
 }
+
 [data-rank="2"]:after {
     content: "\f005\f005\f006\f006\f006";
 }
+
 [data-rank="3"]:after {
     content: "\f005\f005\f005\f006\f006";
 }
+
 [data-rank="4"]:after {
     content: "\f005\f005\f005\f005\f006";
 }
+
 [data-rank="5"]:after {
     content: "\f005\f005\f005\f005\f005";
+}
+
+.p-skill:hover {
+    background-color: rgba(0, 0, 0, 0.05);
 }
