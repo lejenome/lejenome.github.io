@@ -19,9 +19,12 @@ header a:active,
 #articales article hgroup a,
 #articales article hgroup a:active,
 #articales article hgroup a:hover,
-.vcard a,
-.vcard a:hover,
-.vcard a:active {
+.card a,
+.card a:hover,
+.card a:active,
+.h-resume a,
+.h-resume a:hover,
+.h-resume a:active {
     text-decoration: none;
     outline: none;
     color: inherit;
