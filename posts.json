@@ -1,0 +1,18 @@
+{
+    "files": [{
+        "url": "posts/syteup-readme.md",
+        "id": 1,
+        "date": "2014/11/01",
+        "tags": ["syteup", "introduction"]
+    }, {
+        "url": "posts/syteup-creating-basic-plugin-segment.md",
+        "id": 2,
+        "date": "2014/11/04",
+        "tags": ["syteup"]
+    }, {
+        "url": "posts/mtcfss-python-training-get-ready.md",
+        "id": 3,
+        "date": "2016/02/09",
+        "tags": ["mtcfss", "python", "django"]
+    }]
+}
