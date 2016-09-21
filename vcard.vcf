@@ -4,8 +4,8 @@ FN:Moez Bouhlel
 N:Bouhlel;Moez;;;
 NICKNAME:lejenome
 EMAIL:bmoez.j@gmail.com
-TEL;TYPE=cell:23274587
-ADR:;;;Sfax;;;Tunisie
+TEL;TYPE=cell:+216 23 274 587
+ADR:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
 TITLE:Software Developer
 URL;TYPE=home:https://lejenome.github.io/
 KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
@@ -16,17 +16,17 @@ LOGO;VALUE=uri:https://lejenome.github.io/logo.png
 SOURCE;VALUE=uri:https://lejenome.github.io/vcard.vcf
 X-GENDER:Male
 TZ:+0100
-X-SOCIALPROFILE;TYPE=github:https://github.com/lejenome
-X-GITHUB:lejenome
 item1.URL:https://github.com/lejenome
 item1.X-ABLabel:GitHub
-X-SOCIALPROFILE;TYPE=twitter:https://twitter.com/lejenome
-X-TWITTER:lejenome
+item1.X-GITHUB:lejenome
+item1.X-SOCIALPROFILE;TYPE=github:https://github.com/lejenome
 item2.URL:https://twitter.com/lejenome
 item2.X-ABLabel:Twitter
-X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/lejenome
-X-LINKEDIN:lejenome
+item2.X-TWITTER:lejenome
+item2.X-SOCIALPROFILE;TYPE=twitter:https://twitter.com/lejenome
 item3.URL:https://www.linkedin.com/in/lejenome
 item3.X-ABLabel:LinkedIn
+item3.X-LINKEDIN:lejenome
+item3.X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/lejenome
 END:VCARD
 
