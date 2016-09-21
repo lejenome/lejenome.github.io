@@ -1,10 +1,7 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Bouhlel;Moez;;;
-TITLE:Developpeur
+FN:Moez Bouhlel
 TEL:23274587
 EMAIL:bmoez.j@gmail.com
-ADR:;;;Sfax;;;Tunisie
-URL:lejenome.github.io
-SOURCE:lejenome.github.io/vcard.vcf
+SOURCE:goo.gl/CQ1ce1
 END:VCARD
