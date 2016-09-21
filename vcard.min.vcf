@@ -3,5 +3,6 @@ VERSION:3.0
 FN:Moez Bouhlel
 TEL:23274587
 EMAIL:bmoez.j@gmail.com
-SOURCE:goo.gl/CQ1ce1
+SOURCE;VALUE=uri:goo.gl/CQ1ce1
 END:VCARD
+
