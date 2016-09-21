@@ -1,14 +1,14 @@
 BEGIN:VCARD
 VERSION:3.0
-N:Bouhlel;Moez;;;
 FN:Moez Bouhlel
-TITLE:Développeur Logiciel
-TEL;TYPE=cell:23274587
-EMAIL:bmoez.j@gmail.com
-ADR:;;;Sfax;;;Tunisie
-URL:https://lejenome.github.io/
-KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
+N:Bouhlel;Moez;;;
 NICKNAME:lejenome
+EMAIL:bmoez.j@gmail.com
+TEL;TYPE=cell:23274587
+ADR:;;;Sfax;;;Tunisie
+TITLE:Software Developer
+URL;TYPE=home:https://lejenome.github.io/
+KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
 NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serv
  eurs.\nMaintenance PCs.\nFormation en informatique.\nEncadrement PFE.
 PHOTO;VALUE=uri:https://lejenome.github.io/photo.jpg
@@ -16,11 +16,17 @@ LOGO;VALUE=uri:https://lejenome.github.io/logo.png
 SOURCE;VALUE=uri:https://lejenome.github.io/vcard.vcf
 X-GENDER:Male
 TZ:+0100
-X-SOCIALPROFILE;type=github:https://github.com/lejenome
+X-SOCIALPROFILE;TYPE=github:https://github.com/lejenome
 X-GITHUB:lejenome
-X-SOCIALPROFILE;type=twitter:https://twitter.com/lejenome
+item1.URL:https://github.com/lejenome
+item1.X-ABLabel:GitHub
+X-SOCIALPROFILE;TYPE=twitter:https://twitter.com/lejenome
 X-TWITTER:lejenome
-X-SOCIALPROFILE;type=linkedin:https://www.linkedin.com/in/lejenome
+item2.URL:https://twitter.com/lejenome
+item2.X-ABLabel:Twitter
+X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/lejenome
 X-LINKEDIN:lejenome
+item3.URL:https://www.linkedin.com/in/lejenome
+item3.X-ABLabel:LinkedIn
 END:VCARD
 
