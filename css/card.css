@@ -17,19 +17,17 @@ body {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) scale(.305);
+    transform: translate(-50%, -50%) scale(.29);
     /*other*/
     overflow: hidden;
     text-overflow: hidden;
     -webkit-box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4);
     box-shadow: inset 0 -15px 0px;
-    
-    
-  font-family: "Source Code Pro";
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-family: "Source Code Pro";
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body a,
@@ -90,4 +88,6 @@ body> div {
     position: absolute;
     right: 25px;
     top: 25px;
+    /*padding: 5px;
+    border: solid 5px;*/
 }

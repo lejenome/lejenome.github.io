@@ -1,3 +1,13 @@
+.post {
+    width: 100%;
+    padding: 30px 0;
+    border-bottom: 1px solid #C2C2C2;
+}
+
+.post:last-child {
+    border: none;
+}
+
 .post-title {
     color: steelblue;
 }
