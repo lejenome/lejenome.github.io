@@ -80,7 +80,7 @@
     font-size: 18px;
 }
 
-dd+ * {
+dl> dt {
     margin: 20px 0;
 }
 
