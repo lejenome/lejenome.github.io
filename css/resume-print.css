@@ -1,0 +1,75 @@
+@media print {
+    @print {
+        margin: 0;
+        size: A4 portrait;
+    }
+    html {
+        height: 1123px !important;
+    }
+    body,
+    .container {
+        padding: 20px;
+        height: 100% !important;
+        width: 100%;
+    }
+    .no-print {
+        display: none !important;
+    }
+    header h1 {
+        margin: 0px 0 10px 0;
+    }
+    aside.card,
+    section.resume {
+        width: 100%;
+        float: none;
+    }
+    .resume {
+        height: calc(100% - 100px);
+        width: 100%;
+    }
+    aside.card .h-card {
+        margin: 0 0 -15px 0;
+        padding: 0;
+        background: none;
+        border: none;
+        color: black;
+        font-size: 10px;
+        box-shadow: none;
+    }
+    .contact.vcard ul,
+    .contact.h-card ul {
+        text-align: center;
+    }
+    aside.card li {
+        display: inline;
+    }
+    .resume> dl {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    .resume> dl> dt,
+    .resume> dl> dd {
+        width: calc(50% - 10px);
+        margin-right: 10px;
+        box-sizing: border-box;
+    }
+    .resume> dl> dt {
+        margin: 0;
+        font-size: 18px;
+    }
+    .resume> dl> dd {
+        font-size: 12px;
+    }
+    .skills h2 {
+        font-size: 15px;
+        margin: 8px 0;
+    }
+    .skills,
+    .skills-dt,
+    .portfolio,
+    .portfolio-dt {
+        order: 2;
+    }
+}
