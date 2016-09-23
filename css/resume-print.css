@@ -1,3 +1,4 @@
+/* A4 to px: http://www.papersizes.org/a-sizes-in-pixels.htm */
 @media print {
     @print {
         margin: 0;
