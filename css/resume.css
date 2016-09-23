@@ -157,7 +157,7 @@ dd> ul> li {
     list-style-type: square;
 }
 
-.p-experience .p-title,
+.p-experience .p-name,
 .p-experience .p-org,
 .p-education .speciality {
     font-weight: 600;

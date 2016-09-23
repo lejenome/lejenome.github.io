@@ -30,6 +30,10 @@ header a:active,
     color: inherit;
 }
 
+abbr {
+    cursor: help;
+}
+
 header h1 {
     font-weight: 600;
     font-size: 36px;
