@@ -8,7 +8,7 @@
     }
     body,
     .container {
-        padding: 20px;
+        padding: 25px;
         height: 100% !important;
         width: 100%;
     }
@@ -71,5 +71,16 @@
     .portfolio,
     .portfolio-dt {
         order: 2;
+    }
+    abbr {
+        text-decoration: none !important;
+    }
+    .skills abbr:after {
+        display: block;
+        content: "Keywords: " attr(title);
+        font-size: 10px;
+        color: gray;
+        padding: 5px 0 0 0;
+        font-weight: 600;
     }
 }

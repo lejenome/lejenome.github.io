@@ -186,7 +186,7 @@ dd> ul> li {
     color: gray;
 }
 
-[data-rank]:after {
+[data-rank]:before {
     font-family: FontAwesome;
     font-size: 14px;
     text-rendering: auto;
@@ -195,27 +195,27 @@ dd> ul> li {
     float: right;
 }
 
-[data-rank]:after {
+[data-rank]:before {
     content: "\f006\f006\f006\f006\f006";
 }
 
-[data-rank="1"]:after {
+[data-rank="1"]:before {
     content: "\f005\f006\f006\f006\f006";
 }
 
-[data-rank="2"]:after {
+[data-rank="2"]:before {
     content: "\f005\f005\f006\f006\f006";
 }
 
-[data-rank="3"]:after {
+[data-rank="3"]:before {
     content: "\f005\f005\f005\f006\f006";
 }
 
-[data-rank="4"]:after {
+[data-rank="4"]:before {
     content: "\f005\f005\f005\f005\f006";
 }
 
-[data-rank="5"]:after {
+[data-rank="5"]:before {
     content: "\f005\f005\f005\f005\f005";
 }
 
