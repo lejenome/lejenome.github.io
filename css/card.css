@@ -32,10 +32,10 @@ html {
 }
 
 body {
-    /* 3012x1947 */
+    /* 2998×1947 to get 3012x1947 screenshot */
     /* Microsoft Presenter: 1004x649 */
-    width: 3026px;
-    height: 1905px;
+    width: 3012px;
+    height: 1906px;
     box-sizing: padding-box;
     /* center */
     margin: auto auto;
