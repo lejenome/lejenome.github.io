@@ -1,27 +1,36 @@
 /* color schema */
+
 body {
     background: rgb(255, 255, 255) !important;
     color: rgb(85, 85, 85) !important;
 }
-body, .fa {
+
+body,
+.fa {
     color: rgb(85, 85, 85) !important;
 }
+
 .fa-inverse {
     color: white !important;
 }
-body, .left-half h1{
+
+body,
+.left-half h1 {
     border-color: rgb(85, 85, 85) !important;
 }
 
+
 /* struct style */
+
 html {
     background: #A6AB95;
     text-align: center;
     display: block;
 }
+
 body {
-    width: 297.5mm;
-    height: 192.5mm;
+    width: 850mm;
+    height: 550mm;
     box-sizing: padding-box;
     /* center */
     margin: auto auto;
@@ -29,7 +38,7 @@ body {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) scale(0.2857);
+    transform: translate(-50%, -50%) scale(0.1);
     /*other*/
     overflow: hidden;
     text-overflow: hidden;
@@ -37,9 +46,8 @@ body {
     text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    box-shadow: 0 0 50px rgba(0,0,0,0.5),
-                0 0 50px rgba(0,0,0,0.5);
-    border-bottom: solid 15px;
+    box-shadow: 0 0 200px rgba(0, 0, 0, 0.5), 0 0 200px rgba(0, 0, 0, 0.5);
+    border-bottom: solid 43px;
 }
 
 body a,
@@ -68,16 +76,16 @@ body> div {
 .left-half {}
 
 .right-half {
-    right: 20px;
-    bottom: 20px;
+    right: 57px;
+    bottom: 57px;
 }
 
 .left-half h1 {
-    font-size: 70px;
-    padding-left: 50px;
-    margin-bottom: 30px;
-    padding-bottom: 15px;
-    border-bottom-width: 9px;
+    font-size: 200px;
+    padding-left: 143px;
+    margin-bottom: 86px;
+    padding-bottom: 42px;
+    border-bottom-width: 26px;
     border-bottom-style: dashed;
     font-weight: 900;
 }
@@ -87,19 +95,19 @@ body> div {
 }
 
 .left-half ul {
-    font-size: 38px;
+    font-size: 109px;
     line-height: 2;
 }
 
 .right-half ul {
-    font-size: 32px;
+    font-size: 91.3px;
 }
 
 .qrcode {
-    width: 280px;
+    width: 800px;
     position: absolute;
-    right: 25px;
-    top: 25px;
-    /*padding: 5px;
-    border: solid 5px;*/
+    right: 72px;
+    top: 72px;
+    /*padding: 14px;
+    border: solid 14px;*/
 }
