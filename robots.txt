@@ -5,3 +5,4 @@ Disallow: /.jsbeautifyrc
 Disallow: /.jshintrc
 Disallow: /LICENSE.md
 Disallow: /tests
+Disallow: /utils
