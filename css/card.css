@@ -1,22 +1,22 @@
 /* color schema */
 
 body {
-    background: rgb(255, 255, 255) !important;
+    background: white !important;
     color: rgb(85, 85, 85) !important;
-}
-
-body,
-.fa {
-    color: rgb(85, 85, 85) !important;
-}
-
-.fa-inverse {
-    color: white !important;
 }
 
 body,
 .left-half h1 {
-    border-color: rgb(85, 85, 85) !important;
+    border-color: inherit !important;
+}
+
+body,
+.fa {
+    color: inherit !important;
+}
+
+.fa-inverse {
+    color: white !important;
 }
 
 
