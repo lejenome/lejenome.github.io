@@ -25,7 +25,10 @@ html {
 }
 
 body {
+    /* 3198×2122 */
+    /* 3212.6 px */
     width: 850mm;
+    /* 2078.7 px */
     height: 550mm;
     box-sizing: padding-box;
     /* center */
