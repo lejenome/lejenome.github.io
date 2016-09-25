@@ -2,9 +2,12 @@
 
 :root {
     --text-color: #c6c6c6;
-    --background-color: #222323;
+    --background-color: #232323;
     --border-color: var(--text-color);
-    --inverse-color: var(--background-color);
+    --arrow-color: var(--text-color);
+    --cercle-color: var(--text-color);
+    --icons-color: var(--background-color);
+    --border-size: 0px;
 }
 
 body,
@@ -16,10 +19,19 @@ body,
 
 body {
     background-color: var(--background-color) !important;
+    border-bottom-width: var(--border-size);
 }
 
-.fa-inverse {
-    color: var(--inverse-color) !important;
+.left-half .fa {
+    color: var(--arrow-color) !important;
+}
+
+.right-half .fa {
+    color: var(--cercle-color) !important;
+}
+
+.right-half .fa-inverse {
+    color: var(--icons-color) !important;
 }
 
 
@@ -35,7 +47,7 @@ body {
     /* 2998×1947 to get 3012x1947 screenshot */
     /* Microsoft Presenter: 1004x649 */
     width: 3012px;
-    height: 1906px;
+    height: 1948px;
     box-sizing: padding-box;
     /* center */
     margin: auto auto;
@@ -43,7 +55,7 @@ body {
     top: 50%;
     left: 50%;
     margin-right: -50%;
-    transform: translate(-50%, -50%) scale(0.111);
+    transform: translate(-50%, -50%) scale(0.11);
     /*other*/
     overflow: hidden;
     text-overflow: hidden;
@@ -52,7 +64,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.5), 0 0 200px rgba(0, 0, 0, 0.5);
-    border-bottom: solid 43px;
+    box-sizing: border-box;
+    border-bottom-style: solid;
 }
 
 body a,
@@ -90,7 +103,7 @@ body> div {
     padding-left: 135px;
     margin-bottom: 81px;
     padding-bottom: 40px;
-    border-bottom-width: 24px;
+    border-bottom-width: 25px;
     border-bottom-style: dashed;
     font-weight: 900;
 }
