@@ -243,3 +243,7 @@ dd> ul> li {
 .p-skill:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
+
+.nowrap {
+    display: inline-block;
+}
