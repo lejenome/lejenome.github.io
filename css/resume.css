@@ -142,7 +142,7 @@ dd> ul> li {
 .p-experience,
 .p-education {
     padding: 10px 0;
-    border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+    border-bottom: solid 1px silver;
 }
 
 .p-experience:last-child,
@@ -182,8 +182,9 @@ dd> ul> li {
 }
 
 .portfolio .line2 {
-    font-size: 12px;
+    font-size: 11px;
     color: gray;
+    font-weight: 600;
 }
 
 [data-rank]:before {
@@ -199,20 +200,40 @@ dd> ul> li {
     content: "\f006\f006\f006\f006\f006";
 }
 
+[data-rank="+0"]:before {
+    content: "\f123\f006\f006\f006\f006";
+}
+
 [data-rank="1"]:before {
     content: "\f005\f006\f006\f006\f006";
+}
+
+[data-rank="+1"]:before {
+    content: "\f005\f123\f006\f006\f006";
 }
 
 [data-rank="2"]:before {
     content: "\f005\f005\f006\f006\f006";
 }
 
+[data-rank="+2"]:before {
+    content: "\f005\f005\f123\f006\f006";
+}
+
 [data-rank="3"]:before {
     content: "\f005\f005\f005\f006\f006";
 }
 
+[data-rank="+3"]:before {
+    content: "\f005\f005\f005\f123\f006";
+}
+
 [data-rank="4"]:before {
     content: "\f005\f005\f005\f005\f006";
+}
+
+[data-rank="+4"]:before {
+    content: "\f005\f005\f005\f005\f123";
 }
 
 [data-rank="5"]:before {

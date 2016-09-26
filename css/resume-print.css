@@ -1,4 +1,5 @@
 /* A4 to px: http://www.papersizes.org/a-sizes-in-pixels.htm */
+
 @media print {
     @print {
         margin: 0;
@@ -69,8 +70,12 @@
     }
     .skills,
     .skills-dt,
-    .portfolio,
-    .portfolio-dt {
+    .educations-dt,
+    .educations,
+    .notes-dt,
+    .notes,
+    .languages-dt,
+    .languages {
         order: 2;
     }
     abbr {
@@ -79,9 +84,12 @@
     .skills abbr:after {
         display: block;
         content: "Keywords: " attr(title);
+        padding: 5px 0 0 0;
+    }
+    .skills abbr:after,
+    .portfolio .line2 {
+        font-weight: 600;
         font-size: 10px;
         color: gray;
-        padding: 5px 0 0 0;
-        font-weight: 600;
     }
 }
