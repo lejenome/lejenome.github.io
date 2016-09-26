@@ -86,10 +86,11 @@ dl> dt {
 }
 
 dd.skills> ul {
-    padding-left: 0;
+    padding: 0;
     list-style-position: inside;
     list-style-type: square;
     /*lower-greek;*/
+    margin: 10px 0;
 }
 
 dd:not(.skills)> ul {
@@ -246,4 +247,17 @@ dd> ul> li {
 
 .nowrap {
     display: inline-block;
+}
+
+.def-note {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.def-note:before {
+    content: '\f29c';
+    font-weight: 400;
+    font-family: fontawesome;
+    padding-right: 5px;
+    font-size: 10px;
 }
