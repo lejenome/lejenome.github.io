@@ -13,6 +13,18 @@
         padding: 25px;
         height: 100% !important;
         width: 100%;
+        position: relative;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+    body:after {
+        content: "lejenome.github.io/resume";
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 10px;
+        color: grey;
+        font-weight: 600;
     }
     .no-print {
         display: none !important;
