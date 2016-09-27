@@ -1,8 +1,8 @@
 /* color schema */
 
 :root {
-    --text-color: #c6c6c6;
-    --background-color: #232323;
+    --text-color: darkblue;
+    --background-color: white;
     --border-color: var(--text-color);
     --arrow-color: var(--text-color);
     --cercle-color: var(--text-color);
@@ -44,7 +44,8 @@ html {
 }
 
 body {
-    /* 2998×1947 to get 3012x1947 screenshot */
+    /* 6010×3894 x2 */
+    /* 2998×1947 x1 to get 3012x1947 screenshot */
     /* Microsoft Presenter: 1004x649 */
     width: 3012px;
     height: 1948px;
@@ -60,9 +61,9 @@ body {
     overflow: hidden;
     text-overflow: hidden;
     font-family: "Source Code Pro";
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizelegibility !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
     box-shadow: 0 0 200px rgba(0, 0, 0, 0.5), 0 0 200px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
     border-bottom-style: solid;
