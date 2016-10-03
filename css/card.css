@@ -13,25 +13,37 @@
 body,
 .left-half h1,
 .fa {
+    color: darkblue !important;
     color: var(--text-color) !important;
+    border-color: darkblue !important;
     border-color: var(--border-color) !important;
 }
 
 body {
+    background-color: white !important;
     background-color: var(--background-color) !important;
+    border-bottom-width: white;
     border-bottom-width: var(--border-size);
 }
 
 .left-half .fa {
+    color: darkblue !important;
     color: var(--arrow-color) !important;
 }
 
 .right-half .fa {
+    color: darkblue !important;
     color: var(--cercle-color) !important;
 }
 
 .right-half .fa-inverse {
+    color: white !important;
     color: var(--icons-color) !important;
+}
+
+svg g#Pattern rect {
+    fill: darkblue;
+    fill: var(--text-color);
 }
 
 
@@ -56,6 +68,7 @@ body {
     top: 50%;
     left: 50%;
     margin-right: -50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.11);
     transform: translate(-50%, -50%) scale(0.11);
     /*other*/
     overflow: hidden;
@@ -122,11 +135,13 @@ body> div {
     font-size: 86px;
 }
 
-.qrcode {
-    width: 754px;
+.qrcode img,
+.qrcode svg {
+    width: 900px;
+    height: 900px;
     position: absolute;
-    right: 68px;
-    top: 68px;
+    right: 40px;
+    top: 40px;
     /*padding: 13px;
     border: solid 13px;*/
 }
