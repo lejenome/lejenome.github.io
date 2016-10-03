@@ -351,6 +351,7 @@
             <input type="text" name="icon_emoji" value=":briefcase:" hidden></input>
             <textarea name="text" required></textarea>
             <input type="submit" value="send feedback"></input>
+            <p id="feedback-msg"></p>
         </form>
         <script>
             let form = document.getElementById("feedback");
@@ -368,6 +369,8 @@
                         parse: form_data.get("parse"),
                         icon_emoji: form_data.get("icon_emoji"),
                     }),
+                }).then(function() {
+                    document.getElementById("feedback-msg").textContent = "Thanks for you feedback!";
                 });
             });
 
