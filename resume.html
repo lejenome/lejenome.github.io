@@ -354,20 +354,19 @@
             <p id="feedback-msg"></p>
         </form>
         <script>
-            let form = document.getElementById("feedback");
+            var form = document.getElementById("feedback");
             form.addEventListener("submit", function(e) {
-                e.preventDefault()
-                let form_data = new FormData(form);
+                e.preventDefault();
                 fetch(form.action, {
                     method: "POST",
                     redirect: "manual",
                     credentials: "omit",
                     refer: "",
                     body: JSON.stringify({
-                        username: form_data.get("username"),
-                        text: form_data.get("text"),
-                        parse: form_data.get("parse"),
-                        icon_emoji: form_data.get("icon_emoji"),
+                        username: form.username.value,
+                        text: form.text.value,
+                        parse: form.parse.value,
+                        icon_emoji: form.icon_emoji.value,
                     }),
                 }).then(function() {
                     document.getElementById("feedback-msg").textContent = "Thanks for you feedback!";
