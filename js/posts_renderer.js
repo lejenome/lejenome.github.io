@@ -6,6 +6,8 @@ class PostsRenderer
 	{
 		this.posts_loader = posts_loader;
 		this.container = document.getElementById("articales");
+		this.nextBtn = document.getElementById("next-post");
+		this.prevBtn = document.getElementById("prev-post");
 	}
 	static post2html(post)
 	{
@@ -83,55 +85,59 @@ class PostsRenderer
 	update()
 	{
 		let ctxt = this.unhash();
-		if (ctxt.archive)
-			this.loadArchive();
-		else
-			this.loadPosts(ctxt);
+		console.time("update");
+		console.log("Hash:", location.hash || "#");
+		return (ctxt.archive ? this.loadArchive()
+				     : this.loadPosts(ctxt))
+		    .then(function() {
+			    window.scrollTo(0, 0);
+			    console.timeEnd("update");
+		    });
 	}
 	clean()
 	{
 		while (this.container.children.length)
 			this.container.children[0].remove();
+		this.nextBtn.style.display = "none";
+		this.prevBtn.style.display = "none";
 	}
 	loadPosts(ctxt)
 	{
 		let postId = 0;
 		let pageId = 0;
-		let nextBtn = document.getElementById("next-post");
-		let prevBtn = document.getElementById("prev-post");
-		this.posts_loader.getPosts(ctxt)
-		    .then((posts) => {
+		return this.posts_loader.getPosts(ctxt).then(
+		    posts => {
 			    this.clean();
 			    posts.forEach(post => this.container.appendChild(
 					      PostsRenderer.post2html(post)));
 			    prettyPrint();
-			    if (posts.length === 0)
-				    this.container.innerHTML =
-					"<p>Oops! 404 Error!</p>";
 			    if (this.posts_loader.hasPrev()) {
-				    prevBtn.style.display = "inline";
-				    prevBtn.href = location.toString().replace(
-					location.hash, "");
-				    prevBtn.href +=
+				    this.prevBtn.style.display = "inline";
+				    this.prevBtn.href =
 					this.hash(this.posts_loader.prev);
 			    }
 			    if (this.posts_loader.hasNext()) {
-				    nextBtn.style.display = "inline";
-				    nextBtn.href = location.toString().replace(
-					location.hash, "");
-				    nextBtn.href +=
+				    this.nextBtn.style.display = "inline";
+				    this.nextBtn.href =
 					this.hash(this.posts_loader.next);
 			    }
-		    })
-		    .catch((err) => {
+			    if (posts.length === 0) {
+				    this.container.innerHTML =
+					"<p>Oops! 404 Error!</p>";
+				    return Promise.reject();
+			    }
+			    return Promise.resolve();
+		    },
+		    err => {
 			    this.container.innerHTML =
 				"<p>Oops! Error loading posts!</p>";
 			    console.error(err);
+			    return Promise.reject();
 		    });
 	}
 	loadArchive()
 	{
-		this.posts_loader.getArchive().then(posts => {
+		return this.posts_loader.getArchive().then(posts => {
 			this.clean();
 			posts.forEach(p => {
 				let item = `
@@ -144,16 +150,21 @@ class PostsRenderer
                 </hgroup>
                 </article>`;
 				this.container.innerHTML += item;
-
 			});
+			return Promise.resolve();
 		});
 	}
 }
+let renderer;
 function main()
 {
-	window.addEventListener("hashchange", (e) => location.reload());
+	console.log("New session");
 	let loader = new MarkdownPosts("posts.json");
-	let renderer = new PostsRenderer(loader);
+	renderer = new PostsRenderer(loader);
 	renderer.update();
+	window.addEventListener("hashchange", function(e) {
+		e.preventDefault();
+		renderer.update();
+	});
 }
 main();

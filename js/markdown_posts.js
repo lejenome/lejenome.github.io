@@ -35,10 +35,9 @@ class MarkdownPosts
 	}
 	getArchive()
 	{
-		return this.posts_loader.then(files => {
-			return Promise.all(
-			    files.map(f => MarkdownPosts._getPost(f, false)));
-		});
+		return this.posts_loader.then(
+		    files => Promise.all(
+			files.map(f => MarkdownPosts._getPost(f, false))));
 	}
 	/* load posts
 	 * @param options:
@@ -59,6 +58,8 @@ class MarkdownPosts
 	getPosts({postId, pageId, tag})
 	{
 		return this.posts_loader.then(files => {
+			this.next = {};
+			this.prev = {};
 			if (postId) {
 				let index =
 				    files.findIndex(f => f.id === postId);
@@ -80,7 +81,7 @@ class MarkdownPosts
 						files[index]) ]);
 				}
 			}
-			if (1 > pageId)
+			if (!Number.isFinite(pageId) || pageId < 1)
 				pageId = 1;
 			let offset = pageId - 1;
 			if (tag)
@@ -91,8 +92,8 @@ class MarkdownPosts
 				this.next = {tag : tag, pageId : pageId + 1};
 			if (pageId > 1)
 				this.prev = {tag : tag, pageId : pageId - 1};
-			files = files.splice(offset * this.POSTS_MAX,
-					     this.POSTS_MAX);
+			files = files.slice(offset * this.POSTS_MAX,
+					    (offset + 1) * this.POSTS_MAX);
 			return Promise.all(
 			    files.map(p => MarkdownPosts._getPost(p)));
 		});
