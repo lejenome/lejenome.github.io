@@ -2,13 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
  xmlns:dc="http://purl.org/dc/elements/1.1/"
  xml:base="https://lejenome.github.io/">
-<?xml-stylesheet type="text/css" href="https://lejenome.github.io//css/articales.css" ?>
   <channel>
     <atom:link href="https://lejenome.github.io/rss.xml" rel="self" type="application/rss+xml" />
     <title>Moez Bouhlel [lejenome]</title>
     <description>Self-taught programmer, CS Student and FOSS contributor</description>
     <language>en</language>
     <link>https://lejenome.github.io/</link>
+
+    <item>
+      <title>[MTCFSS] Recommendations For IT Students</title>
+      <link>https://lejenome.github.io/#!post/4</link>
+      <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/4</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/mtcfss">mtcfss</category>
+<category domain="https://lejenome.github.io/#!tag/note">note</category>
+      <description>&lt;p&gt;This is a list of useful websites and tools to check for Computer Science
+students.&lt;/p&gt;
+&lt;h2&gt;Challenges:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Algorithms and Programming:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.hackerrank.com/"&gt;HackerRank&lt;/a&gt;: Different-level exercises for many
+domains and challenges.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://projecteuler.net/"&gt;Project Euler&lt;/a&gt;: Algorithms challenges, you can find
+them on &lt;a href="https://www.hackerrank.com/projecteuler"&gt;ProjectEuler+&lt;/a&gt; challenge on
+HackerRank too.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;System development and administration:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://eudyptula-challenge.org/"&gt;The Eudyptula Challenge&lt;/a&gt;: Series of
+programming exercises for Linux kernel development.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Other:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://devpost.com/hackathons"&gt;DevPost&lt;/a&gt;: Online and in-person challenges with
+prizes to win.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Tutorials:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.developpez.com"&gt;Developpez.com&lt;/a&gt;: Club des développeurs et IT pro.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;E-learning:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.coursera.org/"&gt;Coursera&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.edx.org"&gt;Edx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.codecademy.com/"&gt;Codecademy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.udacity.com/"&gt;Udacity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lagunita.stanford.edu/"&gt;Stanford Online Lagunita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ocw.mit.edu/"&gt;MIT OpenCourseWare&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Usefull tools:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com"&gt;GitHub&lt;/a&gt;: #1 Online project hosting service.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://c9.io/"&gt;Could9&lt;/a&gt;: Full-featured development environment, in the cloud.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://zealdocs.org/"&gt;Zeal&lt;/a&gt;: offline documentation for 195+ programming
+  languages and APIs.&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://devdocs.io/"&gt;DevDocs&lt;/a&gt;: Online APIs documentation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Freelancer &amp;amp; Money:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.topcoder.com"&gt;TopCoder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.upwork.com/"&gt;UpWork&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.freelancer.com/"&gt;Freelancer&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;CV:&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.linkedin.com/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://stackoverflow.com/jobs/cv"&gt;StackOverFlow CV&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+    </item>
 
     <item>
       <title>[MTCFSS] Python Training – Get Ready</title>
