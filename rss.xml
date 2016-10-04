@@ -10,6 +10,70 @@
     <link>https://lejenome.github.io/</link>
 
     <item>
+      <title>Simple feedback form implementation for static websites</title>
+      <link>https://lejenome.github.io/#!post/5</link>
+      <pubDate>Wed, 05 Oct 2016 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/5</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/javascript">javascript</category>
+<category domain="https://lejenome.github.io/#!tag/slack">slack</category>
+      <description>&lt;p&gt;Recently, I wanted to add a feedback form to my resume page to help my friends
+review it. I was using GitHub pages to host my static web site and I didn't
+want to host the server side of the feedback on a different server. So I was
+looking for a simple solution that works well with my static website. Most of
+the available ones were either paid or have too many unneeded features.&lt;/p&gt;
+&lt;p&gt;At the end, I decided to use my &lt;a href="https://slack.com/"&gt;Slack&lt;/a&gt; team to receive
+feedbacks. It does not require any third-party library or any server side code.
+And it's very simple to implement:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a Slack team if you don't have one.&lt;/li&gt;
+&lt;li&gt;Add an &lt;a href="https://api.slack.com/incoming-webhooks"&gt;Incoming Webhook&lt;/a&gt; URL to a
+   channel on your team. It's a simple URL that you can send feedbacks to.&lt;/li&gt;
+&lt;li&gt;Finally, add your client side implementation. This is a simple one:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;code&gt;html
+&amp;lt;form id="feedback"&amp;gt;
+    &amp;lt;textarea name="text" required&amp;gt;&amp;lt;/textarea&amp;gt;
+    &amp;lt;input type="submit" value="send feedback"&amp;gt;&amp;lt;/input&amp;gt;
+&amp;lt;/form&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+let form = document.getElementById("feedback");
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    fetch(YOUR_WEBHOOK_URL, {
+        method: "POST", // You should use POST method
+        body: JSON.stringify({
+            text: form.text.value, // the feedback message
+            parse: "none", // tell Slack it's not a formated text
+        });
+    });
+});&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Improvements:&lt;/h4&gt;
+&lt;p&gt;You can add more entries to the send JSON. Check Slack
+&lt;a href="https://api.slack.com/methods/chat.postMessage"&gt;documentation&lt;/a&gt; for more
+details. The most useful ones are &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;icon_emoji&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;You can set different a &lt;code&gt;username&lt;/code&gt; and different a &lt;code&gt;icon_emoji&lt;/code&gt; entry for every
+page. For example, you send this JSON from your resume page:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+{
+    "text": "THE FEEDBACK MESSAGE",
+    "parse": "none",
+    "username": "resume",
+    "icon_emoji": ":briefcase:"
+}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Hopefully when the &lt;a href="bhttp://darobin.github.io/formic/specs/json/"&gt;W3C HTML JSON form
+submission&lt;/a&gt; specification becomes
+implemented by the main browsers, you will no longer need any JavaScript code to
+send feedback but just a simple HTML:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;html
+&amp;lt;form action="YOUR_WEBHOOK_URL" method="post" accept-charset="UTF-8" enctype="application/json"&amp;gt;
+    &amp;lt;textarea name="text" required&amp;gt;&amp;lt;/textarea&amp;gt;
+    &amp;lt;input type="text" name="parse" value="none" hidden&amp;gt;&amp;lt;/input&amp;gt;
+    &amp;lt;input type="submit" value="send feedback"&amp;gt;&amp;lt;/input&amp;gt;
+&amp;lt;/form&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+
+    <item>
       <title>[MTCFSS] Recommendations For IT Students</title>
       <link>https://lejenome.github.io/#!post/4</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
@@ -20,7 +84,7 @@
       <description>&lt;p&gt;This is a list of useful websites and tools to check for Computer Science
 students.&lt;/p&gt;
 &lt;h2&gt;Challenges:&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Algorithms and Programming:&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Algorithms and Programming&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.hackerrank.com/"&gt;HackerRank&lt;/a&gt;: Different-level exercises for many
 domains and challenges.&lt;/li&gt;
@@ -28,12 +92,12 @@ domains and challenges.&lt;/li&gt;
 them on &lt;a href="https://www.hackerrank.com/projecteuler"&gt;ProjectEuler+&lt;/a&gt; challenge on
 HackerRank too.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;System development and administration:&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;System development and administration&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://eudyptula-challenge.org/"&gt;The Eudyptula Challenge&lt;/a&gt;: Series of
 programming exercises for Linux kernel development.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Other:&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;Other&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="http://devpost.com/hackathons"&gt;DevPost&lt;/a&gt;: Online and in-person challenges with
 prizes to win.&lt;/li&gt;
