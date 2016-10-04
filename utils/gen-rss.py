@@ -6,9 +6,10 @@ from markdown import markdown
 
 posts_file = open("posts.json")
 posts = json.load(posts_file)
+posts_file.close()
 
 settings = {
-    "rss_url": "https://lejenome.github.io/feed",
+    "rss_url": "https://lejenome.github.io/rss.xml",
     "blog_name": "Moez Bouhlel [lejenome]",
     "blog_description": "Self-taught programmer, CS Student and FOSS "
     "contributor",
@@ -28,6 +29,7 @@ def gen_post_rss(post):
     categories_rss = "\n".join(
         """<category domain="{blog_url}#!tag/{tag}">{tag}</category>"""
         .format(tag=tag, **settings) for tag in post["tags"])
+    post_file.close()
     return """
     <item>
       <title>{title}</title>
@@ -56,4 +58,6 @@ rss = """<?xml version="1.0" encoding="UTF-8"?>
 </rss>
 """.format(posts_rss=posts_rss, **settings)
 
-print(rss)
+rss_file = open("rss.xml", "w")
+rss_file.write(rss)
+rss_file.close()
