@@ -14,7 +14,7 @@ b::selection,
 
 .post-body h1,
 .post-body .h1 {
-    font-size: 23px;
+    font-size: 24px;
     line-height: 30px;
     font-weight: 700;
 }
@@ -23,33 +23,33 @@ b::selection,
 .post-body .h2 {
     font-size: 20px;
     line-height: 27px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .post-body h3,
 .post-body .h3 {
-    font-size: 18px;
+    font-size: 17px;
     line-height: 25px;
     font-weight: 500;
 }
 
 .post-body h4,
 .post-body .h4 {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h5,
 .post-body .h5 {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h6,
 .post-body .h6 {
-    font-size: 14px;
+    font-size: 13px;
     line-height: 20px;
     font-weight: 500;
 }

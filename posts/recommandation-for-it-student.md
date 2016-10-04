@@ -6,7 +6,7 @@ students.
 
 ## Challenges:
 
-**Algorithms and Programming:**
+### Algorithms and Programming
 
 - [HackerRank](https://www.hackerrank.com/): Different-level exercises for many
 domains and challenges.
@@ -14,12 +14,12 @@ domains and challenges.
 them on [ProjectEuler+](https://www.hackerrank.com/projecteuler) challenge on
 HackerRank too.
 
-**System development and administration:**
+### System development and administration
 
 - [The Eudyptula Challenge](http://eudyptula-challenge.org/): Series of
 programming exercises for Linux kernel development.
 
-**Other:**
+### Other
 
 - [DevPost](http://devpost.com/hackathons): Online and in-person challenges with
 prizes to win.
