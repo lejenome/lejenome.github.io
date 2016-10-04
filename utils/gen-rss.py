@@ -31,8 +31,7 @@ def gen_post_rss(post):
       <link>{url}</link>
       <pubDate>{date}</pubDate>
       <guid>{url}</guid>
-    </item>
-    """.format(**post)
+    </item>""".format(**post)
 
 posts_rss = "\n".join(gen_post_rss(post) for post in reversed(posts["files"]))
 rss = """
@@ -43,7 +42,7 @@ rss = """
     <title>{blog_name}</title>
     <description>{blog_description}</description>
     <link>{blog_url}</link>
-    {posts_rss}
+{posts_rss}
   </channel>
 </rss>
 """.format(posts_rss=posts_rss, **settings)

@@ -1,38 +1,508 @@
+
 <?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
-        <atom:link href="https://lejenome.github.io/feed" rel="self" type="application/rss+xml" />
-        <title>Moez Bouhlel [lejenome]</title>
-        <description>Self-taught programmer, CS Student and FOSS contributor</description>
-        <link>https://lejenome.github.io/</link>
+  <channel>
+    <atom:link href="https://lejenome.github.io/feed" rel="self" type="application/rss+xml" />
+    <title>Moez Bouhlel [lejenome]</title>
+    <description>Self-taught programmer, CS Student and FOSS contributor</description>
+    <link>https://lejenome.github.io/</link>
 
-        <item>
-            <title>[MTCFSS] Python Training – Get Ready</title>
-            <description>&lt;p&gt;This is our check list for any member interested to join the training:&lt;/p&gt; &lt;h2&gt;Tools:&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;For Windows Users:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Python 3.5 (&lt;a href="https://www.python.org/ftp/python/3.5.1/python-3.5.1-amd64.exe"&gt;64bit&lt;/a&gt;) (&lt;a href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe"&gt;32bit&lt;/a&gt;)&lt;/li&gt; &lt;li&gt;&lt;a href="https://desktop.github.com/"&gt;GitHub Desktop&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://git-for-windows.github.io/"&gt;Git For Windows&lt;/a&gt; (optional but recommended)&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;You can choose your preferred Text Editor or IDE to write python code, or you can pick one of our recommendation list:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://www.jetbrains.com/pycharm-edu/"&gt;PyCharm&lt;/a&gt;&lt;/li&gt; &lt;li&gt;IDLE3 (already integrated with Python installer)&lt;/li&gt; &lt;li&gt;Visual Studio + Python Tools extension&lt;/li&gt; &lt;li&gt;&lt;a href="http://ninja-ide.org/home/"&gt;Ninja-IDE&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://www.pydev.org/"&gt;PyDev&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://netbeans.org/"&gt;Netbeans&lt;/a&gt; &amp;gt;= 8.1 + Python plugin&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;For Linux (Ubuntu) Users:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;Python 3 (should be already installed, use python3 command instead of python)&lt;/li&gt; &lt;li&gt;Git&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;You can choose your preferred Text Editor or IDE or one of our suggestion list:&lt;/p&gt; &lt;ul&gt; &lt;li&gt;PyCharm&lt;/li&gt; &lt;li&gt;Vim / emacs / nano / ed (or cat command if you want)&lt;/li&gt; &lt;li&gt;IDLE3&lt;/li&gt; &lt;li&gt;Ninga-IDE&lt;/li&gt; &lt;li&gt;Netbeans &amp;gt;= 8.1 + Python plugin&lt;/li&gt; &lt;li&gt;IPython3 (Jupyter console)&lt;/li&gt; &lt;/ul&gt; &lt;h2&gt;Other: (We will keep it for Saturday)&lt;/h2&gt; &lt;p&gt;We will use the Django Framework on the training. To install Django, you need to use the pip command (already integrated on Python Windows installer, or install python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:&lt;/p&gt; &lt;p&gt;&lt;code&gt;shell pip install Django&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;Requirements:&lt;/h2&gt; &lt;p&gt;We will use GitHub ( http://github.com/ ) to host our projects code. To be able to join the development, every member is required to create a GitHub account and send us his profile link on email (&lt;a href="mailto:mtcfss@outlook.com"&gt;mtcfss@outlook.com&lt;/a&gt;).&lt;/p&gt; &lt;p&gt;Keep in mind that GitHub is #1 code hosting service and you will mostly keep using it outside our training on future.&lt;/p&gt; &lt;h2&gt;Learning Sources:&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;Python 3:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/apprenez-a-programmer-en-python"&gt;Open Class Room Tutorial&lt;/a&gt; (French)&lt;/li&gt; &lt;li&gt;&lt;a href="https://docs.python.org/3/"&gt;Python Official Documentation&lt;/a&gt;:&lt;/li&gt; &lt;li&gt;&lt;a href="https://docs.python.org/3/tutorial/index.html"&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://docs.python.org/3/library/index.html"&gt;Official Library Reference&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Django:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django"&gt;Open Class Room Tutorial&lt;/a&gt; (French)&lt;/li&gt; &lt;li&gt;&lt;a href="https://docs.djangoproject.com/en/1.9/"&gt;Django Official Documentation&lt;/a&gt;:&lt;/li&gt; &lt;li&gt;&lt;a href="https://docs.djangoproject.com/en/1.9/intro/overview/"&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;Git:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://try.github.io/"&gt;GitHub Tutorial&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/manage-your-code-with-git-and-github"&gt;Open Class Room Tutorial&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://git-scm.com/doc"&gt;Git Official Documentation&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;HTML5 &amp;amp; CSS3:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3"&gt;Open Class Room Tutorial&lt;/a&gt; (French)&lt;/li&gt; &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/"&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt; &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web"&gt;Web Docs&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="http://v4-alpha.getbootstrap.com/getting-started/introduction/"&gt;Bootstrap 4 Doc&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;&lt;strong&gt;JavaScript:&lt;/strong&gt;&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href="https://openclassrooms.com/courses/dynamisez-vos-sites-web-avec-javascript"&gt;Open Class Room Tutorial&lt;/a&gt; (French)&lt;/li&gt; &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/"&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt; &lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"&gt;JavaScript Guide&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/"&gt;Angular 2 Doc&lt;/a&gt;:&lt;/li&gt; &lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Quick Start&lt;/a&gt;&lt;/li&gt; &lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Guide&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt;
-            </description>
-            <link>https://lejenome.github.io/#!post/3</link>
-            <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
-            <guid>https://lejenome.github.io/#!post/3</guid>
-        </item>
+    <item>
+      <title>[MTCFSS] Python Training – Get Ready</title>
+      <description>&lt;p&gt;This is our check list for any member interested to join the training:&lt;/p&gt;
+&lt;h2&gt;Tools:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;For Windows Users:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 3.5 (&lt;a href="https://www.python.org/ftp/python/3.5.1/python-3.5.1-amd64.exe"&gt;64bit&lt;/a&gt;)
+  (&lt;a href="https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe"&gt;32bit&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://desktop.github.com/"&gt;GitHub Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git-for-windows.github.io/"&gt;Git For Windows&lt;/a&gt; (optional but recommended)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can choose your preferred Text Editor or IDE to write python code, or you
+can pick one of our recommendation list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://www.jetbrains.com/pycharm-edu/"&gt;PyCharm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;IDLE3 (already integrated with Python installer)&lt;/li&gt;
+&lt;li&gt;Visual Studio + Python Tools extension&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://ninja-ide.org/home/"&gt;Ninja-IDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.pydev.org/"&gt;PyDev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://netbeans.org/"&gt;Netbeans&lt;/a&gt; &amp;gt;= 8.1 + Python plugin&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;For Linux (Ubuntu) Users:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Python 3 (should be already installed, use python3 command instead of python)&lt;/li&gt;
+&lt;li&gt;Git&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can choose your preferred Text Editor or IDE or one of our suggestion list:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;PyCharm&lt;/li&gt;
+&lt;li&gt;Vim / emacs / nano / ed (or cat command if you want)&lt;/li&gt;
+&lt;li&gt;IDLE3&lt;/li&gt;
+&lt;li&gt;Ninga-IDE&lt;/li&gt;
+&lt;li&gt;Netbeans &amp;gt;= 8.1 + Python plugin&lt;/li&gt;
+&lt;li&gt;IPython3 (Jupyter console)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Other: (We will keep it for Saturday)&lt;/h2&gt;
+&lt;p&gt;We will use the Django Framework on the training. To install Django, you need to
+use the pip command (already integrated on Python Windows installer, or install
+python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+    pip install Django&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Requirements:&lt;/h2&gt;
+&lt;p&gt;We will use GitHub ( http://github.com/ ) to host our projects code. To be able
+to join the development, every member is required to create a GitHub account and
+send us his profile link on email (&lt;a href="mailto:mtcfss@outlook.com"&gt;mtcfss@outlook.com&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Keep in mind that GitHub is #1 code hosting service and you will mostly keep
+using it outside our training on future.&lt;/p&gt;
+&lt;h2&gt;Learning Sources:&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Python 3:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://openclassrooms.com/courses/apprenez-a-programmer-en-python"&gt;Open Class Room Tutorial&lt;/a&gt;
+  (French)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/"&gt;Python Official Documentation&lt;/a&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/tutorial/index.html"&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.python.org/3/library/index.html"&gt;Official Library Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Django:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django"&gt;Open Class Room Tutorial&lt;/a&gt;
+  (French)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.djangoproject.com/en/1.9/"&gt;Django Official Documentation&lt;/a&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://docs.djangoproject.com/en/1.9/intro/overview/"&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Git:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://try.github.io/"&gt;GitHub Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://openclassrooms.com/courses/manage-your-code-with-git-and-github"&gt;Open Class Room Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://git-scm.com/doc"&gt;Git Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;HTML5 &amp;amp; CSS3:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3"&gt;Open Class Room Tutorial&lt;/a&gt;
+  (French)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/"&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web"&gt;Web Docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://v4-alpha.getbootstrap.com/getting-started/introduction/"&gt;Bootstrap 4 Doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;JavaScript:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://openclassrooms.com/courses/dynamisez-vos-sites-web-avec-javascript"&gt;Open Class Room Tutorial&lt;/a&gt;
+  (French)&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/"&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"&gt;JavaScript Guide&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/"&gt;Angular 2 Doc&lt;/a&gt;:&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Quick Start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <link>https://lejenome.github.io/#!post/3</link>
+      <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/3</guid>
+    </item>
 
+    <item>
+      <title>[Syteup] creating a basic plugin, segment as an example</title>
+      <description>&lt;p&gt;Here, we will add Segment support to Syteup.&lt;/p&gt;
+&lt;p&gt;Segment is "a customer data hub". It makes it easy to integrate third-party
+tools (analytics, advertising,...) to your application throw a all-in-one single
+library.&lt;/p&gt;
+&lt;p&gt;To add Segment plugin support to Syteup, we needs just 3 simple steps:&lt;/p&gt;
+&lt;p&gt;1- create &lt;code&gt;plugins/segment.js&lt;/code&gt; plugin code file that will export the plugin
+module to the window object:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+(function (window) {
+    "use strict";
+    function setupSegment(settings) {
+        window.analytics = window.analytics || [];
+        window.analytics.methods = [
+            "identify",
+            "group",
+            "track",
+            "page",
+            "pageview",
+            "alias",
+            "ready",
+            "on",
+            "once",
+            "off",
+            "trackLink",
+            "trackForm",
+            "trackClick",
+            "trackSubmit"
+        ];
+        window.analytics.factory = function (method) {
+            return function () {
+                var args = Array.prototype.slice.call(arguments);
+                args.unshift(method);
+                window.analytics.push(args);
+                return window.analytics;
+            };
+        };
+        for (var i = 0; i &amp;lt; window.analytics.methods.length; i++) {
+            var key = window.analytics.methods[i];
+            window.analytics[key] = window.analytics.factory(key);
+        }
+        window.analytics.load = function (key) {
+            if (document.getElementById("analytics-js"))
+                return;
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.id = "analytics-js";
+            script.async = true;
+            script.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
+            var first = document.getElementsByTagName("script")[0];
+            first.parentNode.insertBefore(script, first);
+        };
+        // Add a version to keep track of what's in the wild.
+        window.analytics.SNIPPET_VERSION = "2.0.9";
+        // Load Analytics.js with your key, which will automatically
+        // load the tools you've enabled for your account. Boosh!
+        window.analytics.load(settings["write_key"]);
+        // Make the first page call to load the integrations. If
+        // you'd like to manually name or tag the page, edit or
+        // move this call however you'd like.
+        window.analytics.page({ title: "Syteup" });
+    }
+    window.segmentPlugin = { setup: setupSegment };
+}(window));&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;what we did is to add segment code (copied from segment tutorial) into the
+&lt;code&gt;setupSegment&lt;/code&gt; function, then we export it as &lt;code&gt;setup&lt;/code&gt; item on the plugin module
+which should be named &lt;code&gt;segmentPlugin&lt;/code&gt;. As you note, the user depending write_key
+is readed from the &lt;code&gt;settings&lt;/code&gt; object of the plugin which will be added on the
+third step.&lt;/p&gt;
+&lt;p&gt;2- we add a script tag to the &lt;code&gt;index.html&lt;/code&gt; file that will load the plugin code.&lt;/p&gt;
+&lt;p&gt;the script tag should be included on the plugins section just before
+&lt;code&gt;js/plugins.js&lt;/code&gt; tag and it should be loaded on defer mode&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;html
+&amp;lt;script defer src="plugins/segment.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;3- Finally, we add the plugin settings to the configuration file &lt;code&gt;config.json&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;option to turn on/off the plugin inside the &lt;code&gt;plugins&lt;/code&gt; option:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"plugins": {
+    "segment": true
+}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;the plugin settings object that includes all user depending settings (here we
+will need the user's write_key) on the &lt;code&gt;plugins_settings option&lt;/code&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"plugins_settings": {
+    "segment": {
+        "write_key": "?????????"
+    }
+}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;All Done! we are ready to test our plugin.&lt;/p&gt;
+&lt;p&gt;Don't be lazy, and send me a pull request with your plugins code and other
+patches to
+&lt;a href="https://github.com/lejenome/syteup"&gt;https://github.com/lejenome/syteup&lt;/a&gt; !&lt;/p&gt;</description>
+      <link>https://lejenome.github.io/#!post/2</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/2</guid>
+    </item>
 
-        <item>
-            <title>[Syteup] creating a basic plugin, segment as an example</title>
-            <description>&lt;p&gt;Here, we will add Segment support to Syteup.&lt;/p&gt; &lt;p&gt;Segment is "a customer data hub". It makes it easy to integrate third-party tools (analytics, advertising,...) to your application throw a all-in-one single library.&lt;/p&gt; &lt;p&gt;To add Segment plugin support to Syteup, we needs just 3 simple steps:&lt;/p&gt; &lt;p&gt;1- create &lt;code&gt;plugins/segment.js&lt;/code&gt; plugin code file that will export the plugin module to the window object:&lt;/p&gt; &lt;p&gt;&lt;code&gt;javascript (function (window) { "use strict"; function setupSegment(settings) { window.analytics = window.analytics || []; window.analytics.methods = [ "identify", "group", "track", "page", "pageview", "alias", "ready", "on", "once", "off", "trackLink", "trackForm", "trackClick", "trackSubmit" ]; window.analytics.factory = function (method) { return function () { var args = Array.prototype.slice.call(arguments); args.unshift(method); window.analytics.push(args); return window.analytics; }; }; for (var i = 0; i &amp;lt; window.analytics.methods.length; i++) { var key = window.analytics.methods[i]; window.analytics[key] = window.analytics.factory(key); } window.analytics.load = function (key) { if (document.getElementById("analytics-js")) return; var script = document.createElement("script"); script.type = "text/javascript"; script.id = "analytics-js"; script.async = true; script.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js"; var first = document.getElementsByTagName("script")[0]; first.parentNode.insertBefore(script, first); }; // Add a version to keep track of what's in the wild. window.analytics.SNIPPET_VERSION = "2.0.9"; // Load Analytics.js with your key, which will automatically // load the tools you've enabled for your account. Boosh! window.analytics.load(settings["write_key"]); // Make the first page call to load the integrations. If // you'd like to manually name or tag the page, edit or // move this call however you'd like. window.analytics.page({ title: "Syteup" }); } window.segmentPlugin = { setup: setupSegment }; }(window));&lt;/code&gt;&lt;/p&gt; &lt;p&gt;what we did is to add segment code (copied from segment tutorial) into the &lt;code&gt;setupSegment&lt;/code&gt; function, then we export it as &lt;code&gt;setup&lt;/code&gt; item on the plugin module which should be named &lt;code&gt;segmentPlugin&lt;/code&gt;. As you note, the user depending write_key is readed from the &lt;code&gt;settings&lt;/code&gt; object of the plugin which will be added on the third step.&lt;/p&gt; &lt;p&gt;2- we add a script tag to the &lt;code&gt;index.html&lt;/code&gt; file that will load the plugin code.&lt;/p&gt; &lt;p&gt;the script tag should be included on the plugins section just before &lt;code&gt;js/plugins.js&lt;/code&gt; tag and it should be loaded on defer mode&lt;/p&gt; &lt;p&gt;&lt;code&gt;html &amp;lt;script defer src="plugins/segment.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt; &lt;p&gt;3- Finally, we add the plugin settings to the configuration file &lt;code&gt;config.json&lt;/code&gt;&lt;/p&gt; &lt;p&gt;option to turn on/off the plugin inside the &lt;code&gt;plugins&lt;/code&gt; option:&lt;/p&gt; &lt;p&gt;&lt;code&gt;javascript "plugins": { "segment": true }&lt;/code&gt;&lt;/p&gt; &lt;p&gt;the plugin settings object that includes all user depending settings (here we will need the user's write_key) on the &lt;code&gt;plugins_settings option&lt;/code&gt;:&lt;/p&gt; &lt;p&gt;&lt;code&gt;javascript "plugins_settings": { "segment": { "write_key": "?????????" } }&lt;/code&gt;&lt;/p&gt; &lt;p&gt;All Done! we are ready to test our plugin.&lt;/p&gt; &lt;p&gt;Don't be lazy, and send me a pull request with your plugins code and other patches to &lt;a href="https://github.com/lejenome/syteup"&gt;https://github.com/lejenome/syteup&lt;/a&gt; !&lt;/p&gt;</description>
-            <link>https://lejenome.github.io/#!post/2</link>
-            <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
-            <guid>https://lejenome.github.io/#!post/2</guid>
-        </item>
-
-
-        <item>
-            <title>Syteup Introduction</title>
-            <description>&lt;h1&gt;Syteup&lt;/h1&gt; &lt;p&gt;&lt;strong&gt;Syteup&lt;/strong&gt; (a complete rewrite of &lt;a href="https://github.com/rigoneri/syte"&gt;Syte&lt;/a&gt;) is a really simple but powerful packaged personal site that has social integrations like GitHub, Dribbble, Instagram, Tumblr, Wordpress, Linkedin, Last.fm, SoundCloud, Bitbucket, StackOverflow, Flickr.&lt;/p&gt; &lt;h1&gt;Demo&lt;/h1&gt; &lt;p&gt;You can see Syteup in action on &lt;a href="http://lejenome.github.io/syteup/demo"&gt;here&lt;/a&gt;.&lt;/p&gt; &lt;h2&gt;Social Integrations&lt;/h2&gt; &lt;h3&gt;Blog&lt;/h3&gt; &lt;p&gt;Syteup use &lt;a href="http://tumblr.com"&gt;Tumblr&lt;/a&gt;, &lt;a href="http://wordpress.com/"&gt;Wordpress.com&lt;/a&gt; or &lt;a href="https://www.blogger.com/"&gt;Blogger&lt;/a&gt; for blogging and your blog will be the primary page of the site.&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Wordpress" src="docs/imgs/screenshot-blog-wordpress.png" /&gt;&lt;/p&gt; &lt;h3&gt;Social Services&lt;/h3&gt; &lt;p&gt;Suteup currently support many different social services:&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/"&gt;Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Github" src="docs/imgs/screenshot-github.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.flickr.com/"&gt;Flickr&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Flickr" src="docs/imgs/screenshot-flickr.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://soundcloud.com/"&gt;SoundCloud&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp SoundCloud" src="docs/imgs/screenshot-soundcloud.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="http://www.last.fm/"&gt;Last.fm&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Last.fm" src="docs/imgs/screenshot-lastfm.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="http://stackoverflow.com/"&gt;StackOverflow&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp StackOverflow" src="docs/imgs/screenshot-stackoverflow.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://bitbucket.org/"&gt;Bitbucket&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Bitbucket" src="docs/imgs/screenshot-bitbucket.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Dribbble" src="docs/imgs/screenshot-dribbble.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="http://instagram.com/"&gt;Instagram&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Instagram" src="docs/imgs/screenshot-instagram.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/"&gt;Youtube&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Youtube" src="docs/imgs/screenshot-youtube.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.linkedin.com/"&gt;LinkedIn&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp LinkedIn" src="docs/imgs/screenshot-linkedin.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.facebook.com/"&gt;Facebook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Facebook" src="docs/imgs/screenshot-facebook.png" /&gt;&lt;/p&gt; &lt;p&gt;&lt;strong&gt;&lt;a href="https://plus.google.com/"&gt;Google+&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt; &lt;p&gt;&lt;img alt="Syteyp Google+" src="docs/imgs/screenshot-gplus.png" /&gt;&lt;/p&gt; &lt;p&gt;Some other services integration is planed. For more up to date list of currently supported services and planed services isavailable on &lt;a href="https://github.com/lejenome/syteup/tree/master/TODO.md"&gt;TODO.md&lt;/a&gt; file.&lt;/p&gt; &lt;p&gt;NOTE: Some services can not be supported as accessing them from client side will give crackers full access to your account (e.g: Twitter, Foursquare) or the service provider does not support server side requirements (e.g: neither SOP nor jsonp are supported by Steam,...), if you want them to be implemented, ask the service provider to supported limited permission access tokens or other needed requirements.&lt;/p&gt; &lt;h2&gt;Installation&lt;/h2&gt; &lt;p&gt;Syteup dose not require any specific server side future as it is server-less moder HTML5 webapp.&lt;/p&gt; &lt;p&gt;First, you need to setup Syteup requirements by runnig the following commands: &lt;code&gt;shell npm install bower update&lt;/code&gt; then, you needs to rename &lt;a href="https://github.com/lejenome/syteup/tree/master/src/config.json.sample"&gt;src/config.json.sample&lt;/a&gt; file to &lt;code&gt;config.json&lt;/code&gt; and customize it for your needs as explained on the flowing section then run &lt;code&gt;shell npm run dist&lt;/code&gt; which will update the &lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt; folder with your new settings. Then copy the contents of &lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt; folder to you server and then everything is ready.&lt;/p&gt; &lt;p&gt;You can also use make command for custom src and dist folder and config file too. &lt;code&gt;shell make -j1 SRC=~/syteup/src DIST=/srv/website/www CONF=~/my_config.json&lt;/code&gt;&lt;/p&gt; &lt;h2&gt;Setup&lt;/h2&gt; &lt;p&gt;&lt;strong&gt;IN PROGRESS&lt;/strong&gt;&lt;/p&gt; &lt;h3&gt;General Setup&lt;/h3&gt; &lt;p&gt;Change all avatars images on &lt;a href="src/imgs"&gt;src/imgs&lt;/a&gt; folder (pic.png, favicon.ico, apple-touch-icon*.png) by your avatar images with same sizes.&lt;/p&gt; &lt;p&gt;Setup the options of &lt;code&gt;fields&lt;/code&gt; object on &lt;code&gt;config.json&lt;/code&gt; file&lt;/p&gt; &lt;p&gt;&lt;code&gt;javascript "fields": { "username": String, // the pseudonym (nickname) you mostly known by "realname": String, // your complete real name "description": String, // a very short 'About Me' line "url": String, // the url of your website "contact": { "email": String, // your email "mobile": String, // [optional] your phone number e.g: (216) 00000000 "tel": String, // [optional] your telephone number e.g: (216) 00000000 "fax": String, // [optional] your fax number e.g: (216) 1111111 "address": String, // [optional] just a short address e.g: Texas, USA "pgp_url": String, // [optional] url of your public pgp key file on your site e.g: /pubkey.asc "fingerprint": String, // [optional] your pgp key fingerprint e.g: 3A1D ADDD 332D 2EFB F816 21C3 84D8 5721 7365 9C9D "ssh_url": String // [optional] your ssh public certificate file url on your site e.g: /id_rsa.pub }&lt;/code&gt;&lt;/p&gt; &lt;h3&gt;Blog Setup&lt;/h3&gt; &lt;p&gt;Set &lt;code&gt;blog_platform&lt;/code&gt; to the bloggin platform that you will use, availbale platforms are &lt;strong&gt;"tumblr"&lt;/strong&gt; and &lt;strong&gt;"blogger"&lt;/strong&gt; and &lt;strong&gt;"wordpress"&lt;/strong&gt;.&lt;/p&gt; &lt;p&gt;Next, you need to setup the options of the choosen platform on the &lt;code&gt;blogs_settings.&amp;lt;platform_name&amp;gt;&lt;/code&gt; object as follow:&lt;/p&gt; &lt;h4&gt;Wordpress&lt;/h4&gt; &lt;p&gt;&lt;code&gt;javascript "wordpress": { "blog_url": String, // the url of your wordpress.com blog "tag_slug": String // [optional] tags of posts to import (space separated) }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Blogger&lt;/h4&gt; &lt;p&gt;&lt;code&gt;javascript "blogger": { "blog_url": String, // your blog url "blog_id": String, // your blog id number (you can use https://developers.google.com/apis-explorer/#p/blogger/v3/blogger.blogs.getByUrl) "api_key": String, // your api key (See Below) "tag_slug": String // [optional] tags of posts to import (comma separated) }&lt;/code&gt; Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section below.&lt;/p&gt; &lt;h4&gt;Tumblr&lt;/h4&gt; &lt;p&gt;&lt;code&gt;javascript "tumblr": { "blog_url": String, // your blog url "api_key": String, // your api key (See Below) "tag_slug": String // [optional] tag of posts to import (just one tag) }&lt;/code&gt; To get your &lt;code&gt;api_key&lt;/code&gt;, register a new app &lt;a href="https://www.tumblr.com/oauth/register"&gt;here&lt;/a&gt; with any name and your website url as the default callback url. The "OAuth Consumer Key" of the application is your &lt;code&gt;api_key&lt;/code&gt;.&lt;/p&gt; &lt;h3&gt;Services Setup&lt;/h3&gt; &lt;p&gt;For every service you would to enable, you should set &lt;code&gt;services.&amp;lt;service_name&amp;gt;&lt;/code&gt; on &lt;code&gt;config.json&lt;/code&gt; file to &lt;code&gt;true&lt;/code&gt; and setup it options object &lt;code&gt;services_settings.&amp;lt;service_name&amp;gt;&lt;/code&gt; on same file.&lt;/p&gt; &lt;p&gt;Disabled services can safely removed from booth &lt;code&gt;services&lt;/code&gt; and &lt;code&gt;services_settings&lt;/code&gt; objects on the config file.&lt;/p&gt; &lt;h4&gt;Github&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.github&lt;/code&gt; and configure &lt;code&gt;services_settings.github&lt;/code&gt; as follow: &lt;code&gt;javascript "github": { "username": String // your username }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;StackOverflow&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.stackoverflow&lt;/code&gt; and configure &lt;code&gt;services_settings.stackoverflow&lt;/code&gt; as follow: &lt;code&gt;javascript "stackoverflow": { "username": String, // your username "user_id": String // your user id number }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Flickr&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.flickr&lt;/code&gt; and configure &lt;code&gt;services_settings.flickr&lt;/code&gt; as follow: &lt;code&gt;javascript "flickr": { "username": String, // your username "user_id": String // your user id (you can get it from http://idgettr.com/) }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Bitbucket&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.bitbucket&lt;/code&gt; and configure &lt;code&gt;services_settings.bitbucket&lt;/code&gt; as follow: &lt;code&gt;javascript "bitbucket": { "username": String, // your username "show_forks": Boolean // show number of forks (It require a http request for every repository }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;SoundCloud&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.soundcloud&lt;/code&gt; and configure &lt;code&gt;services_settings.soundcloud&lt;/code&gt; as follow: &lt;code&gt;javascript "soundcloud": { "username": String, // your username "client_id": String, // your client_id (See Below) "show_artwork": Boolean, // show tracks artworks "player_color": String // color of tracks player }&lt;/code&gt; To get an &lt;code&gt;client_id&lt;/code&gt;, register an app &lt;a href="http://soundcloud.com/you/apps"&gt;here&lt;/a&gt; with any name you want, after you accept their Developer Policies, you get your Client ID.&lt;/p&gt; &lt;h4&gt;Last.fm&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.lastfm&lt;/code&gt; and configure &lt;code&gt;services_settings.lastfm&lt;/code&gt; as follow: &lt;code&gt;javascript "lastfm": { "username": String, // your username "api_key": String // your api key (See Below) }&lt;/code&gt; To get an &lt;code&gt;api_key&lt;/code&gt;, register a non comercial account &lt;a href="http://www.last.fm/api/account/create"&gt;here&lt;/a&gt; with any name and a small description, then you will get your API Key.&lt;/p&gt; &lt;h4&gt;Dribbble&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.dribbble&lt;/code&gt; and configure &lt;code&gt;services_settings.dribbble&lt;/code&gt; as follow: &lt;code&gt;javascript "dribbble": { "username": String // your username }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Youtube&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.youtube&lt;/code&gt; and configure &lt;code&gt;services_settings.youtube&lt;/code&gt; as follow: &lt;code&gt;javascript "youtube": { "username": String, // your username "api_key": String // your api key (See Below) }&lt;/code&gt; To get an &lt;code&gt;api_key&lt;/code&gt;, create a project &lt;a href="https://console.developers.google.com/"&gt;here&lt;/a&gt; with any name then click "Enable an API" and enable the API you need ("YouTube Data API v3" for YouTube, "Blogger API v3" for Blogger, "Google+ API" for Google+). Then on "Cendentials" tab, click "Create a new Key" then "Browser Key" and enter your website url then "Create" to get your API KEY.&lt;/p&gt; &lt;h4&gt;Google+&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.gplus&lt;/code&gt; and configure &lt;code&gt;services_settings.gplus&lt;/code&gt; as follow: &lt;code&gt;javascript "gplus": { "user_id": String, // your user id number "api_key": String // your api key (See Below) }&lt;/code&gt; Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section above.&lt;/p&gt; &lt;h4&gt;Facebook&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.facebook&lt;/code&gt; and configure &lt;code&gt;services_settings.facebook&lt;/code&gt; as follow: &lt;code&gt;javascript "facebook": { "username": String, // your username "access_token": String // your access token key (See Below) }&lt;/code&gt; to get you read only &lt;code&gt;access_token&lt;/code&gt;, create a web application &lt;a href="https://developers.facebook.com/quickstarts/?platform=web"&gt;here&lt;/a&gt;. Then, choose it from "Application" menu from this &lt;a href="https://developers.facebook.com/tools/explorer/"&gt;page&lt;/a&gt; and click "Get Access Token" and select booth "user_activities", "user_about_me" and "user_status". After confirming, you will get your final &lt;code&gt;access_token&lt;/code&gt; on the Access Token field.&lt;/p&gt; &lt;h4&gt;Instagram&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.instagram&lt;/code&gt; and configure &lt;code&gt;services_settings.instagram&lt;/code&gt; as follow: &lt;code&gt;javascript "instagram": { "username": String, // your username "access_token": String, // your access token key (TODO: NEED MORE DOCUMENTATION) "user_id": String // your user id number }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;LinkedIn&lt;/h4&gt; &lt;p&gt;enable &lt;code&gt;services.linkedin&lt;/code&gt; and configure &lt;code&gt;services_settings.linkedin&lt;/code&gt; as follow: &lt;code&gt;javascript "linkedin": { "username": String, // your username "access_token": String // your access token key (See Below) }&lt;/code&gt; To get your read only &lt;code&gt;access_token&lt;/code&gt;, register a new app &lt;a href="https://www.linkedin.com/secure/developer"&gt;here&lt;/a&gt;. Select "r_basicprofile" and "r_fullprofile" as your default scopes and add &lt;code&gt;http://lejenome.me/tests/syteup-settings/linkedin.html?client_id=&amp;lt;YOUR_API_KEY&amp;gt;&amp;amp;client_secret=&amp;lt;YOUR_SECRET_API&amp;gt;&lt;/code&gt; to "OAuth 2.0 Redirect URLs" after replacing the two parameters with your API Key and your Secret Key. Then use this &lt;a href="http://lejenome.me//tests/syteup-settings/linkedin.html"&gt;link&lt;/a&gt; to request your access token.&lt;/p&gt; &lt;h3&gt;Plugins setup&lt;/h3&gt; &lt;p&gt;Enabling a plugin depend on the type of plugin, either it's a generic plugin or a blog plugin. For generic plugins, set &lt;code&gt;plugins.&amp;lt;plugin_name&amp;gt;&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;. and for blogs plugins, set &lt;code&gt;blogs_settings.plugins.&amp;lt;plugin_name&amp;gt;&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt; &lt;p&gt;Settings of every plugin are availbale on the &lt;code&gt;plugins_settings.&amp;lt;plugin_name&amp;gt;&lt;/code&gt; object on &lt;code&gt;config.json&lt;/code&gt; file as follow:&lt;/p&gt; &lt;h4&gt;Disqus&lt;/h4&gt; &lt;p&gt;This plugin will enable disqus comments on every post. Just enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;code&gt;plugins_settings.disqus&lt;/code&gt; as follow: &lt;code&gt;javascript "disqus": { "url": String, // [optional] your disqus profile url "shortname": String, // your username "just_count": Boolean // [optional] just show the number of comments instead of the 'Show Comments' buttons }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;ShareThis&lt;/h4&gt; &lt;p&gt;This plugin will add ShareThis widget to every post. Just enable &lt;code&gt;blogs_settings.plugins.sharethis&lt;/code&gt; and configure &lt;code&gt;plugins_settings.sharethis&lt;/code&gt; as follow: &lt;code&gt;javascript "sharethis": { "publisher_key": String // your key }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;RSS&lt;/h4&gt; &lt;p&gt;This plugin will add RSS entry that any browser can subscribe to. Just enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_settings.rss&lt;/code&gt; as follow: &lt;code&gt;javascript "rss": { "url": String // the url of your rss feed file or an external rss feed from your blog platform }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Google Analytics&lt;/h4&gt; &lt;p&gt;This plugin will enable Google Analytics tracking. Just enable &lt;code&gt;plugins.google_analytics&lt;/code&gt; and configure &lt;code&gt;plugins_settings.google_analytics&lt;/code&gt; as follow: &lt;code&gt;javascript "google_analytics": { "tracking_id": String // your tracking id e.g: UA-XXXXXXX-2 }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Woopra&lt;/h4&gt; &lt;p&gt;This plugin will enable Woopra tracking. Just enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins_settings.woopra&lt;/code&gt; as follow: &lt;code&gt;javascript "woopra": { "tracking_domain": String, // TODO "idle_timeout": Number, // TODO "include_query": Boolean // TODO }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Segment&lt;/h4&gt; &lt;p&gt;This plugin will enable Segment services. Just enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugins_settings.segment&lt;/code&gt; as follow: &lt;code&gt;javascript "segment": { "write_key": String // your write key }&lt;/code&gt;&lt;/p&gt; &lt;h4&gt;Gratipay Widget&lt;/h4&gt; &lt;p&gt;This plugin will add Gratupay widget bollow the navigation menu. Just enable &lt;code&gt;plugins.gratipay_widget&lt;/code&gt; and configure &lt;code&gt;plugins_settings.gratipay_widget&lt;/code&gt; as follow: &lt;code&gt;javascript "gratipay_widget": { "username": String // your gratipay username }&lt;/code&gt;&lt;/p&gt;
-            </description>
-            <link>https://lejenome.github.io/#!post/1</link>
-            <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
-            <guid>https://lejenome.github.io/#!post/1</guid>
-        </item>
-
-    </channel>
+    <item>
+      <title>Syteup Introduction</title>
+      <description>&lt;h1&gt;Syteup&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Syteup&lt;/strong&gt; (a complete rewrite of &lt;a href="https://github.com/rigoneri/syte"&gt;Syte&lt;/a&gt;) is a
+really simple but powerful packaged personal site that has social integrations
+like GitHub, Dribbble, Instagram, Tumblr, Wordpress,
+Linkedin, Last.fm, SoundCloud, Bitbucket, StackOverflow, Flickr.&lt;/p&gt;
+&lt;h1&gt;Demo&lt;/h1&gt;
+&lt;p&gt;You can see Syteup in action on &lt;a href="http://lejenome.github.io/syteup/demo"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Social Integrations&lt;/h2&gt;
+&lt;h3&gt;Blog&lt;/h3&gt;
+&lt;p&gt;Syteup use &lt;a href="http://tumblr.com"&gt;Tumblr&lt;/a&gt;, &lt;a href="http://wordpress.com/"&gt;Wordpress.com&lt;/a&gt;
+or &lt;a href="https://www.blogger.com/"&gt;Blogger&lt;/a&gt; for blogging and your blog will be the
+primary page of the site.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Wordpress" src="docs/imgs/screenshot-blog-wordpress.png" /&gt;&lt;/p&gt;
+&lt;h3&gt;Social Services&lt;/h3&gt;
+&lt;p&gt;Suteup currently support many different social services:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/"&gt;Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Github" src="docs/imgs/screenshot-github.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.flickr.com/"&gt;Flickr&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Flickr" src="docs/imgs/screenshot-flickr.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://soundcloud.com/"&gt;SoundCloud&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp SoundCloud" src="docs/imgs/screenshot-soundcloud.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://www.last.fm/"&gt;Last.fm&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Last.fm" src="docs/imgs/screenshot-lastfm.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://stackoverflow.com/"&gt;StackOverflow&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp StackOverflow" src="docs/imgs/screenshot-stackoverflow.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://bitbucket.org/"&gt;Bitbucket&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Bitbucket" src="docs/imgs/screenshot-bitbucket.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Dribbble" src="docs/imgs/screenshot-dribbble.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="http://instagram.com/"&gt;Instagram&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Instagram" src="docs/imgs/screenshot-instagram.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/"&gt;Youtube&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Youtube" src="docs/imgs/screenshot-youtube.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.linkedin.com/"&gt;LinkedIn&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp LinkedIn" src="docs/imgs/screenshot-linkedin.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://www.facebook.com/"&gt;Facebook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Facebook" src="docs/imgs/screenshot-facebook.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href="https://plus.google.com/"&gt;Google+&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Google+" src="docs/imgs/screenshot-gplus.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Some other services integration is planed. For more up to date list of currently
+supported services and planed services isavailable on
+&lt;a href="https://github.com/lejenome/syteup/tree/master/TODO.md"&gt;TODO.md&lt;/a&gt; file.&lt;/p&gt;
+&lt;p&gt;NOTE: Some services can not be supported as accessing them from client side will
+give crackers full access to your account (e.g: Twitter, Foursquare) or the service provider does not support
+server side requirements (e.g: neither SOP nor jsonp are supported by Steam,...),
+if you want them to be implemented, ask the service provider to supported limited
+permission access tokens or other needed requirements.&lt;/p&gt;
+&lt;h2&gt;Installation&lt;/h2&gt;
+&lt;p&gt;Syteup dose not require  any specific server side future as it is server-less
+moder HTML5 webapp.&lt;/p&gt;
+&lt;p&gt;First, you need to setup Syteup requirements by runnig the following commands:
+&lt;code&gt;shell
+npm install
+bower update&lt;/code&gt;
+then, you needs to rename
+&lt;a href="https://github.com/lejenome/syteup/tree/master/src/config.json.sample"&gt;src/config.json.sample&lt;/a&gt;
+file to &lt;code&gt;config.json&lt;/code&gt; and customize it for your needs as explained on the
+flowing section then run
+&lt;code&gt;shell
+npm run dist&lt;/code&gt;
+which will update the
+&lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt;
+folder with your new settings. Then copy the contents of &lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt;
+folder to you server and then everything is ready.&lt;/p&gt;
+&lt;p&gt;You can also use make command for custom src and dist folder and config file
+too.
+&lt;code&gt;shell
+make -j1 SRC=~/syteup/src DIST=/srv/website/www CONF=~/my_config.json&lt;/code&gt;&lt;/p&gt;
+&lt;h2&gt;Setup&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;IN PROGRESS&lt;/strong&gt;&lt;/p&gt;
+&lt;h3&gt;General Setup&lt;/h3&gt;
+&lt;p&gt;Change all avatars images on &lt;a href="src/imgs"&gt;src/imgs&lt;/a&gt; folder (pic.png, favicon.ico,
+apple-touch-icon*.png) by your avatar images with same sizes.&lt;/p&gt;
+&lt;p&gt;Setup the options of &lt;code&gt;fields&lt;/code&gt; object on &lt;code&gt;config.json&lt;/code&gt; file&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"fields": {
+  "username": String, // the pseudonym (nickname) you mostly known by
+  "realname": String, // your complete real name
+  "description": String, // a very short 'About Me' line
+  "url": String, // the url of your website
+  "contact": {
+    "email": String, // your email
+    "mobile": String, // [optional] your phone number e.g: (216) 00000000
+    "tel": String, // [optional] your telephone number e.g: (216) 00000000
+    "fax": String, // [optional] your fax number e.g: (216) 1111111
+    "address": String, // [optional] just a short address e.g: Texas, USA
+    "pgp_url": String, // [optional] url of your public pgp key file on your site e.g: /pubkey.asc
+    "fingerprint": String, // [optional] your pgp key fingerprint e.g: 3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D
+    "ssh_url": String // [optional] your ssh public certificate file url on your site e.g: /id_rsa.pub
+  }&lt;/code&gt;&lt;/p&gt;
+&lt;h3&gt;Blog Setup&lt;/h3&gt;
+&lt;p&gt;Set &lt;code&gt;blog_platform&lt;/code&gt; to the bloggin platform that you will use, availbale platforms
+are &lt;strong&gt;"tumblr"&lt;/strong&gt; and &lt;strong&gt;"blogger"&lt;/strong&gt; and &lt;strong&gt;"wordpress"&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Next, you need to setup the options of the choosen platform on the
+&lt;code&gt;blogs_settings.&amp;lt;platform_name&amp;gt;&lt;/code&gt; object as follow:&lt;/p&gt;
+&lt;h4&gt;Wordpress&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"wordpress": {
+  "blog_url": String, // the url of your wordpress.com blog
+  "tag_slug": String // [optional] tags of posts to import (space separated)
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Blogger&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"blogger": {
+  "blog_url": String, // your blog url
+  "blog_id": String, // your blog id number (you can use https://developers.google.com/apis-explorer/#p/blogger/v3/blogger.blogs.getByUrl)
+  "api_key": String, // your api key (See Below)
+  "tag_slug": String // [optional] tags of posts to import (comma separated)
+}&lt;/code&gt;
+Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section below.&lt;/p&gt;
+&lt;h4&gt;Tumblr&lt;/h4&gt;
+&lt;p&gt;&lt;code&gt;javascript
+"tumblr": {
+  "blog_url": String, // your blog url
+  "api_key": String, // your api key (See Below)
+  "tag_slug": String // [optional] tag of posts to import (just one tag)
+}&lt;/code&gt;
+To get your &lt;code&gt;api_key&lt;/code&gt;, register a new app &lt;a href="https://www.tumblr.com/oauth/register"&gt;here&lt;/a&gt;
+with any name and your website url as the default callback url. The "OAuth
+Consumer Key" of the application is your &lt;code&gt;api_key&lt;/code&gt;.&lt;/p&gt;
+&lt;h3&gt;Services Setup&lt;/h3&gt;
+&lt;p&gt;For every service you would to enable, you should set &lt;code&gt;services.&amp;lt;service_name&amp;gt;&lt;/code&gt; on
+&lt;code&gt;config.json&lt;/code&gt; file to &lt;code&gt;true&lt;/code&gt; and setup it options object
+&lt;code&gt;services_settings.&amp;lt;service_name&amp;gt;&lt;/code&gt; on same file.&lt;/p&gt;
+&lt;p&gt;Disabled services can safely removed from booth &lt;code&gt;services&lt;/code&gt; and
+&lt;code&gt;services_settings&lt;/code&gt; objects on the config file.&lt;/p&gt;
+&lt;h4&gt;Github&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.github&lt;/code&gt; and configure &lt;code&gt;services_settings.github&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"github": {
+  "username": String // your username
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;StackOverflow&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.stackoverflow&lt;/code&gt; and configure &lt;code&gt;services_settings.stackoverflow&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"stackoverflow": {
+  "username": String, // your username
+  "user_id": String // your user id number
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Flickr&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.flickr&lt;/code&gt; and configure &lt;code&gt;services_settings.flickr&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"flickr": {
+  "username": String, // your username
+  "user_id": String // your user id (you can get it from http://idgettr.com/)
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Bitbucket&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.bitbucket&lt;/code&gt; and configure &lt;code&gt;services_settings.bitbucket&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"bitbucket": {
+  "username": String, // your username
+  "show_forks": Boolean // show number of forks (It require a http request for every repository
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;SoundCloud&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.soundcloud&lt;/code&gt; and configure &lt;code&gt;services_settings.soundcloud&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"soundcloud": {
+  "username": String, // your username
+  "client_id": String, // your client_id (See Below)
+  "show_artwork": Boolean, // show tracks artworks
+  "player_color": String // color of tracks player
+}&lt;/code&gt;
+To get an &lt;code&gt;client_id&lt;/code&gt;, register an app &lt;a href="http://soundcloud.com/you/apps"&gt;here&lt;/a&gt;
+with any name you want, after you accept their Developer Policies, you get your
+Client ID.&lt;/p&gt;
+&lt;h4&gt;Last.fm&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.lastfm&lt;/code&gt; and configure &lt;code&gt;services_settings.lastfm&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"lastfm": {
+  "username": String, // your username
+  "api_key": String // your api key (See Below)
+}&lt;/code&gt;
+To get an &lt;code&gt;api_key&lt;/code&gt;, register a non comercial account
+&lt;a href="http://www.last.fm/api/account/create"&gt;here&lt;/a&gt; with any name and a small
+description, then you will get your API Key.&lt;/p&gt;
+&lt;h4&gt;Dribbble&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.dribbble&lt;/code&gt; and configure &lt;code&gt;services_settings.dribbble&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"dribbble": {
+  "username": String // your username
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Youtube&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.youtube&lt;/code&gt; and configure &lt;code&gt;services_settings.youtube&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"youtube": {
+  "username": String, // your username
+  "api_key": String // your api key (See Below)
+}&lt;/code&gt;
+To get an &lt;code&gt;api_key&lt;/code&gt;, create a project
+&lt;a href="https://console.developers.google.com/"&gt;here&lt;/a&gt; with any name then click "Enable
+an API" and enable the API you need ("YouTube Data API v3" for YouTube,
+"Blogger API v3" for Blogger, "Google+ API" for Google+). Then on "Cendentials"
+tab, click "Create a new Key" then "Browser Key" and enter your website url then
+"Create" to get your API KEY.&lt;/p&gt;
+&lt;h4&gt;Google+&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.gplus&lt;/code&gt; and configure &lt;code&gt;services_settings.gplus&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"gplus": {
+  "user_id": String, // your user id number
+  "api_key": String // your api key (See Below)
+}&lt;/code&gt;
+Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section above.&lt;/p&gt;
+&lt;h4&gt;Facebook&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.facebook&lt;/code&gt; and configure &lt;code&gt;services_settings.facebook&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"facebook": {
+  "username": String, // your username
+  "access_token": String // your access token key (See Below)
+}&lt;/code&gt;
+to get you read only &lt;code&gt;access_token&lt;/code&gt;, create a web application
+&lt;a href="https://developers.facebook.com/quickstarts/?platform=web"&gt;here&lt;/a&gt;. Then, choose
+it from "Application" menu from this
+&lt;a href="https://developers.facebook.com/tools/explorer/"&gt;page&lt;/a&gt; and click "Get Access
+Token" and select booth "user_activities", "user_about_me" and "user_status".
+After confirming, you will get your final &lt;code&gt;access_token&lt;/code&gt; on the Access Token
+field.&lt;/p&gt;
+&lt;h4&gt;Instagram&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.instagram&lt;/code&gt; and configure &lt;code&gt;services_settings.instagram&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"instagram": {
+  "username": String, // your username
+  "access_token": String, // your access token key (TODO: NEED MORE DOCUMENTATION)
+  "user_id": String // your user id number
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;LinkedIn&lt;/h4&gt;
+&lt;p&gt;enable &lt;code&gt;services.linkedin&lt;/code&gt; and configure &lt;code&gt;services_settings.linkedin&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"linkedin": {
+  "username": String, // your username
+  "access_token": String // your access token key (See Below)
+}&lt;/code&gt;
+To get your read only &lt;code&gt;access_token&lt;/code&gt;, register a new app
+&lt;a href="https://www.linkedin.com/secure/developer"&gt;here&lt;/a&gt;. Select "r_basicprofile" and
+"r_fullprofile" as your default scopes and add
+&lt;code&gt;http://lejenome.me/tests/syteup-settings/linkedin.html?client_id=&amp;lt;YOUR_API_KEY&amp;gt;&amp;amp;client_secret=&amp;lt;YOUR_SECRET_API&amp;gt;&lt;/code&gt;
+to "OAuth 2.0 Redirect URLs" after replacing the two parameters with your
+API Key and your Secret Key. Then use this
+&lt;a href="http://lejenome.me//tests/syteup-settings/linkedin.html"&gt;link&lt;/a&gt; to request your access token.&lt;/p&gt;
+&lt;h3&gt;Plugins setup&lt;/h3&gt;
+&lt;p&gt;Enabling a plugin depend on the type of plugin, either it's a generic plugin or
+a blog plugin. For generic plugins, set &lt;code&gt;plugins.&amp;lt;plugin_name&amp;gt;&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;. and
+for blogs plugins, set &lt;code&gt;blogs_settings.plugins.&amp;lt;plugin_name&amp;gt;&lt;/code&gt; to &lt;code&gt;true&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Settings of every plugin are availbale on the &lt;code&gt;plugins_settings.&amp;lt;plugin_name&amp;gt;&lt;/code&gt;
+object on &lt;code&gt;config.json&lt;/code&gt; file as follow:&lt;/p&gt;
+&lt;h4&gt;Disqus&lt;/h4&gt;
+&lt;p&gt;This plugin will enable disqus comments on every post. Just
+enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;code&gt;plugins_settings.disqus&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"disqus": {
+  "url": String, // [optional] your disqus profile url
+  "shortname": String, // your username
+  "just_count": Boolean // [optional] just show the number of comments instead of the 'Show Comments' buttons
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;ShareThis&lt;/h4&gt;
+&lt;p&gt;This plugin will add ShareThis widget to every post. Just
+enable &lt;code&gt;blogs_settings.plugins.sharethis&lt;/code&gt; and configure &lt;code&gt;plugins_settings.sharethis&lt;/code&gt;
+as follow:
+&lt;code&gt;javascript
+"sharethis": {
+  "publisher_key": String // your key
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;RSS&lt;/h4&gt;
+&lt;p&gt;This plugin will add RSS entry that any browser can subscribe to. Just
+enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_settings.rss&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"rss": {
+  "url": String // the url of your rss feed file or an external rss feed from your blog platform
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Google Analytics&lt;/h4&gt;
+&lt;p&gt;This plugin will enable Google Analytics tracking. Just
+enable &lt;code&gt;plugins.google_analytics&lt;/code&gt; and configure &lt;code&gt;plugins_settings.google_analytics&lt;/code&gt;
+ as follow:
+&lt;code&gt;javascript
+"google_analytics": {
+  "tracking_id": String // your tracking id e.g: UA-XXXXXXX-2
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Woopra&lt;/h4&gt;
+&lt;p&gt;This plugin will enable Woopra tracking. Just
+enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins_settings.woopra&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"woopra": {
+  "tracking_domain": String, // TODO
+  "idle_timeout": Number, // TODO
+  "include_query": Boolean // TODO
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Segment&lt;/h4&gt;
+&lt;p&gt;This plugin will enable Segment services. Just
+enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugins_settings.segment&lt;/code&gt; as follow:
+&lt;code&gt;javascript
+"segment": {
+  "write_key": String // your write key
+}&lt;/code&gt;&lt;/p&gt;
+&lt;h4&gt;Gratipay Widget&lt;/h4&gt;
+&lt;p&gt;This plugin will add Gratupay widget bollow the navigation menu. Just
+enable &lt;code&gt;plugins.gratipay_widget&lt;/code&gt; and configure &lt;code&gt;plugins_settings.gratipay_widget&lt;/code&gt;
+as follow:
+&lt;code&gt;javascript
+"gratipay_widget": {
+  "username": String // your gratipay username
+}&lt;/code&gt;&lt;/p&gt;</description>
+      <link>https://lejenome.github.io/#!post/1</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/1</guid>
+    </item>
+  </channel>
 </rss>
+
