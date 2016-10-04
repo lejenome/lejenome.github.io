@@ -2,7 +2,11 @@
 "use strict";
 class PostsRenderer
 {
-	constructor(posts_loader) { this.posts_loader = posts_loader; }
+	constructor(posts_loader)
+	{
+		this.posts_loader = posts_loader;
+		this.container = document.getElementById("articales");
+	}
 	static post2html(post)
 	{
 		let txt = `<article class="post" id="${post.id}">
@@ -48,6 +52,9 @@ class PostsRenderer
 		let data = _hash.split("/");
 		for (let i = 0; i < data.length; i++) {
 			switch (data[i]) {
+			case "archive":
+				ctxt.archive = true;
+				break;
 			case "page":
 				i++;
 				if (i < data.length)
@@ -73,23 +80,33 @@ class PostsRenderer
 		}
 		return ctxt;
 	}
-	loadPosts()
+	update()
+	{
+		let ctxt = this.unhash();
+		if (ctxt.archive)
+			this.loadArchive();
+		else
+			this.loadPosts(ctxt);
+	}
+	clean()
+	{
+		while (this.container.children.length)
+			this.container.children[0].remove();
+	}
+	loadPosts(ctxt)
 	{
 		let postId = 0;
 		let pageId = 0;
-		let container = document.getElementById("articales");
 		let nextBtn = document.getElementById("next-post");
 		let prevBtn = document.getElementById("prev-post");
-		let ctxt = this.unhash();
 		this.posts_loader.getPosts(ctxt)
 		    .then((posts) => {
-			    while (container.children.length)
-				    container.children[0].remove();
-			    posts.forEach(post => container.appendChild(
+			    this.clean();
+			    posts.forEach(post => this.container.appendChild(
 					      PostsRenderer.post2html(post)));
 			    prettyPrint();
 			    if (posts.length === 0)
-				    container.innerHTML =
+				    this.container.innerHTML =
 					"<p>Oops! 404 Error!</p>";
 			    if (this.posts_loader.hasPrev()) {
 				    prevBtn.style.display = "inline";
@@ -102,14 +119,34 @@ class PostsRenderer
 				    nextBtn.style.display = "inline";
 				    nextBtn.href = location.toString().replace(
 					location.hash, "");
-				    nextBtn.href += this.hash(this.posts_loader.next);
+				    nextBtn.href +=
+					this.hash(this.posts_loader.next);
 			    }
 		    })
 		    .catch((err) => {
-			    container.innerHTML =
+			    this.container.innerHTML =
 				"<p>Oops! Error loading posts!</p>";
 			    console.error(err);
 		    });
+	}
+	loadArchive()
+	{
+		this.posts_loader.getArchive().then(posts => {
+			this.clean();
+			posts.forEach(p => {
+				let item = `
+                <article class="post archive">
+                <hgroup>
+                  <time class="post-date" datetime="${p.date}">${p.date}</time>
+                  <span class="post-title">
+                    <a class="post-link" href="#!post/${p.id}">${p.title}</a>
+                  </span>
+                </hgroup>
+                </article>`;
+				this.container.innerHTML += item;
+
+			});
+		});
 	}
 }
 function main()
@@ -117,6 +154,6 @@ function main()
 	window.addEventListener("hashchange", (e) => location.reload());
 	let loader = new MarkdownPosts("posts.json");
 	let renderer = new PostsRenderer(loader);
-	renderer.loadPosts();
+	renderer.update();
 }
 main();

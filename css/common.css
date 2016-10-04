@@ -48,6 +48,7 @@ header h1 small {
 header nav ul {
     padding: 0;
     margin: 0;
+    display: inline;
 }
 
 header nav ul li {
@@ -59,19 +60,23 @@ header nav ul li {
     margin: 0 !important;
 }
 
-header nav ul li:after {
+header nav ul.menu li:after {
     content: '|';
     margin: 0 0 0 10px;
     color: black;
 }
 
-header nav ul li:last-child:after {
+header nav ul.menu li:last-child:after {
     display: none;
 }
 
-header nav ul li:last-child {
+header nav ul.menu li:last-child {
     border-right: none;
     padding-right: 0;
+}
+
+header nav ul.icons {
+    float: right;
 }
 
 @media (min-width: 800px) {

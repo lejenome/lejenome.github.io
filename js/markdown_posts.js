@@ -12,18 +12,33 @@ class MarkdownPosts
 		this._next = {};
 		this._prev = {};
 	}
-	static _getPost(post)
+	static _getPost(post, render = true)
 	{
 		return fetch(post.url)
 		    .then((response) => response.text())
 		    .then(txt => {
 			    let arr = txt.split("\n", 2);
 			    post.title = arr[0];
-			    post.body = marked(
-				txt.slice(arr[0].length + arr[1].length + 2),
-				{langPrefix : "prettyprint linenums lang-"});
+			    if (render)
+				    post.body = marked(
+					txt.slice(arr[0].length +
+						  arr[1].length + 2),
+					{
+					  langPrefix :
+					      "prettyprint linenums lang-"
+					});
+			    else
+				    post.body = txt.slice(arr[0].length +
+							  arr[1].length + 2);
 			    return Promise.resolve(post);
 		    });
+	}
+	getArchive()
+	{
+		return this.posts_loader.then(files => {
+			return Promise.all(
+			    files.map(f => MarkdownPosts._getPost(f, false)));
+		});
 	}
 	/* load posts
 	 * @param options:
