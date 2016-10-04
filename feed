@@ -1,14 +1,23 @@
-
-<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xml:base="https://lejenome.github.io/">
   <channel>
     <atom:link href="https://lejenome.github.io/feed" rel="self" type="application/rss+xml" />
     <title>Moez Bouhlel [lejenome]</title>
     <description>Self-taught programmer, CS Student and FOSS contributor</description>
+    <language>en</language>
     <link>https://lejenome.github.io/</link>
 
     <item>
       <title>[MTCFSS] Python Training – Get Ready</title>
+      <link>https://lejenome.github.io/#!post/3</link>
+      <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/3</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/mtcfss">mtcfss</category>
+<category domain="https://lejenome.github.io/#!tag/python">python</category>
+<category domain="https://lejenome.github.io/#!tag/django">django</category>
       <description>&lt;p&gt;This is our check list for any member interested to join the training:&lt;/p&gt;
 &lt;h2&gt;Tools:&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;For Windows Users:&lt;/strong&gt;&lt;/p&gt;
@@ -94,13 +103,15 @@ using it outside our training on future.&lt;/p&gt;
 &lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Quick Start&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://angular.io/docs/ts/latest/quickstart.html"&gt;Guide&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
-      <link>https://lejenome.github.io/#!post/3</link>
-      <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/3</guid>
     </item>
 
     <item>
       <title>[Syteup] creating a basic plugin, segment as an example</title>
+      <link>https://lejenome.github.io/#!post/2</link>
+      <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/2</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/syteup">syteup</category>
       <description>&lt;p&gt;Here, we will add Segment support to Syteup.&lt;/p&gt;
 &lt;p&gt;Segment is "a customer data hub". It makes it easy to integrate third-party
 tools (analytics, advertising,...) to your application throw a all-in-one single
@@ -192,13 +203,16 @@ will need the user's write_key) on the &lt;code&gt;plugins_settings option&lt;/c
 &lt;p&gt;Don't be lazy, and send me a pull request with your plugins code and other
 patches to
 &lt;a href="https://github.com/lejenome/syteup"&gt;https://github.com/lejenome/syteup&lt;/a&gt; !&lt;/p&gt;</description>
-      <link>https://lejenome.github.io/#!post/2</link>
-      <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/2</guid>
     </item>
 
     <item>
       <title>Syteup Introduction</title>
+      <link>https://lejenome.github.io/#!post/1</link>
+      <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/1</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/syteup">syteup</category>
+<category domain="https://lejenome.github.io/#!tag/introduction">introduction</category>
       <description>&lt;h1&gt;Syteup&lt;/h1&gt;
 &lt;p&gt;&lt;strong&gt;Syteup&lt;/strong&gt; (a complete rewrite of &lt;a href="https://github.com/rigoneri/syte"&gt;Syte&lt;/a&gt;) is a
 really simple but powerful packaged personal site that has social integrations
@@ -499,9 +513,6 @@ as follow:
 "gratipay_widget": {
   "username": String // your gratipay username
 }&lt;/code&gt;&lt;/p&gt;</description>
-      <link>https://lejenome.github.io/#!post/1</link>
-      <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/1</guid>
     </item>
   </channel>
 </rss>
