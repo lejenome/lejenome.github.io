@@ -20,7 +20,7 @@ Syteup use [Tumblr](http://tumblr.com), [Wordpress.com](http://wordpress.com/)
 or [Blogger](https://www.blogger.com/) for blogging and your blog will be the
 primary page of the site.
 
-![Syteyp Wordpress](docs/imgs/screenshot-blog-wordpress.png)
+![Syteyp Wordpress](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-blog-wordpress.png)
 
 ### Social Services
 
@@ -28,51 +28,51 @@ Suteup currently support many different social services:
 
 **[Github](https://github.com/)**
 
-![Syteyp Github](docs/imgs/screenshot-github.png)
+![Syteyp Github](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-github.png)
 
 **[Flickr](https://www.flickr.com/)**
 
-![Syteyp Flickr](docs/imgs/screenshot-flickr.png)
+![Syteyp Flickr](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-flickr.png)
 
 **[SoundCloud](https://soundcloud.com/)**
 
-![Syteyp SoundCloud](docs/imgs/screenshot-soundcloud.png)
+![Syteyp SoundCloud](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-soundcloud.png)
 
 **[Last.fm](http://www.last.fm/)**
 
-![Syteyp Last.fm](docs/imgs/screenshot-lastfm.png)
+![Syteyp Last.fm](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-lastfm.png)
 
 **[StackOverflow](http://stackoverflow.com/)**
 
-![Syteyp StackOverflow](docs/imgs/screenshot-stackoverflow.png)
+![Syteyp StackOverflow](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-stackoverflow.png)
 
 **[Bitbucket](https://bitbucket.org/)**
 
-![Syteyp Bitbucket](docs/imgs/screenshot-bitbucket.png)
+![Syteyp Bitbucket](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-bitbucket.png)
 
 **[Dribbble](https://dribbble.com/)**
 
-![Syteyp Dribbble](docs/imgs/screenshot-dribbble.png)
+![Syteyp Dribbble](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-dribbble.png)
 
 **[Instagram](http://instagram.com/)**
 
-![Syteyp Instagram](docs/imgs/screenshot-instagram.png)
+![Syteyp Instagram](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-instagram.png)
 
 **[Youtube](https://www.youtube.com/)**
 
-![Syteyp Youtube](docs/imgs/screenshot-youtube.png)
+![Syteyp Youtube](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-youtube.png)
 
 **[LinkedIn](https://www.linkedin.com/)**
 
-![Syteyp LinkedIn](docs/imgs/screenshot-linkedin.png)
+![Syteyp LinkedIn](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-linkedin.png)
 
 **[Facebook](https://www.facebook.com/)**
 
-![Syteyp Facebook](docs/imgs/screenshot-facebook.png)
+![Syteyp Facebook](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-facebook.png)
 
 **[Google+](https://plus.google.com/)**
 
-![Syteyp Google+](docs/imgs/screenshot-gplus.png)
+![Syteyp Google+](https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-gplus.png)
 
 Some other services integration is planed. For more up to date list of currently
 supported services and planed services isavailable on
@@ -119,7 +119,7 @@ make -j1 SRC=~/syteup/src DIST=/srv/website/www CONF=~/my_config.json
 ### General Setup
 
 
-Change all avatars images on [src/imgs](src/imgs) folder (pic.png, favicon.ico,
+Change all avatars images on [src/imgs](https://github.com/lejenome/syteup/raw/master/src/imgs) folder (pic.png, favicon.ico,
 apple-touch-icon\*.png) by your avatar images with same sizes.
 
 Setup the options of `fields` object on `config.json` file
