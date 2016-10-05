@@ -11,9 +11,9 @@
 
     <item>
       <title>Simple feedback form implementation for static websites</title>
-      <link>https://lejenome.github.io/#!post/6</link>
+      <link>https://lejenome.github.io/post/6.html</link>
       <pubDate>Wed, 05 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/6</guid>
+      <guid>https://lejenome.github.io/post/6.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/javascript">javascript</category>
 <category domain="https://lejenome.github.io/#!tag/slack">slack</category>
@@ -31,43 +31,47 @@ And it's very simple to implement:&lt;/p&gt;
    channel on your team. It's a simple URL that you can send feedbacks to.&lt;/li&gt;
 &lt;li&gt;Finally, add your client side implementation. This is a simple one:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;code&gt;html
-&amp;lt;form id="feedback"&amp;gt;
-    &amp;lt;textarea name="text" required&amp;gt;&amp;lt;/textarea&amp;gt;
-    &amp;lt;input type="submit" value="send feedback"&amp;gt;&amp;lt;/input&amp;gt;
-&amp;lt;/form&amp;gt;&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
-let form = document.getElementById("feedback");
-form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    fetch(YOUR_WEBHOOK_URL, {
-        method: "POST", // You should use POST method
-        body: JSON.stringify({
-            text: form.text.value, // the feedback message
-            parse: "none", // tell Slack it's not a formated text
-        });
-    });
-});&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt; &lt;span class="na"&gt;id&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;textarea&lt;/span&gt; &lt;span class="na"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;required&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;textarea&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt; &lt;span class="na"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class="na"&gt;value&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;send feedback&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;input&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;span class="p"&gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;form&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;form&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;addEventListener&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;submit&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;e&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;preventDefault&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+    &lt;span class="nx"&gt;fetch&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;YOUR_WEBHOOK_URL&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;method&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// You should use POST method&lt;/span&gt;
+        &lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;JSON&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;stringify&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt;
+            &lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;form&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;text&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;value&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// the feedback message&lt;/span&gt;
+            &lt;span class="nx"&gt;parse&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// tell Slack it&amp;#39;s not a formated text&lt;/span&gt;
+        &lt;span class="p"&gt;});&lt;/span&gt;
+    &lt;span class="p"&gt;});&lt;/span&gt;
+&lt;span class="p"&gt;});&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Improvements:&lt;/h4&gt;
 &lt;p&gt;You can add more entries to the send JSON. Check Slack
 &lt;a href="https://api.slack.com/methods/chat.postMessage"&gt;documentation&lt;/a&gt; for more
 details. The most useful ones are &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;icon_emoji&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can set different a &lt;code&gt;username&lt;/code&gt; and different a &lt;code&gt;icon_emoji&lt;/code&gt; entry for every
 page. For example, you send this JSON from your resume page:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;json
-{
-    "text"       : "THE FEEDBACK MESSAGE",
-    "parse"      : "none",
-    "username"   : "resume",
-    "icon_emoji" : ":briefcase:"
-}&lt;/code&gt;&lt;/p&gt;</description>
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;text&amp;quot;&lt;/span&gt;       &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;THE FEEDBACK MESSAGE&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;parse&amp;quot;&lt;/span&gt;      &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;   &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;resume&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;quot;icon_emoji&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;:briefcase:&amp;quot;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
 
     <item>
       <title>[MTCFSS] Recommendations For IT Students</title>
-      <link>https://lejenome.github.io/#!post/4</link>
+      <link>https://lejenome.github.io/post/4.html</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/4</guid>
+      <guid>https://lejenome.github.io/post/4.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/mtcfss">mtcfss</category>
 <category domain="https://lejenome.github.io/#!tag/note">note</category>
@@ -128,9 +132,9 @@ prizes to win.&lt;/li&gt;
 
     <item>
       <title>Physical boot to virtual EFI Windows machine</title>
-      <link>https://lejenome.github.io/#!post/5</link>
+      <link>https://lejenome.github.io/post/5.html</link>
       <pubDate>Thu, 15 Sep 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/5</guid>
+      <guid>https://lejenome.github.io/post/5.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/linux">linux</category>
 <category domain="https://lejenome.github.io/#!tag/qemu">qemu</category>
@@ -148,61 +152,79 @@ configurations (I couldn't find a work around BCD boot entry issue other than
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.&lt;/p&gt;
 &lt;p&gt;Before we start, check that &lt;code&gt;loop&lt;/code&gt; and &lt;code&gt;linear&lt;/code&gt; modules are loaded:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo modprobe loop
-sudo modprobe linear&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo modprobe loop
+sudo modprobe linear
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Because the virtual machine need whole disk with booth the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-dd if=/dev/zero of=efi count=200000&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/zero &lt;span class="nv"&gt;of&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;efi &lt;span class="nv"&gt;count&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;200000
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Now you have &lt;code&gt;efi&lt;/code&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo losetup -f efi&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo losetup -f efi
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;It will assign the first available loopback device to the file. We will assume
 that the assigned device is &lt;code&gt;/dev/loop0&lt;/code&gt;. To check the assigned device:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-losetup -a&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;losetup -a
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Next, we will merge the loopback device and the real Windows partition into a
 single linear RAID disk image (We will assume that the windows partition is
 &lt;code&gt;/dev/sda2&lt;/code&gt;):&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo mdadm --build --verbose /dev/md0 --chunk=16 --level=linear --raid-devices=2 /dev/loop0 /dev/sda2&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt; --level&lt;span class="o"&gt;=&lt;/span&gt;linear --raid-devices&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; /dev/loop0 /dev/sda2
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Time to create the partitions table of the new RAID disk with reusing the same
 physical Windows partition. For this step, we will use &lt;em&gt;parted&lt;/em&gt; utility. You
 can use other tools on your own. We need to get the size of real Windows
 partition on sectors.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo parted /dev/sda unit s print&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/sda unit s print
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo parted /dev/md0
-(parted) mktable gpt
-(parted) mkpart primary ntfs -WINDOW_PARITION_SIZE -1
-(parted) mkpart primary fat32 0 -WINDOW_PARITION_SIZE
-(parted) quit&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/md0
+&lt;span class="o"&gt;(&lt;/span&gt;parted&lt;span class="o"&gt;)&lt;/span&gt; mktable gpt
+&lt;span class="o"&gt;(&lt;/span&gt;parted&lt;span class="o"&gt;)&lt;/span&gt; mkpart primary ntfs -WINDOW_PARITION_SIZE -1
+&lt;span class="o"&gt;(&lt;/span&gt;parted&lt;span class="o"&gt;)&lt;/span&gt; mkpart primary fat32 &lt;span class="m"&gt;0&lt;/span&gt; -WINDOW_PARITION_SIZE
+&lt;span class="o"&gt;(&lt;/span&gt;parted&lt;span class="o"&gt;)&lt;/span&gt; quit
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;code&gt;/dev/md0p1&lt;/code&gt; and
 EFI partition &lt;code&gt;/dev/md0p2&lt;/code&gt;. You may get few warning messages when
 creating partitions, ignore them. The new partitions need to be formatted.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
-sudo mkfs.msdos -F 32 -n EFI /dev/md0p2&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+sudo mkfs.msdos -F &lt;span class="m"&gt;32&lt;/span&gt; -n EFI /dev/md0p2
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Now, you are ready to launch the virtual machine and reinstall Windows. Change
 &lt;code&gt;/dev/md0&lt;/code&gt; owner to the same user &lt;em&gt;Qemu&lt;/em&gt; is running as and install &lt;em&gt;ovmf&lt;/em&gt; EFI
 bios for &lt;em&gt;Qemu&lt;/em&gt;, in my case, it will be available at
 &lt;code&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-qemu-system-x86_64 \
-    -enable-kvm \
-    -bios /usr/share/ovmf/ovmf_x64.bin \
-    -drive file=/dev/md0,media=disk,format=raw \
-    -netdev user,id=windowsnic,hostname=windowshost \
-    -device virtio-net,netdev=windowsnic \
-    -cpu host \
-    -m 2G \
-    -vga qxl \
-    -usbdevice tablet&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qemu-system-x86_64 &lt;span class="se"&gt;\&lt;/span&gt;
+    -enable-kvm &lt;span class="se"&gt;\&lt;/span&gt;
+    -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class="se"&gt;\&lt;/span&gt;
+    -drive &lt;span class="nv"&gt;file&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/dev/md0,media&lt;span class="o"&gt;=&lt;/span&gt;disk,format&lt;span class="o"&gt;=&lt;/span&gt;raw &lt;span class="se"&gt;\&lt;/span&gt;
+    -netdev user,id&lt;span class="o"&gt;=&lt;/span&gt;windowsnic,hostname&lt;span class="o"&gt;=&lt;/span&gt;windowshost &lt;span class="se"&gt;\&lt;/span&gt;
+    -device virtio-net,netdev&lt;span class="o"&gt;=&lt;/span&gt;windowsnic &lt;span class="se"&gt;\&lt;/span&gt;
+    -cpu host &lt;span class="se"&gt;\&lt;/span&gt;
+    -m 2G &lt;span class="se"&gt;\&lt;/span&gt;
+    -vga qxl &lt;span class="se"&gt;\&lt;/span&gt;
+    -usbdevice tablet
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;Adapt &lt;em&gt;Qemu&lt;/em&gt; script to your use case. You may need to download and install
 &lt;a href="https://fedoraproject.org/wiki/Windows_Virtio_Drivers"&gt;&lt;em&gt;Virtio&lt;/em&gt; drivers&lt;/a&gt; on
 your guest machine. After each reboot, you need to create the loopback device,
@@ -213,9 +235,9 @@ Enjoy!&lt;/p&gt;</description>
 
     <item>
       <title>[MTCFSS] Python Training – Get Ready</title>
-      <link>https://lejenome.github.io/#!post/3</link>
+      <link>https://lejenome.github.io/post/3.html</link>
       <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/3</guid>
+      <guid>https://lejenome.github.io/post/3.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/mtcfss">mtcfss</category>
 <category domain="https://lejenome.github.io/#!tag/python">python</category>
@@ -257,8 +279,10 @@ can pick one of our recommendation list:&lt;/p&gt;
 &lt;p&gt;We will use the Django Framework on the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;shell
-pip install Django&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Django
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Requirements:&lt;/h2&gt;
 &lt;p&gt;We will use GitHub ( http://github.com/ ) to host our projects code. To be able
 to join the development, every member is required to create a GitHub account and
@@ -309,9 +333,9 @@ using it outside our training on future.&lt;/p&gt;
 
     <item>
       <title>[Syteup] creating a basic plugin, segment as an example</title>
-      <link>https://lejenome.github.io/#!post/2</link>
+      <link>https://lejenome.github.io/post/2.html</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/2</guid>
+      <guid>https://lejenome.github.io/post/2.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/syteup">syteup</category>
       <description>&lt;p&gt;Here, we will add Segment support to Syteup.&lt;/p&gt;
@@ -321,62 +345,64 @@ library.&lt;/p&gt;
 &lt;p&gt;To add Segment plugin support to Syteup, we needs just 3 simple steps:&lt;/p&gt;
 &lt;p&gt;1- create &lt;code&gt;plugins/segment.js&lt;/code&gt; plugin code file that will export the plugin
 module to the window object:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
-(function (window) {
-    "use strict";
-    function setupSegment(settings) {
-        window.analytics = window.analytics || [];
-        window.analytics.methods = [
-            "identify",
-            "group",
-            "track",
-            "page",
-            "pageview",
-            "alias",
-            "ready",
-            "on",
-            "once",
-            "off",
-            "trackLink",
-            "trackForm",
-            "trackClick",
-            "trackSubmit"
-        ];
-        window.analytics.factory = function (method) {
-            return function () {
-                var args = Array.prototype.slice.call(arguments);
-                args.unshift(method);
-                window.analytics.push(args);
-                return window.analytics;
-            };
-        };
-        for (var i = 0; i &amp;lt; window.analytics.methods.length; i++) {
-            var key = window.analytics.methods[i];
-            window.analytics[key] = window.analytics.factory(key);
-        }
-        window.analytics.load = function (key) {
-            if (document.getElementById("analytics-js"))
-                return;
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.id = "analytics-js";
-            script.async = true;
-            script.src = ("https:" === document.location.protocol ? "https://" : "http://") + "cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";
-            var first = document.getElementsByTagName("script")[0];
-            first.parentNode.insertBefore(script, first);
-        };
-        // Add a version to keep track of what's in the wild.
-        window.analytics.SNIPPET_VERSION = "2.0.9";
-        // Load Analytics.js with your key, which will automatically
-        // load the tools you've enabled for your account. Boosh!
-        window.analytics.load(settings["write_key"]);
-        // Make the first page call to load the integrations. If
-        // you'd like to manually name or tag the page, edit or
-        // move this call however you'd like.
-        window.analytics.page({ title: "Syteup" });
-    }
-    window.segmentPlugin = { setup: setupSegment };
-}(window));&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;setupSegment&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt; &lt;span class="o"&gt;||&lt;/span&gt; &lt;span class="p"&gt;[];&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;methods&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;identify&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;group&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;track&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;page&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;pageview&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;alias&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;ready&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;on&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;once&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;off&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;trackLink&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;trackForm&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;trackClick&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+            &lt;span class="s2"&gt;&amp;quot;trackSubmit&amp;quot;&lt;/span&gt;
+        &lt;span class="p"&gt;];&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;factory&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;()&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+                &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;args&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;Array&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;prototype&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;slice&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;arguments&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                &lt;span class="nx"&gt;args&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;unshift&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;method&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;push&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;args&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+                &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="p"&gt;};&lt;/span&gt;
+        &lt;span class="p"&gt;};&lt;/span&gt;
+        &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;methods&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;length&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="o"&gt;++&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;key&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;methods&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;i&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+            &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="nx"&gt;key&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;factory&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;key&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="p"&gt;}&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;load&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;key&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+            &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementById&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;analytics-js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+                &lt;span class="k"&gt;return&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;script&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;createElement&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;script&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+            &lt;span class="nx"&gt;script&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;type&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;text/javascript&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="nx"&gt;script&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;id&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;analytics-js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="nx"&gt;script&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;async&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="nx"&gt;script&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;src&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;https:&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;===&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;location&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;protocol&lt;/span&gt; &lt;span class="o"&gt;?&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;https://&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;http://&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;cdn.segment.com/analytics.js/v1/&amp;quot;&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nx"&gt;key&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;/analytics.min.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+            &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;first&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;getElementsByTagName&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;script&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;];&lt;/span&gt;
+            &lt;span class="nx"&gt;first&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;parentNode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;insertBefore&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;script&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nx"&gt;first&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="p"&gt;};&lt;/span&gt;
+        &lt;span class="c1"&gt;// Add a version to keep track of what&amp;#39;s in the wild.&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;SNIPPET_VERSION&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;2.0.9&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="c1"&gt;// Load Analytics.js with your key, which will automatically&lt;/span&gt;
+        &lt;span class="c1"&gt;// load the tools you&amp;#39;ve enabled for your account. Boosh!&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;load&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;settings&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;write_key&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;]);&lt;/span&gt;
+        &lt;span class="c1"&gt;// Make the first page call to load the integrations. If&lt;/span&gt;
+        &lt;span class="c1"&gt;// you&amp;#39;d like to manually name or tag the page, edit or&lt;/span&gt;
+        &lt;span class="c1"&gt;// move this call however you&amp;#39;d like.&lt;/span&gt;
+        &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;analytics&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;page&lt;/span&gt;&lt;span class="p"&gt;({&lt;/span&gt; &lt;span class="nx"&gt;title&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Syteup&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;});&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+    &lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;segmentPlugin&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="nx"&gt;setup&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nx"&gt;setupSegment&lt;/span&gt; &lt;span class="p"&gt;};&lt;/span&gt;
+&lt;span class="p"&gt;}(&lt;/span&gt;&lt;span class="nb"&gt;window&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;what we did is to add segment code (copied from segment tutorial) into the
 &lt;code&gt;setupSegment&lt;/code&gt; function, then we export it as &lt;code&gt;setup&lt;/code&gt; item on the plugin module
 which should be named &lt;code&gt;segmentPlugin&lt;/code&gt;. As you note, the user depending write_key
@@ -385,22 +411,28 @@ third step.&lt;/p&gt;
 &lt;p&gt;2- we add a script tag to the &lt;code&gt;index.html&lt;/code&gt; file that will load the plugin code.&lt;/p&gt;
 &lt;p&gt;the script tag should be included on the plugins section just before
 &lt;code&gt;js/plugins.js&lt;/code&gt; tag and it should be loaded on defer mode&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;html
-&amp;lt;script defer src="plugins/segment.js"&amp;gt;&amp;lt;/script&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="p"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt; &lt;span class="na"&gt;defer&lt;/span&gt; &lt;span class="na"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;plugins/segment.js&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class="nt"&gt;script&lt;/span&gt;&lt;span class="p"&gt;&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;3- Finally, we add the plugin settings to the configuration file &lt;code&gt;config.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;option to turn on/off the plugin inside the &lt;code&gt;plugins&lt;/code&gt; option:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"plugins": {
-    "segment": true
-}&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;the plugin settings object that includes all user depending settings (here we
 will need the user's write_key) on the &lt;code&gt;plugins_settings option&lt;/code&gt;:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"plugins_settings": {
-    "segment": {
-        "write_key": "?????????"
-    }
-}&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;plugins_settings&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="s2"&gt;&amp;quot;write_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;?????????&amp;quot;&lt;/span&gt;
+    &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;All Done! we are ready to test our plugin.&lt;/p&gt;
 &lt;p&gt;Don't be lazy, and send me a pull request with your plugins code and other
 patches to
@@ -409,9 +441,9 @@ patches to
 
     <item>
       <title>Syteup Introduction</title>
-      <link>https://lejenome.github.io/#!post/1</link>
+      <link>https://lejenome.github.io/post/1.html</link>
       <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/1</guid>
+      <guid>https://lejenome.github.io/post/1.html</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/syteup">syteup</category>
 <category domain="https://lejenome.github.io/#!tag/introduction">introduction</category>
@@ -427,33 +459,33 @@ Linkedin, Last.fm, SoundCloud, Bitbucket, StackOverflow, Flickr.&lt;/p&gt;
 &lt;p&gt;Syteup use &lt;a href="http://tumblr.com"&gt;Tumblr&lt;/a&gt;, &lt;a href="http://wordpress.com/"&gt;Wordpress.com&lt;/a&gt;
 or &lt;a href="https://www.blogger.com/"&gt;Blogger&lt;/a&gt; for blogging and your blog will be the
 primary page of the site.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Wordpress" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-blog-wordpress.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Wordpress" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-blog-wordpress.png"&gt;&lt;/p&gt;
 &lt;h3&gt;Social Services&lt;/h3&gt;
 &lt;p&gt;Suteup currently support many different social services:&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://github.com/"&gt;Github&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Github" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-github.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Github" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-github.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.flickr.com/"&gt;Flickr&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Flickr" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-flickr.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Flickr" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-flickr.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://soundcloud.com/"&gt;SoundCloud&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp SoundCloud" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-soundcloud.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp SoundCloud" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-soundcloud.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://www.last.fm/"&gt;Last.fm&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Last.fm" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-lastfm.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Last.fm" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-lastfm.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://stackoverflow.com/"&gt;StackOverflow&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp StackOverflow" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-stackoverflow.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp StackOverflow" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-stackoverflow.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://bitbucket.org/"&gt;Bitbucket&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Bitbucket" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-bitbucket.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Bitbucket" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-bitbucket.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://dribbble.com/"&gt;Dribbble&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Dribbble" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-dribbble.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Dribbble" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-dribbble.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="http://instagram.com/"&gt;Instagram&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Instagram" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-instagram.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Instagram" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-instagram.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.youtube.com/"&gt;Youtube&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Youtube" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-youtube.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Youtube" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-youtube.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.linkedin.com/"&gt;LinkedIn&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp LinkedIn" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-linkedin.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp LinkedIn" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-linkedin.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://www.facebook.com/"&gt;Facebook&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Facebook" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-facebook.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Facebook" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-facebook.png"&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;a href="https://plus.google.com/"&gt;Google+&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="Syteyp Google+" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-gplus.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Syteyp Google+" src="https://github.com/lejenome/syteup/raw/master/docs/imgs/screenshot-gplus.png"&gt;&lt;/p&gt;
 &lt;p&gt;Some other services integration is planed. For more up to date list of currently
 supported services and planed services isavailable on
 &lt;a href="https://github.com/lejenome/syteup/tree/master/TODO.md"&gt;TODO.md&lt;/a&gt; file.&lt;/p&gt;
@@ -465,74 +497,88 @@ permission access tokens or other needed requirements.&lt;/p&gt;
 &lt;h2&gt;Installation&lt;/h2&gt;
 &lt;p&gt;Syteup dose not require  any specific server side future as it is server-less
 moder HTML5 webapp.&lt;/p&gt;
-&lt;p&gt;First, you need to setup Syteup requirements by runnig the following commands:
-&lt;code&gt;shell
-npm install
-bower update&lt;/code&gt;
-then, you needs to rename
+&lt;p&gt;First, you need to setup Syteup requirements by runnig the following commands:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+bower update
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;then, you needs to rename
 &lt;a href="https://github.com/lejenome/syteup/tree/master/src/config.json.sample"&gt;src/config.json.sample&lt;/a&gt;
 file to &lt;code&gt;config.json&lt;/code&gt; and customize it for your needs as explained on the
-flowing section then run
-&lt;code&gt;shell
-npm run dist&lt;/code&gt;
-which will update the
+flowing section then run&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm run dist
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;which will update the
 &lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt;
 folder with your new settings. Then copy the contents of &lt;a href="https://github.com/lejenome/syteup/blob/master/dist/"&gt;dist/&lt;/a&gt;
 folder to you server and then everything is ready.&lt;/p&gt;
 &lt;p&gt;You can also use make command for custom src and dist folder and config file
-too.
-&lt;code&gt;shell
-make -j1 SRC=~/syteup/src DIST=/srv/website/www CONF=~/my_config.json&lt;/code&gt;&lt;/p&gt;
+too.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j1 &lt;span class="nv"&gt;SRC&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/syteup/src &lt;span class="nv"&gt;DIST&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/srv/website/www &lt;span class="nv"&gt;CONF&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;~/my_config.json
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h2&gt;Setup&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;IN PROGRESS&lt;/strong&gt;&lt;/p&gt;
 &lt;h3&gt;General Setup&lt;/h3&gt;
 &lt;p&gt;Change all avatars images on &lt;a href="https://github.com/lejenome/syteup/raw/master/src/imgs"&gt;src/imgs&lt;/a&gt; folder (pic.png, favicon.ico,
 apple-touch-icon*.png) by your avatar images with same sizes.&lt;/p&gt;
 &lt;p&gt;Setup the options of &lt;code&gt;fields&lt;/code&gt; object on &lt;code&gt;config.json&lt;/code&gt; file&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"fields": {
-  "username": String, // the pseudonym (nickname) you mostly known by
-  "realname": String, // your complete real name
-  "description": String, // a very short 'About Me' line
-  "url": String, // the url of your website
-  "contact": {
-    "email": String, // your email
-    "mobile": String, // [optional] your phone number e.g: (216) 00000000
-    "tel": String, // [optional] your telephone number e.g: (216) 00000000
-    "fax": String, // [optional] your fax number e.g: (216) 1111111
-    "address": String, // [optional] just a short address e.g: Texas, USA
-    "pgp_url": String, // [optional] url of your public pgp key file on your site e.g: /pubkey.asc
-    "fingerprint": String, // [optional] your pgp key fingerprint e.g: 3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D
-    "ssh_url": String // [optional] your ssh public certificate file url on your site e.g: /id_rsa.pub
-  }&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;fields&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// the pseudonym (nickname) you mostly known by&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;realname&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your complete real name&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// a very short &amp;#39;About Me&amp;#39; line&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// the url of your website&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;contact&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;email&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your email&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;mobile&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your phone number e.g: (216) 00000000&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;tel&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your telephone number e.g: (216) 00000000&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;fax&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your fax number e.g: (216) 1111111&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;address&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] just a short address e.g: Texas, USA&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;pgp_url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] url of your public pgp key file on your site e.g: /pubkey.asc&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;fingerprint&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your pgp key fingerprint e.g: 3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D&lt;/span&gt;
+    &lt;span class="s2"&gt;&amp;quot;ssh_url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your ssh public certificate file url on your site e.g: /id_rsa.pub&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h3&gt;Blog Setup&lt;/h3&gt;
 &lt;p&gt;Set &lt;code&gt;blog_platform&lt;/code&gt; to the bloggin platform that you will use, availbale platforms
 are &lt;strong&gt;"tumblr"&lt;/strong&gt; and &lt;strong&gt;"blogger"&lt;/strong&gt; and &lt;strong&gt;"wordpress"&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Next, you need to setup the options of the choosen platform on the
 &lt;code&gt;blogs_settings.&amp;lt;platform_name&amp;gt;&lt;/code&gt; object as follow:&lt;/p&gt;
 &lt;h4&gt;Wordpress&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"wordpress": {
-  "blog_url": String, // the url of your wordpress.com blog
-  "tag_slug": String // [optional] tags of posts to import (space separated)
-}&lt;/code&gt;&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;wordpress&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// the url of your wordpress.com blog&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;tag_slug&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// [optional] tags of posts to import (space separated)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Blogger&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"blogger": {
-  "blog_url": String, // your blog url
-  "blog_id": String, // your blog id number (you can use https://developers.google.com/apis-explorer/#p/blogger/v3/blogger.blogs.getByUrl)
-  "api_key": String, // your api key (See Below)
-  "tag_slug": String // [optional] tags of posts to import (comma separated)
-}&lt;/code&gt;
-Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section below.&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;blogger&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your blog url&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;blog_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your blog id number (you can use https://developers.google.com/apis-explorer/#p/blogger/v3/blogger.blogs.getByUrl)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your api key (See Below)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;tag_slug&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// [optional] tags of posts to import (comma separated)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section below.&lt;/p&gt;
 &lt;h4&gt;Tumblr&lt;/h4&gt;
-&lt;p&gt;&lt;code&gt;javascript
-"tumblr": {
-  "blog_url": String, // your blog url
-  "api_key": String, // your api key (See Below)
-  "tag_slug": String // [optional] tag of posts to import (just one tag)
-}&lt;/code&gt;
-To get your &lt;code&gt;api_key&lt;/code&gt;, register a new app &lt;a href="https://www.tumblr.com/oauth/register"&gt;here&lt;/a&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;tumblr&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your blog url&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your api key (See Below)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;tag_slug&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// [optional] tag of posts to import (just one tag)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To get your &lt;code&gt;api_key&lt;/code&gt;, register a new app &lt;a href="https://www.tumblr.com/oauth/register"&gt;here&lt;/a&gt;
 with any name and your website url as the default callback url. The "OAuth
 Consumer Key" of the application is your &lt;code&gt;api_key&lt;/code&gt;.&lt;/p&gt;
 &lt;h3&gt;Services Setup&lt;/h3&gt;
@@ -542,89 +588,109 @@ Consumer Key" of the application is your &lt;code&gt;api_key&lt;/code&gt;.&lt;/p
 &lt;p&gt;Disabled services can safely removed from booth &lt;code&gt;services&lt;/code&gt; and
 &lt;code&gt;services_settings&lt;/code&gt; objects on the config file.&lt;/p&gt;
 &lt;h4&gt;Github&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.github&lt;/code&gt; and configure &lt;code&gt;services_settings.github&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"github": {
-  "username": String // your username
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.github&lt;/code&gt; and configure &lt;code&gt;services_settings.github&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;github&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;StackOverflow&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.stackoverflow&lt;/code&gt; and configure &lt;code&gt;services_settings.stackoverflow&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"stackoverflow": {
-  "username": String, // your username
-  "user_id": String // your user id number
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.stackoverflow&lt;/code&gt; and configure &lt;code&gt;services_settings.stackoverflow&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;stackoverflow&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your user id number&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Flickr&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.flickr&lt;/code&gt; and configure &lt;code&gt;services_settings.flickr&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"flickr": {
-  "username": String, // your username
-  "user_id": String // your user id (you can get it from http://idgettr.com/)
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.flickr&lt;/code&gt; and configure &lt;code&gt;services_settings.flickr&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;flickr&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your user id (you can get it from http://idgettr.com/)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Bitbucket&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.bitbucket&lt;/code&gt; and configure &lt;code&gt;services_settings.bitbucket&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"bitbucket": {
-  "username": String, // your username
-  "show_forks": Boolean // show number of forks (It require a http request for every repository
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.bitbucket&lt;/code&gt; and configure &lt;code&gt;services_settings.bitbucket&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;bitbucket&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;show_forks&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Boolean&lt;/span&gt; &lt;span class="c1"&gt;// show number of forks (It require a http request for every repository&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;SoundCloud&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.soundcloud&lt;/code&gt; and configure &lt;code&gt;services_settings.soundcloud&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"soundcloud": {
-  "username": String, // your username
-  "client_id": String, // your client_id (See Below)
-  "show_artwork": Boolean, // show tracks artworks
-  "player_color": String // color of tracks player
-}&lt;/code&gt;
-To get an &lt;code&gt;client_id&lt;/code&gt;, register an app &lt;a href="http://soundcloud.com/you/apps"&gt;here&lt;/a&gt;
+&lt;p&gt;enable &lt;code&gt;services.soundcloud&lt;/code&gt; and configure &lt;code&gt;services_settings.soundcloud&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;soundcloud&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;client_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your client_id (See Below)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;show_artwork&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Boolean&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// show tracks artworks&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;player_color&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// color of tracks player&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To get an &lt;code&gt;client_id&lt;/code&gt;, register an app &lt;a href="http://soundcloud.com/you/apps"&gt;here&lt;/a&gt;
 with any name you want, after you accept their Developer Policies, you get your
 Client ID.&lt;/p&gt;
 &lt;h4&gt;Last.fm&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.lastfm&lt;/code&gt; and configure &lt;code&gt;services_settings.lastfm&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"lastfm": {
-  "username": String, // your username
-  "api_key": String // your api key (See Below)
-}&lt;/code&gt;
-To get an &lt;code&gt;api_key&lt;/code&gt;, register a non comercial account
+&lt;p&gt;enable &lt;code&gt;services.lastfm&lt;/code&gt; and configure &lt;code&gt;services_settings.lastfm&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;lastfm&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your api key (See Below)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To get an &lt;code&gt;api_key&lt;/code&gt;, register a non comercial account
 &lt;a href="http://www.last.fm/api/account/create"&gt;here&lt;/a&gt; with any name and a small
 description, then you will get your API Key.&lt;/p&gt;
 &lt;h4&gt;Dribbble&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.dribbble&lt;/code&gt; and configure &lt;code&gt;services_settings.dribbble&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"dribbble": {
-  "username": String // your username
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.dribbble&lt;/code&gt; and configure &lt;code&gt;services_settings.dribbble&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;dribbble&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Youtube&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.youtube&lt;/code&gt; and configure &lt;code&gt;services_settings.youtube&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"youtube": {
-  "username": String, // your username
-  "api_key": String // your api key (See Below)
-}&lt;/code&gt;
-To get an &lt;code&gt;api_key&lt;/code&gt;, create a project
+&lt;p&gt;enable &lt;code&gt;services.youtube&lt;/code&gt; and configure &lt;code&gt;services_settings.youtube&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;youtube&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your api key (See Below)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To get an &lt;code&gt;api_key&lt;/code&gt;, create a project
 &lt;a href="https://console.developers.google.com/"&gt;here&lt;/a&gt; with any name then click "Enable
 an API" and enable the API you need ("YouTube Data API v3" for YouTube,
 "Blogger API v3" for Blogger, "Google+ API" for Google+). Then on "Cendentials"
 tab, click "Create a new Key" then "Browser Key" and enter your website url then
 "Create" to get your API KEY.&lt;/p&gt;
 &lt;h4&gt;Google+&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.gplus&lt;/code&gt; and configure &lt;code&gt;services_settings.gplus&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"gplus": {
-  "user_id": String, // your user id number
-  "api_key": String // your api key (See Below)
-}&lt;/code&gt;
-Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section above.&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.gplus&lt;/code&gt; and configure &lt;code&gt;services_settings.gplus&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gplus&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your user id number&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your api key (See Below)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section above.&lt;/p&gt;
 &lt;h4&gt;Facebook&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.facebook&lt;/code&gt; and configure &lt;code&gt;services_settings.facebook&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"facebook": {
-  "username": String, // your username
-  "access_token": String // your access token key (See Below)
-}&lt;/code&gt;
-to get you read only &lt;code&gt;access_token&lt;/code&gt;, create a web application
+&lt;p&gt;enable &lt;code&gt;services.facebook&lt;/code&gt; and configure &lt;code&gt;services_settings.facebook&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your access token key (See Below)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;to get you read only &lt;code&gt;access_token&lt;/code&gt;, create a web application
 &lt;a href="https://developers.facebook.com/quickstarts/?platform=web"&gt;here&lt;/a&gt;. Then, choose
 it from "Application" menu from this
 &lt;a href="https://developers.facebook.com/tools/explorer/"&gt;page&lt;/a&gt; and click "Get Access
@@ -632,21 +698,25 @@ Token" and select booth "user_activities", "user_about_me" and "user_status".
 After confirming, you will get your final &lt;code&gt;access_token&lt;/code&gt; on the Access Token
 field.&lt;/p&gt;
 &lt;h4&gt;Instagram&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.instagram&lt;/code&gt; and configure &lt;code&gt;services_settings.instagram&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"instagram": {
-  "username": String, // your username
-  "access_token": String, // your access token key (TODO: NEED MORE DOCUMENTATION)
-  "user_id": String // your user id number
-}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;enable &lt;code&gt;services.instagram&lt;/code&gt; and configure &lt;code&gt;services_settings.instagram&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;instagram&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your access token key (TODO: NEED MORE DOCUMENTATION)&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your user id number&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;LinkedIn&lt;/h4&gt;
-&lt;p&gt;enable &lt;code&gt;services.linkedin&lt;/code&gt; and configure &lt;code&gt;services_settings.linkedin&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"linkedin": {
-  "username": String, // your username
-  "access_token": String // your access token key (See Below)
-}&lt;/code&gt;
-To get your read only &lt;code&gt;access_token&lt;/code&gt;, register a new app
+&lt;p&gt;enable &lt;code&gt;services.linkedin&lt;/code&gt; and configure &lt;code&gt;services_settings.linkedin&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;linkedin&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your access token key (See Below)&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To get your read only &lt;code&gt;access_token&lt;/code&gt;, register a new app
 &lt;a href="https://www.linkedin.com/secure/developer"&gt;here&lt;/a&gt;. Select "r_basicprofile" and
 "r_fullprofile" as your default scopes and add
 &lt;code&gt;http://lejenome.me/tests/syteup-settings/linkedin.html?client_id=&amp;lt;YOUR_API_KEY&amp;gt;&amp;amp;client_secret=&amp;lt;YOUR_SECRET_API&amp;gt;&lt;/code&gt;
@@ -661,60 +731,72 @@ for blogs plugins, set &lt;code&gt;blogs_settings.plugins.&amp;lt;plugin_name&am
 object on &lt;code&gt;config.json&lt;/code&gt; file as follow:&lt;/p&gt;
 &lt;h4&gt;Disqus&lt;/h4&gt;
 &lt;p&gt;This plugin will enable disqus comments on every post. Just
-enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;code&gt;plugins_settings.disqus&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"disqus": {
-  "url": String, // [optional] your disqus profile url
-  "shortname": String, // your username
-  "just_count": Boolean // [optional] just show the number of comments instead of the 'Show Comments' buttons
-}&lt;/code&gt;&lt;/p&gt;
+enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;code&gt;plugins_settings.disqus&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;disqus&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// [optional] your disqus profile url&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;shortname&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// your username&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;just_count&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Boolean&lt;/span&gt; &lt;span class="c1"&gt;// [optional] just show the number of comments instead of the &amp;#39;Show Comments&amp;#39; buttons&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;ShareThis&lt;/h4&gt;
 &lt;p&gt;This plugin will add ShareThis widget to every post. Just
 enable &lt;code&gt;blogs_settings.plugins.sharethis&lt;/code&gt; and configure &lt;code&gt;plugins_settings.sharethis&lt;/code&gt;
-as follow:
-&lt;code&gt;javascript
-"sharethis": {
-  "publisher_key": String // your key
-}&lt;/code&gt;&lt;/p&gt;
+as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;sharethis&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;publisher_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your key&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;RSS&lt;/h4&gt;
 &lt;p&gt;This plugin will add RSS entry that any browser can subscribe to. Just
-enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_settings.rss&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"rss": {
-  "url": String // the url of your rss feed file or an external rss feed from your blog platform
-}&lt;/code&gt;&lt;/p&gt;
+enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_settings.rss&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;rss&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// the url of your rss feed file or an external rss feed from your blog platform&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Google Analytics&lt;/h4&gt;
 &lt;p&gt;This plugin will enable Google Analytics tracking. Just
 enable &lt;code&gt;plugins.google_analytics&lt;/code&gt; and configure &lt;code&gt;plugins_settings.google_analytics&lt;/code&gt;
- as follow:
-&lt;code&gt;javascript
-"google_analytics": {
-  "tracking_id": String // your tracking id e.g: UA-XXXXXXX-2
-}&lt;/code&gt;&lt;/p&gt;
+ as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;google_analytics&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;tracking_id&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your tracking id e.g: UA-XXXXXXX-2&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Woopra&lt;/h4&gt;
 &lt;p&gt;This plugin will enable Woopra tracking. Just
-enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins_settings.woopra&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"woopra": {
-  "tracking_domain": String, // TODO
-  "idle_timeout": Number, // TODO
-  "include_query": Boolean // TODO
-}&lt;/code&gt;&lt;/p&gt;
+enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins_settings.woopra&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;woopra&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;tracking_domain&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// TODO&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;idle_timeout&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Number&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="c1"&gt;// TODO&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;include_query&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;Boolean&lt;/span&gt; &lt;span class="c1"&gt;// TODO&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Segment&lt;/h4&gt;
 &lt;p&gt;This plugin will enable Segment services. Just
-enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugins_settings.segment&lt;/code&gt; as follow:
-&lt;code&gt;javascript
-"segment": {
-  "write_key": String // your write key
-}&lt;/code&gt;&lt;/p&gt;
+enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugins_settings.segment&lt;/code&gt; as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;write_key&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your write key&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;h4&gt;Gratipay Widget&lt;/h4&gt;
 &lt;p&gt;This plugin will add Gratupay widget bollow the navigation menu. Just
 enable &lt;code&gt;plugins.gratipay_widget&lt;/code&gt; and configure &lt;code&gt;plugins_settings.gratipay_widget&lt;/code&gt;
-as follow:
-&lt;code&gt;javascript
-"gratipay_widget": {
-  "username": String // your gratipay username
-}&lt;/code&gt;&lt;/p&gt;</description>
+as follow:&lt;/p&gt;
+&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;gratipay_widget&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
+  &lt;span class="s2"&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="nb"&gt;String&lt;/span&gt; &lt;span class="c1"&gt;// your gratipay username&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>

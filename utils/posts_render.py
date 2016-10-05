@@ -3,6 +3,7 @@
 import os
 import json
 from datetime import datetime
+from xml.sax.saxutils import escape
 from jinja2 import Template
 import markdown
 
@@ -11,6 +12,14 @@ tmpl = None
 md = markdown.Markdown(output_format="html5",
                        extensions=["markdown.extensions.fenced_code",
                                    "markdown.extensions.codehilite"])
+settings = {
+    "rss_url": "https://lejenome.github.io/rss.xml",
+    "blog_name": "Moez Bouhlel [lejenome]",
+    "blog_description": "Self-taught programmer, CS Student and FOSS "
+    "contributor",
+    "blog_url": "https://lejenome.github.io/",
+    "author": "Moez Bouhlel",
+}
 MAX_POSTS = 5
 
 with open("posts.json") as posts_file:
@@ -20,7 +29,7 @@ with open(os.path.join(os.path.dirname(__file__), "post.html")) as tmpl_file:
 
 def load_post(post, index):
     post_file = open(post["url"])
-    post["title"] = post_file.readline()[:-1]
+    post["title"] = post_file.readline().strip()
     post_file.readline()
     post["body"] = md.convert(post_file.read())
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
@@ -77,7 +86,49 @@ def gen_pages():
     except FileExistsError:
         pass
 
+def gen_post_rss(post):
+    post["title"] = escape(post["title"])
+    post["body"] = escape(post["body"])
+    post["url"] = os.path.join(
+        settings["blog_url"], "post", str(post["id"]) + ".html")
+    post["date"] = datetime.strptime(post["date"], "%a %b %d %Y").strftime(
+        "%a, %d %b %Y 00:00:00 GMT")
+    categories_rss = "\n".join(
+        """<category domain="{blog_url}#!tag/{tag}">{tag}</category>"""
+        .format(tag=tag, **settings) for tag in post["tags"])
+    return """
+    <item>
+      <title>{title}</title>
+      <link>{url}</link>
+      <pubDate>{date}</pubDate>
+      <guid>{url}</guid>
+      <dc:creator>{author}</dc:creator>
+      {categories}
+      <description>{body}</description>
+    </item>""".format(author=settings["author"], categories=categories_rss,
+                      **post)
+
+def gen_rss():
+    posts_rss = "\n".join(gen_post_rss(post) for post in reversed(posts))
+    rss = """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
+ xmlns:dc="http://purl.org/dc/elements/1.1/"
+ xml:base="{blog_url}">
+  <channel>
+    <atom:link href="{rss_url}" rel="self" type="application/rss+xml" />
+    <title>{blog_name}</title>
+    <description>{blog_description}</description>
+    <language>en</language>
+    <link>{blog_url}</link>
+{posts_rss}
+  </channel>
+</rss>""".format(posts_rss=posts_rss, **settings)
+    rss_file = open("rss.xml", "w")
+    rss_file.write(rss)
+    rss_file.close()
+
 if __name__ == "__main__":
     load_posts()
     gen_posts()
     gen_pages()
+    gen_rss()
