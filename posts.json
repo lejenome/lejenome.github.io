@@ -15,13 +15,18 @@
         "date": "2016/02/09",
         "tags": ["mtcfss", "python", "django"]
     }, {
+        "url": "posts/dual-boot-to-virtual-machine.md",
+        "id": 5,
+        "date": "2016/09/15",
+        "tags": ["linux", "qemu", "kvm", "windows"]
+    }, {
         "url": "posts/recommandation-for-it-student.md",
         "id": 4,
         "date": "2016/10/04",
         "tags": ["mtcfss", "note"]
     }, {
         "url": "posts/simple-feedback-form-for-static-websites.md",
-        "id": 5,
+        "id": 6,
         "date": "2016/10/05",
         "tags": ["javascript", "slack"]
     }]

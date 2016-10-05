@@ -54,16 +54,3 @@ page. For example, you send this JSON from your resume page:
     "icon_emoji": ":briefcase:"
 }
 ```
-
-Hopefully when the [W3C HTML JSON form
-submission](bhttp://darobin.github.io/formic/specs/json/) specification becomes
-implemented by the main browsers, you will no longer need any JavaScript code to
-send feedback but just a simple HTML:
-
-```html
-<form action="YOUR_WEBHOOK_URL" method="post" accept-charset="UTF-8" enctype="application/json">
-    <textarea name="text" required></textarea>
-    <input type="text" name="parse" value="none" hidden></input>
-    <input type="submit" value="send feedback"></input>
-</form>
-```

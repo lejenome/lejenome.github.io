@@ -11,9 +11,9 @@
 
     <item>
       <title>Simple feedback form implementation for static websites</title>
-      <link>https://lejenome.github.io/#!post/5</link>
+      <link>https://lejenome.github.io/#!post/6</link>
       <pubDate>Wed, 05 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/#!post/5</guid>
+      <guid>https://lejenome.github.io/#!post/6</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/#!tag/javascript">javascript</category>
 <category domain="https://lejenome.github.io/#!tag/slack">slack</category>
@@ -60,17 +60,7 @@ page. For example, you send this JSON from your resume page:&lt;/p&gt;
     "parse": "none",
     "username": "resume",
     "icon_emoji": ":briefcase:"
-}&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;Hopefully when the &lt;a href="bhttp://darobin.github.io/formic/specs/json/"&gt;W3C HTML JSON form
-submission&lt;/a&gt; specification becomes
-implemented by the main browsers, you will no longer need any JavaScript code to
-send feedback but just a simple HTML:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;html
-&amp;lt;form action="YOUR_WEBHOOK_URL" method="post" accept-charset="UTF-8" enctype="application/json"&amp;gt;
-    &amp;lt;textarea name="text" required&amp;gt;&amp;lt;/textarea&amp;gt;
-    &amp;lt;input type="text" name="parse" value="none" hidden&amp;gt;&amp;lt;/input&amp;gt;
-    &amp;lt;input type="submit" value="send feedback"&amp;gt;&amp;lt;/input&amp;gt;
-&amp;lt;/form&amp;gt;&lt;/code&gt;&lt;/p&gt;</description>
+}&lt;/code&gt;&lt;/p&gt;</description>
     </item>
 
     <item>
@@ -134,6 +124,91 @@ prizes to win.&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://www.linkedin.com/"&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://stackoverflow.com/jobs/cv"&gt;StackOverFlow CV&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;</description>
+    </item>
+
+    <item>
+      <title>Physical boot to virtual EFI Windows machine</title>
+      <link>https://lejenome.github.io/#!post/5</link>
+      <pubDate>Thu, 15 Sep 2016 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/#!post/5</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/#!tag/linux">linux</category>
+<category domain="https://lejenome.github.io/#!tag/qemu">qemu</category>
+<category domain="https://lejenome.github.io/#!tag/kvm">kvm</category>
+<category domain="https://lejenome.github.io/#!tag/windows">windows</category>
+      <description>&lt;p&gt;Even Linux is my main system, I frequently need to use Windows for school
+homework when Mono does not support desired features. Running Windows inside a
+virtual machine is always enough expect few cases. The best solution was to
+setup a single windows system accessible from booth the virtual machine and
+from the physical dual boot.&lt;/p&gt;
+&lt;p&gt;For the virtual machine, we will use &lt;em&gt;Qemu/KVM&lt;/em&gt; with &lt;em&gt;Virtio&lt;/em&gt; devices and a disk
+partition for Windows.&lt;/p&gt;
+&lt;p&gt;First, you need to install Windows on your PC to get the boot entry with right
+configurations (I couldn't find a work around BCD boot entry issue other than
+this one). Then reboot to your Linux system to reinstall Windows on the same
+partition but using the virtual machine this time.&lt;/p&gt;
+&lt;p&gt;Before we start, check that &lt;code&gt;loop&lt;/code&gt; and &lt;code&gt;linear&lt;/code&gt; modules are loaded:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo modprobe loop
+sudo modprobe linear&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Because the virtual machine need whole disk with booth the Windows partition
+and the EFI partition, We need to create a virtual RAID. Let's create a small
+file to hold the EFI partition:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+dd if=/dev/zero of=efi count=200000&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now you have &lt;code&gt;efi&lt;/code&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
+loopback device from the file:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo losetup -f efi&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;It will assign the first available loopback device to the file. We will assume
+that the assigned device is &lt;code&gt;/dev/loop0&lt;/code&gt;. To check the assigned device:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+losetup -a&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Next, we will merge the loopback device and the real Windows partition into a
+single linear RAID disk image (We will assume that the windows partition is
+&lt;code&gt;/dev/sda2&lt;/code&gt;):&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo mdadm --build --verbose /dev/md0 --chunk=16 --level=linear --raid-devices=2 /dev/loop0 /dev/sda2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Time to create the partitions table of the new RAID disk with reusing the same
+physical Windows partition. For this step, we will use &lt;em&gt;parted&lt;/em&gt; utility. You
+can use other tools on your own. We need to get the size of real Windows
+partition on sectors.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo parted /dev/sda unit s print&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo parted /dev/md0
+(parted) mktable gpt
+(parted) mkpart primary ntfs -WINDOW_PARITION_SIZE -1
+(parted) mkpart primary fat32 0 -WINDOW_PARITION_SIZE
+(parted) quit&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;code&gt;/dev/md0p1&lt;/code&gt; and
+EFI partition &lt;code&gt;/dev/md0p2&lt;/code&gt;. You may get few warning messages when
+creating partitions, ignore them. The new partitions need to be formatted.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+sudo mkfs.msdos -F 32 -n EFI /dev/md0p2&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now, you are ready to launch the virtual machine and reinstall Windows. Change
+&lt;code&gt;/dev/md0&lt;/code&gt; owner to the same user &lt;em&gt;Qemu&lt;/em&gt; is running as and install &lt;em&gt;ovmf&lt;/em&gt; EFI
+bios for &lt;em&gt;Qemu&lt;/em&gt;, in my case, it will be available at
+&lt;code&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;shell
+qemu-system-x86_64 \
+    -enable-kvm \
+    -bios /usr/share/ovmf/ovmf_x64.bin \
+    -drive file=/dev/md0,media=disk,format=raw \
+    -netdev user,id=windowsnic,hostname=windowshost \
+    -device virtio-net,netdev=windowsnic \
+    -cpu host \
+    -m 2G \
+    -vga qxl \
+    -usbdevice tablet&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Adapt &lt;em&gt;Qemu&lt;/em&gt; script to your use case. You may need to download and install
+&lt;a href="https://fedoraproject.org/wiki/Windows_Virtio_Drivers"&gt;&lt;em&gt;Virtio&lt;/em&gt; drivers&lt;/a&gt; on
+your guest machine. After each reboot, you need to create the loopback device,
+merge the two partitions into the RAID disk and change the owner of the device.&lt;/p&gt;
+&lt;p&gt;Credit to &lt;a href="file:///usr/share/doc/arch-wiki/html/en/QEMU.html#Simulate_virtual_disk_with_MBR_using_linear_RAID"&gt;Arch Linux Wiki&lt;/a&gt;.
+Enjoy!&lt;/p&gt;</description>
     </item>
 
     <item>
