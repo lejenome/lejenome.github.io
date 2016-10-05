@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Blog">
+
+<head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website# type: http://ogp.me/ns/profile#">
+    <meta charset="utf-8" />
+    <title itemprop="name">[Syteup] creating a basic plugin, segment as an example | Moez Bouhlel </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- metadata -->
+    <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
+    <meta name="keywords" content="moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j,personal,website" itemprop="keywords" />
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
+    <meta name="author" content="Moez Bouhlel" itemprop="creator" />
+    <meta name="copyright" content="Moez Bouhlel 2016, All Rights Reserved." />
+    <link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
+    <!--<link rel="canonical" href="https://lejenome.github.io" />-->
+    <base href="/" />
+    <link rel="alternate" type="application/rss+xml" href="rss.xml" />
+    <!-- google verification, should kept -->
+    <meta name="google-site-verification" content="S6sLGAfoubJHu5uLGJMU9sOD82LL7APn_EYSZQPOXsE" />
+    <!-- openid -->
+    <link rel="openid.server" href="https://login.launchpad.net/+openid" />
+    <link rel="openid.delegate" href="https://login.launchpad.net/+id/mBmWsYt" />
+    <link rel="openid2.provider" href="https://login.launchpad.net/+openid" />
+    <link rel="openid2.local_id" href="https://login.launchpad.net/+id/mBmWsYt" />
+    <meta http-equiv="X-XRDS-Location" content="https://login.launchpad.net/+id/mBmWsYt/+xrds" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@lejenome" />
+    <meta name="twitter:creator" content="@lejenome" />
+    <meta name="twitter:domain" content="lejenome.github.io" />
+    <!-- og -->
+    <meta property="og:site_name" content="Moez Bouhlel" />
+    <meta property="og:type" content="article" />
+    <!-- itemprop -->
+    <meta itemprop="inLanguage" content="en" />
+
+    <meta property="og:url" itemprop="url" content="https://lejenome.github.io/" />
+    <meta name="twitter:description" property="og:description" itemprop="description" content="Moez Bouhlel (lejenome) Website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
+    <meta name="twitter:title" property="og:title" content=" Moez Bouhlel [lejenome] Website " />
+    <meta name="twitter:image" property="og:image" itemprop="image" content="https://lejenome.github.io/logo.png" />
+    <!-- favicons -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="imgs/favicon/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="imgs/favicon/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="imgs/favicon/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="imgs/favicon/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="imgs/favicon/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="imgs/favicon/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="imgs/favicon/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="imgs/favicon/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="imgs/favicon/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="imgs/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="imgs/favicon/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="imgs/favicon/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="imgs/favicon/favicon-128.png" sizes="128x128" />
+    <meta name="msapplication-TileImage" content="imgs/favicon/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="imgs/favicon/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="imgs/favicon/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="imgs/favicon/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="imgs/favicon/mstile-310x310.png" />
+    <!-- import css -->
+    <link href="css/normalize.css" type="text/css" rel="stylesheet" />
+    <link href="css/font-awesome.css" type="text/css" rel="stylesheet" />
+    <link href="fonts/source-code-pro/source-code-pro.css" type="text/css" rel="stylesheet" />
+    <link href="css/common.css" type="text/css" rel="stylesheet" />
+    <link href="css/articales.css" type="text/css" rel="stylesheet" />
+    <link href="css/pygmentize.default.css" type="text/css" rel="stylesheet" />
+    <link href="css/blog.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body class="container">
+    <header>
+        <h1><a href="/">Moez Bouhlel <small>@lejenome</small></a></h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="https://twitter.com/lejenome">Twitter</a></li>
+                <li><a href="https://github.com/lejenome">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
+                <li><a href="/resume.html">Resume</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+            <ul class="icons">
+                <li><a title="Archive" href="#!archive"><i class="fa fa-folder-open"></i></a></li>
+                <li><a title="RSS" rel="alternate" type="application/rss+xml" href="rss.xml"><i class="fa fa-rss"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <section id="articales">
+            
+            <article class="post" id="2">
+                <hgroup>
+                    <h2 class="post-title"><a href="post/2.html" class="post-link">[Syteup] creating a basic plugin, segment as an example</a></h2>
+                    <h3 class="post-date"><a href="#{post.id|e}}">Tue Nov 04 2014</a></h3>
+                </hgroup>
+                <div class="post-body">
+                    <p>Here, we will add Segment support to Syteup.</p>
+<p>Segment is "a customer data hub". It makes it easy to integrate third-party
+tools (analytics, advertising,...) to your application throw a all-in-one single
+library.</p>
+<p>To add Segment plugin support to Syteup, we needs just 3 simple steps:</p>
+<p>1- create <code>plugins/segment.js</code> plugin code file that will export the plugin
+module to the window object:</p>
+<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">setupSegment</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">||</span> <span class="p">[];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;identify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;track&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;page&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pageview&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alias&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ready&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;on&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;once&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;off&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackLink&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackForm&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackClick&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackSubmit&quot;</span>
+        <span class="p">];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">method</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+                <span class="nx">args</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">method</span><span class="p">);</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">;</span>
+            <span class="p">};</span>
+        <span class="p">};</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;analytics-js&quot;</span><span class="p">))</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;analytics-js&quot;</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;https:&quot;</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s2">&quot;https://&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;cdn.segment.com/analytics.js/v1/&quot;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s2">&quot;/analytics.min.js&quot;</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="nx">first</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="nx">first</span><span class="p">);</span>
+        <span class="p">};</span>
+        <span class="c1">// Add a version to keep track of what&#39;s in the wild.</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">SNIPPET_VERSION</span> <span class="o">=</span> <span class="s2">&quot;2.0.9&quot;</span><span class="p">;</span>
+        <span class="c1">// Load Analytics.js with your key, which will automatically</span>
+        <span class="c1">// load the tools you&#39;ve enabled for your account. Boosh!</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">settings</span><span class="p">[</span><span class="s2">&quot;write_key&quot;</span><span class="p">]);</span>
+        <span class="c1">// Make the first page call to load the integrations. If</span>
+        <span class="c1">// you&#39;d like to manually name or tag the page, edit or</span>
+        <span class="c1">// move this call however you&#39;d like.</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Syteup&quot;</span> <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">segmentPlugin</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">setup</span><span class="o">:</span> <span class="nx">setupSegment</span> <span class="p">};</span>
+<span class="p">}(</span><span class="nb">window</span><span class="p">));</span>
+</pre></div>
+
+
+<p>what we did is to add segment code (copied from segment tutorial) into the
+<code>setupSegment</code> function, then we export it as <code>setup</code> item on the plugin module
+which should be named <code>segmentPlugin</code>. As you note, the user depending write_key
+is readed from the <code>settings</code> object of the plugin which will be added on the
+third step.</p>
+<p>2- we add a script tag to the <code>index.html</code> file that will load the plugin code.</p>
+<p>the script tag should be included on the plugins section just before
+<code>js/plugins.js</code> tag and it should be loaded on defer mode</p>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>3- Finally, we add the plugin settings to the configuration file <code>config.json</code></p>
+<p>option to turn on/off the plugin inside the <code>plugins</code> option:</p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>the plugin settings object that includes all user depending settings (here we
+will need the user's write_key) on the <code>plugins_settings option</code>:</p>
+<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;write_key&quot;</span><span class="o">:</span> <span class="s2">&quot;?????????&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>All Done! we are ready to test our plugin.</p>
+<p>Don't be lazy, and send me a pull request with your plugins code and other
+patches to
+<a href="https://github.com/lejenome/syteup">https://github.com/lejenome/syteup</a> !</p>
+                </div>
+            </article>
+            
+
+        </section>
+        <nav id="posts-nav">
+            <ul>
+                
+                <li><a href="post/3.html" id="prev-post">Newer</a></li>
+                 
+                <li><a href="post/1.html" id="next-post">Older</a></li>
+                
+            </ul>
+        </nav>
+    </div>
+    <!-- import js -->
+    <script>
+        var pres = document.querySelectorAll(".codehilite pre");
+        var i;
+        for (i = 0; i < pres.length; i++) {
+            var html = pres[i].innerHTML;
+            html = '<ol class="linenums"><li><span class="codeline">' +
+                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                '</span></li></ol>';
+            pres[i].innerHTML = html;
+        }
+    </script>
+
+    <script>
+        (function(i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function() {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-28759938-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

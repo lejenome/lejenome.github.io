@@ -3,7 +3,7 @@
 
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website# type: http://ogp.me/ns/profile#">
     <meta charset="utf-8" />
-    <title itemprop="name">{% if page_type == "post" -%} {{posts[0].title|e}} | Moez Bouhlel {% else %} Moez Bouhlel [lejenome] Website {% endif %}</title>
+    <title itemprop="name">Simple feedback form implementation for static websites | Moez Bouhlel </title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <!-- metadata -->
     <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
@@ -36,7 +36,7 @@
 
     <meta property="og:url" itemprop="url" content="https://lejenome.github.io/" />
     <meta name="twitter:description" property="og:description" itemprop="description" content="Moez Bouhlel (lejenome) Website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
-    <meta name="twitter:title" property="og:title" content="{% if page_type == " post " -%} {{posts[0].title|e}} | Moez Bouhlel {% else %} Moez Bouhlel [lejenome] Website {% endif %}" />
+    <meta name="twitter:title" property="og:title" content=" Moez Bouhlel [lejenome] Website " />
     <meta name="twitter:image" property="og:image" itemprop="image" content="https://lejenome.github.io/logo.png" />
     <!-- favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="imgs/favicon/apple-touch-icon-57x57.png" />
@@ -87,26 +87,71 @@
     </header>
     <div>
         <section id="articales">
-            {% for post in posts %}
-            <article class="post" id="{{post.id|e}}">
+            
+            <article class="post" id="6">
                 <hgroup>
-                    <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
-                    <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    <h2 class="post-title"><a href="post/6.html" class="post-link">Simple feedback form implementation for static websites</a></h2>
+                    <h3 class="post-date"><a href="#{post.id|e}}">Wed Oct 05 2016</a></h3>
                 </hgroup>
                 <div class="post-body">
-                    {{post.body}}
+                    <p>Recently, I wanted to add a feedback form to my resume page to help my friends
+review it. I was using GitHub pages to host my static web site and I didn't
+want to host the server side of the feedback on a different server. So I was
+looking for a simple solution that works well with my static website. Most of
+the available ones were either paid or have too many unneeded features.</p>
+<p>At the end, I decided to use my <a href="https://slack.com/">Slack</a> team to receive
+feedbacks. It does not require any third-party library or any server side code.
+And it's very simple to implement:</p>
+<ol>
+<li>Create a Slack team if you don't have one.</li>
+<li>Add an <a href="https://api.slack.com/incoming-webhooks">Incoming Webhook</a> URL to a
+   channel on your team. It's a simple URL that you can send feedbacks to.</li>
+<li>Finally, add your client side implementation. This is a simple one:</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;feedback&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">required</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;send feedback&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;feedback&quot;</span><span class="p">);</span>
+<span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+    <span class="nx">fetch</span><span class="p">(</span><span class="nx">YOUR_WEBHOOK_URL</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="c1">// You should use POST method</span>
+        <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+            <span class="nx">text</span><span class="o">:</span> <span class="nx">form</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// the feedback message</span>
+            <span class="nx">parse</span><span class="o">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="c1">// tell Slack it&#39;s not a formated text</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h4>Improvements:</h4>
+<p>You can add more entries to the send JSON. Check Slack
+<a href="https://api.slack.com/methods/chat.postMessage">documentation</a> for more
+details. The most useful ones are <code>username</code> and <code>icon_emoji</code>.</p>
+<p>You can set different a <code>username</code> and different a <code>icon_emoji</code> entry for every
+page. For example, you send this JSON from your resume page:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;text&quot;</span>       <span class="p">:</span> <span class="s2">&quot;THE FEEDBACK MESSAGE&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;parse&quot;</span>      <span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;username&quot;</span>   <span class="p">:</span> <span class="s2">&quot;resume&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;icon_emoji&quot;</span> <span class="p">:</span> <span class="s2">&quot;:briefcase:&quot;</span>
+<span class="p">}</span>
+</pre></div>
                 </div>
             </article>
-            {% endfor %}
+            
 
         </section>
         <nav id="posts-nav">
             <ul>
-                {% if "newer" in page %}
-                <li><a href="{{page_type}}/{{page.newer|urlencode}}.html" id="prev-post">Newer</a></li>
-                {% endif %} {% if "older" in page %}
-                <li><a href="{{page_type}}/{{page.older|urlencode}}.html" id="next-post">Older</a></li>
-                {% endif %}
+                 
+                <li><a href="post/4.html" id="next-post">Older</a></li>
+                
             </ul>
         </nav>
     </div>

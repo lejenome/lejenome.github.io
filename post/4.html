@@ -3,7 +3,7 @@
 
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website# type: http://ogp.me/ns/profile#">
     <meta charset="utf-8" />
-    <title itemprop="name">{% if page_type == "post" -%} {{posts[0].title|e}} | Moez Bouhlel {% else %} Moez Bouhlel [lejenome] Website {% endif %}</title>
+    <title itemprop="name">[MTCFSS] Recommendations For IT Students | Moez Bouhlel </title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <!-- metadata -->
     <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
@@ -36,7 +36,7 @@
 
     <meta property="og:url" itemprop="url" content="https://lejenome.github.io/" />
     <meta name="twitter:description" property="og:description" itemprop="description" content="Moez Bouhlel (lejenome) Website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
-    <meta name="twitter:title" property="og:title" content="{% if page_type == " post " -%} {{posts[0].title|e}} | Moez Bouhlel {% else %} Moez Bouhlel [lejenome] Website {% endif %}" />
+    <meta name="twitter:title" property="og:title" content=" Moez Bouhlel [lejenome] Website " />
     <meta name="twitter:image" property="og:image" itemprop="image" content="https://lejenome.github.io/logo.png" />
     <!-- favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="imgs/favicon/apple-touch-icon-57x57.png" />
@@ -87,26 +87,78 @@
     </header>
     <div>
         <section id="articales">
-            {% for post in posts %}
-            <article class="post" id="{{post.id|e}}">
+            
+            <article class="post" id="4">
                 <hgroup>
-                    <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
-                    <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    <h2 class="post-title"><a href="post/4.html" class="post-link">[MTCFSS] Recommendations For IT Students</a></h2>
+                    <h3 class="post-date"><a href="#{post.id|e}}">Tue Oct 04 2016</a></h3>
                 </hgroup>
                 <div class="post-body">
-                    {{post.body}}
+                    <p>This is a list of useful websites and tools to check for Computer Science
+students.</p>
+<h2>Challenges:</h2>
+<h3>Algorithms and Programming</h3>
+<ul>
+<li><a href="https://www.hackerrank.com/">HackerRank</a>: Different-level exercises for many
+domains and challenges.</li>
+<li><a href="https://projecteuler.net/">Project Euler</a>: Algorithms challenges, you can find
+them on <a href="https://www.hackerrank.com/projecteuler">ProjectEuler+</a> challenge on
+HackerRank too.</li>
+</ul>
+<h3>System development and administration</h3>
+<ul>
+<li><a href="http://eudyptula-challenge.org/">The Eudyptula Challenge</a>: Series of
+programming exercises for Linux kernel development.</li>
+</ul>
+<h3>Other</h3>
+<ul>
+<li><a href="http://devpost.com/hackathons">DevPost</a>: Online and in-person challenges with
+prizes to win.</li>
+</ul>
+<h2>Tutorials:</h2>
+<ul>
+<li><a href="http://www.developpez.com">Developpez.com</a>: Club des développeurs et IT pro.</li>
+</ul>
+<h2>E-learning:</h2>
+<ul>
+<li><a href="https://www.coursera.org/">Coursera</a></li>
+<li><a href="https://www.edx.org">Edx</a></li>
+<li><a href="https://www.codecademy.com/">Codecademy</a></li>
+<li><a href="https://www.udacity.com/">Udacity</a></li>
+<li><a href="https://lagunita.stanford.edu/">Stanford Online Lagunita</a></li>
+<li><a href="http://ocw.mit.edu/">MIT OpenCourseWare</a></li>
+</ul>
+<h2>Usefull tools:</h2>
+<ul>
+<li><a href="https://github.com">GitHub</a>: #1 Online project hosting service.</li>
+<li><a href="https://c9.io/">Could9</a>: Full-featured development environment, in the cloud.</li>
+<li><a href="https://zealdocs.org/">Zeal</a>: offline documentation for 195+ programming
+  languages and APIs.</li>
+<li><a href="http://devdocs.io/">DevDocs</a>: Online APIs documentation.</li>
+</ul>
+<h2>Freelancer &amp; Money:</h2>
+<ul>
+<li><a href="https://www.topcoder.com">TopCoder</a></li>
+<li><a href="https://www.upwork.com/">UpWork</a></li>
+<li><a href="https://www.freelancer.com/">Freelancer</a></li>
+</ul>
+<h2>CV:</h2>
+<ul>
+<li><a href="https://www.linkedin.com/">LinkedIn</a></li>
+<li><a href="https://stackoverflow.com/jobs/cv">StackOverFlow CV</a></li>
+</ul>
                 </div>
             </article>
-            {% endfor %}
+            
 
         </section>
         <nav id="posts-nav">
             <ul>
-                {% if "newer" in page %}
-                <li><a href="{{page_type}}/{{page.newer|urlencode}}.html" id="prev-post">Newer</a></li>
-                {% endif %} {% if "older" in page %}
-                <li><a href="{{page_type}}/{{page.older|urlencode}}.html" id="next-post">Older</a></li>
-                {% endif %}
+                
+                <li><a href="post/6.html" id="prev-post">Newer</a></li>
+                 
+                <li><a href="post/5.html" id="next-post">Older</a></li>
+                
             </ul>
         </nav>
     </div>

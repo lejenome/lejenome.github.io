@@ -43,7 +43,7 @@ use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:
 
 ```shell
-    pip install Django
+pip install Django
 ```
 
 ## Requirements:
