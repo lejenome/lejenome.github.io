@@ -32,6 +32,7 @@ def load_post(post, index):
     post["title"] = post_file.readline().strip()
     post_file.readline()
     post["body"] = md.convert(post_file.read())
+    post["date_original"] = post["date"]
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
         "%a %b %d %Y")
     post["index"] = index

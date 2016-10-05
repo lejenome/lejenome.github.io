@@ -92,11 +92,11 @@
                 <hgroup>
 
                     {% if page_type == "archive" -%}
-                    <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    <h3 class="post-date"><time datetime="{{post.date_original}}">{{post.date_original}}</time></h3>
                     {% endif %}
                     <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
                     {% if page_type != "archive" -%}
-                    <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    <h3 class="post-date"><time datetime="{{post.date_original}}">{{post.date}}</time></h3>
                     {% endif %}
                 </hgroup>
                 {% if page_type != "archive" %}
