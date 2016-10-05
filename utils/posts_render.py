@@ -64,13 +64,17 @@ def gen_posts():
         except FileExistsError:
             pass
 
+def gen_archive():
+    archive_html = open("archive.html", "w")
+    html = tmpl.render(posts=posts, page={"index": 1}, page_type="archive")
+    archive_html.write(html)
+
 def gen_pages():
-    posts_r = list(reversed(posts))
     for i in range(0, len(posts), MAX_POSTS):
         index = (i // 4) + 1
-        page_posts = posts_r[i: i + MAX_POSTS]
+        page_posts = posts[i: i + MAX_POSTS]
         page_data = {"index": index}
-        if i + MAX_POSTS < len(posts_r):
+        if i + MAX_POSTS < len(posts):
             page_data["older"] = str(index + 1)
         if i > 0:
             page_data["newer"] = str(index - 1)
@@ -109,7 +113,7 @@ def gen_post_rss(post):
                       **post)
 
 def gen_rss():
-    posts_rss = "\n".join(gen_post_rss(post) for post in reversed(posts))
+    posts_rss = "\n".join(gen_post_rss(post) for post in posts)
     rss = """<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
  xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -129,6 +133,8 @@ def gen_rss():
 
 if __name__ == "__main__":
     load_posts()
+    posts.reverse()
     gen_posts()
+    gen_archive()
     gen_pages()
     gen_rss()

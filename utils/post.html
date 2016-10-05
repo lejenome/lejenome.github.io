@@ -69,33 +69,41 @@
 
 <body class="container">
     <header>
-        <h1><a href="/">Moez Bouhlel <small>@lejenome</small></a></h1>
+        <h1><a href="">Moez Bouhlel <small>@lejenome</small></a></h1>
         <nav>
             <ul class="menu">
-                <li><a href="/">Home</a></li>
+                <li><a href="">Home</a></li>
                 <li><a href="https://twitter.com/lejenome">Twitter</a></li>
                 <li><a href="https://github.com/lejenome">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
-                <li><a href="/resume.html">Resume</a></li>
-                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="resume.html">Resume</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <ul class="icons">
-                <li><a title="Archive" href="#!archive"><i class="fa fa-folder-open"></i></a></li>
+                <li><a title="Archive" href="archive.html"><i class="fa fa-folder-open"></i></a></li>
                 <li><a title="RSS" rel="alternate" type="application/rss+xml" href="rss.xml"><i class="fa fa-rss"></i></a></li>
             </ul>
         </nav>
     </header>
     <div>
-        <section id="articales">
+        <section id="articales" class="type-{{ page_type }}">
             {% for post in posts %}
             <article class="post" id="{{post.id|e}}">
                 <hgroup>
-                    <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
+
+                    {% if page_type == "archive" -%}
                     <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    {% endif %}
+                    <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
+                    {% if page_type != "archive" -%}
+                    <h3 class="post-date"><a href="#{post.id|e}}">{{post.date}}</a></h3>
+                    {% endif %}
                 </hgroup>
+                {% if page_type != "archive" %}
                 <div class="post-body">
                     {{post.body}}
                 </div>
+                {% endif %}
             </article>
             {% endfor %}
 
