@@ -54,12 +54,12 @@ form.addEventListener("submit", function(e) {
 details. The most useful ones are &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;icon_emoji&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;You can set different a &lt;code&gt;username&lt;/code&gt; and different a &lt;code&gt;icon_emoji&lt;/code&gt; entry for every
 page. For example, you send this JSON from your resume page:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;javascript
+&lt;p&gt;&lt;code&gt;json
 {
-    "text": "THE FEEDBACK MESSAGE",
-    "parse": "none",
-    "username": "resume",
-    "icon_emoji": ":briefcase:"
+    "text"       : "THE FEEDBACK MESSAGE",
+    "parse"      : "none",
+    "username"   : "resume",
+    "icon_emoji" : ":briefcase:"
 }&lt;/code&gt;&lt;/p&gt;</description>
     </item>
 

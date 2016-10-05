@@ -13,7 +13,7 @@ md = markdown.Markdown(output_format="html5",
                                    "markdown.extensions.codehilite"],
                        extension_configs={
                            'markdown.extensions.codehilite': {
-                               'linenums': True,
+                               # 'linenums': True,
                            }})
 
 with open("posts.json") as posts_file:
@@ -27,7 +27,7 @@ for index, post in enumerate(posts):
         os.path.splitext(os.path.basename(post["url"]))[0], "html"]))
     min_path = os.path.join("post", '.'.join([str(post["id"]), "html"]))
     post_html = open(min_path, "w")
-    post["title"] = post_file.readline()[:-2]
+    post["title"] = post_file.readline()[:-1]
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
         "%a %b %d %Y")
     post_file.readline()

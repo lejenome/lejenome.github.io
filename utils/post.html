@@ -3,7 +3,7 @@
 
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website# type: http://ogp.me/ns/profile#">
     <meta charset="utf-8" />
-    <title itemprop="name">{{post.title|e}}</title>
+    <title itemprop="name">{{post.title|e}} | Moez Bouhlel</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <!-- metadata -->
     <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
@@ -62,8 +62,8 @@
     <link href="css/font-awesome.css" type="text/css" rel="stylesheet" />
     <link href="fonts/source-code-pro/source-code-pro.css" type="text/css" rel="stylesheet" />
     <link href="css/common.css" type="text/css" rel="stylesheet" />
-    <link href="css/pygmentize.default.css" type="text/css" rel="stylesheet" />
     <link href="css/articales.css" type="text/css" rel="stylesheet" />
+    <link href="css/pygmentize.default.css" type="text/css" rel="stylesheet" />
     <link href="css/blog.css" type="text/css" rel="stylesheet" />
 </head>
 
@@ -109,6 +109,18 @@
         </nav>
     </div>
     <!-- import js -->
+    <script>
+        var pres = document.querySelectorAll(".codehilite pre");
+        var i;
+        for (i = 0; i < pres.length; i++) {
+            var html = pres[i].innerHTML;
+            html = '<ol class="linenums"><li>' +
+                html.split("\n").slice(0, -1).join("</li><li>") +
+                '</li></ol>';
+            pres[i].innerHTML = html;
+        }
+    </script>
+
     <script>
         (function(i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;

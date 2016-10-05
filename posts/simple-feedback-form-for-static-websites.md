@@ -46,11 +46,11 @@ details. The most useful ones are `username` and `icon_emoji`.
 You can set different a `username` and different a `icon_emoji` entry for every
 page. For example, you send this JSON from your resume page:
 
-```javascript
+```json
 {
-    "text": "THE FEEDBACK MESSAGE",
-    "parse": "none",
-    "username": "resume",
-    "icon_emoji": ":briefcase:"
+    "text"       : "THE FEEDBACK MESSAGE",
+    "parse"      : "none",
+    "username"   : "resume",
+    "icon_emoji" : ":briefcase:"
 }
 ```
