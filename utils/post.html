@@ -114,9 +114,9 @@
         var i;
         for (i = 0; i < pres.length; i++) {
             var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li>' +
-                html.split("\n").slice(0, -1).join("</li><li>") +
-                '</li></ol>';
+            html = '<ol class="linenums"><li><span class="codeline">' +
+                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                '</span></li></ol>';
             pres[i].innerHTML = html;
         }
     </script>

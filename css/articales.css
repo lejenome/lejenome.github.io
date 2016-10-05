@@ -258,17 +258,12 @@ pre {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.codehilite pre {
-    margin-bottom: 20px;
-}
-
 pre code {
     padding: 0;
     color: inherit;
     background-color: transparent;
     border: 0;
 }
-
 
 blockquote code {
     padding: 0;
@@ -289,7 +284,11 @@ ol.linenums {
 
 ol.linenums li {
     padding-left: 12px;
-    /*color: #bebec5;*/
+    color: #bebec5;
     line-height: 18px;
     text-shadow: 0 1px 0 #fff;
+}
+
+ol.linenums li> span.codeline {
+    color: #333;
 }
