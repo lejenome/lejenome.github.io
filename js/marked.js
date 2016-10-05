@@ -1,3 +1,4 @@
+/* vim: set filetype=javascript : */
 /**
  * marked - a markdown parser
  * Copyright (c) 2011-2014, Christopher Jeffrey. (MIT Licensed)
