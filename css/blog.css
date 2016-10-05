@@ -70,10 +70,10 @@
 
 #prev-post {
     float: left;
-    display: none;
+    /*display: none;*/
 }
 
 #next-post {
     float: right;
-    display: none;
+    /*display: none;*/
 }
