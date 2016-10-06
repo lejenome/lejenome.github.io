@@ -106,7 +106,13 @@
                 {% endif %}
             </article>
             {% endfor %}
-
+            {%- if page_type == "tags" %}
+            <ul>
+            {% for tag in tags %}
+                <li><i class="fa fa-tag"></i> <a href="tag/{{tag}}.html">{{tag}}</a></li>
+            {% endfor %}
+            </ul>
+            {% endif %}
         </section>
         <nav id="posts-nav">
             <ul>

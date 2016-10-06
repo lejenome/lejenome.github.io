@@ -94,6 +94,12 @@ def gen_tags():
         html = tmpl.render(posts=tag_posts, page={"index": 1}, page_type="tag")
         tag_html.write(html)
         tag_html.close()
+    tags_s = sorted(tags)
+    tag_html = open(os.path.join("tag/index.html"), "w")
+    html = tmpl.render(tags=tags_s, page={"index": 1},
+                       page_type="tags", posts=[])
+    tag_html.write(html)
+    tag_html.close()
 
 def gen_pages():
     try:
