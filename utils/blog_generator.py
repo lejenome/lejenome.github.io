@@ -3,12 +3,12 @@
 import os
 import json
 from datetime import datetime
-from xml.sax.saxutils import escape
 from jinja2 import Template
 import markdown
 
 posts = None
 tmpl = None
+tmpl_rss = None
 md = markdown.Markdown(output_format="html5",
                        extensions=["markdown.extensions.fenced_code",
                                    "markdown.extensions.codehilite"])
@@ -26,6 +26,8 @@ with open("posts.json") as posts_file:
     posts = json.load(posts_file)["files"]
 with open(os.path.join(os.path.dirname(__file__), "post.html")) as tmpl_file:
     tmpl = Template(tmpl_file.read())
+with open(os.path.join(os.path.dirname(__file__), "rss.xml")) as tmpl_file:
+    tmpl_rss = Template(tmpl_file.read())
 
 def load_post(post, index):
     post_file = open(post["url"])
@@ -45,6 +47,10 @@ def load_post(post, index):
         os.path.splitext(os.path.basename(post["url"]))[0], "html"]))
     post["min_path"] = os.path.join(
         "post", '.'.join([str(post["id"]), "html"]))
+    post["url_rss"] = os.path.join(
+        settings["blog_url"], post["full_path"])
+    post["date_rss"] = datetime.strptime(post["date"], "%a %b %d %Y").strftime(
+        "%a, %d %b %Y 00:00:00 GMT")
 
 def load_posts():
     for index, post in enumerate(posts):
@@ -64,6 +70,7 @@ def gen_posts():
         post_html = open(post["min_path"], "w")
         html = tmpl.render(posts=[post], page=page_data, page_type="post")
         post_html.write(html)
+        post_html.close()
         try:
             os.symlink(post["min_path"][5:], post["full_path"])
         except FileExistsError:
@@ -73,6 +80,7 @@ def gen_archive():
     archive_html = open("archive.html", "w")
     html = tmpl.render(posts=posts, page={"index": 1}, page_type="archive")
     archive_html.write(html)
+    archive_html.close()
 
 def gen_pages():
     try:
@@ -90,6 +98,7 @@ def gen_pages():
         page_html = open(os.path.join("page", str(index) + ".html"), "w")
         html = tmpl.render(posts=page_posts, page=page_data, page_type="page")
         page_html.write(html)
+        page_html.close()
     try:
         os.symlink("1.html", "page/index.html")
     except FileExistsError:
@@ -99,44 +108,9 @@ def gen_pages():
     except FileExistsError:
         pass
 
-def gen_post_rss(post):
-    post["title"] = escape(post["title"])
-    post["body"] = escape(post["body"])
-    post["url"] = os.path.join(
-        settings["blog_url"], "post", str(post["id"]) + ".html")
-    post["date"] = datetime.strptime(post["date"], "%a %b %d %Y").strftime(
-        "%a, %d %b %Y 00:00:00 GMT")
-    categories_rss = "\n".join(
-        """<category domain="{blog_url}#!tag/{tag}">{tag}</category>"""
-        .format(tag=tag, **settings) for tag in post["tags"])
-    return """
-    <item>
-      <title>{title}</title>
-      <link>{url}</link>
-      <pubDate>{date}</pubDate>
-      <guid>{url}</guid>
-      <dc:creator>{author}</dc:creator>
-      {categories}
-      <description>{body}</description>
-    </item>""".format(author=settings["author"], categories=categories_rss,
-                      **post)
-
 def gen_rss():
-    posts_rss = "\n".join(gen_post_rss(post) for post in posts)
-    rss = """<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"
- xmlns:dc="http://purl.org/dc/elements/1.1/"
- xml:base="{blog_url}">
-  <channel>
-    <atom:link href="{rss_url}" rel="self" type="application/rss+xml" />
-    <title>{blog_name}</title>
-    <description>{blog_description}</description>
-    <language>en</language>
-    <link>{blog_url}</link>
-{posts_rss}
-  </channel>
-</rss>""".format(posts_rss=posts_rss, **settings)
     rss_file = open("rss.xml", "w")
+    rss = tmpl_rss.render(settings=settings, posts=posts)
     rss_file.write(rss)
     rss_file.close()
 
