@@ -51,6 +51,10 @@ def load_posts():
         load_post(post, index)
 
 def gen_posts():
+    try:
+        os.mkdir("post")
+    except FileExistsError:
+        pass
     for post in posts:
         page_data = {"index": post["index"]}
         if "newer" in post:
@@ -61,7 +65,7 @@ def gen_posts():
         html = tmpl.render(posts=[post], page=page_data, page_type="post")
         post_html.write(html)
         try:
-            os.symlink(post["min_path"], post["full_path"])
+            os.symlink(post["min_path"][5:], post["full_path"])
         except FileExistsError:
             pass
 
@@ -71,6 +75,10 @@ def gen_archive():
     archive_html.write(html)
 
 def gen_pages():
+    try:
+        os.mkdir("page")
+    except FileExistsError:
+        pass
     for i in range(0, len(posts), MAX_POSTS):
         index = (i // 4) + 1
         page_posts = posts[i: i + MAX_POSTS]
@@ -83,7 +91,7 @@ def gen_pages():
         html = tmpl.render(posts=page_posts, page=page_data, page_type="page")
         page_html.write(html)
     try:
-        os.symlink("page/1.html", "page/index.html")
+        os.symlink("1.html", "page/index.html")
     except FileExistsError:
         pass
     try:
