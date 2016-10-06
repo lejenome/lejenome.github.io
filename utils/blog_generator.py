@@ -18,7 +18,7 @@ settings = {
     "blog_name": "Moez Bouhlel [lejenome]",
     "blog_description": "Self-taught programmer, CS Student and FOSS "
     "contributor",
-    "blog_url": "https://lejenome.github.io/",
+    "blog_url": "https://lejenome.github.io",
     "author": "Moez Bouhlel",
 }
 MAX_POSTS = 5

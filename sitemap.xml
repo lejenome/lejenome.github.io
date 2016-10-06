@@ -4,18 +4,158 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     <url>
-        <loc>https://lejenome.github.io/</loc>
+        <loc>https://lejenome.github.io</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/resume</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://lejenome.github.io/contact</loc>
         <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url><url>
+        <loc>https://lejenome.github.io/post/syteup-creating-basic-plugin-segment</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/5</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/mtcfss-python-training-get-ready</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/1</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/simple-feedback-form-for-static-websites</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/syteup-readme</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/recommandation-for-it-student</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/2</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/6</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/4</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/3</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/dual-boot-to-virtual-machine</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/page/1</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/page/2</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/page/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.70</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/javascript</loc>
+        <changefreq>daily</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
-        <loc>https://lejenome.github.io/resume</loc>
+        <loc>https://lejenome.github.io/tag/qemu</loc>
         <changefreq>daily</changefreq>
-        <priority>0.95</priority>
+        <priority>0.80</priority>
     </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/windows</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/mtcfss</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/slack</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/django</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/linux</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/note</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/introduction</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/kvm</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/python</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/syteup</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    
 </urlset>
