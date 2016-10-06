@@ -9,6 +9,7 @@ import markdown
 posts = None
 tmpl = None
 tmpl_rss = None
+tmpl_sitemap = None
 md = markdown.Markdown(output_format="html5",
                        extensions=["markdown.extensions.fenced_code",
                                    "markdown.extensions.codehilite"])
@@ -28,6 +29,8 @@ with open(os.path.join(os.path.dirname(__file__), "post.html")) as tmpl_file:
     tmpl = Template(tmpl_file.read())
 with open(os.path.join(os.path.dirname(__file__), "rss.xml")) as tmpl_file:
     tmpl_rss = Template(tmpl_file.read())
+with open(os.path.join(os.path.dirname(__file__), "sitemap.xml")) as tmpl_file:
+    tmpl_sitemap = Template(tmpl_file.read())
 
 def load_post(post, index):
     post_file = open(post["url"])
@@ -133,6 +136,20 @@ def gen_rss():
     rss_file.write(rss)
     rss_file.close()
 
+def gen_sitemap():
+    sitemap_file = open("sitemap.xml", "w")
+    posts_d = [os.path.splitext(p)[0] for p in os.listdir("post/")]
+    tags_d = [os.path.splitext(p)[0]
+              for p in os.listdir("tag/") if p != "index.html"]
+    pages_d = [os.path.splitext(p)[0]
+               for p in os.listdir("page/") if p != "index.html"]
+    tags_d.append("")
+    pages_d.append("")
+    sitemap = tmpl_sitemap.render(settings=settings, posts=posts_d,
+                                  tags=tags_d, pages=pages_d)
+    sitemap_file.write(sitemap)
+    sitemap_file.close()
+
 if __name__ == "__main__":
     load_posts()
     posts.reverse()
@@ -141,3 +158,4 @@ if __name__ == "__main__":
     gen_tags()
     gen_pages()
     gen_rss()
+    gen_sitemap()
