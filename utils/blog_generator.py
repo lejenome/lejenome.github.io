@@ -82,6 +82,19 @@ def gen_archive():
     archive_html.write(html)
     archive_html.close()
 
+def gen_tags():
+    try:
+        os.mkdir("tag")
+    except FileExistsError:
+        pass
+    tags = set(tag for post in posts for tag in post["tags"])
+    for tag in tags:
+        tag_posts = [post for post in posts if tag in post["tags"]]
+        tag_html = open(os.path.join("tag", tag + ".html"), "w")
+        html = tmpl.render(posts=tag_posts, page={"index": 1}, page_type="tag")
+        tag_html.write(html)
+        tag_html.close()
+
 def gen_pages():
     try:
         os.mkdir("page")
@@ -119,5 +132,6 @@ if __name__ == "__main__":
     posts.reverse()
     gen_posts()
     gen_archive()
+    gen_tags()
     gen_pages()
     gen_rss()
