@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/Blog">
+<html lang="en" itemscope itemtype="http://schema.org/{% if page_type == 'post' -%}TechArticle{%else%}Blog{%endif%}">
 
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# website: http://ogp.me/ns/website# type: http://ogp.me/ns/profile#">
     <meta charset="utf-8" />
@@ -87,40 +87,38 @@
     </header>
     <div>
         <section id="articales" class="type-{{ page_type }}">
-            {% for post in posts %}
-            <article class="post" id="{{post.id|e}}">
+            {% for post in posts -%}
+            <article class="post" id="{{post.id|e}}" {%- if page_type != 'post' %} itemprop="blogPost" itemscope itemtype="http://schema.org/TechArticle"{% endif %}>
                 <hgroup>
-
                     {% if page_type in ("archive", "tag") -%}
-                    <h3 class="post-date"><time datetime="{{post.date_original}}">{{post.date_original}}</time></h3>
-                    {% endif %}
-                    <h2 class="post-title"><a href="post/{{post.id|urlencode}}.html" class="post-link">{{post.title|e}}</a></h2>
-                    {% if page_type not in ("archive", "tag") -%}
-                    <h3 class="post-date"><time datetime="{{post.date_original}}">{{post.date}}</time></h3>
-                    {% endif %}
+                    <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date_original}}</time></h3>
+                    {% endif -%}
+                    <h2 class="post-title" itemprop="name"><a href="post/{{post.id|urlencode}}.html" class="post-link" itemprop="url">{{post.title|e}}</a></h2>
+                    {%- if page_type not in ("archive", "tag") %}
+                    <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time></h3>
+                    {%- endif %}
                 </hgroup>
-                {% if page_type not in ("archive", "tag") %}
-                <div class="post-body">
+                {% if page_type not in ("archive", "tag") -%}
+                <div class="post-body" itemprop="articleBody">
                     {{post.body}}
                 </div>
-                {% endif %}
+                {%- endif %}
             </article>
-            {% endfor %}
-            {%- if page_type == "tags" %}
+            {%- endfor %}
+            {%- if page_type == "tags" -%}
             <ul>
-            {% for tag in tags %}
+            {%- for tag in tags %}
                 <li><i class="fa fa-tag"></i> <a href="tag/{{tag}}.html">{{tag}}</a></li>
-            {% endfor %}
+            {% endfor -%}
             </ul>
-            {% endif %}
+            {%- endif %}
         </section>
         <nav id="posts-nav">
-            <ul>
-                {% if "newer" in page %}
+            <ul>{% if "newer" in page -%}
                 <li><a href="{{page_type}}/{{page.newer|urlencode}}.html" id="prev-post">Newer</a></li>
-                {% endif %} {% if "older" in page %}
+                {%- endif %}{% if "older" in page %}
                 <li><a href="{{page_type}}/{{page.older|urlencode}}.html" id="next-post">Older</a></li>
-                {% endif %}
+                {%- endif %}
             </ul>
         </nav>
     </div>
