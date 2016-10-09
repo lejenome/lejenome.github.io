@@ -1,9 +1,7 @@
 BEGIN:VCARD
-VERSION:3.0
-N:Bouhlel;Moez;;;
+VERSION:4.0
 FN:Moez Bouhlel
 TEL:23274587
 EMAIL:bmoez.j@gmail.com
-SOURCE;VALUE=uri:goo.gl/CQ1ce1
+SOURCE:goo.gl/CQ1ce1
 END:VCARD
-

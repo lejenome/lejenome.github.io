@@ -24,8 +24,7 @@
             </ul>
         </p>
     </div>
-    <a href="vcard.vcf" rel="alternate" type="text/vcard"><img class="qrcode" src="qrcode.png"></img>
-    </a>
+    <a href="vcard.vcf" rel="alternate" type="text/vcard" class="qrcode"><img id="qrcode" src="qrcode.svg" /></a>
     <div class="right-half">
         <ul>
             <li>
@@ -50,6 +49,14 @@
             </li>
         </ul>
     </div>
+    <script>
+        "use strict";
+        let svg_url = document.getElementById("qrcode").src;
+        fetch(svg_url).then(resp => resp.text()).then(svg => {
+            document.getElementsByClassName("qrcode")[0].innerHTML = svg;
+        });
+
+    </script>
 </body>
 
 </html>
