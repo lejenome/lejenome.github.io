@@ -39,4 +39,9 @@
         <priority>0.80</priority>
     </url>
     {% endfor %}
+    <url>
+        <loc>{{settings.blog_url}}/archive</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.70</priority>
+    </url>
 </urlset>

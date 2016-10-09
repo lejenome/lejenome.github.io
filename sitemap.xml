@@ -158,4 +158,9 @@
         <priority>0.80</priority>
     </url>
     
+    <url>
+        <loc>https://lejenome.github.io/archive</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.70</priority>
+    </url>
 </urlset>
