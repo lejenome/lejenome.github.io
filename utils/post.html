@@ -93,11 +93,11 @@
                 <li><a href="https://twitter.com/lejenome">Twitter</a></li>
                 <li><a href="https://github.com/lejenome">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
-                <li><a href="resume.html">Resume</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="resume">Resume</a></li>
+                <li><a href="contact">Contact</a></li>
             </ul>
             <ul class="icons">
-                <li><a title="Archive" href="archive.html"><i class="fa fa-folder-open"></i></a></li>
+                <li><a title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>
                 <li><a title="RSS" rel="alternate" type="application/rss+xml" href="rss.xml"><i class="fa fa-rss"></i></a></li>
             </ul>
         </nav>
@@ -112,7 +112,7 @@
                     {% if page_type in ("archive", "tag") -%}
                     <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date_original}}</time></h3>
                     {% endif -%}
-                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}.html" class="post-link" itemprop="url">{{post.title|e}}</a></h2>
+                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url">{{post.title|e}}</a></h2>
                     {%- if page_type not in ("archive", "tag") %}
                     <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time></h3>
                     {%- endif %}
@@ -127,16 +127,16 @@
             {%- if page_type == "tags" -%}
             <ul>
             {%- for tag in tags %}
-                <li><i class="fa fa-tag"></i> <a href="tag/{{tag}}.html">{{tag}}</a></li>
+                <li><i class="fa fa-tag"></i> <a href="tag/{{tag}}">{{tag}}</a></li>
             {% endfor -%}
             </ul>
             {%- endif %}
         </section>
         <nav id="posts-nav">
             <ul>{% if "newer" in page -%}
-                <li><a href="{{page_type}}/{{page.newer|urlencode}}.html" id="prev-post">Newer</a></li>
+                <li><a href="{{page_type}}/{{page.newer|urlencode}}" id="prev-post">Newer</a></li>
                 {%- endif %}{% if "older" in page %}
-                <li><a href="{{page_type}}/{{page.older|urlencode}}.html" id="next-post">Older</a></li>
+                <li><a href="{{page_type}}/{{page.older|urlencode}}" id="next-post">Older</a></li>
                 {%- endif %}
             </ul>
         </nav>
