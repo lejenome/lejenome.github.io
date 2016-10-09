@@ -94,7 +94,8 @@ def gen_tags():
     for tag in tags:
         tag_posts = [post for post in posts if tag in post["tags"]]
         tag_html = open(os.path.join("tag", tag + ".html"), "w")
-        html = tmpl.render(posts=tag_posts, page={"index": 1}, page_type="tag")
+        html = tmpl.render(tag=tag, posts=tag_posts, page={"index": 1},
+                           page_type="tag")
         tag_html.write(html)
         tag_html.close()
     tags_s = sorted(tags)
