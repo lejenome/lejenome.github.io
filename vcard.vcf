@@ -1,21 +1,23 @@
 BEGIN:VCARD
-VERSION:3.0
+VERSION:4.0
 FN:Moez Bouhlel
 N:Bouhlel;Moez;;;
 NICKNAME:lejenome
 EMAIL:bmoez.j@gmail.com
 TEL;TYPE=cell:+216 23 274 587
-ADR:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
-TITLE:Software Developer
+ADR;TYPE=home:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
+TITLE:Software Developer, CS Student
 URL;TYPE=home:https://lejenome.github.io/
-KEY;TYPE=PGP:https://lejenome.github.io/key.pgp
-NOTE:Développement des logiciels.\nDéveloppement web.\nMaintenance des serv
- eurs.\nMaintenance PCs.\nFormation en informatique.\nEncadrement PFE.
-PHOTO;VALUE=uri:https://lejenome.github.io/photo.jpg
-LOGO;VALUE=uri:https://lejenome.github.io/logo.png
+KEY;MEDIATYPE=application/pgp-keys:https://lejenome.github.io/key.pgp
+NOTE:Self-taught programmer, CS student and FOSS contributor.\nHire me for 
+ a part-time job or for an internship at https://lejenome.github.io/resume
+PHOTO;MEDIATYPE=image/jpeg:https://lejenome.github.io/photo.jpg
+LOGO;MEDIATYPE=image/png:https://lejenome.github.io/logo.png
 SOURCE;VALUE=uri:https://lejenome.github.io/vcard.vcf
-X-GENDER:Male
-TZ:+0100
+KIND:individual
+GENDER:M
+TZ:Africa/Tunis
+CLASS:public
 item1.URL:https://github.com/lejenome
 item1.X-ABLabel:GitHub
 item1.X-GITHUB:lejenome
@@ -28,5 +30,6 @@ item3.URL:https://www.linkedin.com/in/lejenome
 item3.X-ABLabel:LinkedIn
 item3.X-LINKEDIN:lejenome
 item3.X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/lejenome
+REV:20161016T200811Z
 END:VCARD
 
