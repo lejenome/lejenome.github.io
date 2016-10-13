@@ -18,12 +18,27 @@
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url><url>
+        <loc>https://lejenome.github.io/post/dualboolt-guest-window-machine</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/post/syteup-creating-basic-plugin-segment</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://lejenome.github.io/post/5</loc>
+        <loc>https://lejenome.github.io/post/python-101-training-get-ready</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/mtcfss-recommendations-for-it-students</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/syteup-plugin-creation</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
@@ -33,12 +48,17 @@
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://lejenome.github.io/post/1</loc>
+        <loc>https://lejenome.github.io/post/physical-boot-to-virtual-efi-windows-machine</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
         <loc>https://lejenome.github.io/post/simple-feedback-form-for-static-websites</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/useful-links</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
@@ -58,22 +78,12 @@
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://lejenome.github.io/post/2</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.00</priority>
-    </url>
-    <url>
         <loc>https://lejenome.github.io/post/simple-feedback-form-implementation-for-static-websites</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
     <url>
-        <loc>https://lejenome.github.io/post/4</loc>
-        <changefreq>daily</changefreq>
-        <priority>1.00</priority>
-    </url>
-    <url>
-        <loc>https://lejenome.github.io/post/3</loc>
+        <loc>https://lejenome.github.io/post/syteup-introduction</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>

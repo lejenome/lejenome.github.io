@@ -70,72 +70,87 @@ every page. For example, you send this JSON from your resume page:&lt;/p&gt;
     </item>
   <item>
       <title>[MTCFSS] Recommendations For IT Students</title>
-      <link>https://lejenome.github.io/post/4</link>
+      <link>https://lejenome.github.io/post/useful-links</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/4</guid>
+      <guid>https://lejenome.github.io/post/useful-links</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/mtcfss">mtcfss</category>
       <category domain="https://lejenome.github.io/tag/note">note</category>
       
       <description>&lt;p&gt;This is a list of useful websites and tools to check for Computer Science
 students.&lt;/p&gt;
-&lt;h2&gt;Challenges:&lt;/h2&gt;
-&lt;h3&gt;Algorithms and Programming&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.hackerrank.com/&#34;&gt;HackerRank&lt;/a&gt;: Different-level exercises for many
-domains and challenges.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://projecteuler.net/&#34;&gt;Project Euler&lt;/a&gt;: Algorithms challenges, you can find
-them on &lt;a href=&#34;https://www.hackerrank.com/projecteuler&#34;&gt;ProjectEuler+&lt;/a&gt; challenge on
-HackerRank too.&lt;/li&gt;
+&lt;div class=&#34;section&#34; id=&#34;challenges&#34;&gt;
+&lt;h1&gt;Challenges:&lt;/h1&gt;
+&lt;div class=&#34;section&#34; id=&#34;algorithms-and-programming&#34;&gt;
+&lt;h2&gt;Algorithms and Programming&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.hackerrank.com/&#34;&gt;HackerRank&lt;/a&gt;: Different-level exercises for many domains and challenges.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://projecteuler.net/&#34;&gt;Project Euler&lt;/a&gt;: Algorithms challenges, you can find them on
+&lt;a class=&#34;reference external&#34; href=&#34;https://www.hackerrank.com/projecteuler&#34;&gt;ProjectEuler+&lt;/a&gt; challenge on HackerRank too.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;System development and administration&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://eudyptula-challenge.org/&#34;&gt;The Eudyptula Challenge&lt;/a&gt;: Series of
-programming exercises for Linux kernel development.&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;system-development-and-administration&#34;&gt;
+&lt;h2&gt;System development and administration&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://eudyptula-challenge.org/&#34;&gt;The Eudyptula Challenge&lt;/a&gt;: Series of programming exercises for Linux kernel
+development.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3&gt;Other&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://devpost.com/hackathons&#34;&gt;DevPost&lt;/a&gt;: Online and in-person challenges with
-prizes to win.&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;other&#34;&gt;
+&lt;h2&gt;Other&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://devpost.com/hackathons&#34;&gt;DevPost&lt;/a&gt;: Online and in-person challenges with prizes to win.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Tutorials:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.developpez.com&#34;&gt;Developpez.com&lt;/a&gt;: Club des développeurs et IT pro.&lt;/li&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;tutorials&#34;&gt;
+&lt;h1&gt;Tutorials:&lt;/h1&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://www.developpez.com&#34;&gt;Developpez.com&lt;/a&gt;: Club des développeurs et IT pro.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;E-learning:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.coursera.org/&#34;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.edx.org&#34;&gt;Edx&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.codecademy.com/&#34;&gt;Codecademy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.udacity.com/&#34;&gt;Udacity&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://lagunita.stanford.edu/&#34;&gt;Stanford Online Lagunita&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ocw.mit.edu/&#34;&gt;MIT OpenCourseWare&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;e-learning&#34;&gt;
+&lt;h1&gt;E-learning:&lt;/h1&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.coursera.org/&#34;&gt;Coursera&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.edx.org&#34;&gt;Edx&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.codecademy.com/&#34;&gt;Codecademy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.udacity.com/&#34;&gt;Udacity&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://lagunita.stanford.edu/&#34;&gt;Stanford Online Lagunita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://ocw.mit.edu/&#34;&gt;MIT OpenCourseWare&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Usefull tools:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;: #1 Online project hosting service.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://c9.io/&#34;&gt;Could9&lt;/a&gt;: Full-featured development environment, in the cloud.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://zealdocs.org/&#34;&gt;Zeal&lt;/a&gt;: offline documentation for 195+ programming
-  languages and APIs.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://devdocs.io/&#34;&gt;DevDocs&lt;/a&gt;: Online APIs documentation.&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;usefull-tools&#34;&gt;
+&lt;h1&gt;Usefull tools:&lt;/h1&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://github.com&#34;&gt;GitHub&lt;/a&gt;: #1 Online project hosting service.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://c9.io/&#34;&gt;Could9&lt;/a&gt;: Full-featured development environment, in the cloud.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://zealdocs.org/&#34;&gt;Zeal&lt;/a&gt;: offline documentation for 195+ programming languages and APIs.&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://devdocs.io/&#34;&gt;DevDocs&lt;/a&gt;: Online APIs documentation.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Freelancer &amp;amp; Money:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.topcoder.com&#34;&gt;TopCoder&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.upwork.com/&#34;&gt;UpWork&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.freelancer.com/&#34;&gt;Freelancer&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;freelancer-money&#34;&gt;
+&lt;h1&gt;Freelancer &amp;amp; Money:&lt;/h1&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.topcoder.com&#34;&gt;TopCoder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.upwork.com/&#34;&gt;UpWork&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.freelancer.com/&#34;&gt;Freelancer&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;CV:&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.linkedin.com/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://stackoverflow.com/jobs/cv&#34;&gt;StackOverFlow CV&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;cv&#34;&gt;
+&lt;h1&gt;CV:&lt;/h1&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.linkedin.com/&#34;&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://stackoverflow.com/story&#34;&gt;StackOverFlow Story&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+</description>
     </item>
   <item>
       <title>Physical boot to virtual EFI Windows machine</title>
-      <link>https://lejenome.github.io/post/5</link>
+      <link>https://lejenome.github.io/post/dualboolt-guest-window-machine</link>
       <pubDate>Thu, 15 Sep 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/5</guid>
+      <guid>https://lejenome.github.io/post/dualboolt-guest-window-machine</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/linux">linux</category>
       <category domain="https://lejenome.github.io/tag/qemu">qemu</category>
@@ -153,123 +168,118 @@ partition for Windows.&lt;/p&gt;
 configurations (I couldn&#39;t find a work around BCD boot entry issue other than
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.&lt;/p&gt;
-&lt;p&gt;Before we start, check that &lt;code&gt;loop&lt;/code&gt; and &lt;code&gt;linear&lt;/code&gt; modules are loaded:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo modprobe loop
+&lt;p&gt;Before we start, check that &lt;tt class=&#34;docutils literal&#34;&gt;loop&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;linear&lt;/tt&gt; modules are loaded:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo modprobe loop
 sudo modprobe linear
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;/pre&gt;
 &lt;p&gt;Because the virtual machine need whole disk with booth the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let&#39;s create a small
 file to hold the EFI partition:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;200000
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Now you have &lt;code&gt;efi&lt;/code&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;200000
+&lt;/pre&gt;
+&lt;p&gt;Now you have &lt;tt class=&#34;docutils literal&#34;&gt;efi&lt;/tt&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo losetup -f efi
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo losetup -f efi
+&lt;/pre&gt;
 &lt;p&gt;It will assign the first available loopback device to the file. We will assume
-that the assigned device is &lt;code&gt;/dev/loop0&lt;/code&gt;. To check the assigned device:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;losetup -a
-&lt;/pre&gt;&lt;/div&gt;
-
-
+that the assigned device is &lt;tt class=&#34;docutils literal&#34;&gt;/dev/loop0&lt;/tt&gt;. To check the assigned device:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+losetup -a
+&lt;/pre&gt;
 &lt;p&gt;Next, we will merge the loopback device and the real Windows partition into a
 single linear RAID disk image (We will assume that the windows partition is
-&lt;code&gt;/dev/sda2&lt;/code&gt;):&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; --level&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linear --raid-devices&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; /dev/loop0 /dev/sda2
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;tt class=&#34;docutils literal&#34;&gt;/dev/sda2&lt;/tt&gt;):&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; --level&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linear --raid-devices&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; /dev/loop0 /dev/sda2
+&lt;/pre&gt;
 &lt;p&gt;Time to create the partitions table of the new RAID disk with reusing the same
-physical Windows partition. For this step, we will use &lt;em&gt;parted&lt;/em&gt; utility. You
+physical Windows partition. For this step, we will use _parted_ utility. You
 can use other tools on your own. We need to get the size of real Windows
 partition on sectors.&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/sda unit s print
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo parted /dev/sda unit s print
+&lt;/pre&gt;
 &lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/md0
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo parted /dev/md0
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mktable gpt
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary fat32 &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -WINDOW_PARITION_SIZE
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; quit
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;code&gt;/dev/md0p1&lt;/code&gt; and
-EFI partition &lt;code&gt;/dev/md0p2&lt;/code&gt;. You may get few warning messages when
+&lt;/pre&gt;
+&lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0p1&lt;/tt&gt; and
+EFI partition &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0p2&lt;/tt&gt;. You may get few warning messages when
 creating partitions, ignore them. The new partitions need to be formatted.&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
 sudo mkfs.msdos -F &lt;span class=&#34;m&#34;&gt;32&lt;/span&gt; -n EFI /dev/md0p2
-&lt;/pre&gt;&lt;/div&gt;
-
-
+&lt;/pre&gt;
 &lt;p&gt;Now, you are ready to launch the virtual machine and reinstall Windows. Change
-&lt;code&gt;/dev/md0&lt;/code&gt; owner to the same user &lt;em&gt;Qemu&lt;/em&gt; is running as and install &lt;em&gt;ovmf&lt;/em&gt; EFI
-bios for &lt;em&gt;Qemu&lt;/em&gt;, in my case, it will be available at
-&lt;code&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -enable-kvm &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -drive &lt;span class=&#34;nv&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/md0,media&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disk,format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;raw &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -netdev user,id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowsnic,hostname&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowshost &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -device virtio-net,netdev&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowsnic &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -cpu host &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -m 2G &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -vga qxl &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
-    -usbdevice tablet
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;Adapt &lt;em&gt;Qemu&lt;/em&gt; script to your use case. You may need to download and install
-&lt;a href=&#34;https://fedoraproject.org/wiki/Windows_Virtio_Drivers&#34;&gt;&lt;em&gt;Virtio&lt;/em&gt; drivers&lt;/a&gt; on
-your guest machine. After each reboot, you need to create the loopback device,
-merge the two partitions into the RAID disk and change the owner of the device.&lt;/p&gt;
-&lt;p&gt;Credit to &lt;a href=&#34;file:///usr/share/doc/arch-wiki/html/en/QEMU.html#Simulate_virtual_disk_with_MBR_using_linear_RAID&#34;&gt;Arch Linux Wiki&lt;/a&gt;.
-Enjoy!&lt;/p&gt;</description>
+&lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0&lt;/tt&gt; owner to the same user _Qemu_ is running as and install _ovmf_ EFI
+bios for _Qemu_, in my case, it will be available at
+&lt;tt class=&#34;docutils literal&#34;&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/tt&gt;.&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -enable-kvm &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -drive &lt;span class=&#34;nv&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/md0,media&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disk,format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;raw &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -netdev user,id&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowsnic,hostname&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowshost &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -device virtio-net,netdev&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;windowsnic &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -cpu host &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -m 2G &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -vga qxl &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -usbdevice tablet
+&lt;/pre&gt;
+&lt;p&gt;Adapt _Qemu_ script to your use case. You may need to download and install
+&lt;a class=&#34;reference external&#34; href=&#34;https://fedoraproject.org/wiki/Windows_Virtio_Drivers&#34;&gt;Virtio drivers&lt;/a&gt; on your guest machine. After each reboot, you need to create
+the loopback device, merge the two partitions into the RAID disk and change the
+owner of the device.&lt;/p&gt;
+&lt;p&gt;Credit to &lt;a class=&#34;reference external&#34; href=&#34;https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID&#34;&gt;Arch Linux Wiki&lt;/a&gt;. Enjoy!&lt;/p&gt;
+</description>
     </item>
   <item>
       <title>[MTCFSS] Python Training – Get Ready</title>
-      <link>https://lejenome.github.io/post/3</link>
+      <link>https://lejenome.github.io/post/python-101-training-get-ready</link>
       <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/3</guid>
+      <guid>https://lejenome.github.io/post/python-101-training-get-ready</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/mtcfss">mtcfss</category>
       <category domain="https://lejenome.github.io/tag/python">python</category>
       <category domain="https://lejenome.github.io/tag/django">django</category>
       
       <description>&lt;p&gt;This is our check list for any member interested to join the training:&lt;/p&gt;
-&lt;h2&gt;Tools:&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;For Windows Users:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Python 3.5 (&lt;a href=&#34;https://www.python.org/ftp/python/3.5.1/python-3.5.1-amd64.exe&#34;&gt;64bit&lt;/a&gt;)
-  (&lt;a href=&#34;https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe&#34;&gt;32bit&lt;/a&gt;)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://desktop.github.com/&#34;&gt;GitHub Desktop&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-for-windows.github.io/&#34;&gt;Git For Windows&lt;/a&gt; (optional but recommended)&lt;/li&gt;
+&lt;div class=&#34;section&#34; id=&#34;tools&#34;&gt;
+&lt;h1&gt;Tools&lt;/h1&gt;
+&lt;div class=&#34;section&#34; id=&#34;for-windows-users&#34;&gt;
+&lt;h2&gt;For Windows Users&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;Python 3.5 (&lt;a class=&#34;reference external&#34; href=&#34;https://www.python.org/ftp/python/3.5.1/python-3.5.1-amd64.exe&#34;&gt;64bit&lt;/a&gt;)
+(&lt;a class=&#34;reference external&#34; href=&#34;https://www.python.org/ftp/python/3.5.1/python-3.5.1.exe&#34;&gt;32bit&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://desktop.github.com/&#34;&gt;GitHub Desktop&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://git-for-windows.github.io/&#34;&gt;Git For Windows&lt;/a&gt; (optional but recommended)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can choose your preferred Text Editor or IDE to write python code, or you
 can pick one of our recommendation list:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.jetbrains.com/pycharm-edu/&#34;&gt;PyCharm&lt;/a&gt;&lt;/li&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://www.jetbrains.com/pycharm-edu/&#34;&gt;PyCharm&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;IDLE3 (already integrated with Python installer)&lt;/li&gt;
 &lt;li&gt;Visual Studio + Python Tools extension&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://ninja-ide.org/home/&#34;&gt;Ninja-IDE&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.pydev.org/&#34;&gt;PyDev&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://netbeans.org/&#34;&gt;Netbeans&lt;/a&gt; &amp;gt;= 8.1 + Python plugin&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://ninja-ide.org/home/&#34;&gt;Ninja-IDE&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://www.pydev.org/&#34;&gt;PyDev&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://netbeans.org/&#34;&gt;Netbeans&lt;/a&gt; &amp;gt;= 8.1 + Python plugin&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;For Linux (Ubuntu) Users:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;for-linux-ubuntu-users&#34;&gt;
+&lt;h2&gt;For Linux (Ubuntu) Users&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
 &lt;li&gt;Python 3 (should be already installed, use python3 command instead of python)&lt;/li&gt;
 &lt;li&gt;Git&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;You can choose your preferred Text Editor or IDE or one of our suggestion list:&lt;/p&gt;
-&lt;ul&gt;
+&lt;ul class=&#34;simple&#34;&gt;
 &lt;li&gt;PyCharm&lt;/li&gt;
 &lt;li&gt;Vim / emacs / nano / ed (or cat command if you want)&lt;/li&gt;
 &lt;li&gt;IDLE3&lt;/li&gt;
@@ -277,66 +287,94 @@ can pick one of our recommendation list:&lt;/p&gt;
 &lt;li&gt;Netbeans &amp;gt;= 8.1 + Python plugin&lt;/li&gt;
 &lt;li&gt;IPython3 (Jupyter console)&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2&gt;Other: (We will keep it for Saturday)&lt;/h2&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;other-we-will-keep-it-for-saturday&#34;&gt;
+&lt;h1&gt;Other (We will keep it for Saturday)&lt;/h1&gt;
 &lt;p&gt;We will use the Django Framework on the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:&lt;/p&gt;
-&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Django
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;Requirements:&lt;/h2&gt;
-&lt;p&gt;We will use GitHub ( http://github.com/ ) to host our projects code. To be able
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+pip install Django
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;requirements&#34;&gt;
+&lt;h1&gt;Requirements&lt;/h1&gt;
+&lt;p&gt;We will use GitHub to host our projects code. To be able
 to join the development, every member is required to create a GitHub account and
-send us his profile link on email (&lt;a href=&#34;mailto:mtcfss@outlook.com&#34;&gt;mtcfss@outlook.com&lt;/a&gt;).&lt;/p&gt;
+send us his profile link on email (&lt;a class=&#34;reference external&#34; href=&#34;mailto:mtcfss&amp;#64;outlook.com&#34;&gt;mtcfss&amp;#64;outlook.com&lt;/a&gt;).&lt;/p&gt;
 &lt;p&gt;Keep in mind that GitHub is #1 code hosting service and you will mostly keep
 using it outside our training on future.&lt;/p&gt;
-&lt;h2&gt;Learning Sources:&lt;/h2&gt;
-&lt;p&gt;&lt;strong&gt;Python 3:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://openclassrooms.com/courses/apprenez-a-programmer-en-python&#34;&gt;Open Class Room Tutorial&lt;/a&gt;
-  (French)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/&#34;&gt;Python Official Documentation&lt;/a&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/tutorial/index.html&#34;&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/library/index.html&#34;&gt;Official Library Reference&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;learning-sources&#34;&gt;
+&lt;h1&gt;Learning Sources&lt;/h1&gt;
+&lt;div class=&#34;section&#34; id=&#34;python-3&#34;&gt;
+&lt;h2&gt;Python 3&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://openclassrooms.com/courses/apprenez-a-programmer-en-python&#34;&gt;Open Class Room Python Tutorial&lt;/a&gt;
+(French)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://docs.python.org/3/&#34;&gt;Python Official Documentation&lt;/a&gt;:&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://docs.python.org/3/tutorial/index.html&#34;&gt;Python Official Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://docs.python.org/3/library/index.html&#34;&gt;Official Library Reference&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Django:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django&#34;&gt;Open Class Room Tutorial&lt;/a&gt;
-  (French)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.djangoproject.com/en/1.9/&#34;&gt;Django Official Documentation&lt;/a&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.djangoproject.com/en/1.9/intro/overview/&#34;&gt;Official Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Git:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://try.github.io/&#34;&gt;GitHub Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://openclassrooms.com/courses/manage-your-code-with-git-and-github&#34;&gt;Open Class Room Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://git-scm.com/doc&#34;&gt;Git Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;django&#34;&gt;
+&lt;h2&gt;Django&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://openclassrooms.com/courses/developpez-votre-site-web-avec-le-framework-django&#34;&gt;Open Class Room Django Tutorial&lt;/a&gt;
+(French)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://docs.djangoproject.com/en/1.9/&#34;&gt;Django Official Documentation&lt;/a&gt;:&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://docs.djangoproject.com/en/1.9/intro/overview/&#34;&gt;Django Official Tutorial&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;HTML5 &amp;amp; CSS3:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3&#34;&gt;Open Class Room Tutorial&lt;/a&gt;
-  (French)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/&#34;&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web&#34;&gt;Web Docs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://v4-alpha.getbootstrap.com/getting-started/introduction/&#34;&gt;Bootstrap 4 Doc&lt;/a&gt;&lt;/li&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;JavaScript:&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://openclassrooms.com/courses/dynamisez-vos-sites-web-avec-javascript&#34;&gt;Open Class Room Tutorial&lt;/a&gt;
-  (French)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/&#34;&gt;Mozilla Developer Network&lt;/a&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript&#34;&gt;JavaScript Guide&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/&#34;&gt;Angular 2 Doc&lt;/a&gt;:&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/quickstart.html&#34;&gt;Quick Start&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://angular.io/docs/ts/latest/quickstart.html&#34;&gt;Guide&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;git&#34;&gt;
+&lt;h2&gt;Git&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://try.github.io/&#34;&gt;GitHub Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://openclassrooms.com/courses/manage-your-code-with-git-and-github&#34;&gt;Open Class Room Git Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://git-scm.com/doc&#34;&gt;Git Official Documentation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;html5-css3&#34;&gt;
+&lt;h2&gt;HTML5 &amp;amp; CSS3&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://openclassrooms.com/courses/apprenez-a-creer-votre-site-web-avec-html5-et-css3&#34;&gt;Open Class Room HTML5 Tutorial&lt;/a&gt;
+(French)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/&#34;&gt;Mozilla Developer Network&lt;/a&gt;:&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web&#34;&gt;Web Docs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;http://v4-alpha.getbootstrap.com/getting-started/introduction/&#34;&gt;Bootstrap 4 Doc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class=&#34;section&#34; id=&#34;javascript&#34;&gt;
+&lt;h2&gt;JavaScript&lt;/h2&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://openclassrooms.com/courses/dynamisez-vos-sites-web-avec-javascript&#34;&gt;Open Class Room JavaScript Tutorial&lt;/a&gt;
+(French)&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/&#34;&gt;Mozilla Developer Network&lt;/a&gt;:&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://developer.mozilla.org/en-US/docs/Web/JavaScript&#34;&gt;JavaScript Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://angular.io/docs/ts/latest/&#34;&gt;Angular 2 Doc&lt;/a&gt;:&lt;ul&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://angular.io/docs/ts/latest/quickstart.html&#34;&gt;Quick Start&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a class=&#34;reference external&#34; href=&#34;https://angular.io/docs/ts/latest/quickstart.html&#34;&gt;Guide&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</description>
     </item>
   <item>
       <title>[Syteup] creating a basic plugin, segment as an example</title>
-      <link>https://lejenome.github.io/post/2</link>
+      <link>https://lejenome.github.io/post/syteup-plugin-creation</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/2</guid>
+      <guid>https://lejenome.github.io/post/syteup-plugin-creation</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/syteup">syteup</category>
       
@@ -442,9 +480,9 @@ patches to
     </item>
   <item>
       <title>Syteup Introduction</title>
-      <link>https://lejenome.github.io/post/1</link>
+      <link>https://lejenome.github.io/post/syteup-introduction</link>
       <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/1</guid>
+      <guid>https://lejenome.github.io/post/syteup-introduction</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/syteup">syteup</category>
       <category domain="https://lejenome.github.io/tag/introduction">introduction</category>
