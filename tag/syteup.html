@@ -111,15 +111,18 @@
     </div>
     <!-- import js -->
     <script>
-        var pres = document.querySelectorAll(".codehilite pre");
-        var i;
-        for (i = 0; i < pres.length; i++) {
-            var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li><span class="codeline">' +
-                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
-                '</span></li></ol>';
-            pres[i].innerHTML = html;
+        function linenumber(pres) {
+            var i;
+            for (i = 0; i < pres.length; i++) {
+                var html = pres[i].innerHTML;
+                html = '<ol class="linenums"><li><span class="codeline">' +
+                    html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                    '</span></li></ol>';
+                pres[i].innerHTML = html;
+            }
         }
+        // add line number to all markdown generated blocks
+        linenumber(document.querySelectorAll(".code pre"));
     </script>
 
     <script>

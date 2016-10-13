@@ -4,15 +4,14 @@ import os
 import json
 from datetime import datetime
 from jinja2 import Template
-import markdown
+
+from rst_parser import load_post as load_rst_post
+from md_parser import load_post as load_md_post
 
 posts = None
 tmpl = None
 tmpl_rss = None
 tmpl_sitemap = None
-md = markdown.Markdown(output_format="html5",
-                       extensions=["markdown.extensions.fenced_code",
-                                   "markdown.extensions.codehilite"])
 settings = {
     "rss_url": "https://lejenome.github.io/rss.xml",
     "blog_name": "Moez Bouhlel [lejenome]",
@@ -32,52 +31,37 @@ with open(os.path.join(os.path.dirname(__file__), "rss.xml")) as tmpl_file:
 with open(os.path.join(os.path.dirname(__file__), "sitemap.xml")) as tmpl_file:
     tmpl_sitemap = Template(tmpl_file.read())
 
-def load_post(post, index):
-    post_file = open(post["url"])
-    post["title"] = post_file.readline().strip()
-    post_file.readline()
-    post["body"] = md.convert(post_file.read())
-    post["date_original"] = post["date"]
-    post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
-        "%a %b %d %Y")
-    post["index"] = index
-    if index + 1 < len(posts):
-        post["newer"] = posts[index + 1]['id']
-    if index > 0:
-        post["older"] = posts[index - 1]["id"]
-    post_file.close()
-    post["full_path"] = os.path.join("post", '.'.join([
-        os.path.splitext(os.path.basename(post["url"]))[0], "html"]))
-    post["min_path"] = os.path.join(
-        "post", '.'.join([str(post["id"]), "html"]))
-    post["url_rss"] = os.path.join(
-        settings["blog_url"], post["full_path"])
-    post["date_rss"] = datetime.strptime(post["date"], "%a %b %d %Y").strftime(
-        "%a, %d %b %Y 00:00:00 GMT")
-
 def load_posts():
+    global posts
     for index, post in enumerate(posts):
-        load_post(post, index)
+        if post["url"].endswith(".rst"):
+            load_rst_post(post, index)
+        else:
+            load_md_post(post, index)
+    posts = list(filter(lambda p: "publish" not in p or p["publish"], posts))
 
 def gen_posts():
     try:
         os.mkdir("post")
     except FileExistsError:
         pass
-    for post in posts:
-        page_data = {"index": post["index"]}
-        if "newer" in post:
-            page_data["newer"] = post["newer"]
-        if "older" in post:
-            page_data["older"] = post["older"]
-        post_html = open(post["min_path"], "w")
+    for index, post in enumerate(posts):
+        post["index"] = index
+        page_data = {"index": index}
+        if index + 1 < len(posts):
+            page_data["older"] = post["older"] = posts[index + 1]['id']
+        if index > 0:
+            page_data["newer"] = post["newer"] = posts[index - 1]["id"]
+        post_html = open(post["url"] + '.html', "w")
         html = tmpl.render(posts=[post], page=page_data, page_type="post")
         post_html.write(html)
         post_html.close()
-        try:
-            os.symlink(post["min_path"][5:], post["full_path"])
-        except FileExistsError:
-            pass
+        for _id in post["ids"]:
+            try:
+                os.symlink(post["url"][5:] + '.html',
+                           os.path.join("post", str(_id) + ".html"))
+            except FileExistsError:
+                pass
 
 def gen_archive():
     archive_html = open("archive.html", "w")

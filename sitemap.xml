@@ -63,6 +63,11 @@
         <priority>1.00</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/post/simple-feedback-form-implementation-for-static-websites</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/post/4</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>

@@ -27,28 +27,34 @@
 }
 
 .post-body h3,
-.post-body .h3 {
+.post-body .h3,
+.section h1 {
     font-size: 17px;
     line-height: 25px;
     font-weight: 500;
 }
 
 .post-body h4,
-.post-body .h4 {
+.post-body .h4,
+.section h2 {
     font-size: 15px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h5,
-.post-body .h5 {
+.post-body .h5,
+.section h3 {
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h6,
-.post-body .h6 {
+.post-body .h6,
+.section h4,
+.section h5,
+.section h6 {
     font-size: 13px;
     line-height: 20px;
     font-weight: 500;
@@ -231,7 +237,8 @@
 /* pretty print code block */
 
 code,
-pre {
+pre,
+.docutils.literal {
     padding: 0 3px 2px;
     color: #333;
     font-size: 11px;
@@ -240,7 +247,8 @@ pre {
     border-radius: 3px;
 }
 
-code {
+code,
+.docutils.literal {
     padding: 2px 4px;
     color: #d75701;
     background-color: #f7f7f9;
@@ -258,13 +266,7 @@ pre {
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-pre code {
-    padding: 0;
-    color: inherit;
-    background-color: transparent;
-    border: 0;
-}
-
+pre code,
 blockquote code {
     padding: 0;
     color: inherit;
@@ -272,17 +274,21 @@ blockquote code {
     border: 0;
 }
 
-.codehilite {
+
+/*
+.code {
     -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
     -moz-animation: -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
     box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
 }
+*/
 
 ol.linenums {
     margin: 0;
 }
 
-ol.linenums li {
+ol.linenums li,
+.code .ln {
     padding-left: 12px;
     color: #bebec5;
     line-height: 18px;
@@ -291,4 +297,17 @@ ol.linenums li {
 
 ol.linenums li> span.codeline {
     color: #333;
+}
+
+.code .ln {
+    padding-right: 10px;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+pre,
+code {
+    font-family: "Source Code Pro";
 }

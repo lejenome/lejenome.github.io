@@ -131,7 +131,7 @@ can pick one of our recommendation list:</p>
 <p>We will use the Django Framework on the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:</p>
-<div class="codehilite"><pre><span></span>pip install Django
+<div class="code"><pre><span></span>pip install Django
 </pre></div>
 
 
@@ -192,15 +192,18 @@ using it outside our training on future.</p>
     </div>
     <!-- import js -->
     <script>
-        var pres = document.querySelectorAll(".codehilite pre");
-        var i;
-        for (i = 0; i < pres.length; i++) {
-            var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li><span class="codeline">' +
-                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
-                '</span></li></ol>';
-            pres[i].innerHTML = html;
+        function linenumber(pres) {
+            var i;
+            for (i = 0; i < pres.length; i++) {
+                var html = pres[i].innerHTML;
+                html = '<ol class="linenums"><li><span class="codeline">' +
+                    html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                    '</span></li></ol>';
+                pres[i].innerHTML = html;
+            }
         }
+        // add line number to all markdown generated blocks
+        linenumber(document.querySelectorAll(".code pre"));
     </script>
 
     <script>

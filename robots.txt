@@ -3,6 +3,7 @@ Disallow: /card
 Disallow: /README.md
 Disallow: /.clang-format
 Disallow: /.jshintrc
+Disallow: /.gitignore
 Disallow: /LICENSE.md
 Disallow: /tests
 Disallow: /utils

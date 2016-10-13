@@ -10,9 +10,9 @@
     <link>https://lejenome.github.io</link>
     <item>
       <title>Simple feedback form implementation for static websites</title>
-      <link>https://lejenome.github.io/post/simple-feedback-form-for-static-websites.html</link>
+      <link>https://lejenome.github.io/post/6</link>
       <pubDate>Wed, 05 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/simple-feedback-form-for-static-websites.html</guid>
+      <guid>https://lejenome.github.io/post/6</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/javascript">javascript</category>
       <category domain="https://lejenome.github.io/tag/slack">slack</category>
@@ -22,55 +22,57 @@ review it. I was using GitHub pages to host my static web site and I didn&#39;t
 want to host the server side of the feedback on a different server. So I was
 looking for a simple solution that works well with my static website. Most of
 the available ones were either paid or have too many unneeded features.&lt;/p&gt;
-&lt;p&gt;At the end, I decided to use my &lt;a href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; team to receive
+&lt;p&gt;At the end, I decided to use my &lt;a class=&#34;reference external&#34; href=&#34;https://slack.com/&#34;&gt;Slack&lt;/a&gt; team to receive
 feedbacks. It does not require any third-party library or any server side code.
 And it&#39;s very simple to implement:&lt;/p&gt;
-&lt;ol&gt;
+&lt;ol class=&#34;arabic simple&#34;&gt;
 &lt;li&gt;Create a Slack team if you don&#39;t have one.&lt;/li&gt;
-&lt;li&gt;Add an &lt;a href=&#34;https://api.slack.com/incoming-webhooks&#34;&gt;Incoming Webhook&lt;/a&gt; URL to a
-   channel on your team. It&#39;s a simple URL that you can send feedbacks to.&lt;/li&gt;
+&lt;li&gt;Add an &lt;a class=&#34;reference external&#34; href=&#34;https://api.slack.com/incoming-webhooks&#34;&gt;Incoming Webhook&lt;/a&gt; URL to
+a channel on your team. It&#39;s a simple URL that you can send feedbacks to.&lt;/li&gt;
 &lt;li&gt;Finally, add your client side implementation. This is a simple one:&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;pre class=&#34;code html literal-block&#34;&gt;
+&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;textarea&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;required&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;textarea&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;input&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;send feedback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;input&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preventDefault&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-    &lt;span class=&#34;nx&#34;&gt;fetch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;YOUR_WEBHOOK_URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// You should use POST method&lt;/span&gt;
-        &lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
-            &lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// the feedback message&lt;/span&gt;
-            &lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// tell Slack it&amp;#39;s not a formated text&lt;/span&gt;
-        &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
-    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
-&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h4&gt;Improvements:&lt;/h4&gt;
+&lt;/pre&gt;
+&lt;pre class=&#34;code javascript literal-block&#34;&gt;
+&lt;span class=&#34;ln&#34;&gt; 1 &lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;document&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;getElementById&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;feedback&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 2 &lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;addEventListener&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;submit&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 3 &lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;preventDefault&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 4 &lt;/span&gt;    &lt;span class=&#34;nx&#34;&gt;fetch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;YOUR_WEBHOOK_URL&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 5 &lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;method&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;POST&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// You should use POST method
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 6 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;nx&#34;&gt;body&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;({&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt; 7 &lt;/span&gt;            &lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;form&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;value&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// the feedback message
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 8 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;            &lt;span class=&#34;nx&#34;&gt;parse&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// tell Slack it&#39;s not a formated text
+&lt;/span&gt;&lt;span class=&#34;ln&#34;&gt; 9 &lt;/span&gt;&lt;span class=&#34;c1&#34;&gt;&lt;/span&gt;        &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;10 &lt;/span&gt;    &lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;span class=&#34;ln&#34;&gt;11 &lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/pre&gt;
+&lt;div class=&#34;section&#34; id=&#34;improvements&#34;&gt;
+&lt;h1&gt;Improvements:&lt;/h1&gt;
 &lt;p&gt;You can add more entries to the send JSON. Check Slack
-&lt;a href=&#34;https://api.slack.com/methods/chat.postMessage&#34;&gt;documentation&lt;/a&gt; for more
-details. The most useful ones are &lt;code&gt;username&lt;/code&gt; and &lt;code&gt;icon_emoji&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;You can set different a &lt;code&gt;username&lt;/code&gt; and different a &lt;code&gt;icon_emoji&lt;/code&gt; entry for every
-page. For example, you send this JSON from your resume page:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;a class=&#34;reference external&#34; href=&#34;https://api.slack.com/methods/chat.postMessage&#34;&gt;documentation&lt;/a&gt; for more
+details. The most useful ones are &lt;tt class=&#34;docutils literal&#34;&gt;username&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;icon_emoji&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;You can set different a &lt;tt class=&#34;docutils literal&#34;&gt;username&lt;/tt&gt; and different a &lt;tt class=&#34;docutils literal&#34;&gt;icon_emoji&lt;/tt&gt; entry for
+every page. For example, you send this JSON from your resume page:&lt;/p&gt;
+&lt;pre class=&#34;code json literal-block&#34;&gt;
+&lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;nt&#34;&gt;&amp;quot;text&amp;quot;&lt;/span&gt;       &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;THE FEEDBACK MESSAGE&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nt&#34;&gt;&amp;quot;parse&amp;quot;&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;none&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nt&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;   &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;resume&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
     &lt;span class=&#34;nt&#34;&gt;&amp;quot;icon_emoji&amp;quot;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;:briefcase:&amp;quot;&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</description>
+&lt;/pre&gt;
+&lt;/div&gt;
+</description>
     </item>
   <item>
       <title>[MTCFSS] Recommendations For IT Students</title>
-      <link>https://lejenome.github.io/post/recommandation-for-it-student.html</link>
+      <link>https://lejenome.github.io/post/4</link>
       <pubDate>Tue, 04 Oct 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/recommandation-for-it-student.html</guid>
+      <guid>https://lejenome.github.io/post/4</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/mtcfss">mtcfss</category>
       <category domain="https://lejenome.github.io/tag/note">note</category>
@@ -131,9 +133,9 @@ prizes to win.&lt;/li&gt;
     </item>
   <item>
       <title>Physical boot to virtual EFI Windows machine</title>
-      <link>https://lejenome.github.io/post/dual-boot-to-virtual-machine.html</link>
+      <link>https://lejenome.github.io/post/5</link>
       <pubDate>Thu, 15 Sep 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/dual-boot-to-virtual-machine.html</guid>
+      <guid>https://lejenome.github.io/post/5</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/linux">linux</category>
       <category domain="https://lejenome.github.io/tag/qemu">qemu</category>
@@ -152,7 +154,7 @@ configurations (I couldn&#39;t find a work around BCD boot entry issue other tha
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.&lt;/p&gt;
 &lt;p&gt;Before we start, check that &lt;code&gt;loop&lt;/code&gt; and &lt;code&gt;linear&lt;/code&gt; modules are loaded:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo modprobe loop
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo modprobe loop
 sudo modprobe linear
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -160,26 +162,26 @@ sudo modprobe linear
 &lt;p&gt;Because the virtual machine need whole disk with booth the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let&#39;s create a small
 file to hold the EFI partition:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;200000
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;200000
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now you have &lt;code&gt;efi&lt;/code&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo losetup -f efi
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo losetup -f efi
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;It will assign the first available loopback device to the file. We will assume
 that the assigned device is &lt;code&gt;/dev/loop0&lt;/code&gt;. To check the assigned device:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;losetup -a
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;losetup -a
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Next, we will merge the loopback device and the real Windows partition into a
 single linear RAID disk image (We will assume that the windows partition is
 &lt;code&gt;/dev/sda2&lt;/code&gt;):&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; --level&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linear --raid-devices&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; /dev/loop0 /dev/sda2
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;16&lt;/span&gt; --level&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linear --raid-devices&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; /dev/loop0 /dev/sda2
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -187,12 +189,12 @@ single linear RAID disk image (We will assume that the windows partition is
 physical Windows partition. For this step, we will use &lt;em&gt;parted&lt;/em&gt; utility. You
 can use other tools on your own. We need to get the size of real Windows
 partition on sectors.&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/sda unit s print
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/sda unit s print
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/md0
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo parted /dev/md0
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mktable gpt
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary fat32 &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -WINDOW_PARITION_SIZE
@@ -203,7 +205,7 @@ partition on sectors.&lt;/p&gt;
 &lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;code&gt;/dev/md0p1&lt;/code&gt; and
 EFI partition &lt;code&gt;/dev/md0p2&lt;/code&gt;. You may get few warning messages when
 creating partitions, ignore them. The new partitions need to be formatted.&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
 sudo mkfs.msdos -F &lt;span class=&#34;m&#34;&gt;32&lt;/span&gt; -n EFI /dev/md0p2
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -212,7 +214,7 @@ sudo mkfs.msdos -F &lt;span class=&#34;m&#34;&gt;32&lt;/span&gt; -n EFI /dev/md0
 &lt;code&gt;/dev/md0&lt;/code&gt; owner to the same user &lt;em&gt;Qemu&lt;/em&gt; is running as and install &lt;em&gt;ovmf&lt;/em&gt; EFI
 bios for &lt;em&gt;Qemu&lt;/em&gt;, in my case, it will be available at
 &lt;code&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/code&gt;.&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
     -enable-kvm &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
     -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
     -drive &lt;span class=&#34;nv&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/md0,media&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disk,format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;raw &lt;span class=&#34;se&#34;&gt;\&lt;/span&gt;
@@ -234,9 +236,9 @@ Enjoy!&lt;/p&gt;</description>
     </item>
   <item>
       <title>[MTCFSS] Python Training – Get Ready</title>
-      <link>https://lejenome.github.io/post/mtcfss-python-training-get-ready.html</link>
+      <link>https://lejenome.github.io/post/3</link>
       <pubDate>Tue, 09 Feb 2016 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/mtcfss-python-training-get-ready.html</guid>
+      <guid>https://lejenome.github.io/post/3</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/mtcfss">mtcfss</category>
       <category domain="https://lejenome.github.io/tag/python">python</category>
@@ -279,7 +281,7 @@ can pick one of our recommendation list:&lt;/p&gt;
 &lt;p&gt;We will use the Django Framework on the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Django
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pip install Django
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -332,9 +334,9 @@ using it outside our training on future.&lt;/p&gt;
     </item>
   <item>
       <title>[Syteup] creating a basic plugin, segment as an example</title>
-      <link>https://lejenome.github.io/post/syteup-creating-basic-plugin-segment.html</link>
+      <link>https://lejenome.github.io/post/2</link>
       <pubDate>Tue, 04 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/syteup-creating-basic-plugin-segment.html</guid>
+      <guid>https://lejenome.github.io/post/2</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/syteup">syteup</category>
       
@@ -345,7 +347,7 @@ library.&lt;/p&gt;
 &lt;p&gt;To add Segment plugin support to Syteup, we needs just 3 simple steps:&lt;/p&gt;
 &lt;p&gt;1- create &lt;code&gt;plugins/segment.js&lt;/code&gt; plugin code file that will export the plugin
 module to the window object:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;s2&#34;&gt;&amp;quot;use strict&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
     &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;setupSegment&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;settings&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
         &lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;analytics&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;window&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;analytics&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[];&lt;/span&gt;
@@ -411,13 +413,13 @@ third step.&lt;/p&gt;
 &lt;p&gt;2- we add a script tag to the &lt;code&gt;index.html&lt;/code&gt; file that will load the plugin code.&lt;/p&gt;
 &lt;p&gt;the script tag should be included on the plugins section just before
 &lt;code&gt;js/plugins.js&lt;/code&gt; tag and it should be loaded on defer mode&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;defer&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;plugins/segment.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;defer&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;quot;plugins/segment.js&amp;quot;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&amp;lt;/&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;script&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;3- Finally, we add the plugin settings to the configuration file &lt;code&gt;config.json&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;option to turn on/off the plugin inside the &lt;code&gt;plugins&lt;/code&gt; option:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;plugins&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;s2&#34;&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;kc&#34;&gt;true&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -425,7 +427,7 @@ third step.&lt;/p&gt;
 
 &lt;p&gt;the plugin settings object that includes all user depending settings (here we
 will need the user&#39;s write_key) on the &lt;code&gt;plugins_settings option&lt;/code&gt;:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;plugins_settings&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;plugins_settings&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
     &lt;span class=&#34;s2&#34;&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
         &lt;span class=&#34;s2&#34;&gt;&amp;quot;write_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;quot;?????????&amp;quot;&lt;/span&gt;
     &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -440,9 +442,9 @@ patches to
     </item>
   <item>
       <title>Syteup Introduction</title>
-      <link>https://lejenome.github.io/post/syteup-readme.html</link>
+      <link>https://lejenome.github.io/post/1</link>
       <pubDate>Sat, 01 Nov 2014 00:00:00 GMT</pubDate>
-      <guid>https://lejenome.github.io/post/syteup-readme.html</guid>
+      <guid>https://lejenome.github.io/post/1</guid>
       <dc:creator>Moez Bouhlel</dc:creator>
       <category domain="https://lejenome.github.io/tag/syteup">syteup</category>
       <category domain="https://lejenome.github.io/tag/introduction">introduction</category>
@@ -498,7 +500,7 @@ permission access tokens or other needed requirements.&lt;/p&gt;
 &lt;p&gt;Syteup dose not require  any specific server side future as it is server-less
 moder HTML5 webapp.&lt;/p&gt;
 &lt;p&gt;First, you need to setup Syteup requirements by runnig the following commands:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm install
 bower update
 &lt;/pre&gt;&lt;/div&gt;
 
@@ -507,7 +509,7 @@ bower update
 &lt;a href=&#34;https://github.com/lejenome/syteup/tree/master/src/config.json.sample&#34;&gt;src/config.json.sample&lt;/a&gt;
 file to &lt;code&gt;config.json&lt;/code&gt; and customize it for your needs as explained on the
 flowing section then run&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm run dist
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;npm run dist
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -517,7 +519,7 @@ folder with your new settings. Then copy the contents of &lt;a href=&#34;https:/
 folder to you server and then everything is ready.&lt;/p&gt;
 &lt;p&gt;You can also use make command for custom src and dist folder and config file
 too.&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j1 &lt;span class=&#34;nv&#34;&gt;SRC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/syteup/src &lt;span class=&#34;nv&#34;&gt;DIST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/srv/website/www &lt;span class=&#34;nv&#34;&gt;CONF&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/my_config.json
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;make -j1 &lt;span class=&#34;nv&#34;&gt;SRC&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/syteup/src &lt;span class=&#34;nv&#34;&gt;DIST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/srv/website/www &lt;span class=&#34;nv&#34;&gt;CONF&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;~/my_config.json
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -527,7 +529,7 @@ too.&lt;/p&gt;
 &lt;p&gt;Change all avatars images on &lt;a href=&#34;https://github.com/lejenome/syteup/raw/master/src/imgs&#34;&gt;src/imgs&lt;/a&gt; folder (pic.png, favicon.ico,
 apple-touch-icon*.png) by your avatar images with same sizes.&lt;/p&gt;
 &lt;p&gt;Setup the options of &lt;code&gt;fields&lt;/code&gt; object on &lt;code&gt;config.json&lt;/code&gt; file&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;fields&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;fields&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// the pseudonym (nickname) you mostly known by&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;realname&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your complete real name&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// a very short &amp;#39;About Me&amp;#39; line&lt;/span&gt;
@@ -551,7 +553,7 @@ are &lt;strong&gt;&#34;tumblr&#34;&lt;/strong&gt; and &lt;strong&gt;&#34;blogger
 &lt;p&gt;Next, you need to setup the options of the choosen platform on the
 &lt;code&gt;blogs_settings.&amp;lt;platform_name&amp;gt;&lt;/code&gt; object as follow:&lt;/p&gt;
 &lt;h4&gt;Wordpress&lt;/h4&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;wordpress&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;wordpress&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// the url of your wordpress.com blog&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;tag_slug&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [optional] tags of posts to import (space separated)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -559,7 +561,7 @@ are &lt;strong&gt;&#34;tumblr&#34;&lt;/strong&gt; and &lt;strong&gt;&#34;blogger
 
 
 &lt;h4&gt;Blogger&lt;/h4&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;blogger&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;blogger&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your blog url&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;blog_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your blog id number (you can use https://developers.google.com/apis-explorer/#p/blogger/v3/blogger.blogs.getByUrl)&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your api key (See Below)&lt;/span&gt;
@@ -570,7 +572,7 @@ are &lt;strong&gt;&#34;tumblr&#34;&lt;/strong&gt; and &lt;strong&gt;&#34;blogger
 
 &lt;p&gt;Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section below.&lt;/p&gt;
 &lt;h4&gt;Tumblr&lt;/h4&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;tumblr&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;tumblr&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;blog_url&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your blog url&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your api key (See Below)&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;tag_slug&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [optional] tag of posts to import (just one tag)&lt;/span&gt;
@@ -589,7 +591,7 @@ Consumer Key&#34; of the application is your &lt;code&gt;api_key&lt;/code&gt;.&l
 &lt;code&gt;services_settings&lt;/code&gt; objects on the config file.&lt;/p&gt;
 &lt;h4&gt;Github&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.github&lt;/code&gt; and configure &lt;code&gt;services_settings.github&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;github&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;github&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -597,7 +599,7 @@ Consumer Key&#34; of the application is your &lt;code&gt;api_key&lt;/code&gt;.&l
 
 &lt;h4&gt;StackOverflow&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.stackoverflow&lt;/code&gt; and configure &lt;code&gt;services_settings.stackoverflow&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;stackoverflow&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;stackoverflow&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your user id number&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -606,7 +608,7 @@ Consumer Key&#34; of the application is your &lt;code&gt;api_key&lt;/code&gt;.&l
 
 &lt;h4&gt;Flickr&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.flickr&lt;/code&gt; and configure &lt;code&gt;services_settings.flickr&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;flickr&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;flickr&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your user id (you can get it from http://idgettr.com/)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -615,7 +617,7 @@ Consumer Key&#34; of the application is your &lt;code&gt;api_key&lt;/code&gt;.&l
 
 &lt;h4&gt;Bitbucket&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.bitbucket&lt;/code&gt; and configure &lt;code&gt;services_settings.bitbucket&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;bitbucket&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;bitbucket&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;show_forks&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Boolean&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// show number of forks (It require a http request for every repository&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -624,7 +626,7 @@ Consumer Key&#34; of the application is your &lt;code&gt;api_key&lt;/code&gt;.&l
 
 &lt;h4&gt;SoundCloud&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.soundcloud&lt;/code&gt; and configure &lt;code&gt;services_settings.soundcloud&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;soundcloud&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;soundcloud&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;client_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your client_id (See Below)&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;show_artwork&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Boolean&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// show tracks artworks&lt;/span&gt;
@@ -638,7 +640,7 @@ with any name you want, after you accept their Developer Policies, you get your
 Client ID.&lt;/p&gt;
 &lt;h4&gt;Last.fm&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.lastfm&lt;/code&gt; and configure &lt;code&gt;services_settings.lastfm&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;lastfm&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;lastfm&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your api key (See Below)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -650,7 +652,7 @@ Client ID.&lt;/p&gt;
 description, then you will get your API Key.&lt;/p&gt;
 &lt;h4&gt;Dribbble&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.dribbble&lt;/code&gt; and configure &lt;code&gt;services_settings.dribbble&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;dribbble&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;dribbble&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -658,7 +660,7 @@ description, then you will get your API Key.&lt;/p&gt;
 
 &lt;h4&gt;Youtube&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.youtube&lt;/code&gt; and configure &lt;code&gt;services_settings.youtube&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;youtube&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;youtube&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your api key (See Below)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -673,7 +675,7 @@ tab, click &#34;Create a new Key&#34; then &#34;Browser Key&#34; and enter your 
 &#34;Create&#34; to get your API KEY.&lt;/p&gt;
 &lt;h4&gt;Google+&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.gplus&lt;/code&gt; and configure &lt;code&gt;services_settings.gplus&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;gplus&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;gplus&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your user id number&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;api_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your api key (See Below)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -683,7 +685,7 @@ tab, click &#34;Create a new Key&#34; then &#34;Browser Key&#34; and enter your 
 &lt;p&gt;Steps to get your &lt;code&gt;api_key&lt;/code&gt; are explained on the youtube section above.&lt;/p&gt;
 &lt;h4&gt;Facebook&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.facebook&lt;/code&gt; and configure &lt;code&gt;services_settings.facebook&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;facebook&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your access token key (See Below)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -699,7 +701,7 @@ After confirming, you will get your final &lt;code&gt;access_token&lt;/code&gt; 
 field.&lt;/p&gt;
 &lt;h4&gt;Instagram&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.instagram&lt;/code&gt; and configure &lt;code&gt;services_settings.instagram&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;instagram&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;instagram&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your access token key (TODO: NEED MORE DOCUMENTATION)&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;user_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your user id number&lt;/span&gt;
@@ -709,7 +711,7 @@ field.&lt;/p&gt;
 
 &lt;h4&gt;LinkedIn&lt;/h4&gt;
 &lt;p&gt;enable &lt;code&gt;services.linkedin&lt;/code&gt; and configure &lt;code&gt;services_settings.linkedin&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;linkedin&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;linkedin&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;access_token&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your access token key (See Below)&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
@@ -732,7 +734,7 @@ object on &lt;code&gt;config.json&lt;/code&gt; file as follow:&lt;/p&gt;
 &lt;h4&gt;Disqus&lt;/h4&gt;
 &lt;p&gt;This plugin will enable disqus comments on every post. Just
 enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;code&gt;plugins_settings.disqus&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;disqus&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;disqus&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [optional] your disqus profile url&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;shortname&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your username&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;just_count&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Boolean&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// [optional] just show the number of comments instead of the &amp;#39;Show Comments&amp;#39; buttons&lt;/span&gt;
@@ -744,7 +746,7 @@ enable &lt;code&gt;blogs_settings.plugins.disqus&lt;/code&gt; and configure &lt;
 &lt;p&gt;This plugin will add ShareThis widget to every post. Just
 enable &lt;code&gt;blogs_settings.plugins.sharethis&lt;/code&gt; and configure &lt;code&gt;plugins_settings.sharethis&lt;/code&gt;
 as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;sharethis&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;sharethis&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;publisher_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your key&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -753,7 +755,7 @@ as follow:&lt;/p&gt;
 &lt;h4&gt;RSS&lt;/h4&gt;
 &lt;p&gt;This plugin will add RSS entry that any browser can subscribe to. Just
 enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_settings.rss&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;rss&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;rss&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;url&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// the url of your rss feed file or an external rss feed from your blog platform&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -763,7 +765,7 @@ enable &lt;code&gt;plugins.rss&lt;/code&gt; and configure &lt;code&gt;plugins_se
 &lt;p&gt;This plugin will enable Google Analytics tracking. Just
 enable &lt;code&gt;plugins.google_analytics&lt;/code&gt; and configure &lt;code&gt;plugins_settings.google_analytics&lt;/code&gt;
  as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;google_analytics&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;google_analytics&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;tracking_id&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your tracking id e.g: UA-XXXXXXX-2&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -772,7 +774,7 @@ enable &lt;code&gt;plugins.google_analytics&lt;/code&gt; and configure &lt;code&
 &lt;h4&gt;Woopra&lt;/h4&gt;
 &lt;p&gt;This plugin will enable Woopra tracking. Just
 enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins_settings.woopra&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;woopra&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;woopra&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;tracking_domain&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// TODO&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;idle_timeout&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Number&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// TODO&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;include_query&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Boolean&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// TODO&lt;/span&gt;
@@ -783,7 +785,7 @@ enable &lt;code&gt;plugins.woopra&lt;/code&gt; and configure &lt;code&gt;plugins
 &lt;h4&gt;Segment&lt;/h4&gt;
 &lt;p&gt;This plugin will enable Segment services. Just
 enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugins_settings.segment&lt;/code&gt; as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;segment&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;write_key&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your write key&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
@@ -793,7 +795,7 @@ enable &lt;code&gt;plugins.segment&lt;/code&gt; and configure &lt;code&gt;plugin
 &lt;p&gt;This plugin will add Gratupay widget bollow the navigation menu. Just
 enable &lt;code&gt;plugins.gratipay_widget&lt;/code&gt; and configure &lt;code&gt;plugins_settings.gratipay_widget&lt;/code&gt;
 as follow:&lt;/p&gt;
-&lt;div class=&#34;codehilite&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;gratipay_widget&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;div class=&#34;code&#34;&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;quot;gratipay_widget&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
   &lt;span class=&#34;s2&#34;&gt;&amp;quot;username&amp;quot;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;c1&#34;&gt;// your gratipay username&lt;/span&gt;
 &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;</description>

@@ -101,7 +101,7 @@ library.</p>
 <p>To add Segment plugin support to Syteup, we needs just 3 simple steps:</p>
 <p>1- create <code>plugins/segment.js</code> plugin code file that will export the plugin
 module to the window object:</p>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
     <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
     <span class="kd">function</span> <span class="nx">setupSegment</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">||</span> <span class="p">[];</span>
@@ -167,13 +167,13 @@ third step.</p>
 <p>2- we add a script tag to the <code>index.html</code> file that will load the plugin code.</p>
 <p>the script tag should be included on the plugins section just before
 <code>js/plugins.js</code> tag and it should be loaded on defer mode</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="code"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <p>3- Finally, we add the plugin settings to the configuration file <code>config.json</code></p>
 <p>option to turn on/off the plugin inside the <code>plugins</code> option:</p>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
@@ -181,7 +181,7 @@ third step.</p>
 
 <p>the plugin settings object that includes all user depending settings (here we
 will need the user's write_key) on the <code>plugins_settings option</code>:</p>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;write_key&quot;</span><span class="o">:</span> <span class="s2">&quot;?????????&quot;</span>
     <span class="p">}</span>
@@ -204,15 +204,18 @@ patches to
     </div>
     <!-- import js -->
     <script>
-        var pres = document.querySelectorAll(".codehilite pre");
-        var i;
-        for (i = 0; i < pres.length; i++) {
-            var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li><span class="codeline">' +
-                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
-                '</span></li></ol>';
-            pres[i].innerHTML = html;
+        function linenumber(pres) {
+            var i;
+            for (i = 0; i < pres.length; i++) {
+                var html = pres[i].innerHTML;
+                html = '<ol class="linenums"><li><span class="codeline">' +
+                    html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                    '</span></li></ol>';
+                pres[i].innerHTML = html;
+            }
         }
+        // add line number to all markdown generated blocks
+        linenumber(document.querySelectorAll(".code pre"));
     </script>
 
     <script>

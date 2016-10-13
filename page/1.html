@@ -99,49 +99,51 @@ review it. I was using GitHub pages to host my static web site and I didn't
 want to host the server side of the feedback on a different server. So I was
 looking for a simple solution that works well with my static website. Most of
 the available ones were either paid or have too many unneeded features.</p>
-<p>At the end, I decided to use my <a href="https://slack.com/">Slack</a> team to receive
+<p>At the end, I decided to use my <a class="reference external" href="https://slack.com/">Slack</a> team to receive
 feedbacks. It does not require any third-party library or any server side code.
 And it's very simple to implement:</p>
-<ol>
+<ol class="arabic simple">
 <li>Create a Slack team if you don't have one.</li>
-<li>Add an <a href="https://api.slack.com/incoming-webhooks">Incoming Webhook</a> URL to a
-   channel on your team. It's a simple URL that you can send feedbacks to.</li>
+<li>Add an <a class="reference external" href="https://api.slack.com/incoming-webhooks">Incoming Webhook</a> URL to
+a channel on your team. It's a simple URL that you can send feedbacks to.</li>
 <li>Finally, add your client side implementation. This is a simple one:</li>
 </ol>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;feedback&quot;</span><span class="p">&gt;</span>
+<pre class="code html literal-block">
+<span class="p">&lt;</span><span class="nt">form</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;feedback&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">required</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;send feedback&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">input</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span><span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;feedback&quot;</span><span class="p">);</span>
-<span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
-    <span class="nx">fetch</span><span class="p">(</span><span class="nx">YOUR_WEBHOOK_URL</span><span class="p">,</span> <span class="p">{</span>
-        <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="c1">// You should use POST method</span>
-        <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
-            <span class="nx">text</span><span class="o">:</span> <span class="nx">form</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// the feedback message</span>
-            <span class="nx">parse</span><span class="o">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="c1">// tell Slack it&#39;s not a formated text</span>
-        <span class="p">});</span>
-    <span class="p">});</span>
-<span class="p">});</span>
-</pre></div>
-
-
-<h4>Improvements:</h4>
+</pre>
+<pre class="code javascript literal-block">
+<span class="ln"> 1 </span><span class="kd">let</span> <span class="nx">form</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;feedback&quot;</span><span class="p">);</span>
+<span class="ln"> 2 </span><span class="nx">form</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&quot;submit&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+<span class="ln"> 3 </span>    <span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span>
+<span class="ln"> 4 </span>    <span class="nx">fetch</span><span class="p">(</span><span class="nx">YOUR_WEBHOOK_URL</span><span class="p">,</span> <span class="p">{</span>
+<span class="ln"> 5 </span>        <span class="nx">method</span><span class="o">:</span> <span class="s2">&quot;POST&quot;</span><span class="p">,</span> <span class="c1">// You should use POST method
+</span><span class="ln"> 6 </span><span class="c1"></span>        <span class="nx">body</span><span class="o">:</span> <span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span>
+<span class="ln"> 7 </span>            <span class="nx">text</span><span class="o">:</span> <span class="nx">form</span><span class="p">.</span><span class="nx">text</span><span class="p">.</span><span class="nx">value</span><span class="p">,</span> <span class="c1">// the feedback message
+</span><span class="ln"> 8 </span><span class="c1"></span>            <span class="nx">parse</span><span class="o">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span> <span class="c1">// tell Slack it's not a formated text
+</span><span class="ln"> 9 </span><span class="c1"></span>        <span class="p">});</span>
+<span class="ln">10 </span>    <span class="p">});</span>
+<span class="ln">11 </span><span class="p">});</span>
+</pre>
+<div class="section" id="improvements">
+<h1>Improvements:</h1>
 <p>You can add more entries to the send JSON. Check Slack
-<a href="https://api.slack.com/methods/chat.postMessage">documentation</a> for more
-details. The most useful ones are <code>username</code> and <code>icon_emoji</code>.</p>
-<p>You can set different a <code>username</code> and different a <code>icon_emoji</code> entry for every
-page. For example, you send this JSON from your resume page:</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<a class="reference external" href="https://api.slack.com/methods/chat.postMessage">documentation</a> for more
+details. The most useful ones are <tt class="docutils literal">username</tt> and <tt class="docutils literal">icon_emoji</tt>.</p>
+<p>You can set different a <tt class="docutils literal">username</tt> and different a <tt class="docutils literal">icon_emoji</tt> entry for
+every page. For example, you send this JSON from your resume page:</p>
+<pre class="code json literal-block">
+<span class="p">{</span>
     <span class="nt">&quot;text&quot;</span>       <span class="p">:</span> <span class="s2">&quot;THE FEEDBACK MESSAGE&quot;</span><span class="p">,</span>
     <span class="nt">&quot;parse&quot;</span>      <span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
     <span class="nt">&quot;username&quot;</span>   <span class="p">:</span> <span class="s2">&quot;resume&quot;</span><span class="p">,</span>
     <span class="nt">&quot;icon_emoji&quot;</span> <span class="p">:</span> <span class="s2">&quot;:briefcase:&quot;</span>
 <span class="p">}</span>
-</pre></div>
+</pre>
+</div>
+
                 </div>
             </article><article class="post" id="4" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/4" >
                 <meta itemprop="proficiencyLevel" content="Beginner" />
@@ -225,7 +227,7 @@ configurations (I couldn't find a work around BCD boot entry issue other than
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.</p>
 <p>Before we start, check that <code>loop</code> and <code>linear</code> modules are loaded:</p>
-<div class="codehilite"><pre><span></span>sudo modprobe loop
+<div class="code"><pre><span></span>sudo modprobe loop
 sudo modprobe linear
 </pre></div>
 
@@ -233,26 +235,26 @@ sudo modprobe linear
 <p>Because the virtual machine need whole disk with booth the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:</p>
-<div class="codehilite"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span>200000
+<div class="code"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span>200000
 </pre></div>
 
 
 <p>Now you have <code>efi</code> file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:</p>
-<div class="codehilite"><pre><span></span>sudo losetup -f efi
+<div class="code"><pre><span></span>sudo losetup -f efi
 </pre></div>
 
 
 <p>It will assign the first available loopback device to the file. We will assume
 that the assigned device is <code>/dev/loop0</code>. To check the assigned device:</p>
-<div class="codehilite"><pre><span></span>losetup -a
+<div class="code"><pre><span></span>losetup -a
 </pre></div>
 
 
 <p>Next, we will merge the loopback device and the real Windows partition into a
 single linear RAID disk image (We will assume that the windows partition is
 <code>/dev/sda2</code>):</p>
-<div class="codehilite"><pre><span></span>sudo mdadm --build --verbose /dev/md0 --chunk<span class="o">=</span><span class="m">16</span> --level<span class="o">=</span>linear --raid-devices<span class="o">=</span><span class="m">2</span> /dev/loop0 /dev/sda2
+<div class="code"><pre><span></span>sudo mdadm --build --verbose /dev/md0 --chunk<span class="o">=</span><span class="m">16</span> --level<span class="o">=</span>linear --raid-devices<span class="o">=</span><span class="m">2</span> /dev/loop0 /dev/sda2
 </pre></div>
 
 
@@ -260,12 +262,12 @@ single linear RAID disk image (We will assume that the windows partition is
 physical Windows partition. For this step, we will use <em>parted</em> utility. You
 can use other tools on your own. We need to get the size of real Windows
 partition on sectors.</p>
-<div class="codehilite"><pre><span></span>sudo parted /dev/sda unit s print
+<div class="code"><pre><span></span>sudo parted /dev/sda unit s print
 </pre></div>
 
 
 <p>Partition your virtual RAID disk:</p>
-<div class="codehilite"><pre><span></span>sudo parted /dev/md0
+<div class="code"><pre><span></span>sudo parted /dev/md0
 <span class="o">(</span>parted<span class="o">)</span> mktable gpt
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary fat32 <span class="m">0</span> -WINDOW_PARITION_SIZE
@@ -276,7 +278,7 @@ partition on sectors.</p>
 <p>Your final layout will have 2 partitions; Windows partition <code>/dev/md0p1</code> and
 EFI partition <code>/dev/md0p2</code>. You may get few warning messages when
 creating partitions, ignore them. The new partitions need to be formatted.</p>
-<div class="codehilite"><pre><span></span>sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+<div class="code"><pre><span></span>sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
 sudo mkfs.msdos -F <span class="m">32</span> -n EFI /dev/md0p2
 </pre></div>
 
@@ -285,7 +287,7 @@ sudo mkfs.msdos -F <span class="m">32</span> -n EFI /dev/md0p2
 <code>/dev/md0</code> owner to the same user <em>Qemu</em> is running as and install <em>ovmf</em> EFI
 bios for <em>Qemu</em>, in my case, it will be available at
 <code>/usr/share/ovmf/ovmf_x64.bin</code>.</p>
-<div class="codehilite"><pre><span></span>qemu-system-x86_64 <span class="se">\</span>
+<div class="code"><pre><span></span>qemu-system-x86_64 <span class="se">\</span>
     -enable-kvm <span class="se">\</span>
     -bios /usr/share/ovmf/ovmf_x64.bin <span class="se">\</span>
     -drive <span class="nv">file</span><span class="o">=</span>/dev/md0,media<span class="o">=</span>disk,format<span class="o">=</span>raw <span class="se">\</span>
@@ -350,7 +352,7 @@ can pick one of our recommendation list:</p>
 <p>We will use the Django Framework on the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:</p>
-<div class="codehilite"><pre><span></span>pip install Django
+<div class="code"><pre><span></span>pip install Django
 </pre></div>
 
 
@@ -416,7 +418,7 @@ library.</p>
 <p>To add Segment plugin support to Syteup, we needs just 3 simple steps:</p>
 <p>1- create <code>plugins/segment.js</code> plugin code file that will export the plugin
 module to the window object:</p>
-<div class="codehilite"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
     <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
     <span class="kd">function</span> <span class="nx">setupSegment</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
         <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">||</span> <span class="p">[];</span>
@@ -482,13 +484,13 @@ third step.</p>
 <p>2- we add a script tag to the <code>index.html</code> file that will load the plugin code.</p>
 <p>the script tag should be included on the plugins section just before
 <code>js/plugins.js</code> tag and it should be loaded on defer mode</p>
-<div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="code"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </pre></div>
 
 
 <p>3- Finally, we add the plugin settings to the configuration file <code>config.json</code></p>
 <p>option to turn on/off the plugin inside the <code>plugins</code> option:</p>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="kc">true</span>
 <span class="p">}</span>
 </pre></div>
@@ -496,7 +498,7 @@ third step.</p>
 
 <p>the plugin settings object that includes all user depending settings (here we
 will need the user's write_key) on the <code>plugins_settings option</code>:</p>
-<div class="codehilite"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="p">{</span>
         <span class="s2">&quot;write_key&quot;</span><span class="o">:</span> <span class="s2">&quot;?????????&quot;</span>
     <span class="p">}</span>
@@ -519,15 +521,18 @@ patches to
     </div>
     <!-- import js -->
     <script>
-        var pres = document.querySelectorAll(".codehilite pre");
-        var i;
-        for (i = 0; i < pres.length; i++) {
-            var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li><span class="codeline">' +
-                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
-                '</span></li></ol>';
-            pres[i].innerHTML = html;
+        function linenumber(pres) {
+            var i;
+            for (i = 0; i < pres.length; i++) {
+                var html = pres[i].innerHTML;
+                html = '<ol class="linenums"><li><span class="codeline">' +
+                    html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                    '</span></li></ol>';
+                pres[i].innerHTML = html;
+            }
         }
+        // add line number to all markdown generated blocks
+        linenumber(document.querySelectorAll(".code pre"));
     </script>
 
     <script>

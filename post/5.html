@@ -106,7 +106,7 @@ configurations (I couldn't find a work around BCD boot entry issue other than
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.</p>
 <p>Before we start, check that <code>loop</code> and <code>linear</code> modules are loaded:</p>
-<div class="codehilite"><pre><span></span>sudo modprobe loop
+<div class="code"><pre><span></span>sudo modprobe loop
 sudo modprobe linear
 </pre></div>
 
@@ -114,26 +114,26 @@ sudo modprobe linear
 <p>Because the virtual machine need whole disk with booth the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:</p>
-<div class="codehilite"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span>200000
+<div class="code"><pre><span></span>dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span>200000
 </pre></div>
 
 
 <p>Now you have <code>efi</code> file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:</p>
-<div class="codehilite"><pre><span></span>sudo losetup -f efi
+<div class="code"><pre><span></span>sudo losetup -f efi
 </pre></div>
 
 
 <p>It will assign the first available loopback device to the file. We will assume
 that the assigned device is <code>/dev/loop0</code>. To check the assigned device:</p>
-<div class="codehilite"><pre><span></span>losetup -a
+<div class="code"><pre><span></span>losetup -a
 </pre></div>
 
 
 <p>Next, we will merge the loopback device and the real Windows partition into a
 single linear RAID disk image (We will assume that the windows partition is
 <code>/dev/sda2</code>):</p>
-<div class="codehilite"><pre><span></span>sudo mdadm --build --verbose /dev/md0 --chunk<span class="o">=</span><span class="m">16</span> --level<span class="o">=</span>linear --raid-devices<span class="o">=</span><span class="m">2</span> /dev/loop0 /dev/sda2
+<div class="code"><pre><span></span>sudo mdadm --build --verbose /dev/md0 --chunk<span class="o">=</span><span class="m">16</span> --level<span class="o">=</span>linear --raid-devices<span class="o">=</span><span class="m">2</span> /dev/loop0 /dev/sda2
 </pre></div>
 
 
@@ -141,12 +141,12 @@ single linear RAID disk image (We will assume that the windows partition is
 physical Windows partition. For this step, we will use <em>parted</em> utility. You
 can use other tools on your own. We need to get the size of real Windows
 partition on sectors.</p>
-<div class="codehilite"><pre><span></span>sudo parted /dev/sda unit s print
+<div class="code"><pre><span></span>sudo parted /dev/sda unit s print
 </pre></div>
 
 
 <p>Partition your virtual RAID disk:</p>
-<div class="codehilite"><pre><span></span>sudo parted /dev/md0
+<div class="code"><pre><span></span>sudo parted /dev/md0
 <span class="o">(</span>parted<span class="o">)</span> mktable gpt
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary fat32 <span class="m">0</span> -WINDOW_PARITION_SIZE
@@ -157,7 +157,7 @@ partition on sectors.</p>
 <p>Your final layout will have 2 partitions; Windows partition <code>/dev/md0p1</code> and
 EFI partition <code>/dev/md0p2</code>. You may get few warning messages when
 creating partitions, ignore them. The new partitions need to be formatted.</p>
-<div class="codehilite"><pre><span></span>sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
+<div class="code"><pre><span></span>sudo mkfs.ntfs -f -L Windows -C /dev/md0p1
 sudo mkfs.msdos -F <span class="m">32</span> -n EFI /dev/md0p2
 </pre></div>
 
@@ -166,7 +166,7 @@ sudo mkfs.msdos -F <span class="m">32</span> -n EFI /dev/md0p2
 <code>/dev/md0</code> owner to the same user <em>Qemu</em> is running as and install <em>ovmf</em> EFI
 bios for <em>Qemu</em>, in my case, it will be available at
 <code>/usr/share/ovmf/ovmf_x64.bin</code>.</p>
-<div class="codehilite"><pre><span></span>qemu-system-x86_64 <span class="se">\</span>
+<div class="code"><pre><span></span>qemu-system-x86_64 <span class="se">\</span>
     -enable-kvm <span class="se">\</span>
     -bios /usr/share/ovmf/ovmf_x64.bin <span class="se">\</span>
     -drive <span class="nv">file</span><span class="o">=</span>/dev/md0,media<span class="o">=</span>disk,format<span class="o">=</span>raw <span class="se">\</span>
@@ -196,15 +196,18 @@ Enjoy!</p>
     </div>
     <!-- import js -->
     <script>
-        var pres = document.querySelectorAll(".codehilite pre");
-        var i;
-        for (i = 0; i < pres.length; i++) {
-            var html = pres[i].innerHTML;
-            html = '<ol class="linenums"><li><span class="codeline">' +
-                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
-                '</span></li></ol>';
-            pres[i].innerHTML = html;
+        function linenumber(pres) {
+            var i;
+            for (i = 0; i < pres.length; i++) {
+                var html = pres[i].innerHTML;
+                html = '<ol class="linenums"><li><span class="codeline">' +
+                    html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                    '</span></li></ol>';
+                pres[i].innerHTML = html;
+            }
         }
+        // add line number to all markdown generated blocks
+        linenumber(document.querySelectorAll(".code pre"));
     </script>
 
     <script>
