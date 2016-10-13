@@ -3,7 +3,7 @@ Simple feedback form implementation for static websites
 =======================================================
 
 .. Author:: Moez Bouhlel <bmoez.j@gmail.com>
-.. Id:: 6
+.. Id:: slack-feedback-form
 .. Tags:: javascript, slack
 .. Published:: 2016/10/05
 .. Publish:: True
@@ -24,6 +24,7 @@ And it's very simple to implement:
 3. Finally, add your client side implementation. This is a simple one:
 
 .. code:: html
+    :number-lines:
 
     <form id="feedback">
         <textarea name="text" required></textarea>
@@ -56,6 +57,7 @@ You can set different a ``username`` and different a ``icon_emoji`` entry for
 every page. For example, you send this JSON from your resume page:
 
 .. code:: json
+    :number-lines:
 
     {
         "text"       : "THE FEEDBACK MESSAGE",
