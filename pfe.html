@@ -1,0 +1,243 @@
+<h1 id="pfe-ideas">PFE Ideas</h1>
+<h2 id="google-summer-of-code-2017-ideas">Google Summer of Code 2017 Ideas</h2>
+<ul>
+<li><a href="https://gcc.gnu.org/wiki/SummerOfCode">GCC</a>
+<ul>
+<li>Export/Import IR/Data on every stage (gimple &amp; rtl passes)</li>
+<li>GIMPLE IL API simplification</li>
+<li>Fuzzing every Stage</li>
+<li>modular GCC</li>
+</ul></li>
+<li><a href="https://wiki.eclipse.org/Google_Summer_of_Code">Eclipse</a></li>
+<li><a href="https://wiki.openstack.org/wiki/Internship_ideas">OpenStack</a></li>
+<li><a href="https://wiki.libvirt.org/page/Google_Summer_of_Code_2017">LibVirt</a>:
+<ul>
+<li>Introducing job control to the storage driver</li>
+<li>libvirt bindings for node.js</li>
+<li>Conversion to and from OCI-formatted containers</li>
+</ul></li>
+<li><a href="https://wiki.python.org/moin/SummerOfCode/2016/python-core">CPython</a></li>
+<li><a href="http://doc.pypy.org/en/latest/project-ideas.html">PyPy</a></li>
+<li><a href="https://coq.inria.fr/cocorico/GoogleSummerOfCode">Coq Proof Assistant</a></li>
+<li><a href="https://wiki.mozilla.org/SummerOfCode">Mozilla</a>
+<ul>
+<li>qutebrowser-servo: servo/rust -&gt; libservo -&gt; libservo++ -&gt; qtservo -&gt; pyqtservo</li>
+<li>Rust GUI tookit: Rust + Servo (HTML/CSS) == Gtk + Glade == qt/c++ + QML</li>
+</ul></li>
+</ul>
+<hr />
+<h2 id="oxford-bachelor-of-computer-science-projects">OXFORD Bachelor of Computer Science Projects</h2>
+<p><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/undergraduate.html"><strong>Full List</strong></a>:</p>
+<ul>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/396.html">3D environment for Hand Physiotherapy (Leap Motion)</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/517.html">A high level language for a stack-based virtual machine</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/429.html">A parallel version of Tarjan's Algorithm</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/481.html">A smartphone controller for massive local multi-player games</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/430.html">Automatic translation to GPGPU</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/348.html">Cake-cutting with low envy</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/44.html">Compilation of a CSP-like language</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/450.html">Deciding satisfiability of formulas in the guarded negation fragment</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/507.html">Enabling domain-specific operations in real-time systems</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/260.html">Extension of the interval program analysis for unknown library functions</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/374.html">Faceted Search over (Semantic) Web</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/508.html">Implementing and experimenting with variants of Weisfeiler-Leman graph stabilisation</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/226.html">Kinect interface development for cybersecurity visual analytics tool</a></li>
+<li><a href="http://www.cs.ox.ac.uk/teaching/studentprojects/373.html">Semi-automatic installation support for Ontology-Based Data Access systems (OBDA)</a></li>
+</ul>
+<hr />
+<h2 id="eurpe-union---open-dream-kit---porjects">Eurpe Union - Open Dream Kit - Porjects</h2>
+<ul>
+<li>Basic JUPYTER interface for GAP, PARI/GP, SAGE , Singular</li>
+<li><strong>T4.1</strong>: SAGE notebook / JUPYTER notebook convergence</li>
+<li>Tools for collaborating on notebooks via version-control</li>
+<li>Extend the existing assembly superoptimiser for AVX and upcoming Intel processor extensions for the MPIR library.</li>
+<li><strong>T4.8</strong>: JUPYTER extension for 3D visualisation</li>
+<li>Explore the possibility to interface smoothly PYTHRAN , CYTHON and Cilk++</li>
+<li><strong>T5.7</strong>: Pythran, CYthon convergence</li>
+<li><strong>T5.9</strong>: HPC enabled SAGE distribution</li>
+<li><strong>T4.12</strong>: Python/Cython bindings for PARI</li>
+<li><strong>T6.5</strong>: Knowledge-based code infrastructure</li>
+</ul>
+<hr />
+<h2 id="embed-llvm-based-scripting-languages-support">Embed LLVM-based Scripting Languages support</h2>
+<h3 id="why">Why</h3>
+<p>Current state:</p>
+<ul>
+<li>Lua/Python/C# embed implementation for many apps (games, servers, ...)</li>
+</ul>
+<p>Small size LLVM-based solution to support any LLVM-JIT based language implementation.</p>
+<h3 id="pfe">PFE</h3>
+<ul>
+<li>App APIs to LLVM-IR predefined functions and types.</li>
+<li>LLVM-IR predefined functions and types to the scripting lang API.</li>
+<li>Small size LLVM implementation.</li>
+<li>Proof of concept: Lua/Python/C# scripting for a demo/existing app.</li>
+<li>LibScript lib support?</li>
+</ul>
+<hr />
+<h2 id="semantic-firefoxchrome-bookmarks-file-system-extension">Semantic Firefox/Chrome Bookmarks file system extension</h2>
+<h3 id="why-1">Why</h3>
+<p>Represent Bookmarks as a file system tree where dirs are categories and tags, and files are bookmarks for easy manage huge bookmarks lists and for scripting using standard file system functions (copy, paste, link, remove, add)</p>
+<h3 id="pfe-1">PFE</h3>
+<ul>
+<li>implement userspace FUSE-base file system to represent bookmarks</li>
+<li>file operations support</li>
+<li>opendir / readdir (bookmarks on tag/category/site)</li>
+<li>open / read (the bookmark as link)</li>
+<li>getattr</li>
+<li>unlink (delete bookmark)</li>
+<li>rmdir (delete tag/category or all bookmarks of the site)</li>
+<li>symlink (add bookmark to tag/category)</li>
+<li>copy / paste / link (to duplicate the bookmark)</li>
+<li>rename (rename bookmark/tag/category)</li>
+<li>statfs (bookmarks number,... ?)</li>
+<li>create (add bookmark link to tag/category and site)</li>
+<li>readlink (bookmark link as path to site)</li>
+<li>chmod / chown (bookmarks owner management ?)</li>
+<li>auto tags generation (based on keywords, metadata, schema.org, ...)</li>
+<li>thumbnails auto generation (img for images, html rendered image, schema.org metadata: logo, ranking, ...)</li>
+<li>Firefox/Chrome extension for integration with the file system</li>
+<li><p>nautilus integration (if needed)</p></li>
+<li>file type and content:</li>
+<li>sol1: a link <code>.desktop</code> file with url entry, icon, name, categories, ...</li>
+<li><p>sol2: html file with redirect metadata</p></li>
+</ul>
+<p><strong>mozfs tree example</strong>:</p>
+<pre><code>.
+|_ stats.json
+|_ stats.html
+|_ stats.xml
+|_ tags
+|  |_ tag1
+|  |  |_ ooredoo home page.link -&gt; /sites/www.ooredoo.tn/index.html
+|  |_ tag2
+|     |_ Tunisie Telecom Bussniess.link -&gt; /sites/tunisietelecom.tn/bussniess/?rt=5
+|_ categories
+|  |_ IT
+|  |  |_ ooredoo home page.link -&gt; /sites/www.ooredoo.tn/index.html
+|  |  |_ Tunisie Telecom Bussniess.link -&gt; /sites/tunisietelecom.tn/bussniess/?rt=5
+|  |_ other
+|_ sites
+  |_ www.ooredoo.tn
+  |  |_ index.html
+  |_ tunisietelecom.tn
+     |_ bussniess
+        |_ ?rt=5</code></pre>
+<hr />
+<h2 id="ada-compiler">Ada compiler</h2>
+<h3 id="why-2">Why</h3>
+<p>GCC-based Ada implementation and compiler (Gnat) alternative using LLVM toolchain. It's very demanded as LLVM/clang is a fast-growing serious alternative to GCC. It has modern design and it is standard compatible. It is used By Apple on MacOS/iOS, By Nvidia on CUDA/GPU-firmwares, by AMD, Quantum, and many others too.</p>
+<p><strong>Benefit to Ada community</strong>:</p>
+<ul>
+<li>No GPL license, No restriction commercial use</li>
+<li>LLVM IR, many analyze tools and sanitizers</li>
+</ul>
+<p><strong>Benefit for LLVM community</strong>:</p>
+<ul>
+<li>Improve LLVM reliability and generated code correctness for mission-critical.</li>
+<li>Reliability and code generation correction proofs by military/gov.</li>
+<li>Ada powerful data types/subtypes notation</li>
+<li>SPARK Design by Conduct framework</li>
+</ul>
+<h3 id="pfe-2">PFE</h3>
+<ul>
+<li>lexer and parser front-end for LLVM (flex &amp; bison or hand-written recursive parser)</li>
+<li>reuse GNAT standard lib implementation</li>
+<li>parsing correctness tests</li>
+<li>generated binary correctness proof</li>
+<li>SPARK extension implementation</li>
+<li>secure Linux-unikernel generation</li>
+<li>unikernel correctness and security analyze (kernel + modules + userspace + libs)</li>
+<li>SPARK-like framework for LLVM to be used on other languages front-end (at IR level)</li>
+</ul>
+<hr />
+<h2 id="cc-repl">C/C++ REPL</h2>
+<h3 id="why-3">Why</h3>
+<p>IPython like LLVM-based C/C++ interpreter for scientific and testing use. Reuse Cling interpreter used by CERN and add more features. Last update for Cling was at 2015. But since last month, It is on active dev again?</p>
+<h3 id="pfe-3">PFE</h3>
+<ul>
+<li>update cling to upstream LLVM</li>
+<li>it seems it's back on dev again since last month</li>
+<li>mainstream the code</li>
+<li>re-use LLVM JIT instead of cling specific JIT</li>
+<li>add Bash/Zsh like history completion</li>
+<li>add clang_colored like live coloring and syntax highlighting</li>
+<li>add YouCompleteMe like auto-completer</li>
+<li>code completion for standard keys (int, long, ...) is already implemented</li>
+<li>should be exteneded to user defined keys (vars, fncts, macros, typedef, ...)</li>
+<li>live libs &amp; headers path injecting</li>
+<li>add man/doxygen/python-help docs access (using man-pages, glibc-docs, live doxygen-gen, stdman, sphinx, ...)</li>
+<li>add gdb/lldb fallback on exceptions</li>
+<li>add !<code>&lt;shell_command&gt;</code></li>
+<li>add %<code>&lt;internal_commands&gt;</code> like IPython</li>
+<li>add session store, restore</li>
+<li>add code export support</li>
+<li>add %+ -Werror, %- -Wall: clang flags and args append/remove</li>
+<li>add vim-simpledb like vim/emacs/IDEs integration to exec one/all lines</li>
+<li>add vim-synastic like checker/validator</li>
+<li>add ltrace/strace like tracers</li>
+<li>add Makefile support to resolve dependencies for big projects using provided makefiles</li>
+<li>add pkg-config integration</li>
+<li>moving jupyter protocol implementation into LLVM JIT code to support all LLVM based JITs interpreters.</li>
+</ul>
+<hr />
+<h2 id="overlay-file-system-new-features-and-use">Overlay file system new features and use</h2>
+<h3 id="why-4">Why</h3>
+<p>Merging multiple file systems (dirs) into single one got very big intension last view years especially for virtualisation/container use. Overlayfs is newly created implementation used by Docker and other vendors.</p>
+<pre><code>merge dir1 and dir2 to dir3 (dir1 upper and dir2 lower)
+
+dir1
+|_ file1
+|_ file2
+
+dir2
+|_ file1
+|_ file3
+
+dir3
+|_ file1  # from dir1
+|_ file2  # from dir1
+|_ file3  # from dir2</code></pre>
+<h3 id="pfe-4">PFE</h3>
+<ul>
+<li>add sync changes back to lower dir support</li>
+<li>implement front-end solution to merge Local Home, Google Drive, oneDrive, ....</li>
+<li>add scripting support to determine which level dir to sync to (Google Drive or oneDrive,...)</li>
+</ul>
+<hr />
+<h2 id="atomic-mode-setting-nuclear-page-flipping">Atomic Mode-setting, Nuclear Page-Flipping</h2>
+<h3 id="why-5">Why</h3>
+<p>Linux graphic subsystem has changed a lot last years (from X11 drivers to kernel-based KMS/DRM to the recent kernel-based Atomic mode-setting) to produce more correct graphical buffers on screen. Intel is the first to implement it. AMD and Nvidia open source drivers support is still on early dev.</p>
+<h3 id="pfe-5">PFE</h3>
+<ul>
+<li>implementation for AMD Radeon (R600/RadeonSI drivers)</li>
+</ul>
+<hr />
+<h2 id="unix-device-memory-allocation-api">Unix Device Memory allocation API</h2>
+<h3 id="why-6">Why</h3>
+<p>Nvidia has proposed to replace the use of Linux GBM with OpenGl ES for Memory Allocation. But due to limitations on both APIs, the decision was to develop a new vendor-independent allocation API (Unix Device Memory Allocation library).</p>
+<ul>
+<li><a href="https://github.com/cubanismo/allocator">current specification</a> (started at 5 October)</li>
+<li><a href="https://www.x.org/wiki/Events/XDC2016/Program/Unix_Device_Memory_Allocation-results.pdf">notes pdf</a></li>
+<li><a href="https://docs.google.com/document/d/1gErEVwnk26cIVF7nbmJluc-2qoaAlZaA2L8LNPQMgE0/edit">google doc discussion</a></li>
+</ul>
+<h3 id="pfe-6">PFE</h3>
+<ul>
+<li>study available APIs and contributor to the specification design</li>
+<li>add an experimental proof-of-concept userspace API to be used by apps/toolkits</li>
+<li>add an experimental proof-of-concept API support to the driver/Linux (AMD or Intel driver)</li>
+<li>test and analyze of API specification and to the API implementation.</li>
+<li>port to other Unix platform (FreeBSD) for portability proof</li>
+</ul>
+<hr />
+<h2 id="coreboot">CoreBoot</h2>
+<h3 id="why-7">Why</h3>
+<p>Bios and EFI alternative firmware. Open source with less legacy; moving many hardware initialisation to OS. Used on Google ChromeBooks.</p>
+<h3 id="pfe-7">PFE</h3>
+<ul>
+<li>port to new Board ?</li>
+</ul>
+<hr />
+<blockquote>
+<p>Code should use a formal proof method on any chosen idea</p>
+</blockquote>
