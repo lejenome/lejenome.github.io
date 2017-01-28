@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/lejenome
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://lejenome.github.io
+  * I am lejenome (https://keybase.io/lejenome) on keybase.
+  * I have a public key with fingerprint 3A1D ADDD 332D 2EFB F816  21C3 84D8 5721 7365 9C9D
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101123a9e3312872598758daa9a1671b564cf35bc04dd1e3db43a38c6ca47d6bd130a",
+            "fingerprint": "3a1daddd332d2efbf81621c384d8572173659c9d",
+            "host": "keybase.io",
+            "key_id": "84d8572173659c9d",
+            "kid": "0101123a9e3312872598758daa9a1671b564cf35bc04dd1e3db43a38c6ca47d6bd130a",
+            "uid": "be4c9750489df0da61a8558d362aef19",
+            "username": "lejenome"
+        },
+        "service": {
+            "hostname": "lejenome.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1485628599,
+    "expire_in": 157680000,
+    "prev": "b860994abe4bc4ec66f393b37686c450d3ec9067d3ff3aa3c6c7cc58b628c39f",
+    "seqno": 3,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUY3mVXhWUMzSDIAeFGTbkr3bvnfm6uJBqzCJahjFAG3Y9zd6/Q7rIf
+fATOBqKDFDMhJG5JYyWSJu6MFtjEYBGiptNiUFKOSwrGABpTjYhS2r2Uf5p+dv6c
+c97zPM95nnfetxZqVDp1zdDmJDfc16I+N86pct8c7alAOIdQjpgqkEI4t8EiAbo9
+BYWSgJgQFEMxzAhYBgKAGWnKSDA0RdACyzIsRlIYR5A4LwKC41FcEDAIBA4HLKB5
+kmdxSiA5AQMoixgQUbJbocvpkuweWRawmMAKggCAUTBCkRNpjDRiPKBxgSYoI0YB
+kmB4RpCJNodbYcjmONYNUySHXJMvBXP2/gP/P/v2zslxEOcZikBxmhFEVGBJjKUJ
+WQ6QRhaKGKMA3dBlZ1+FMroIboV2h3zcZkDkaonEQ6WxSpJ/IVKsksfm5f5O5XQ5
+PA7eUSS/2zwep9uk8D3lToVQCrmCf6QKOMkuyN2UGSXQ5ZYcdsSEyUjeIynaGE4T
+pJEmGMaAwDKn5IIFkoIgKJJG5aX8A0uUTPk0iTIMzsrhOB6HPEmKgAEckIEkjxOo
+ACDPoCQlAFEELAvk3lA8T9CcLM8DRkSUdMV2B2ICsk/WKmu6Jaud9XhdcnTdrjCg
+Val1qviYJK0pvv0yWJEyOxOT9NX9CZwXpoyfShex6H6laibqXkbDUx+NbYx4UTOB
+5u4bvp4bjDL4i/dXH2gwHc6Pbvsj/9fts7eG+wfzdi6fqsu6cAK7vOBQuHnknd+0
+tQcrRTQ9r5uqPPDGrd05n+x+CX26tnAXU/P9qnez6pOvHgqMIYYbw9Z429qH73Y8
+nvD6actDgfemE3+sf6YxbUHghM1d6XuwcXrztcDylS+b5935bn1n/d6evLSVzOzJ
+i336qAH/pK861JF22NZ29/az3i3hm473Xfrm6nPXOna2t1k0waU1wdd+vpDsKzuW
++ll6goiPnu99rNrywMZfuo57fWF5lfpiuytb33u0YeiMuvn8l5ZBa1x075krvszm
+tozJWu2l6vZo0LS+a+uYv79Co47Nb3V9MDEwHd4ajNAmRrYuwbPifL9nzFf3+e9k
+3lu8At0bOoIdvRJqmn1lpDcpamHsMnX5TSzU/0iDapQe7dYUnrZwIFU7YEia+qGW
+7upaln29L1m/JudDvjRyrGLt7SPO8e5Tpmq9YwOdu2T7xHhnwGr+c9qcGTgX8qVu
+awzPGGnJCU4++nHzMU10cm/6p4MHn/w22yR5prCbVZEtKR3F+oRy846ohuHSstXB
+xB6v2bjplHXD+/ufyFhTo4tcPetf98KNinhHbu3zdagfDO2JnR8aDwx9vWXp21Nn
+cZ0uxjOj+nxPB7m4c1VqU13cxZ8s60rPflG1qPTkXw==
+=DbOP
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/lejenome
+
+==================================================================
