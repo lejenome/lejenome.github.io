@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i');
+/*@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,700i,400i,300i|Open+Sans+Condensed:700,700i&subset=latin,latin-ext');*/
+
 ::selection,
 ::-moz-selection {
     background: #d75701;
@@ -5,10 +8,15 @@
     text-shadow: none;
 }
 
+.post-title,
 .post-body {
+    font-family: "Roboto", /*"Open Sans",*/ Helvetica, sans-serif;
+}
+
+.post-body {
+    font-size: 16px;
     overflow: hidden;
     line-height: 18px;
-    font-size: 14px;
     color: #222;
 }
 
@@ -235,7 +243,7 @@ pre,
 .docutils.literal {
     padding: 0 3px 2px;
     color: #333;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
     line-height: 20px;
     border-radius: 3px;
