@@ -177,7 +177,7 @@ sudo modprobe linear
 and the EFI partition, We need to create a virtual RAID. Let&#39;s create a small
 file to hold the EFI partition:&lt;/p&gt;
 &lt;pre class=&#34;code shell literal-block&#34;&gt;
-dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;200000
+dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;200000&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;Now you have &lt;tt class=&#34;docutils literal&#34;&gt;efi&lt;/tt&gt; file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:&lt;/p&gt;

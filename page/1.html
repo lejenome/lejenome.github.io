@@ -250,7 +250,7 @@ sudo modprobe linear
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:</p>
 <pre class="code shell literal-block">
-dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span>200000
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi <span class="nv">count</span><span class="o">=</span><span class="m">200000</span>
 </pre>
 <p>Now you have <tt class="docutils literal">efi</tt> file of 100 MB (200000 * 512 Bytes). Next, we create a
 loopback device from the file:</p>
