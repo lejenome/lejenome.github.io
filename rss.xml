@@ -119,7 +119,7 @@ qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\
 &lt;/pre&gt;
 &lt;p&gt;After each Linux system reboot, you need to create the loopback devices, merge
 the partitions into the RAID disk and change the owner of the device before
-launching the virtual machine.&lt;/p&gt;
+launching the virtual machine. You can find &lt;a class=&#34;reference external&#34; href=&#34;https://github.com/lejenome/dotfiles/blob/master/bin/ws&#34;&gt;the script I use&lt;/a&gt; as reference.&lt;/p&gt;
 &lt;p&gt;Credit to &lt;a class=&#34;reference external&#34; href=&#34;https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID&#34;&gt;Arch Linux Wiki&lt;/a&gt;. Enjoy!&lt;/p&gt;
 </description>
     </item>

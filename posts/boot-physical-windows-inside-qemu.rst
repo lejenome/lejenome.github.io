@@ -134,9 +134,10 @@ Now, you are ready to boot to Windows from inside Qemu.
 
 After each Linux system reboot, you need to create the loopback devices, merge
 the partitions into the RAID disk and change the owner of the device before
-launching the virtual machine.
+launching the virtual machine. You can find `the script I use`_ as reference.
 
 Credit to `Arch Linux Wiki`_. Enjoy!
 
 .. _older post: /post/dualboolt-guest-window-machine
 .. _Arch Linux Wiki: https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID
+.. _the script I use: https://github.com/lejenome/dotfiles/blob/master/bin/ws
