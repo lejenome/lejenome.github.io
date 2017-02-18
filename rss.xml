@@ -9,6 +9,121 @@
     <language>en</language>
     <link>https://lejenome.github.io</link>
     <item>
+      <title>Boot physical Windows inside Qemu guest machine</title>
+      <link>https://lejenome.github.io/post/boot-physical-windows-inside-qemu-guest-machine</link>
+      <pubDate>Tue, 14 Feb 2017 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/post/boot-physical-windows-inside-qemu-guest-machine</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/tag/linux">linux</category>
+      <category domain="https://lejenome.github.io/tag/qemu">qemu</category>
+      <category domain="https://lejenome.github.io/tag/kvm">kvm</category>
+      <category domain="https://lejenome.github.io/tag/windows">windows</category>
+      
+      <description>&lt;p&gt;Recently, I needed to setup a new Windows system for use in an Internship
+project. Like the old setup which was described on an &lt;a class=&#34;reference external&#34; href=&#34;/post/dualboolt-guest-window-machine&#34;&gt;older post&lt;/a&gt;, I needed to
+have access to the same Windows from inside Qemu and from dual-boot for
+performance reseasons. But instead of requiring to install Windows two times
+(once directly on PC as host and the other inside Qemu) which caused some
+issues including slow filesystem operations when booting as host system, I did
+an update to setup instructions this time.&lt;/p&gt;
+&lt;p&gt;For the virtual machine, we will use &lt;em&gt;Qemu/KVM&lt;/em&gt; with &lt;em&gt;Ovmf&lt;/em&gt; EFI bios.&lt;/p&gt;
+&lt;p&gt;First, Install Windows directly on your PC then reboot back to Linux. Check
+that &lt;tt class=&#34;docutils literal&#34;&gt;loop&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;linear&lt;/tt&gt; modules are loaded:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo modprobe loop
+sudo modprobe linear
+&lt;/pre&gt;
+&lt;p&gt;New, we need to create a virtual RAID disk for Qemu that will hold our physical
+Windows partition. As we will use GPT partitions table schema, we will allocate
+few megabytes &lt;tt class=&#34;docutils literal&#34;&gt;efi1&lt;/tt&gt; for GPT metadata (34 Sectors) and for EFI partition
+before Windows partition and one megabyte &lt;tt class=&#34;docutils literal&#34;&gt;efi2&lt;/tt&gt; after Windows partition for
+GPT secondary metadata (even we need just 34 Sectors, we will use one megabyte
+for best RAID performance)&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi1 &lt;span class=&#34;nv&#34;&gt;bs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1M &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;100&lt;/span&gt;
+dd &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/zero &lt;span class=&#34;nv&#34;&gt;of&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;efi2 &lt;span class=&#34;nv&#34;&gt;bs&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;1M &lt;span class=&#34;nv&#34;&gt;count&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;1&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;Now that we have &lt;tt class=&#34;docutils literal&#34;&gt;efi1&lt;/tt&gt; file of 100 MB (100 * 1M) and &lt;tt class=&#34;docutils literal&#34;&gt;efi2&lt;/tt&gt; of 1 MB. Next,
+we create a loopback devices from both files:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo losetup -f efi1
+sudo losetup -f efi2
+&lt;/pre&gt;
+&lt;p&gt;We will assume that the assigned devices are &lt;tt class=&#34;docutils literal&#34;&gt;/dev/loop0&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;/dev/loop1&lt;/tt&gt;
+for &lt;tt class=&#34;docutils literal&#34;&gt;efi1&lt;/tt&gt; and &lt;tt class=&#34;docutils literal&#34;&gt;efi2&lt;/tt&gt; respectively. To check the assigned devices, type:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+losetup -a
+&lt;/pre&gt;
+&lt;p&gt;Next, we will merge the loopback devices and the real Windows partition into a
+single linear RAID disk image (We will assume that the windows partition is
+&lt;tt class=&#34;docutils literal&#34;&gt;/dev/sda2&lt;/tt&gt;):&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo mdadm --build --verbose /dev/md0 --chunk&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;512&lt;/span&gt; --level&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;linear --raid-devices&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;m&#34;&gt;3&lt;/span&gt; /dev/loop0 /dev/sda2 /dev/loop1
+&lt;/pre&gt;
+&lt;p&gt;Time to create the partitions table of the new RAID disk reusing the same
+physical Windows partition. For this step, we will use &lt;em&gt;parted&lt;/em&gt; utility. You
+can use other tool of your choose.&lt;/p&gt;
+&lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo parted /dev/md0
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; unit s
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mktable gpt
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary fat32 &lt;span class=&#34;m&#34;&gt;2048&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;204799&lt;/span&gt;    &lt;span class=&#34;c1&#34;&gt;# depends on size of efi1 file
+&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary ntfs &lt;span class=&#34;m&#34;&gt;204800&lt;/span&gt; -2049    &lt;span class=&#34;c1&#34;&gt;# depends on size of efi1 and efi2 files
+&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; boot on
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; esp on
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;set&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; msftdata on
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; name &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; EFI
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; name &lt;span class=&#34;m&#34;&gt;2&lt;/span&gt; Windows
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; quit
+&lt;/pre&gt;
+&lt;p&gt;Your final layout will have 2 partitions; Windows partition &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0p2&lt;/tt&gt; and
+EFI partition &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0p1&lt;/tt&gt;. The EFI partition need to be formatted.&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+sudo mkfs.msdos -F &lt;span class=&#34;m&#34;&gt;32&lt;/span&gt; -n EFI /dev/md0p1
+&lt;/pre&gt;
+&lt;p&gt;Now let add Windows boot entry to the virtual RAID disk.&lt;/p&gt;
+&lt;p&gt;Boot to Windows live DVD from inside Qemu virtual machine with &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0&lt;/tt&gt; as
+disk after changing &lt;tt class=&#34;docutils literal&#34;&gt;/dev/md0&lt;/tt&gt; owner to the current user and installing
+&lt;em&gt;Ovmf&lt;/em&gt; EFI bios, which in my case, it is available at
+&lt;tt class=&#34;docutils literal&#34;&gt;/usr/share/ovmf/ovmf_x64.bin&lt;/tt&gt;.&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+chown &lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt;:&lt;span class=&#34;nv&#34;&gt;$USER&lt;/span&gt; /dev/md0  &lt;span class=&#34;c1&#34;&gt;# We need to change the owner of md0
+&lt;/span&gt;qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -drive &lt;span class=&#34;nv&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/md0,media&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disk,format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;raw &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -cpu host -enable-kvm -m 2G &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -cdrom /path/to/windows.iso
+&lt;/pre&gt;
+&lt;p&gt;Press &lt;tt class=&#34;docutils literal&#34;&gt;Shift+F10&lt;/tt&gt; when Windows installer starts to open the terminal. We need
+to assign letter to EFI volume (partition).&lt;/p&gt;
+&lt;pre class=&#34;code batch literal-block&#34;&gt;
+diskpart
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; list disk
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; select disk 0    # Select the disk
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; list volume      # Find EFI volume (partition) number
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; select volume 2  # Select EFI volume
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; assign letter=B  # Assign B: to EFI volume
+DISKPART&lt;span class=&#34;p&#34;&gt;&amp;gt;&lt;/span&gt; exit
+&lt;/pre&gt;
+&lt;p&gt;Finally, we create BCD boot entry for Windows partition on the same terminal.&lt;/p&gt;
+&lt;pre class=&#34;code batch literal-block&#34;&gt;
+bcdboot C:\Windows /s B: /f ALL
+&lt;/pre&gt;
+&lt;p&gt;Now, you are ready to boot to Windows from inside Qemu.&lt;/p&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+qemu-system-x86_64 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -bios /usr/share/ovmf/ovmf_x64.bin &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -drive &lt;span class=&#34;nv&#34;&gt;file&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;/dev/md0,media&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;disk,format&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;raw &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;    -cpu host -enable-kvm -m 2G
+&lt;/pre&gt;
+&lt;p&gt;After each Linux system reboot, you need to create the loopback devices, merge
+the partitions into the RAID disk and change the owner of the device before
+launching the virtual machine.&lt;/p&gt;
+&lt;p&gt;Credit to &lt;a class=&#34;reference external&#34; href=&#34;https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID&#34;&gt;Arch Linux Wiki&lt;/a&gt;. Enjoy!&lt;/p&gt;
+</description>
+    </item>
+  <item>
       <title>Simple feedback form implementation for static websites</title>
       <link>https://lejenome.github.io/post/slack-feedback-form</link>
       <pubDate>Wed, 05 Oct 2016 00:00:00 GMT</pubDate>
@@ -157,10 +272,12 @@ development.&lt;/li&gt;
       <category domain="https://lejenome.github.io/tag/kvm">kvm</category>
       <category domain="https://lejenome.github.io/tag/windows">windows</category>
       
-      <description>&lt;p&gt;Even Linux is my main system, I frequently need to use Windows for school
+      <description>&lt;p&gt;&lt;strong&gt;Update:&lt;/strong&gt; A new version of the articale with better solution is available
+&lt;a class=&#34;reference external&#34; href=&#34;/post/boot-physical-windows-inside-qemu-guest-machine&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Even Linux is my main system, I frequently need to use Windows for school
 homework when Mono does not support desired features. Running Windows inside a
 virtual machine is always enough expect few cases. The best solution was to
-setup a single windows system accessible from booth the virtual machine and
+setup a single windows system accessible from both the virtual machine and
 from the physical dual boot.&lt;/p&gt;
 &lt;p&gt;For the virtual machine, we will use &lt;em&gt;Qemu/KVM&lt;/em&gt; with &lt;em&gt;Virtio&lt;/em&gt; devices and a disk
 partition for Windows.&lt;/p&gt;
@@ -173,7 +290,7 @@ partition but using the virtual machine this time.&lt;/p&gt;
 sudo modprobe loop
 sudo modprobe linear
 &lt;/pre&gt;
-&lt;p&gt;Because the virtual machine need whole disk with booth the Windows partition
+&lt;p&gt;Because the virtual machine need whole disk with both the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let&#39;s create a small
 file to hold the EFI partition:&lt;/p&gt;
 &lt;pre class=&#34;code shell literal-block&#34;&gt;
@@ -205,6 +322,7 @@ sudo parted /dev/sda unit s print
 &lt;p&gt;Partition your virtual RAID disk:&lt;/p&gt;
 &lt;pre class=&#34;code shell literal-block&#34;&gt;
 sudo parted /dev/md0
+&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; unit s
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mktable gpt
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;parted&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; mkpart primary fat32 &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; -WINDOW_PARITION_SIZE

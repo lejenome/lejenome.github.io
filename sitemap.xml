@@ -28,6 +28,11 @@
         <priority>1.00</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/post/boot-physical-windows-inside-qemu-guest-machine</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/post/python-101-training-get-ready</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
@@ -74,6 +79,11 @@
     </url>
     <url>
         <loc>https://lejenome.github.io/post/slack-feedback-form</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/boot-physical-windows-inside-qemu</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>

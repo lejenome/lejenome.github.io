@@ -17,5 +17,7 @@
         "url": "posts/recommandation-for-it-student.rst"
     }, {
         "url": "posts/simple-feedback-form-for-static-websites.rst"
+    }, {
+        "url": "posts/boot-physical-windows-inside-qemu.rst"
     }]
 }

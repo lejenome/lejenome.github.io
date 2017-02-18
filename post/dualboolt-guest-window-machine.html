@@ -94,10 +94,12 @@
                     <h3 class="post-date"><time datetime="2016/09/15" itemprop="datePublished">Thu Sep 15 2016</time></h3>
                 </hgroup>
                 <div class="post-body" itemprop="articleBody">
-                    <p>Even Linux is my main system, I frequently need to use Windows for school
+                    <p><strong>Update:</strong> A new version of the articale with better solution is available
+<a class="reference external" href="/post/boot-physical-windows-inside-qemu-guest-machine">here</a>.</p>
+<p>Even Linux is my main system, I frequently need to use Windows for school
 homework when Mono does not support desired features. Running Windows inside a
 virtual machine is always enough expect few cases. The best solution was to
-setup a single windows system accessible from booth the virtual machine and
+setup a single windows system accessible from both the virtual machine and
 from the physical dual boot.</p>
 <p>For the virtual machine, we will use <em>Qemu/KVM</em> with <em>Virtio</em> devices and a disk
 partition for Windows.</p>
@@ -110,7 +112,7 @@ partition but using the virtual machine this time.</p>
 sudo modprobe loop
 sudo modprobe linear
 </pre>
-<p>Because the virtual machine need whole disk with booth the Windows partition
+<p>Because the virtual machine need whole disk with both the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:</p>
 <pre class="code shell literal-block">
@@ -142,6 +144,7 @@ sudo parted /dev/sda unit s print
 <p>Partition your virtual RAID disk:</p>
 <pre class="code shell literal-block">
 sudo parted /dev/md0
+<span class="o">(</span>parted<span class="o">)</span> unit s
 <span class="o">(</span>parted<span class="o">)</span> mktable gpt
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary fat32 <span class="m">0</span> -WINDOW_PARITION_SIZE

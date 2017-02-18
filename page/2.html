@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <!-- metadata -->
     <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
-    <meta name="keywords" content="syteup,introduction,moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j" itemprop="keywords" />
+    <meta name="keywords" content="syteup,syteup,introduction,moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j" itemprop="keywords" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
     <meta name="author" content="Moez Bouhlel" itemprop="creator" />
     <meta name="copyright" content="Moez Bouhlel 2016, All Rights Reserved." />
@@ -86,7 +86,115 @@
     </header>
     <div>
         <section id="articales" class="type-page">
-            <article class="post" id="syteup-introduction" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/syteup-introduction" >
+            <article class="post" id="syteup-plugin-creation" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/syteup-plugin-creation" >
+                <meta itemprop="proficiencyLevel" content="Beginner" />
+                <link itemprop="publisher" href="https://lejenome.github.io/resume" />
+                <hgroup>
+                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/syteup-plugin-creation" class="post-link" itemprop="url">[Syteup] creating a basic plugin, segment as an example</a></h2>
+                    <h3 class="post-date"><time datetime="2014/11/04" itemprop="datePublished">Tue Nov 04 2014</time></h3>
+                </hgroup>
+                <div class="post-body" itemprop="articleBody">
+                    <p>Here, we will add Segment support to Syteup.</p>
+<p>Segment is "a customer data hub". It makes it easy to integrate third-party
+tools (analytics, advertising,...) to your application throw a all-in-one single
+library.</p>
+<p>To add Segment plugin support to Syteup, we needs just 3 simple steps:</p>
+<p>1- create <code>plugins/segment.js</code> plugin code file that will export the plugin
+module to the window object:</p>
+<div class="code"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
+    <span class="kd">function</span> <span class="nx">setupSegment</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">||</span> <span class="p">[];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s2">&quot;identify&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;group&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;track&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;page&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;pageview&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;alias&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ready&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;on&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;once&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;off&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackLink&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackForm&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackClick&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;trackSubmit&quot;</span>
+        <span class="p">];</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">method</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
+                <span class="nx">args</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">method</span><span class="p">);</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
+                <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">;</span>
+            <span class="p">};</span>
+        <span class="p">};</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
+            <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;analytics-js&quot;</span><span class="p">))</span>
+                <span class="k">return</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;analytics-js&quot;</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;https:&quot;</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s2">&quot;https://&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;cdn.segment.com/analytics.js/v1/&quot;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s2">&quot;/analytics.min.js&quot;</span><span class="p">;</span>
+            <span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="nx">first</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="nx">first</span><span class="p">);</span>
+        <span class="p">};</span>
+        <span class="c1">// Add a version to keep track of what&#39;s in the wild.</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">SNIPPET_VERSION</span> <span class="o">=</span> <span class="s2">&quot;2.0.9&quot;</span><span class="p">;</span>
+        <span class="c1">// Load Analytics.js with your key, which will automatically</span>
+        <span class="c1">// load the tools you&#39;ve enabled for your account. Boosh!</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">settings</span><span class="p">[</span><span class="s2">&quot;write_key&quot;</span><span class="p">]);</span>
+        <span class="c1">// Make the first page call to load the integrations. If</span>
+        <span class="c1">// you&#39;d like to manually name or tag the page, edit or</span>
+        <span class="c1">// move this call however you&#39;d like.</span>
+        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Syteup&quot;</span> <span class="p">});</span>
+    <span class="p">}</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">segmentPlugin</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">setup</span><span class="o">:</span> <span class="nx">setupSegment</span> <span class="p">};</span>
+<span class="p">}(</span><span class="nb">window</span><span class="p">));</span>
+</pre></div>
+
+
+<p>what we did is to add segment code (copied from segment tutorial) into the
+<code>setupSegment</code> function, then we export it as <code>setup</code> item on the plugin module
+which should be named <code>segmentPlugin</code>. As you note, the user depending write_key
+is readed from the <code>settings</code> object of the plugin which will be added on the
+third step.</p>
+<p>2- we add a script tag to the <code>index.html</code> file that will load the plugin code.</p>
+<p>the script tag should be included on the plugins section just before
+<code>js/plugins.js</code> tag and it should be loaded on defer mode</p>
+<div class="code"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>3- Finally, we add the plugin settings to the configuration file <code>config.json</code></p>
+<p>option to turn on/off the plugin inside the <code>plugins</code> option:</p>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>the plugin settings object that includes all user depending settings (here we
+will need the user's write_key) on the <code>plugins_settings option</code>:</p>
+<div class="code"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;write_key&quot;</span><span class="o">:</span> <span class="s2">&quot;?????????&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>All Done! we are ready to test our plugin.</p>
+<p>Don't be lazy, and send me a pull request with your plugins code and other
+patches to
+<a href="https://github.com/lejenome/syteup">https://github.com/lejenome/syteup</a> !</p>
+                </div>
+            </article><article class="post" id="syteup-introduction" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/syteup-introduction" >
                 <meta itemprop="proficiencyLevel" content="Beginner" />
                 <link itemprop="publisher" href="https://lejenome.github.io/resume" />
                 <hgroup>

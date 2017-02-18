@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <!-- metadata -->
     <meta name="description" content="Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume" />
-    <meta name="keywords" content="javascript,slack,mtcfss,note,linux,qemu,kvm,windows,mtcfss,python,django,syteup,moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j" itemprop="keywords" />
+    <meta name="keywords" content="linux,qemu,kvm,windows,javascript,slack,mtcfss,note,linux,qemu,kvm,windows,mtcfss,python,django,moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j" itemprop="keywords" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
     <meta name="author" content="Moez Bouhlel" itemprop="creator" />
     <meta name="copyright" content="Moez Bouhlel 2016, All Rights Reserved." />
@@ -86,7 +86,119 @@
     </header>
     <div>
         <section id="articales" class="type-page">
-            <article class="post" id="slack-feedback-form" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/slack-feedback-form" >
+            <article class="post" id="boot-physical-windows-inside-qemu-guest-machine" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/boot-physical-windows-inside-qemu-guest-machine" >
+                <meta itemprop="proficiencyLevel" content="Beginner" />
+                <link itemprop="publisher" href="https://lejenome.github.io/resume" />
+                <hgroup>
+                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/boot-physical-windows-inside-qemu-guest-machine" class="post-link" itemprop="url">Boot physical Windows inside Qemu guest machine</a></h2>
+                    <h3 class="post-date"><time datetime="2017/02/14" itemprop="datePublished">Tue Feb 14 2017</time></h3>
+                </hgroup>
+                <div class="post-body" itemprop="articleBody">
+                    <p>Recently, I needed to setup a new Windows system for use in an Internship
+project. Like the old setup which was described on an <a class="reference external" href="/post/dualboolt-guest-window-machine">older post</a>, I needed to
+have access to the same Windows from inside Qemu and from dual-boot for
+performance reseasons. But instead of requiring to install Windows two times
+(once directly on PC as host and the other inside Qemu) which caused some
+issues including slow filesystem operations when booting as host system, I did
+an update to setup instructions this time.</p>
+<p>For the virtual machine, we will use <em>Qemu/KVM</em> with <em>Ovmf</em> EFI bios.</p>
+<p>First, Install Windows directly on your PC then reboot back to Linux. Check
+that <tt class="docutils literal">loop</tt> and <tt class="docutils literal">linear</tt> modules are loaded:</p>
+<pre class="code shell literal-block">
+sudo modprobe loop
+sudo modprobe linear
+</pre>
+<p>New, we need to create a virtual RAID disk for Qemu that will hold our physical
+Windows partition. As we will use GPT partitions table schema, we will allocate
+few megabytes <tt class="docutils literal">efi1</tt> for GPT metadata (34 Sectors) and for EFI partition
+before Windows partition and one megabyte <tt class="docutils literal">efi2</tt> after Windows partition for
+GPT secondary metadata (even we need just 34 Sectors, we will use one megabyte
+for best RAID performance)</p>
+<pre class="code shell literal-block">
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi1 <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">100</span>
+dd <span class="k">if</span><span class="o">=</span>/dev/zero <span class="nv">of</span><span class="o">=</span>efi2 <span class="nv">bs</span><span class="o">=</span>1M <span class="nv">count</span><span class="o">=</span><span class="m">1</span>
+</pre>
+<p>Now that we have <tt class="docutils literal">efi1</tt> file of 100 MB (100 * 1M) and <tt class="docutils literal">efi2</tt> of 1 MB. Next,
+we create a loopback devices from both files:</p>
+<pre class="code shell literal-block">
+sudo losetup -f efi1
+sudo losetup -f efi2
+</pre>
+<p>We will assume that the assigned devices are <tt class="docutils literal">/dev/loop0</tt> and <tt class="docutils literal">/dev/loop1</tt>
+for <tt class="docutils literal">efi1</tt> and <tt class="docutils literal">efi2</tt> respectively. To check the assigned devices, type:</p>
+<pre class="code shell literal-block">
+losetup -a
+</pre>
+<p>Next, we will merge the loopback devices and the real Windows partition into a
+single linear RAID disk image (We will assume that the windows partition is
+<tt class="docutils literal">/dev/sda2</tt>):</p>
+<pre class="code shell literal-block">
+sudo mdadm --build --verbose /dev/md0 --chunk<span class="o">=</span><span class="m">512</span> --level<span class="o">=</span>linear --raid-devices<span class="o">=</span><span class="m">3</span> /dev/loop0 /dev/sda2 /dev/loop1
+</pre>
+<p>Time to create the partitions table of the new RAID disk reusing the same
+physical Windows partition. For this step, we will use <em>parted</em> utility. You
+can use other tool of your choose.</p>
+<p>Partition your virtual RAID disk:</p>
+<pre class="code shell literal-block">
+sudo parted /dev/md0
+<span class="o">(</span>parted<span class="o">)</span> unit s
+<span class="o">(</span>parted<span class="o">)</span> mktable gpt
+<span class="o">(</span>parted<span class="o">)</span> mkpart primary fat32 <span class="m">2048</span> <span class="m">204799</span>    <span class="c1"># depends on size of efi1 file
+</span><span class="o">(</span>parted<span class="o">)</span> mkpart primary ntfs <span class="m">204800</span> -2049    <span class="c1"># depends on size of efi1 and efi2 files
+</span><span class="o">(</span>parted<span class="o">)</span> <span class="nb">set</span> <span class="m">1</span> boot on
+<span class="o">(</span>parted<span class="o">)</span> <span class="nb">set</span> <span class="m">1</span> esp on
+<span class="o">(</span>parted<span class="o">)</span> <span class="nb">set</span> <span class="m">2</span> msftdata on
+<span class="o">(</span>parted<span class="o">)</span> name <span class="m">1</span> EFI
+<span class="o">(</span>parted<span class="o">)</span> name <span class="m">2</span> Windows
+<span class="o">(</span>parted<span class="o">)</span> quit
+</pre>
+<p>Your final layout will have 2 partitions; Windows partition <tt class="docutils literal">/dev/md0p2</tt> and
+EFI partition <tt class="docutils literal">/dev/md0p1</tt>. The EFI partition need to be formatted.</p>
+<pre class="code shell literal-block">
+sudo mkfs.msdos -F <span class="m">32</span> -n EFI /dev/md0p1
+</pre>
+<p>Now let add Windows boot entry to the virtual RAID disk.</p>
+<p>Boot to Windows live DVD from inside Qemu virtual machine with <tt class="docutils literal">/dev/md0</tt> as
+disk after changing <tt class="docutils literal">/dev/md0</tt> owner to the current user and installing
+<em>Ovmf</em> EFI bios, which in my case, it is available at
+<tt class="docutils literal">/usr/share/ovmf/ovmf_x64.bin</tt>.</p>
+<pre class="code shell literal-block">
+chown <span class="nv">$USER</span>:<span class="nv">$USER</span> /dev/md0  <span class="c1"># We need to change the owner of md0
+</span>qemu-system-x86_64 <span class="se">\
+</span>    -bios /usr/share/ovmf/ovmf_x64.bin <span class="se">\
+</span>    -drive <span class="nv">file</span><span class="o">=</span>/dev/md0,media<span class="o">=</span>disk,format<span class="o">=</span>raw <span class="se">\
+</span>    -cpu host -enable-kvm -m 2G <span class="se">\
+</span>    -cdrom /path/to/windows.iso
+</pre>
+<p>Press <tt class="docutils literal">Shift+F10</tt> when Windows installer starts to open the terminal. We need
+to assign letter to EFI volume (partition).</p>
+<pre class="code batch literal-block">
+diskpart
+DISKPART<span class="p">&gt;</span> list disk
+DISKPART<span class="p">&gt;</span> select disk 0    # Select the disk
+DISKPART<span class="p">&gt;</span> list volume      # Find EFI volume (partition) number
+DISKPART<span class="p">&gt;</span> select volume 2  # Select EFI volume
+DISKPART<span class="p">&gt;</span> assign letter=B  # Assign B: to EFI volume
+DISKPART<span class="p">&gt;</span> exit
+</pre>
+<p>Finally, we create BCD boot entry for Windows partition on the same terminal.</p>
+<pre class="code batch literal-block">
+bcdboot C:\Windows /s B: /f ALL
+</pre>
+<p>Now, you are ready to boot to Windows from inside Qemu.</p>
+<pre class="code shell literal-block">
+qemu-system-x86_64 <span class="se">\
+</span>    -bios /usr/share/ovmf/ovmf_x64.bin <span class="se">\
+</span>    -drive <span class="nv">file</span><span class="o">=</span>/dev/md0,media<span class="o">=</span>disk,format<span class="o">=</span>raw <span class="se">\
+</span>    -cpu host -enable-kvm -m 2G
+</pre>
+<p>After each Linux system reboot, you need to create the loopback devices, merge
+the partitions into the RAID disk and change the owner of the device before
+launching the virtual machine.</p>
+<p>Credit to <a class="reference external" href="https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID">Arch Linux Wiki</a>. Enjoy!</p>
+
+                </div>
+            </article><article class="post" id="slack-feedback-form" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/slack-feedback-form" >
                 <meta itemprop="proficiencyLevel" content="Beginner" />
                 <link itemprop="publisher" href="https://lejenome.github.io/resume" />
                 <hgroup>
@@ -230,10 +342,12 @@ development.</li>
                     <h3 class="post-date"><time datetime="2016/09/15" itemprop="datePublished">Thu Sep 15 2016</time></h3>
                 </hgroup>
                 <div class="post-body" itemprop="articleBody">
-                    <p>Even Linux is my main system, I frequently need to use Windows for school
+                    <p><strong>Update:</strong> A new version of the articale with better solution is available
+<a class="reference external" href="/post/boot-physical-windows-inside-qemu-guest-machine">here</a>.</p>
+<p>Even Linux is my main system, I frequently need to use Windows for school
 homework when Mono does not support desired features. Running Windows inside a
 virtual machine is always enough expect few cases. The best solution was to
-setup a single windows system accessible from booth the virtual machine and
+setup a single windows system accessible from both the virtual machine and
 from the physical dual boot.</p>
 <p>For the virtual machine, we will use <em>Qemu/KVM</em> with <em>Virtio</em> devices and a disk
 partition for Windows.</p>
@@ -246,7 +360,7 @@ partition but using the virtual machine this time.</p>
 sudo modprobe loop
 sudo modprobe linear
 </pre>
-<p>Because the virtual machine need whole disk with booth the Windows partition
+<p>Because the virtual machine need whole disk with both the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:</p>
 <pre class="code shell literal-block">
@@ -278,6 +392,7 @@ sudo parted /dev/sda unit s print
 <p>Partition your virtual RAID disk:</p>
 <pre class="code shell literal-block">
 sudo parted /dev/md0
+<span class="o">(</span>parted<span class="o">)</span> unit s
 <span class="o">(</span>parted<span class="o">)</span> mktable gpt
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary ntfs -WINDOW_PARITION_SIZE -1
 <span class="o">(</span>parted<span class="o">)</span> mkpart primary fat32 <span class="m">0</span> -WINDOW_PARITION_SIZE
@@ -440,114 +555,6 @@ using it outside our training on future.</p>
 </div>
 </div>
 
-                </div>
-            </article><article class="post" id="syteup-plugin-creation" itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/syteup-plugin-creation" >
-                <meta itemprop="proficiencyLevel" content="Beginner" />
-                <link itemprop="publisher" href="https://lejenome.github.io/resume" />
-                <hgroup>
-                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/syteup-plugin-creation" class="post-link" itemprop="url">[Syteup] creating a basic plugin, segment as an example</a></h2>
-                    <h3 class="post-date"><time datetime="2014/11/04" itemprop="datePublished">Tue Nov 04 2014</time></h3>
-                </hgroup>
-                <div class="post-body" itemprop="articleBody">
-                    <p>Here, we will add Segment support to Syteup.</p>
-<p>Segment is "a customer data hub". It makes it easy to integrate third-party
-tools (analytics, advertising,...) to your application throw a all-in-one single
-library.</p>
-<p>To add Segment plugin support to Syteup, we needs just 3 simple steps:</p>
-<p>1- create <code>plugins/segment.js</code> plugin code file that will export the plugin
-module to the window object:</p>
-<div class="code"><pre><span></span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nb">window</span><span class="p">)</span> <span class="p">{</span>
-    <span class="s2">&quot;use strict&quot;</span><span class="p">;</span>
-    <span class="kd">function</span> <span class="nx">setupSegment</span><span class="p">(</span><span class="nx">settings</span><span class="p">)</span> <span class="p">{</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span> <span class="o">||</span> <span class="p">[];</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="s2">&quot;identify&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;group&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;track&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;page&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;pageview&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;alias&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;ready&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;on&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;once&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;off&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;trackLink&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;trackForm&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;trackClick&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;trackSubmit&quot;</span>
-        <span class="p">];</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">method</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">return</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-                <span class="kd">var</span> <span class="nx">args</span> <span class="o">=</span> <span class="nb">Array</span><span class="p">.</span><span class="nx">prototype</span><span class="p">.</span><span class="nx">slice</span><span class="p">.</span><span class="nx">call</span><span class="p">(</span><span class="nx">arguments</span><span class="p">);</span>
-                <span class="nx">args</span><span class="p">.</span><span class="nx">unshift</span><span class="p">(</span><span class="nx">method</span><span class="p">);</span>
-                <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">args</span><span class="p">);</span>
-                <span class="k">return</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">;</span>
-            <span class="p">};</span>
-        <span class="p">};</span>
-        <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-            <span class="kd">var</span> <span class="nx">key</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">methods</span><span class="p">[</span><span class="nx">i</span><span class="p">];</span>
-            <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">factory</span><span class="p">(</span><span class="nx">key</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
-            <span class="k">if</span> <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;analytics-js&quot;</span><span class="p">))</span>
-                <span class="k">return</span><span class="p">;</span>
-            <span class="kd">var</span> <span class="nx">script</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">);</span>
-            <span class="nx">script</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="s2">&quot;text/javascript&quot;</span><span class="p">;</span>
-            <span class="nx">script</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="s2">&quot;analytics-js&quot;</span><span class="p">;</span>
-            <span class="nx">script</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
-            <span class="nx">script</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;https:&quot;</span> <span class="o">===</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">protocol</span> <span class="o">?</span> <span class="s2">&quot;https://&quot;</span> <span class="o">:</span> <span class="s2">&quot;http://&quot;</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot;cdn.segment.com/analytics.js/v1/&quot;</span> <span class="o">+</span> <span class="nx">key</span> <span class="o">+</span> <span class="s2">&quot;/analytics.min.js&quot;</span><span class="p">;</span>
-            <span class="kd">var</span> <span class="nx">first</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">&quot;script&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
-            <span class="nx">first</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">script</span><span class="p">,</span> <span class="nx">first</span><span class="p">);</span>
-        <span class="p">};</span>
-        <span class="c1">// Add a version to keep track of what&#39;s in the wild.</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">SNIPPET_VERSION</span> <span class="o">=</span> <span class="s2">&quot;2.0.9&quot;</span><span class="p">;</span>
-        <span class="c1">// Load Analytics.js with your key, which will automatically</span>
-        <span class="c1">// load the tools you&#39;ve enabled for your account. Boosh!</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">settings</span><span class="p">[</span><span class="s2">&quot;write_key&quot;</span><span class="p">]);</span>
-        <span class="c1">// Make the first page call to load the integrations. If</span>
-        <span class="c1">// you&#39;d like to manually name or tag the page, edit or</span>
-        <span class="c1">// move this call however you&#39;d like.</span>
-        <span class="nb">window</span><span class="p">.</span><span class="nx">analytics</span><span class="p">.</span><span class="nx">page</span><span class="p">({</span> <span class="nx">title</span><span class="o">:</span> <span class="s2">&quot;Syteup&quot;</span> <span class="p">});</span>
-    <span class="p">}</span>
-    <span class="nb">window</span><span class="p">.</span><span class="nx">segmentPlugin</span> <span class="o">=</span> <span class="p">{</span> <span class="nx">setup</span><span class="o">:</span> <span class="nx">setupSegment</span> <span class="p">};</span>
-<span class="p">}(</span><span class="nb">window</span><span class="p">));</span>
-</pre></div>
-
-
-<p>what we did is to add segment code (copied from segment tutorial) into the
-<code>setupSegment</code> function, then we export it as <code>setup</code> item on the plugin module
-which should be named <code>segmentPlugin</code>. As you note, the user depending write_key
-is readed from the <code>settings</code> object of the plugin which will be added on the
-third step.</p>
-<p>2- we add a script tag to the <code>index.html</code> file that will load the plugin code.</p>
-<p>the script tag should be included on the plugins section just before
-<code>js/plugins.js</code> tag and it should be loaded on defer mode</p>
-<div class="code"><pre><span></span><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;plugins/segment.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
-</pre></div>
-
-
-<p>3- Finally, we add the plugin settings to the configuration file <code>config.json</code></p>
-<p>option to turn on/off the plugin inside the <code>plugins</code> option:</p>
-<div class="code"><pre><span></span><span class="s2">&quot;plugins&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="kc">true</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>the plugin settings object that includes all user depending settings (here we
-will need the user's write_key) on the <code>plugins_settings option</code>:</p>
-<div class="code"><pre><span></span><span class="s2">&quot;plugins_settings&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;segment&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;write_key&quot;</span><span class="o">:</span> <span class="s2">&quot;?????????&quot;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>All Done! we are ready to test our plugin.</p>
-<p>Don't be lazy, and send me a pull request with your plugins code and other
-patches to
-<a href="https://github.com/lejenome/syteup">https://github.com/lejenome/syteup</a> !</p>
                 </div>
             </article>
         </section>

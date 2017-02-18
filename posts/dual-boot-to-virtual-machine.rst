@@ -8,10 +8,13 @@ Physical boot to virtual EFI Windows machine
 .. Published:: 2016/09/15
 .. Publish:: True
 
+**Update:** A new version of the articale with better solution is available
+`here`_.
+
 Even Linux is my main system, I frequently need to use Windows for school
 homework when Mono does not support desired features. Running Windows inside a
 virtual machine is always enough expect few cases. The best solution was to
-setup a single windows system accessible from booth the virtual machine and
+setup a single windows system accessible from both the virtual machine and
 from the physical dual boot.
 
 For the virtual machine, we will use *Qemu/KVM* with *Virtio* devices and a disk
@@ -29,7 +32,7 @@ Before we start, check that ``loop`` and ``linear`` modules are loaded:
     sudo modprobe loop
     sudo modprobe linear
 
-Because the virtual machine need whole disk with booth the Windows partition
+Because the virtual machine need whole disk with both the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:
 
@@ -73,6 +76,7 @@ Partition your virtual RAID disk:
 .. code:: shell
 
     sudo parted /dev/md0
+    (parted) unit s
     (parted) mktable gpt
     (parted) mkpart primary ntfs -WINDOW_PARITION_SIZE -1
     (parted) mkpart primary fat32 0 -WINDOW_PARITION_SIZE
@@ -112,5 +116,6 @@ owner of the device.
 
 Credit to `Arch Linux Wiki`_. Enjoy!
 
+.. _here: /post/boot-physical-windows-inside-qemu-guest-machine
 .. _Virtio drivers: https://fedoraproject.org/wiki/Windows_Virtio_Drivers
 .. _Arch Linux Wiki: https://wiki.archlinux.org/index.php/QEMU#Simulate_virtual_disk_with_MBR_using_linear_RAID
