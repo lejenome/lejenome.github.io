@@ -7,6 +7,7 @@ import os
 import docutils.parsers.rst.directives
 import docutils.parsers.rst
 
+
 class Author(docutils.parsers.rst.Directive):
 
     required_arguments = 1
@@ -16,6 +17,7 @@ class Author(docutils.parsers.rst.Directive):
     def run(self):
         self.state_machine.document['author'] = self.arguments[0]
         return []
+
 
 class Tags(docutils.parsers.rst.Directive):
 
@@ -28,6 +30,7 @@ class Tags(docutils.parsers.rst.Directive):
         self.state_machine.document['tags'] = tags
         return []
 
+
 class Publish(docutils.parsers.rst.Directive):
 
     required_arguments = 1
@@ -38,6 +41,7 @@ class Publish(docutils.parsers.rst.Directive):
         publish = self.arguments[0].lower() in ("true", "yes", "1")
         self.state_machine.document['publish'] = publish
         return []
+
 
 class Published(docutils.parsers.rst.Directive):
 
@@ -52,6 +56,7 @@ class Published(docutils.parsers.rst.Directive):
         self.state_machine.document['published'] = date
         return []
 
+
 class Id(docutils.parsers.rst.Directive):
 
     required_arguments = 1
@@ -62,14 +67,17 @@ class Id(docutils.parsers.rst.Directive):
         self.state_machine.document['id'] = self.arguments[0]
         return []
 
+
 docutils.parsers.rst.directives.register_directive("author", Author)
 docutils.parsers.rst.directives.register_directive("tags", Tags)
 docutils.parsers.rst.directives.register_directive("publish", Publish)
 docutils.parsers.rst.directives.register_directive("published", Published)
 docutils.parsers.rst.directives.register_directive("id", Id)
 
+
 import docutils.core
 import docutils.io
+
 
 def parse_file(file_path):
     print(file_path)
@@ -87,6 +95,7 @@ def parse_file(file_path):
 # pprint(pub.document)
 # pprint(pub.writer.parts)
 
+
 def load_post(post, index):
     post_file = open(post["url"])
     pub = parse_file(post["url"])
@@ -96,6 +105,7 @@ def load_post(post, index):
     post["tags"] = pub.document["tags"]
     post["date"] = pub.document["published"].strftime("%Y/%m/%d")
     post["date_original"] = post["date"]
+    post["file"] = post["url"]
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
         "%a %b %d %Y")
     post_file.close()

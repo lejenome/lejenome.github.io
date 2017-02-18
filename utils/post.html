@@ -114,7 +114,10 @@
                     {% endif -%}
                     <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url">{{post.title|e}}</a></h2>
                     {%- if page_type not in ("archive", "tag") %}
-                    <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time></h3>
+                    <h3 class="post-date">
+                      <time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time>
+                      - <a href="https://github.com/lejenome/lejenome.github.io/blob/master/{{post.file|urlencode}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
+                    </h3>
                     {%- endif %}
                 </hgroup>
                 {% if page_type not in ("archive", "tag") -%}

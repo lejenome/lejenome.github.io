@@ -8,6 +8,8 @@ md = markdown.Markdown(output_format="html5",
                            "markdown.extensions.codehilite": {
                                "css_class": "code"
                            }})
+
+
 def load_post(post, index):
     post_file = open(post["url"])
     post["title"] = post_file.readline().strip()
@@ -16,6 +18,7 @@ def load_post(post, index):
     post["date_original"] = post["date"]
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
         "%a %b %d %Y")
+    post["file"] = post["url"]
     post_file.close()
     post["ids"] = {post["id"]}
     post["ids"].add(os.path.splitext(os.path.basename(post["url"]))[0])
