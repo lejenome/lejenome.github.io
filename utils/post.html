@@ -93,11 +93,11 @@
                 <li><a href="https://twitter.com/lejenome">Twitter</a></li>
                 <li><a href="https://github.com/lejenome">GitHub</a></li>
                 <li><a href="https://www.linkedin.com/in/lejenome">LinkedIn</a></li>
-                <li><a href="resume">Resume</a></li>
+                <li><a href="resume" rel="author">Resume</a></li>
                 <li><a href="contact">Contact</a></li>
             </ul>
             <ul class="icons">
-                <li><a title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>
+                <li><a rel="archives" title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>
                 <li><a title="RSS" rel="alternate" type="application/rss+xml" href="rss.xml"><i class="fa fa-rss"></i></a></li>
             </ul>
         </nav>
@@ -107,16 +107,16 @@
             {% for post in posts -%}
             <article class="post" id="{{post.id|e}}" {%- if page_type != 'post' %} itemscope itemType="http://schema.org/TechArticle" itemid="https://lejenome.github.io/post/{{post.id|urlencode}}" {% endif %}>
                 <meta itemprop="proficiencyLevel" content="Beginner" />
-                <link itemprop="publisher" href="https://lejenome.github.io/resume" />
+                <link itemprop="publisher" href="https://lejenome.github.io/resume" rel="author" />
                 <hgroup>
                     {% if page_type in ("archive", "tag") -%}
                     <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date_original}}</time></h3>
                     {% endif -%}
-                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url">{{post.title|e}}</a></h2>
+                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url" {%- if page_type == "post" %}rel="bookmark"{% endif %}>{{post.title|e}}</a></h2>
                     {%- if page_type not in ("archive", "tag") %}
                     <h3 class="post-date">
                       <time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time>
-                      - <a href="https://github.com/lejenome/lejenome.github.io/blob/master/{{post.file|urlencode}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
+                      - <a href="https://github.com/lejenome/lejenome.github.io/blob/master/{{post.file|urlencode}}" rel="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
                     </h3>
                     {%- endif %}
                 </hgroup>
@@ -137,9 +137,9 @@
         </section>
         <nav id="posts-nav">
             <ul>{% if "newer" in page -%}
-                <li><a href="{{page_type}}/{{page.newer|urlencode}}" id="prev-post">Newer</a></li>
+                <li><a href="{{page_type}}/{{page.newer|urlencode}}" rel="next" id="prev-post">Newer</a></li>
                 {%- endif %}{% if "older" in page %}
-                <li><a href="{{page_type}}/{{page.older|urlencode}}" id="next-post">Older</a></li>
+                <li><a href="{{page_type}}/{{page.older|urlencode}}" rel="prev" id="next-post">Older</a></li>
                 {%- endif %}
             </ul>
         </nav>
