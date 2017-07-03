@@ -46,10 +46,12 @@
     }
 }
 
-.resume a,
-.resume a:hover,
-.resume a:active {
-    text-decoration: underline;
+@media screen {
+    .resume a,
+    .resume a:hover,
+    .resume a:active {
+        text-decoration: underline;
+    }
 }
 
 .resume> dl> dt {
@@ -165,8 +167,12 @@ dd> ul> li {
     font-weight: 600;
 }
 
-.p-experience .p-location:before {
-    content: " - ";
+.experience .p-experience .p-name {
+    font-style: italic;
+}
+
+.p-experience .p-location:after {
+    content: ", ";
 }
 
 .line1 {
