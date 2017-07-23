@@ -145,6 +145,7 @@ def gen_sitemap():
 
 
 def minify_html():
+    print("Minifying HTML...")
     files = ["page/" + f for f in os.listdir("page/")]
     files += ["post/" + f for f in os.listdir("post/")]
     files += ["tag/" + f for f in os.listdir("tag/")]
@@ -164,6 +165,17 @@ def minify_html():
                          "--remove-empty-attributes"])
 
 
+def minify_css():
+    print("Minifying CSS...")
+    subprocess.call(["lessc",
+                     "--no-ie-compat",
+                     "--plugin=less-plugin-clean-css=advanced",
+                     "css/style.less",
+                     "css/style.css",
+                     "--relative-urls",
+                     "--source-map"])
+
+
 if __name__ == "__main__":
     load_posts()
     posts.reverse()
@@ -174,3 +186,4 @@ if __name__ == "__main__":
     gen_rss()
     gen_sitemap()
     minify_html()
+    minify_css()
