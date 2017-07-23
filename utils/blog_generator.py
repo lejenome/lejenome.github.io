@@ -1,6 +1,7 @@
 #!/bin/env python3
 
 import os
+import subprocess
 import json
 from datetime import datetime
 from jinja2 import Template
@@ -31,6 +32,7 @@ with open(os.path.join(os.path.dirname(__file__), "rss.xml")) as tmpl_file:
 with open(os.path.join(os.path.dirname(__file__), "sitemap.xml")) as tmpl_file:
     tmpl_sitemap = Template(tmpl_file.read())
 
+
 def load_posts():
     global posts
     for index, post in enumerate(posts):
@@ -39,6 +41,7 @@ def load_posts():
         else:
             load_md_post(post, index)
     posts = list(filter(lambda p: "publish" not in p or p["publish"], posts))
+
 
 def gen_posts():
     try:
@@ -63,11 +66,13 @@ def gen_posts():
             except FileExistsError:
                 pass
 
+
 def gen_archive():
     archive_html = open("archive.html", "w")
     html = tmpl.render(posts=posts, page={"index": 1}, page_type="archive")
     archive_html.write(html)
     archive_html.close()
+
 
 def gen_tags():
     try:
@@ -88,6 +93,7 @@ def gen_tags():
                        page_type="tags", posts=[])
     tag_html.write(html)
     tag_html.close()
+
 
 def gen_pages():
     try:
@@ -115,11 +121,13 @@ def gen_pages():
     except FileExistsError:
         pass
 
+
 def gen_rss():
     rss_file = open("rss.xml", "w")
     rss = tmpl_rss.render(settings=settings, posts=posts)
     rss_file.write(rss)
     rss_file.close()
+
 
 def gen_sitemap():
     sitemap_file = open("sitemap.xml", "w")
@@ -135,6 +143,27 @@ def gen_sitemap():
     sitemap_file.write(sitemap)
     sitemap_file.close()
 
+
+def minify_html():
+    files = ["page/" + f for f in os.listdir("page/")]
+    files += ["post/" + f for f in os.listdir("post/")]
+    files += ["tag/" + f for f in os.listdir("tag/")]
+    files.append("archive.html")
+    files = filter(lambda f: not os.path.islink(f), files)
+    for f in files:
+        pass
+        subprocess.call(["html-minifier", f, "-o", f,
+                         "--minify-css",
+                         "--minify-js",
+                         "--case-sensitive",
+                         "--remove-comments",
+                         "--collapse-whitespace",
+                         "--conservative-collapse",
+                         "--collapseBoolean-attributes",
+                         "--remove-redundant-attributes",
+                         "--remove-empty-attributes"])
+
+
 if __name__ == "__main__":
     load_posts()
     posts.reverse()
@@ -144,3 +173,4 @@ if __name__ == "__main__":
     gen_pages()
     gen_rss()
     gen_sitemap()
+    minify_html()
