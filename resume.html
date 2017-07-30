@@ -394,8 +394,8 @@
                 fetch("https://api.admin.tik.tn/feedback", {
                     method: "POST",
                     redirect: "manual",
-                    // credentials: "omit",
-                    // refer: "",
+                    credentials: "omit",
+                    refer: "",
                     body: JSON.stringify({
                         target: 'resume',
                         message: form.message.value,
