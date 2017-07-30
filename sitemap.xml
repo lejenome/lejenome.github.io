@@ -93,7 +93,17 @@
         <priority>1.00</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/post/github-push-webhook-implementation</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/post/syteup-introduction</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/github-webhook</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
@@ -148,12 +158,27 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/tag/github</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/webhook</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/tag/linux</loc>
         <changefreq>daily</changefreq>
         <priority>0.80</priority>
     </url>
     <url>
         <loc>https://lejenome.github.io/tag/note</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/php</loc>
         <changefreq>daily</changefreq>
         <priority>0.80</priority>
     </url>

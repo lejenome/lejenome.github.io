@@ -9,6 +9,48 @@
     <language>en</language>
     <link>https://lejenome.github.io</link>
     <item>
+      <title>Github push webhook implementation</title>
+      <link>https://lejenome.github.io/post/github-push-webhook-implementation</link>
+      <pubDate>Sun, 30 Jul 2017 00:00:00 GMT</pubDate>
+      <guid>https://lejenome.github.io/post/github-push-webhook-implementation</guid>
+      <dc:creator>Moez Bouhlel</dc:creator>
+      <category domain="https://lejenome.github.io/tag/php">php</category>
+      <category domain="https://lejenome.github.io/tag/github">github</category>
+      <category domain="https://lejenome.github.io/tag/webhook">webhook</category>
+      <category domain="https://lejenome.github.io/tag/django">django</category>
+      
+      <description>&lt;p&gt;Github and Bitbuket provide webhooks support to notify external services when
+certain events happen with a repository. The most commonly used webhook event
+is &lt;tt class=&#34;docutils literal&#34;&gt;push&lt;/tt&gt;.&lt;/p&gt;
+&lt;p&gt;The following code is a PHP implementation of GitHub webhook that will update
+a repository clone and execute required deployment code when a new commit was
+pushed.&lt;/p&gt;
+&lt;script src=&#34;https://gist.github.com/lejenome/2ee7f1f47b9800140c57b51c1474439f.js&#34;&gt;&lt;/script&gt;&lt;p&gt;After adding this file to your server, you need to make the following changes
+before adding the webhook to github:&lt;/p&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;Sett &lt;tt class=&#34;docutils literal&#34;&gt;SECRET_TOKEN&lt;/tt&gt; to a randomly generated token. You can use this
+command to generate a truly random secure token on Linux:&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class=&#34;code shell literal-block&#34;&gt;
+head /dev/urandom &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr -dc A-Za-z0-9 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; head -c &lt;span class=&#34;m&#34;&gt;40&lt;/span&gt;
+&lt;/pre&gt;
+&lt;ul class=&#34;simple&#34;&gt;
+&lt;li&gt;Change &lt;tt class=&#34;docutils literal&#34;&gt;$commands&lt;/tt&gt; list to matches your need for every repository. An
+example of updating both a static website repository and a Django based
+application repository is provided on the code above as a reference.&lt;/li&gt;
+&lt;li&gt;Add write access to the process running PHP (FastCGI, mod_php, ...) which is
+mostly either running within the group &lt;tt class=&#34;docutils literal&#34;&gt;&lt;span class=&#34;pre&#34;&gt;www-data&lt;/span&gt;&lt;/tt&gt; or &lt;tt class=&#34;docutils literal&#34;&gt;www&lt;/tt&gt; depending on
+the Linux distribution running on your server.&lt;/li&gt;
+&lt;li&gt;If your repository is private, generate a ssh key and add the pubkey as a
+read-only deployment key to your repository settings. This key should be
+generated using the same user as the PHP process.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Finally, add a webhook to your repository settings. Make sure to set the
+content type to &lt;tt class=&#34;docutils literal&#34;&gt;application/json&lt;/tt&gt; and the secret to the secret token you
+have already generated.&lt;/p&gt;
+</description>
+    </item>
+  <item>
       <title>Boot physical Windows inside Qemu guest machine</title>
       <link>https://lejenome.github.io/post/boot-physical-windows-inside-qemu-guest-machine</link>
       <pubDate>Tue, 14 Feb 2017 00:00:00 GMT</pubDate>
