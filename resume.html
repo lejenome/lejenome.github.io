@@ -394,8 +394,8 @@
                 fetch(form.action, {
                     method: "POST",
                     redirect: "manual",
-                    credentials: "omit",
-                    refer: "",
+                    // credentials: "omit",
+                    // refer: "",
                     body: JSON.stringify({
                         target: 'resume',
                         message: form.message.value,
@@ -407,6 +407,8 @@
                     },
                 }).then(function() {
                     document.getElementById("feedback-msg").textContent = "Thanks for you feedback!";
+                }).catch(function() {
+                    document.getElementById("feedback-msg").textContent = "Oops! An error occurred!";
                 });
             });
         </script>
