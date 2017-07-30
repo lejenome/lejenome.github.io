@@ -402,6 +402,9 @@
                         from: 'self',
                         subject: '/resume Feedback',
                     }),
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
                 }).then(function() {
                     document.getElementById("feedback-msg").textContent = "Thanks for you feedback!";
                 });
