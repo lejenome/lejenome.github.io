@@ -107,7 +107,7 @@ def load_post(post, index):
     post["date_original"] = post["date"]
     post["file"] = post["url"]
     post["date"] = datetime.strptime(post["date"], "%Y/%m/%d").strftime(
-        "%a %b %d %Y")
+        "%B %d, %Y")
     post_file.close()
     if "id" in pub.document:
         post["id"] = pub.document["id"]
@@ -116,5 +116,5 @@ def load_post(post, index):
     post["ids"] = set(pub.document["ids"])
     post["ids"].add(os.path.splitext(os.path.basename(post["url"]))[0])
     post["url"] = os.path.join("post", str(post["id"]))
-    post["date_rss"] = datetime.strptime(post["date"], "%a %b %d %Y").strftime(
+    post["date_rss"] = datetime.strptime(post["date"], "%B %d, %Y").strftime(
         "%a, %d %b %Y 00:00:00 GMT")

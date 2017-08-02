@@ -128,7 +128,7 @@
                     <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url" {%- if page_type == "post" %}rel="bookmark"{% endif %}>{{post.title|e}}</a></h2>
                     {%- if page_type not in ("archive", "tag") %}
                     <h3 class="post-date">
-                      <time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date}}</time>
+                      <time datetime="{{post.date_original}}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{post.date}}</time>
                       - <a href="https://github.com/lejenome/lejenome.github.io/blob/master/{{post.file|urlencode}}" rel="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
                     </h3>
                     {%- endif %}
@@ -137,6 +137,18 @@
                 <div class="post-body" itemprop="articleBody">
                     {{post.body}}
                 </div>
+                {%- endif %}
+                {% if page_type == "post" %}
+                <script>
+                  function disqus_config() {
+                    this.page.url = "https://lejenome.github.io/post/{{post.id|urlencode}}";
+                    this.page.identifier = "{{post.id}}";
+                    this.page.title = "{{post.title}}";
+                  }
+                </script>
+                <div class="post-comments post-comment-thread" id="disqus_thread"></div>
+                {% elif page_type == "page" %}
+                <div class="post-comments post-comment-count" data-disqus-identifier="{{post.id}}" data-disqus-title="{{post.title}}" data-disqus-url="https://lejenome.github.io/post/{{post.id|urlencode}}">Show Comments</div>
                 {%- endif %}
             </article>
             {%- endfor %}
@@ -216,6 +228,48 @@
         enable_page_level_ads: true
       });
     </script>
+    <!--<script id="dsq-count-scr" src="https://lejenome.disqus.com/count.js" async></script>-->
+    {% if page_type == "page" %}
+    <script>
+      document.addEventListener("click", function(e) {
+        let x = window.scrollX;
+        let y = window.scrollY;
+        let el = e.target;
+        if (el.classList.contains("post-comment-count")) {
+          let old = document.getElementById("disqus_thread");
+          if (old) {
+            if (old.offsetTop < el.offsetTop) {
+              y -= old.clientHeight; // remove element old height
+            }
+            old.innerHTML = "Show Comments";
+            old.classList.remove("post-comment-thread");
+            old.classList.add("post-comment-count");
+            old.id = "";
+            if (old.offsetTop < el.offsetTop) {
+              y += old.clientHeight; // add element new height
+            }
+          }
+          el.innerHTML = "";
+          el.classList.add("post-comment-thread");
+          el.classList.remove("post-comment-count");
+          el.id = "disqus_thread";
+          DISQUS.reset({
+            reload: true,
+            config: function () {
+              this.page.identifier = el.dataset.disqusIdentifier;
+              this.page.url = el.dataset.disqusUrl;
+              this.page.title = el.dataset.disqusTitle;
+            }
+          });
+          window.scroll(x, y); // reset position
+        }
+      });
+    </script>
+    {% endif %}
+    {% if page_type in ("page", "post") %}
+    <script src="https://lejenome.disqus.com/embed.js" defer></script>
+    {% endif %}
+
 
 </body>
 
