@@ -19,7 +19,7 @@
            {%- endfor -%}
            moez,bouhlel,lejenome,bmoez,bmoezj,bmoez.j" itemprop="keywords" />
     <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width, minimum-scale=1" />
-    <meta property="author" content="Moez Bouhlel" itemprop="creator" />
+    <meta name="author" content="Moez Bouhlel" itemprop="creator" />
     <meta name="copyright" content="Moez Bouhlel 2016, All Rights Reserved." />
     <link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
     <base href="/" />
@@ -47,9 +47,10 @@
     <meta property="og:site_name" content="Moez Bouhlel" />
     <meta property="og:type" content="article" />
     <meta property="article:tag" content="{%- for post in posts -%}{{ post.tags|join(',') }},{%- endfor -%}" />
-    <!--<meta property="article:author" content="https://lejenome.github.io/resume" />-->
+    <meta property="article:author" content="https://lejenome.github.io/resume" />
     <!-- itemprop -->
     <meta itemprop="inLanguage" content="en" />
+    <meta property="og:locale" content="en_US">
     {% if page_type == "post" -%}
     <meta property="og:url" itemprop="url" content="https://lejenome.github.io/post/{{ posts[0].id|urlencode }}" />
     <link rel="canonical" href="https://lejenome.github.io/post/{{ posts[0].id|urlencode }}" />
