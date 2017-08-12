@@ -58,7 +58,16 @@
     font-weight: 600;
     display: block;
 }
-
+.post-share {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+    font-size: 120%;
+}
+.post-share > * {
+    display: inline-block;
+}
 #posts-nav ul {
     list-style-type: none;
     width: 100;
