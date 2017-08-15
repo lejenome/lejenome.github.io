@@ -288,10 +288,34 @@ footer p {
 
 footer textarea {
     width: 100%;
+    box-sizing: border-box;
     height: 80px;
+    resize: none;
+    border-radius: 0px;
+    border: 1px solid #EDEDED;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    padding: 6px 12px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+footer textarea:focus {
+    border: 1px solid #00bfff;
 }
 
-footer input[type="submit"] {
+footer button[type="submit"] {
     float: right;
-    margin: 10px;
+    margin-top: 10px;
+    border-radius: 0px;
+    border: 1px solid #00bfff;
+    background: #00bfff;
+    color: #fff;
+    line-height: 2rem;
+}
+footer button[type="submit"]:hover {
+    border: 1px solid #00bfff;
+    background: #fff;
+    color: #00bfff;
+    transition: background 0.5s;
 }
