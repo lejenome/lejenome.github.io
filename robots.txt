@@ -7,3 +7,5 @@ Disallow: /.gitignore
 Disallow: /LICENSE.md
 Disallow: /tests
 Disallow: /utils
+
+Sitemap: https://lejenome.github.io/sitemap.xml
