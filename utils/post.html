@@ -161,7 +161,7 @@
                     {% if page_type in ("archive", "tag") -%}
                     <h3 class="post-date"><time datetime="{{post.date_original}}" itemprop="datePublished">{{post.date_original}}</time></h3>
                     {% endif -%}
-                    <h2 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url" {%- if page_type == "post" %}rel="bookmark"{% endif %}>{{post.title|e}}</a></h2>
+                    <h1 class="post-title" itemprop="name" itemprop="headline"><a href="post/{{post.id|urlencode}}" class="post-link" itemprop="url" {%- if page_type == "post" %}rel="bookmark"{% endif %}>{{post.title|e}}</a></h1>
                     {%- if page_type not in ("archive", "tag") %}
                     <h3 class="post-date">
                       <time datetime="{{post.date_original}}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{post.date}}</time>
