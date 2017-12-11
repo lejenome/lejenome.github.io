@@ -32,15 +32,17 @@ into `Lego.com`_ website. The module path will be ``content/Lego.js``.
 
 .. code:: javascript
 
-    "use strict";
+    import Module from './Module.js';
 
     class Lego extends Module {
       constructor() {
+        // We overwrite the constructor to set the module name.
         super("lego");
       }
 
       onInteractive() {
-        console.log("Hello World");
+        // Here we are using the Module `log` method.
+        this.log("Hello World");
       }
     }
 
@@ -48,23 +50,26 @@ into `Lego.com`_ website. The module path will be ``content/Lego.js``.
     new Lego().start();
 
 
+You will notice we are using ES6 Modules syntax. Even it's still not supported
+by the Firefox WebExtensions, it will transcompiled into Firefox v52+ valid
+code using babel at a later step. You can use all the fancy latest ES syntax
+without worring about the bowser support. You will notice the use of `log`
+function defined on Module class, it's a wrapper of `console.log` with
+namespacing the log message to identify the extension own messages, you should
+use it instead of direct using `console` API.
+
 Now, we need this module to be injected when opening `Lego.com` video player
 page. After inspecting the site, we notice that its videos are opened within an
 iFrame and are hosted under ``https://www.lego.com/en-US/mediaplayer/video/``
-path where ``en-US`` could be changed to the user locale. We need to match this
-URL and inject required files when opened. In ``manifest.json`` file, we add
-the following object into ``"content_scripts"`` field:
+path where ``en-US`` could be changed to the user locale code. We need to match
+this URL and inject the required files when opened. In ``manifest.json`` file,
+we add the following object into ``"content_scripts"`` field:
 
 .. code:: json
 
     {
       "matches": ["https://www.lego.com/*/mediaplayer/video/*"],
       "js": [
-        "content/Options.js",
-        "content/common.js",
-        "content/report-geolocation.js",
-        "content/video-player.js",
-        "content/Module.js",
         "content/Lego.js"
       ],
       "all_frames": true,
@@ -139,6 +144,11 @@ module code logic follows these steps:
   browser video player, to add video sources and to apply all provided styles
   and properties.
 
+We resume. To add new website support. We implement a subclass of Module with
+overwriting one of its abstract methods but mostly `onInterative`. We add a
+new entry to the module with its matching URL patterns to `content_scripts` on
+`manifest.json`. We add module specific options definitions into `defaults`
+property of `content/Options.js` module.
 The final implementation of `Lego.com`_ module can be found on `HTML5 Video
 EveryWhere`_ `repository`_. I welcome patches for new websites support, for
 new language translation or for issue fixing.

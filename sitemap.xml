@@ -23,6 +23,11 @@
         <priority>1.00</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/post/h5vew-adding-new-website-support</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/post/syteup-creating-basic-plugin-segment</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
@@ -74,6 +79,11 @@
     </url>
     <url>
         <loc>https://lejenome.github.io/post/recommandation-for-it-student</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.00</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/post/adding-new-website-support-to-h5vew</loc>
         <changefreq>daily</changefreq>
         <priority>1.00</priority>
     </url>
@@ -138,7 +148,17 @@
         <priority>0.80</priority>
     </url>
     <url>
+        <loc>https://lejenome.github.io/tag/webextension</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
         <loc>https://lejenome.github.io/tag/windows</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.80</priority>
+    </url>
+    <url>
+        <loc>https://lejenome.github.io/tag/h5vew</loc>
         <changefreq>daily</changefreq>
         <priority>0.80</priority>
     </url>
