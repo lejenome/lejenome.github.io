@@ -1,12 +1,8 @@
-==================================
-Github push webhook implementation
-==================================
-
-.. Author:: Moez Bouhlel <bmoez.j@gmail.com>
-.. Id:: github-push-webhook-implementation
-.. Tags:: php, github, webhook, django
-.. Published:: 2017/07/30
-.. Publish:: True
+---
+title: Github push webhook implementation
+slug: github-push-webhook-implementation
+tags: php, github, webhook, django
+---
 
 Github and Bitbuket provide webhooks support to notify external services when
 certain events happen with a repository. The most commonly used webhook event
@@ -16,9 +12,7 @@ The following code is a PHP implementation of GitHub webhook that will update
 a repository clone and execute required deployment code when a new commit was
 pushed.
 
-.. raw:: html
-
-    <script src="https://gist.github.com/lejenome/2ee7f1f47b9800140c57b51c1474439f.js"></script>
+<script src="https://gist.github.com/lejenome/2ee7f1f47b9800140c57b51c1474439f.js"></script>
 
 After adding this file to your server, you need to make the following changes
 before adding the webhook to github:
@@ -26,9 +20,9 @@ before adding the webhook to github:
 - Sett ``SECRET_TOKEN`` to a randomly generated token. You can use this
   command to generate a truly random secure token on Linux:
 
-.. code:: shell
-
-    head /dev/urandom | tr -dc A-Za-z0-9 | head -c 40
+```shell
+head /dev/urandom | tr -dc A-Za-z0-9 | head -c 40
+```
 
 - Change ``$commands`` list to matches your need for every repository. An
   example of updating both a static website repository and a Django based

@@ -1,8 +1,7 @@
 ---
 title: Syteup Introduction
+tags: syteup
 ---
-
-# Syteup
 
 **Syteup** (a complete rewrite of [Syte](https://github.com/rigoneri/syte)) is a
 really simple but powerful packaged personal site that has social integrations

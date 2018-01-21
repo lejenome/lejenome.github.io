@@ -1,5 +1,6 @@
 ---
 title: (Syteup) creating a basic plugin, segment as an example
+tags: syteup
 ---
 
 Here, we will add Segment support to Syteup.

@@ -1,12 +1,9 @@
-============================
-List of recommanded articles
-============================
-
-.. Author:: Moez Bouhlel <bmoez.j@gmail.com>
-.. Id:: recommanded-artictles
-.. Tags:: note
-.. Published:: 2016/10/04
-.. Publish:: False
+---
+title: List of recommanded articles
+slug: recommanded-artictles
+tags: note
+published: false
+---
 
 This is a unsorted list of articles I keep for later references. I recommand
 read them too.
