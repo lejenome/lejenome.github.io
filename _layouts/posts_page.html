@@ -10,7 +10,7 @@ title: Moez Bouhlel (lejenome) Website
         <hgroup>
             <h1 class="post-title" itemprop="name" itemprop="headline"><a href="{{post.url | relative_url }}" class="post-link" itemprop="url">{{post.title}}</a></h1>
             <h3 class="post-date">
-              <time datetime="{{ post.date }}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{ post.date }}</time>
+              <time datetime="{{ post.date | date: "%FT%TZ" }}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{ post.date | date: "%b %d, %Y" }}</time>
               - <a href="{{ site.repo }}/blob/master/{{ post.path }}" rel="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
               - <span>share </span>
               <ul class="post-share">
@@ -26,22 +26,17 @@ title: Moez Bouhlel (lejenome) Website
         <div class="post-body" itemprop="articleBody">
             {{ post.content }}
         </div>
-        <script>
-          function disqus_config() {
-            this.page.url = "{{ post.url | absolute_url }}";
-            this.page.identifier = "{{post.id}}";
-            this.page.title = "{{post.title}}";
-          }
+        <div class="post-comments post-comment-count" data-disqus-identifier="{{post.id}}" data-disqus-title="{{post.title}}" data-disqus-url="{{post.url | absolute_url}}">Show Comments</div>
         </script>
         <div class="post-comments post-comment-thread" id="disqus_thread"></div>
     </article>
     {%- endfor %}
 </section>
 <nav id="posts-nav">
-    <ul>{% if paginator.next_page -%}
-        <li><a href="{{ paginator.next_page_path | relative_url }}" rel="next" id="prev-post">Newer</a></li>
-        {%- endif %}{% if paginator.previous_page %}
-        <li><a href="{{ paginator.previous_page_path | relative_url }}" rel="prev" id="next-post">Older</a></li>
+    <ul>{% if paginator.previous_page -%}
+        <li><a href="{{ paginator.previous_page_path | relative_url }}" rel="next" id="prev-post">Newer</a></li>
+        {%- endif %}{% if paginator.next_page %}
+        <li><a href="{{ paginator.next_page_path | relative_url }}" rel="prev" id="next-post">Older</a></li>
         {%- endif %}
     </ul>
 </nav>

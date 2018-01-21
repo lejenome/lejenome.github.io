@@ -1,0 +1,101 @@
+/* common */
+
+html {
+    width: 100%;
+}
+
+body {
+    background-color: white;
+    font-family: Source Code Pro, Arial, sans-serif;
+    color: black;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+header a,
+header a:hover,
+header a:active,
+#articales article hgroup a,
+#articales article hgroup a:active,
+#articales article hgroup a:hover,
+#articales.type-tags> ul> li a,
+#articales.type-tags> ul> li a:active,
+#articales.type-tags> ul> li a:hover,
+.card a,
+.card a:hover,
+.card a:active,
+.h-resume a,
+.h-resume a:hover,
+.h-resume a:active {
+    text-decoration: none;
+    outline: none;
+    color: inherit;
+}
+
+abbr {
+    cursor: help;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 36px;
+    color: rgb(85, 85, 85);
+}
+
+header h1 small {
+    font-size: 25px;
+    font-weight: 400;
+}
+
+header nav ul {
+    padding: 0;
+    margin: 0;
+    display: inline;
+}
+
+header nav ul li {
+    color: #990000;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 130%;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+header nav ul.menu li:after {
+    content: '|';
+    margin: 0 0 0 10px;
+    color: black;
+}
+
+header nav ul.menu li:last-child:after {
+    display: none;
+}
+
+header nav ul.menu li:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+
+header nav ul.icons {
+    float: right;
+}
+
+@media (min-width: 800px) {
+    .container {
+        width: 800px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .container {
+        width: 1000px;
+    }
+}
+
+@media (max-width: 799px) {
+    .conainer {
+        width: 100%;
+    }
+}

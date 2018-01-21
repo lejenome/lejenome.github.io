@@ -13,6 +13,7 @@ group :jekyll_plugins do
     gem "jekyll-relative-links"
     gem "jekyll-titles-from-headings"
     gem "jekyll-redirect-from"
+    gem "jekyll-sass-converter"
 end
 
 gem "nokogiri"

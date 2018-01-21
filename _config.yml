@@ -44,6 +44,7 @@ plugins:
   - jekyll-relative-links
   - jekyll-titles-from-headings
   - jekyll-redirect-from
+  - jekyll-sass-converter
 
 paginate: 5
 paginate_path: "/page/:num"
@@ -97,3 +98,7 @@ whitelist:
   - jekyll-optional-front-matter
   - jekyll-relative-links
   - jekyll-titles-from-headings
+  - jekyll-sass-converter
+
+sass:
+  style: compressed
