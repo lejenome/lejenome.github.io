@@ -1,5 +1,7 @@
-Syteup Introduction
-===================
+---
+layout: post
+title: Syteup Introduction
+---
 
 # Syteup
 

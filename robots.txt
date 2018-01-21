@@ -1,3 +1,6 @@
+---
+layout:
+---
 User-agent: *
 Disallow: /card
 Disallow: /README.md
@@ -8,4 +11,4 @@ Disallow: /LICENSE.md
 Disallow: /tests
 Disallow: /utils
 
-Sitemap: https://lejenome.github.io/sitemap.xml
+Sitemap: {{ "sitemap.xml" | absolute_url }}

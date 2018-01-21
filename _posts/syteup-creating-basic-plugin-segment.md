@@ -1,5 +1,7 @@
-[Syteup] creating a basic plugin, segment as an example
-=======================================================
+---
+layout: post
+title: [Syteup] creating a basic plugin, segment as an example
+---
 
 Here, we will add Segment support to Syteup.
 
