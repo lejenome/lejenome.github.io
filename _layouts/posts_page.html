@@ -2,7 +2,7 @@
 layout: default
 title: Moez Bouhlel (lejenome) Website
 ---
-<section id="articales" class="type-post">
+<section id="articales" class="type-page">
     {% for post in paginator.posts -%}
     <article class="post" id="{{ post.id }}">
         <meta itemprop="proficiencyLevel" content="Beginner" />
@@ -26,9 +26,7 @@ title: Moez Bouhlel (lejenome) Website
         <div class="post-body" itemprop="articleBody">
             {{ post.content }}
         </div>
-        <div class="post-comments post-comment-count" data-disqus-identifier="{{post.id}}" data-disqus-title="{{post.title}}" data-disqus-url="{{post.url | absolute_url}}">Show Comments</div>
-        </script>
-        <div class="post-comments post-comment-thread" id="disqus_thread"></div>
+        <div class="post-comments post-comment-count" data-disqus-identifier="{{post.slug}}" data-disqus-title="{{post.title}}" data-disqus-url="{{post.url | absolute_url}}">Show Comments</div>
     </article>
     {%- endfor %}
 </section>

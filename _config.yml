@@ -6,7 +6,7 @@ author:
   twitter: lejenome
 email: bmoez.j@gmail.com
 description: "Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume"
-url: "https://lejenome.github.io/"
+url: "https://lejenome.github.io"
 logo: "logo.png"
 lang: en_US
 baseurl: ""
@@ -26,7 +26,7 @@ webmaster_verifications:
   google: S6sLGAfoubJHu5uLGJMU9sOD82LL7APn_EYSZQPOXsE
   bing: 53107FC985BA81D864CE98CC28D80C1E
 
-exclude: [node_modules, LICENSE.md, README.md, Gemfile.lock, Gemfile, utils]
+exclude: [node_modules, LICENSE.md, README.md, Gemfile.lock, Gemfile, utils, yarn.lock, package.json, gulpfile.js]
 
 safe: true
 
@@ -65,7 +65,7 @@ defaults:
       path: ""
     values:
       image:
-        path: /imgs/logo-350x350.png
+        path: /imgs/logo-350x350.jpg
         height: 350
         width: 350
   -

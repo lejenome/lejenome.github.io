@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -x
+
+# TODO:  dev, production
+ENV=${1:-dev}
+
+if [ -e "Gemfile" ]; then
+	bundle install --path .bundle/gems
+fi
+
+if [ "${ENV}" == "production" ]; then
+	JEKYLL_ENV=production bundle exec jekyll build
+else
+	bundle exec jekyll build
+fi

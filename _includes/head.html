@@ -13,7 +13,7 @@
     <meta name="copyright" content="Moez Bouhlel 2016-2018, All Rights Reserved." />
     <link rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/" />
     <base href="/" />
-    <link rel="alternate" type="application/rss+xml" href="rss.xml" />
+    {% feed_meta %}
     <!-- pinterest verification -->
     <meta name="p:domain_verify" content="3324f7e099304fd296c47e61bc056185" />
     <!-- Flattr ownership validation -->
@@ -28,12 +28,12 @@
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:domain" content="lejenome.github.io" />
     <!-- og -->
-    <meta property="article:tag" content="{%- for post in posts -%}{{ post.tags|join(',') }},{%- endfor -%}" />
+    <meta property="article:tag" content="{%- for tag in page.tags -%}{{ tag }},{%- endfor -%}" />
     <meta property="article:author" content="https://lejenome.github.io/resume" />
     <!-- itemprop -->
     <meta itemprop="inLanguage" content="en" />
     <meta name="twitter:description" property="og:description" itemprop="description" content="Moez Bouhlel (lejenome) Website for latest updates." />
-    <meta name="twitter:title" property="og:title" content="{% if page_type == "post" -%} {{posts[0].title|e}} | Moez Bouhlel {%- else -%} Moez Bouhlel [lejenome] Website {%- endif %}" />
+    <meta name="twitter:title" property="og:title" content="{{ page.title | xml_escape }}" />
     <meta name="twitter:image" property="og:image" itemprop="image" content="https://lejenome.github.io/imgs/logo-350x350.jpg" />
     <!-- favicons -->
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="imgs/favicon/apple-touch-icon-57x57.png" />

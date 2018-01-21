@@ -54,7 +54,7 @@
 </script>
 
 <!--<script id="dsq-count-scr" src="https://lejenome.disqus.com/count.js" async></script>-->
-{% if page_type == "page" %}
+{% if page.layout == "posts_page" %}
 <script>
   document.addEventListener("click", function(e) {
     let x = window.scrollX;
@@ -91,7 +91,7 @@
   });
 </script>
 {% endif %}
-{% if page.layout == "page" or page.layout == "post" %}
+{% if page.layout == "posts_page" or page.layout == "post" %}
 <script src="https://lejenome.disqus.com/embed.js" defer></script>
 {% endif %}
 
