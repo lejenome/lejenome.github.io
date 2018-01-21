@@ -4,7 +4,7 @@ slug: python-101-training-get-ready
 tags: mtcfss, python, django
 ---
 
-This is our check list for any member interested to join the training:
+This is our checklist for any member interested to join the training:
 
 Tools
 =====
@@ -18,7 +18,7 @@ For Windows Users
 - [Git For Windows](https://git-for-windows.github.io/) (optional but recommended)
 
 You can choose your preferred Text Editor or IDE to write python code, or you
-can pick one of our recommendation list:
+can pick one from our recommendation list:
 
 - [PyCharm](https://www.jetbrains.com/pycharm-edu/)
 - IDLE3 (already integrated with Python installer)
@@ -45,7 +45,7 @@ You can choose your preferred Text Editor or IDE or one of our suggestion list:
 Other (We will keep it for Saturday)
 ====================================
 
-We will use the Django Framework on the training. To install Django, you need to
+We will use the Django Framework in the training. To install Django, you need to
 use the pip command (already integrated on Python Windows installer, or install
 python3-pip for Ubuntu users). Launch your console (cmd on Windows), and run:
 
@@ -58,7 +58,7 @@ Requirements
 
 We will use GitHub to host our projects code. To be able
 to join the development, every member is required to create a GitHub account and
-send us his profile link on email (<mtcfss@outlook.com>).
+email his profile link to <mtcfss@outlook.com>.
 
 Keep in mind that GitHub is #1 code hosting service and you will mostly keep
 using it outside our training on future.

@@ -4,13 +4,13 @@ slug: boot-physical-windows-inside-qemu-guest-machine
 tags: linux, qemu, kvm, windows
 ---
 
-Recently, I needed to setup a new Windows system for use in an Internship
-project. Like the old setup which was described on an [older post], I needed to
-have access to the same Windows from inside Qemu and from dual-boot for
-performance reseasons. But instead of requiring to install Windows two times
-(once directly on PC as host and the other inside Qemu) which caused some
-issues including slow filesystem operations when booting as host system, I did
-an update to setup instructions this time.
+Recently, I needed to set up a new Windows system for use in an Internship
+project. Like the old setup which was described in an [older post], I needed to
+have access to the same Windows from inside _Qemu_ and from dual-boot for
+performance reasons. But instead of requiring to install Windows two times
+(once directly on PC as host and the other inside _Qemu_) which caused some
+issues including slow filesystem operations when booting as the host system, I
+did an update to setup instructions this time.
 
 For the virtual machine, we will use *Qemu/KVM* with *Ovmf* EFI bios.
 
@@ -22,7 +22,7 @@ sudo modprobe loop
 sudo modprobe linear
 ```
 
-New, we need to create a virtual RAID disk for Qemu that will hold our physical
+Now, we need to create a virtual RAID disk for _Qemu_ that will hold our physical
 Windows partition. As we will use GPT partitions table schema, we will allocate
 few megabytes ``efi1`` for GPT metadata (34 Sectors) and for EFI partition
 before Windows partition and one megabyte ``efi2`` after Windows partition for
@@ -35,7 +35,7 @@ dd if=/dev/zero of=efi2 bs=1M count=1
 ```
 
 Now that we have ``efi1`` file of 100 MB (100 * 1M) and ``efi2`` of 1 MB. Next,
-we create a loopback devices from both files:
+we create loopback devices from both files:
 
 ```shell
 sudo losetup -f efi1
@@ -59,7 +59,7 @@ sudo mdadm --build --verbose /dev/md0 --chunk=512 --level=linear --raid-devices=
 
 Time to create the partitions table of the new RAID disk reusing the same
 physical Windows partition. For this step, we will use *parted* utility. You
-can use other tool of your choose.
+can use another tool of your choice.
 
 Partition your virtual RAID disk:
 
@@ -78,7 +78,7 @@ sudo parted /dev/md0
 ```
 
 Your final layout will have 2 partitions; Windows partition ``/dev/md0p2`` and
-EFI partition ``/dev/md0p1``. The EFI partition need to be formatted.
+EFI partition ``/dev/md0p1``. The EFI partition needs to be formatted.
 
 ```shell
 sudo mkfs.msdos -F 32 -n EFI /dev/md0p1
@@ -86,7 +86,7 @@ sudo mkfs.msdos -F 32 -n EFI /dev/md0p1
 
 Now let add Windows boot entry to the virtual RAID disk.
 
-Boot to Windows live DVD from inside Qemu virtual machine with ``/dev/md0`` as
+Boot to Windows live DVD from inside _Qemu_ virtual machine with ``/dev/md0`` as
 disk after changing ``/dev/md0`` owner to the current user and installing
 *Ovmf* EFI bios, which in my case, it is available at
 ``/usr/share/ovmf/ovmf_x64.bin``.
@@ -101,7 +101,7 @@ qemu-system-x86_64 \
 ```
 
 Press ``Shift+F10`` when Windows installer starts to open the terminal. We need
-to assign letter to EFI volume (partition).
+to assign a letter to EFI volume (partition).
 
 ```shell
 diskpart
@@ -119,7 +119,7 @@ Finally, we create BCD boot entry for Windows partition on the same terminal.
 bcdboot C:\Windows /s B: /f ALL
 ```
 
-Now, you are ready to boot to Windows from inside Qemu.
+Now, you are ready to boot to Windows from inside _Qemu_.
 
 ```shell
 qemu-system-x86_64 \
@@ -130,7 +130,7 @@ qemu-system-x86_64 \
 
 After each Linux system reboot, you need to create the loopback devices, merge
 the partitions into the RAID disk and change the owner of the device before
-launching the virtual machine. You can find [the script I use] as reference.
+launching the virtual machine. You can find [the script I use] as a reference.
 
 Credit to [Arch Linux Wiki]. Enjoy!
 

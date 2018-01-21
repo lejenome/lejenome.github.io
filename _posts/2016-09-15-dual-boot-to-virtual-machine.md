@@ -4,20 +4,21 @@ slug: dualboolt-guest-window-machine
 tags: linux, qemu, kvm, windows
 ---
 
-**Update:** A new version of the articale with better solution is available
+**Update:** A new version of the article with better solution is available
 [here].
 
 Even Linux is my main system, I frequently need to use Windows for school
 homework when Mono does not support desired features. Running Windows inside a
-virtual machine is always enough expect few cases. The best solution was to
-setup a single windows system accessible from both the virtual machine and
+virtual machine may has limits especially when running Visual Studio on the
+guest machine. The best solution was to
+set up a single windows system accessible from both the virtual machine and
 from the physical dual boot.
 
 For the virtual machine, we will use *Qemu/KVM* with *Virtio* devices and a disk
 partition for Windows.
 
 First, you need to install Windows on your PC to get the boot entry with right
-configurations (I couldn't find a work around BCD boot entry issue other than
+configurations (I couldn't find a workaround BCD boot entry issue other than
 this one). Then reboot to your Linux system to reinstall Windows on the same
 partition but using the virtual machine this time.
 
@@ -28,7 +29,7 @@ sudo modprobe loop
 sudo modprobe linear
 ```
 
-Because the virtual machine need whole disk with both the Windows partition
+Because the virtual machine needs a whole disk with both the Windows partition
 and the EFI partition, We need to create a virtual RAID. Let's create a small
 file to hold the EFI partition:
 

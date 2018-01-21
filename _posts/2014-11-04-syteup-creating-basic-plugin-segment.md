@@ -6,10 +6,10 @@ tags: syteup
 Here, we will add Segment support to Syteup.
 
 Segment is "a customer data hub". It makes it easy to integrate third-party
-tools (analytics, advertising,...) to your application throw a all-in-one single
-library.
+tools (analytics, advertising,...) to your application throw an all-in-one
+single library.
 
-To add Segment plugin support to Syteup, we needs just 3 simple steps:
+To add Segment plugin support to Syteup, we need just 3 simple steps:
 
 1- create `plugins/segment.js` plugin code file that will export the plugin
 module to the window object:
@@ -75,12 +75,12 @@ module to the window object:
 what we did is to add segment code (copied from segment tutorial) into the
 `setupSegment` function, then we export it as `setup` item on the plugin module
 which should be named `segmentPlugin`. As you note, the user depending write_key
-is readed from the `settings` object of the plugin which will be added on the
+is read from the `settings` object of the plugin which will be added on the
 third step.
 
 2- we add a script tag to the `index.html` file that will load the plugin code.
 
-the script tag should be included on the plugins section just before
+the script tag should be included in the plugins section just before
 `js/plugins.js` tag and it should be loaded on defer mode
 
 ```html
