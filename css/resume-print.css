@@ -57,23 +57,23 @@
     aside.card li {
         display: inline;
     }
-    .resume> dl {
+    .resume>dl {
         height: 100%;
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
     }
-    .resume> dl> dt,
-    .resume> dl> dd {
+    .resume>dl>dt,
+    .resume>dl>dd {
         width: calc(50% - 10px);
         margin-right: 10px;
         box-sizing: border-box;
     }
-    .resume> dl> dt {
+    .resume>dl>dt {
         margin: 0;
         font-size: 18px;
     }
-    .resume> dl> dd {
+    .resume>dl>dd {
         font-size: 12px;
     }
     .skills h2 {

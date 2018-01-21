@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "bootstrap": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-html": "^3.2.1",
+    "eslint-plugin-json": "^1.2.0",
+    "gulp": "^3.9.1",
+    "gulp-eslint": "^3.0.1",
+    "gulp-jsbeautifier": "^2.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylelint": "^5.0.0",
+    "gulp-watch": "^4.3.6"
+  }
+}

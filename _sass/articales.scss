@@ -7,7 +7,8 @@
 
 .post-title,
 .post-body {
-    font-family: "Roboto", /*"Open Sans",*/ Helvetica, sans-serif;
+    font-family: "Roboto", /*"Open Sans",*/
+    Helvetica, sans-serif;
 }
 
 .post-body {
@@ -32,28 +33,28 @@
 }
 
 .post-body h3,
-.post-body .h3{
+.post-body .h3 {
     font-size: 16px;
     line-height: 25px;
     font-weight: 500;
 }
 
 .post-body h4,
-.post-body .h4{
+.post-body .h4 {
     font-size: 15px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h5,
-.post-body .h5{
+.post-body .h5 {
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
 }
 
 .post-body h6,
-.post-body .h6{
+.post-body .h6 {
     font-size: 13px;
     line-height: 20px;
     font-weight: 500;
@@ -225,17 +226,17 @@
 }
 
 .post-comments {
-  display: block;
-  margin: 10px auto 0 auto;
+    display: block;
+    margin: 10px auto 0 auto;
 }
 
 .post-comment-count {
-  width: 250px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  color: rgba(0,0,0,0.6);
+    width: 250px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: rgba(0, 0, 0, 0.6);
 }
 
 #articales .loading {
@@ -245,7 +246,6 @@
     font-weight: 400;
     line-height: 25px;
 }
-
 
 /* pretty print code block */
 
@@ -287,7 +287,6 @@ blockquote code {
     border: 0;
 }
 
-
 /*
 .code {
     -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
@@ -308,7 +307,7 @@ ol.linenums li,
     text-shadow: 0 1px 0 #fff;
 }
 
-ol.linenums li> span.codeline {
+ol.linenums li>span.codeline {
     color: #333;
 }
 

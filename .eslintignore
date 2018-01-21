@@ -1,0 +1,10 @@
+# Always ignore node_modules
+**/node_modules/**/*.*
+**/vendor/**/*.*
+.git/**
+_site/**
+jukax-about/**
+meet-ubuntu-ads/**
+meet-ubuntu-ads_next/**
+tests/**
+jukax/**

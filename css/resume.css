@@ -24,7 +24,7 @@
     }
 }
 
-.card .more> span {
+.card .more>span {
     font-weight: 500;
     font-size: 15px;
 }
@@ -54,7 +54,7 @@
     }
 }
 
-.resume> dl> dt {
+.resume>dl>dt {
     line-height: 2;
     width: 100%;
     border-bottom: solid 1px gray;
@@ -62,7 +62,7 @@
     font-weight: 600;
 }
 
-.resume> dl> dd {
+.resume>dl>dd {
     font-size: 13px;
     padding-left: 20px;
     margin-left: 0;
@@ -75,7 +75,7 @@
         padding-left: 20px;
         padding-right: 20px;
     }
-    .resume> dl> dd {
+    .resume>dl>dd {
         margin-left: 0;
     }
 }
@@ -84,11 +84,11 @@
     font-size: 18px;
 }
 
-dl> dt {
+dl>dt {
     margin: 20px 0;
 }
 
-dd.skills> ul {
+dd.skills>ul {
     padding: 0;
     list-style-position: inside;
     list-style-type: square;
@@ -96,12 +96,12 @@ dd.skills> ul {
     margin: 10px 0;
 }
 
-dd:not(.skills)> ul {
+dd:not(.skills)>ul {
     padding-left: 0;
     list-style: none;
 }
 
-dd> ul> li {
+dd>ul>li {
     padding-top: 2.5px;
     padding-bottom: 2.5px;
 }
@@ -113,7 +113,6 @@ dd> ul> li {
 .languages .term {
     width: 75px;
 }
-
 
 /* dates */
 
@@ -132,7 +131,6 @@ dd> ul> li {
 .duration {
     float: right;
 }
-
 
 /* table */
 
@@ -300,6 +298,7 @@ footer textarea {
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, .1);
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
+
 footer textarea:focus {
     border: 1px solid #00bfff;
 }
@@ -313,6 +312,7 @@ footer button[type="submit"] {
     color: #fff;
     line-height: 2rem;
 }
+
 footer button[type="submit"]:hover {
     border: 1px solid #00bfff;
     background: #fff;

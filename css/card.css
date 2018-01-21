@@ -46,7 +46,6 @@ svg g#Pattern rect {
     fill: var(--text-color);
 }
 
-
 /* struct style */
 
 html {
@@ -97,10 +96,9 @@ body ul {
     font-weight: bold;
 }
 
-
 /* card */
 
-body> div {
+body>div {
     text-align: left;
     position: absolute;
 }

@@ -2,3 +2,5 @@ __pycache__
 Gemfile.lock
 _site/
 .bundle/
+node_modules/
+yarn.lock
