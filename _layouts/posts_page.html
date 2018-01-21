@@ -1,0 +1,47 @@
+---
+layout: default
+title: Moez Bouhlel (lejenome) Website
+---
+<section id="articales" class="type-post">
+    {% for post in paginator.posts -%}
+    <article class="post" id="{{ post.id }}">
+        <meta itemprop="proficiencyLevel" content="Beginner" />
+        <link itemprop="publisher" href="https://lejenome.github.io/resume" rel="author" />
+        <hgroup>
+            <h1 class="post-title" itemprop="name" itemprop="headline"><a href="{{post.url | relative_url }}" class="post-link" itemprop="url">{{post.title}}</a></h1>
+            <h3 class="post-date">
+              <time datetime="{{ post.date }}" itemprop="datePublished"><i class="fa fa-clock-o"></i> {{ post.date }}</time>
+              - <a href="{{ site.repo }}/blob/master/{{ post.path }}" rel="edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> edit</a>
+              - <span>share </span>
+              <ul class="post-share">
+                <li><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{post.url | absolute_url | cgi_escape}}"><i class="fa fa-facebook-square"></i></a></li>
+                <li><a target="_blank" href="https://plus.google.com/share?url={{post.url | absolute_url | cgi_escape}}"><i class="fa fa-google-plus-square"></i></a></li>
+                <li><a target="_blank" href="https://twitter.com/intent/tweet?url={{site.url | absolute_url | cgi_escape}}&text={{post.title | cgi_escape}}"><i class="fa fa-twitter-square"></i></a></li>
+                <li><a target="_blank" href="https://www.reddit.com/submit?url={{site.url | absolute_url | cgi_escape}}&title={{post.title | cgi_escape}}"><i class="fa fa-reddit-square"></i></a></li>
+                <li><a target="_blank" href="https://www.tumblr.com/share/link?url={{site.url | absolute_url | cgi_escape}}&name={{post.title | cgi_escape}}"><i class="fa fa-tumblr-square"></i></a></li>
+                <li><a target="_blank" href="https://www.linkedin.com/shareArticle?mini=true&url={{site.url | absolute_url | cgi_escape}}&title={{post.title | cgi_escape}}"><i class="fa fa-linkedin-square"></i></a></li>
+              </ul>
+            </h3>
+        </hgroup>
+        <div class="post-body" itemprop="articleBody">
+            {{ post.content }}
+        </div>
+        <script>
+          function disqus_config() {
+            this.page.url = "{{ post.url | absolute_url }}";
+            this.page.identifier = "{{post.id}}";
+            this.page.title = "{{post.title}}";
+          }
+        </script>
+        <div class="post-comments post-comment-thread" id="disqus_thread"></div>
+    </article>
+    {%- endfor %}
+</section>
+<nav id="posts-nav">
+    <ul>{% if paginator.next_page -%}
+        <li><a href="{{ paginator.next_page_path | relative_url }}" rel="next" id="prev-post">Newer</a></li>
+        {%- endif %}{% if paginator.previous_page %}
+        <li><a href="{{ paginator.previous_page_path | relative_url }}" rel="prev" id="next-post">Older</a></li>
+        {%- endif %}
+    </ul>
+</nav>

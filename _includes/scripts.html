@@ -1,0 +1,105 @@
+<!-- import js -->
+<script>
+    function linenumber(pres) {
+        var i;
+        for (i = 0; i < pres.length; i++) {
+            var html = pres[i].innerHTML;
+            html = '<ol class="linenums"><li><span class="codeline">' +
+                html.split("\n").slice(0, -1).join('</span></li><li><span class="codeline">') +
+                '</span></li></ol>';
+            pres[i].innerHTML = html;
+        }
+    }
+    // add line number to all markdown generated blocks
+    linenumber(document.querySelectorAll(".code pre"));
+</script>
+
+<noscript id="deferred-styles">
+  <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css" /> -->
+  <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+  <link rel="stylesheet" type="text/css" href="css/source-code-pro.css" />
+  <link rel="stylesheet" type="text/css" href="css/pygmentize.default.css" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900,900i" />
+  <!-- https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,700i,400i,300i|Open+Sans+Condensed:700,700i&subset=latin,latin-ext -->
+</noscript>
+<script>
+  var loadDeferredStyles = function() {
+    var addStylesNode = document.getElementById("deferred-styles");
+    var replacement = document.createElement("div");
+    replacement.innerHTML = addStylesNode.textContent;
+    document.body.appendChild(replacement)
+    addStylesNode.parentElement.removeChild(addStylesNode);
+  };
+  var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+      webkitRequestAnimationFrame || msRequestAnimationFrame;
+  if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+  else window.addEventListener('load', loadDeferredStyles);
+</script>
+<script type="text/javascript">
+  var _paq = _paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['enableHeartBeatTimer']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://api.admin.tik.tn/p";
+    _paq.push(['setTrackerUrl', u]);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+<!--<script id="dsq-count-scr" src="https://lejenome.disqus.com/count.js" async></script>-->
+{% if page_type == "page" %}
+<script>
+  document.addEventListener("click", function(e) {
+    let x = window.scrollX;
+    let y = window.scrollY;
+    let el = e.target;
+    if (el.classList.contains("post-comment-count")) {
+      let old = document.getElementById("disqus_thread");
+      if (old) {
+        if (old.offsetTop < el.offsetTop) {
+          y -= old.clientHeight; // remove element old height
+        }
+        old.innerHTML = "Show Comments";
+        old.classList.remove("post-comment-thread");
+        old.classList.add("post-comment-count");
+        old.id = "";
+        if (old.offsetTop < el.offsetTop) {
+          y += old.clientHeight; // add element new height
+        }
+      }
+      el.innerHTML = "";
+      el.classList.add("post-comment-thread");
+      el.classList.remove("post-comment-count");
+      el.id = "disqus_thread";
+      DISQUS.reset({
+        reload: true,
+        config: function () {
+          this.page.identifier = el.dataset.disqusIdentifier;
+          this.page.url = el.dataset.disqusUrl;
+          this.page.title = el.dataset.disqusTitle;
+        }
+      });
+      window.scroll(x, y); // reset position
+    }
+  });
+</script>
+{% endif %}
+{% if page.layout == "page" or page.layout == "post" %}
+<script src="https://lejenome.disqus.com/embed.js" defer></script>
+{% endif %}
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Lejenome Website Ad 1 -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-2482029926365022"
+     data-ad-slot="6455608003"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>

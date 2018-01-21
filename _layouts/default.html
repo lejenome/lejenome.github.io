@@ -1,0 +1,19 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" itemscope itemType="http://schema.org/{% if page.layout == "post" %}TechArticle{% else %}Blog{% endif %}">
+
+{% include head.html %}
+
+<body class="container">
+
+  {% include header.html %}
+
+  <div>
+    {{ content }}
+  </div>
+
+  {% include scripts.html %}
+
+  </body>
+</html>

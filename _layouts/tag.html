@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<section id="articales" class="type-tag">
+    {% for post in site.tags[page.tag] -%}
+    <article class="post" id="{{ post.id }}" itemscope itemType="http://schema.org/TechArticle" itemid="{{ post.url | absolute_url }} ">
+        <meta itemprop="proficiencyLevel" content="Beginner" />
+        <link itemprop="publisher" href="https://lejenome.github.io/resume" rel="author" />
+        <hgroup>
+            <h3 class="post-date"><time datetime="{{ post.date | date: "%FT%TZ" }}" itemprop="datePublished">{{ post.date | date: "%Y/%m/%d" }}</time></h3>
+            <h1 class="post-title" itemprop="name" itemprop="headline"><a href="{{ post.url | relative_url }}" class="post-link" itemprop="url">{{post.title}}</a></h1>
+        </hgroup>
+    </article>
+    {%- endfor %}
+</section>
+<nav id="posts-nav">
+</nav>

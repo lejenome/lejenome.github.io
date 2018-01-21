@@ -1,0 +1,20 @@
+<header>
+  <h1><a href="">{{ site.author.name }} <small>@{{ site.author.username }}</small></a></h1>
+    <nav>
+        <ul class="menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+            <li itemprop="name"><a itemprop="url" href="#">Home</a></li>
+            <li><a href="https://twitter.com/{{ site.twitter.username }}">Twitter</a></li>
+            <li><a href="https://github.com/{{ site.github.username }}">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/{{ site.linkedin.username }}">LinkedIn</a></li>
+            <li itemprop="name"><a itemprop="url" href="resume" rel="author">Resume</a></li>
+            <li itemprop="name"><a itemprop="url" href="contact">Contact</a></li>
+        </ul>
+        <ul class="icons">
+          {% if site.donate %}
+            <li><a target="_blank" href="{{ site.donate }}" title="Donate"><img alt="Donate" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" /></a></li>
+          {% endif %}
+          <li><a rel="archives" title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>
+          <li><a title="RSS" rel="alternate" type="application/rss+xml" href="rss.xml"><i class="fa fa-rss"></i></a></li>
+        </ul>
+    </nav>
+</header>

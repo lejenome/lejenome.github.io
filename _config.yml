@@ -1,0 +1,99 @@
+# Site settings
+title: Moez Bouhlel [lejenome] Website
+author:
+  name: Moez Bouhlel
+  username: lejenome
+  twitter: lejenome
+email: bmoez.j@gmail.com
+description: "Moez Bouhlel (lejenome) website for latest updates. Hire me for a part-time job or for an internship at https://lejenome.github.io/resume"
+url: "https://lejenome.github.io/"
+logo: "logo.png"
+lang: en_US
+baseurl: ""
+repo: https://github.com/lejenome/lejenome.github.io
+twitter:
+  username: lejenome
+facebook:
+  app_id: 135239077081828
+  publisher: lejenome
+  admins: lejenome
+github:
+  username: lejenome
+linkedin:
+  username: lejenome
+donate: https://paypal.me/pools/c/801V34eBNq
+webmaster_verifications:
+  google: S6sLGAfoubJHu5uLGJMU9sOD82LL7APn_EYSZQPOXsE
+  bing: 53107FC985BA81D864CE98CC28D80C1E
+
+exclude: [node_modules, LICENSE.md, README.md, Gemfile.lock, Gemfile, utils]
+
+safe: true
+
+# Build settings
+markdown: kramdown
+# permalink: pretty
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
+  - jekyll-redirect-from
+
+paginate: 5
+paginate_path: "/page/:num"
+
+highlighter: rouge
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
+
+collections:
+  tag:
+    output: true
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      image:
+        path: /imgs/logo-350x350.png
+        height: 350
+        width: 350
+  -
+    scope:
+      type: "posts"
+    values:
+      layout: post
+      permalink: /post/:slug
+  -
+    scope:
+      type: "tag"
+    values:
+      layout: tag
+
+optional_front_matter:
+  remove_originals: true
+
+titles_from_headings:
+  enabled:     true
+  strip_title: true
+  collections: true
+
+whitelist:
+  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-seo-tag
+  - jekyll-optional-front-matter
+  - jekyll-relative-links
+  - jekyll-titles-from-headings
