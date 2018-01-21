@@ -25,6 +25,7 @@ donate: https://paypal.me/pools/c/801V34eBNq
 webmaster_verifications:
   google: S6sLGAfoubJHu5uLGJMU9sOD82LL7APn_EYSZQPOXsE
   bing: 53107FC985BA81D864CE98CC28D80C1E
+  yandex: 21fc1ac7da8c5809
 
 exclude: [node_modules, LICENSE.md, README.md, Gemfile.lock, Gemfile, utils, yarn.lock, package.json, gulpfile.js]
 
