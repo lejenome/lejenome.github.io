@@ -1,6 +1,6 @@
 ---
-layout: post
 title: A Detailed Tour of the Rust Compiler
+tags: rust compiler
 ---
 
 I was learning about Rust compiler internals when I came across Tom Lee
