@@ -7,7 +7,7 @@
     --arrow-color: var(--text-color);
     --cercle-color: var(--text-color);
     --icons-color: var(--background-color);
-    --border-size: 0px;
+    --border-size: 0;
 }
 
 body,
@@ -102,8 +102,6 @@ body>div {
     text-align: left;
     position: absolute;
 }
-
-.left-half {}
 
 .right-half {
     right: 54px;

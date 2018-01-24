@@ -11,6 +11,7 @@ logo: "logo.png"
 lang: en_US
 baseurl: ""
 repo: https://github.com/lejenome/lejenome.github.io
+repository: lejenome/lejenome.github.io
 twitter:
   username: lejenome
 facebook:
@@ -103,3 +104,8 @@ whitelist:
 
 sass:
   style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all

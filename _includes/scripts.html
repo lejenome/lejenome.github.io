@@ -10,7 +10,6 @@
             pres[i].innerHTML = html;
         }
     }
-    // add line number to all markdown generated blocks
     linenumber(document.querySelectorAll(".code pre"));
 </script>
 
@@ -30,7 +29,7 @@
     var addStylesNode = document.getElementById("deferred-styles");
     var replacement = document.createElement("div");
     replacement.innerHTML = addStylesNode.textContent;
-    document.body.appendChild(replacement)
+    document.body.appendChild(replacement);
     addStylesNode.parentElement.removeChild(addStylesNode);
   };
   var raf = requestAnimationFrame || mozRequestAnimationFrame ||
@@ -40,7 +39,6 @@
 </script>
 <script type="text/javascript">
   var _paq = _paq || [];
-  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
   _paq.push(['enableHeartBeatTimer']);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
@@ -64,14 +62,14 @@
       let old = document.getElementById("disqus_thread");
       if (old) {
         if (old.offsetTop < el.offsetTop) {
-          y -= old.clientHeight; // remove element old height
+          y -= old.clientHeight;
         }
         old.innerHTML = "Show Comments";
         old.classList.remove("post-comment-thread");
         old.classList.add("post-comment-count");
         old.id = "";
         if (old.offsetTop < el.offsetTop) {
-          y += old.clientHeight; // add element new height
+          y += old.clientHeight;
         }
       }
       el.innerHTML = "";
@@ -86,7 +84,7 @@
           this.page.title = el.dataset.disqusTitle;
         }
       });
-      window.scroll(x, y); // reset position
+      window.scroll(x, y);
     }
   });
 </script>

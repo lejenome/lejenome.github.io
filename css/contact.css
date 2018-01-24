@@ -26,7 +26,7 @@
 .contact.vcard ul li .fa,
 .contact.h-card ul li .fa {
     width: 20px;
-    text-align: center
+    text-align: center;
 }
 
 @media (max-width: 500px) {

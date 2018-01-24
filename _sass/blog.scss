@@ -61,7 +61,7 @@
 
 .post-share {
     list-style: none;
-    display: inline-block;
+    display: inline-flex;
     padding: 0;
     margin: 0;
     font-size: 120%;
@@ -69,6 +69,10 @@
 
 .post-share>* {
     display: inline-block;
+}
+
+.post-share li a {
+    margin-left: 10px;
 }
 
 #posts-nav ul {

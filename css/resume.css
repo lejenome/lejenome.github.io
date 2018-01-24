@@ -32,7 +32,7 @@
 .card .more ul {
     list-style-position: inside;
     list-style-type: square;
-    padding-left: 0px;
+    padding-left: 0;
     font-size: 14px;
 }
 
@@ -274,7 +274,7 @@ footer {
 
 footer h6 {
     padding: 0;
-    margin: 5px 0px;
+    margin: 5px 0;
 }
 
 footer p {
@@ -289,7 +289,7 @@ footer textarea {
     box-sizing: border-box;
     height: 80px;
     resize: none;
-    border-radius: 0px;
+    border-radius: 0;
     border: 1px solid #EDEDED;
     font-size: 14px;
     line-height: 1.42857143;
@@ -306,7 +306,7 @@ footer textarea:focus {
 footer button[type="submit"] {
     float: right;
     margin-top: 10px;
-    border-radius: 0px;
+    border-radius: 0;
     border: 1px solid #00bfff;
     background: #00bfff;
     color: #fff;
