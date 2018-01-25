@@ -1,6 +1,7 @@
 "use strict";
 
 const gulp = require('gulp');
+const rename = require('gulp-rename');
 const eslint = require('gulp-eslint');
 const gulpStylelint = require('gulp-stylelint');
 const prettify = require('gulp-jsbeautifier');
@@ -10,7 +11,7 @@ const BASE_DIR = './';
 const JSFiles = [
   './**/*.js',
   '!**/*.min.js',
-  '!vendor/**/*',
+  '!**/vendor/**/*',
   '!_site/**/*',
   '!jukax-about/**/*',
   '!meet-ubuntu-ads/**/*',
@@ -26,9 +27,9 @@ const CSSFiles = [
   './**/*.scss',
   './**/*.sass',
   './**/*.less',
-  '!css/style.scss',
+  '!_assets/css/*.scss',
   '!**/*.min.css',
-  '!vendor/**/*',
+  '!**/vendor/**/*',
   '!_site/**/*',
   '!jukax-about/**/*',
   '!meet-ubuntu-ads/**/*',
@@ -40,7 +41,7 @@ const CSSFiles = [
 
 const HTMLFiles = [
   '.**/*.html',
-  '!vendor/**/*',
+  '!**/vendor/**/*',
   '!_site/**/*',
   '!jukax-about/**/*',
   '!meet-ubuntu-ads/**/*',
@@ -99,11 +100,11 @@ gulp.task('copy', function() {
       'node_modules/font-awesome/css/*',
       '!**/*.map',
     ])
-    .pipe(gulp.dest(BASE_DIR + 'vendor/font-awesome/css'));
+    .pipe(gulp.dest(BASE_DIR + '_assets/vendor/font-awesome/css'));
   gulp.src([
       'node_modules/font-awesome/fonts/*',
     ])
-    .pipe(gulp.dest(BASE_DIR + 'vendor/font-awesome/fonts'));
+    .pipe(gulp.dest(BASE_DIR + '_assets/vendor/font-awesome/fonts'));
   gulp.src([
       'node_modules/bootstrap/dist/**/bootstrap.*',
       'node_modules/bootstrap/dist/**/bootstrap.*',
@@ -112,11 +113,12 @@ gulp.task('copy', function() {
       '!**/*.map',
       '!**/fonts/*',
     ])
-    .pipe(gulp.dest(BASE_DIR + 'vendor/bootstrap'));
+    .pipe(gulp.dest(BASE_DIR + '_assets/vendor/bootstrap'));
   gulp.src([
       'node_modules/normalize.css/normalize.css',
     ])
-    .pipe(gulp.dest(BASE_DIR + 'vendor/'));
+    .pipe(rename('normalize.scss'))
+    .pipe(gulp.dest(BASE_DIR + '_sass/vendor'));
 });
 
 gulp.task('html', ['html:prettify']);
