@@ -60,6 +60,8 @@ kramdown:
 collections:
   tag:
     output: true
+  assets:
+    output: true
 
 defaults:
   -
