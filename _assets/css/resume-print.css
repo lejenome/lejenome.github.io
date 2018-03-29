@@ -6,7 +6,8 @@
         size: A4 portrait;
     }
     html {
-        height: 1122px !important;
+        /*height: 100vh !important;*/
+        width: 100vw !important;
     }
     body,
     .container {
@@ -16,6 +17,7 @@
         position: relative;
         text-rendering: optimizeLegibility !important;
         -webkit-font-smoothing: antialiased !important;
+        box-sizing: border-box;
     }
     body:after {
         content: "lejenome.github.io/resume";
@@ -40,6 +42,14 @@
     .resume {
         height: calc(100% - 100px);
         width: 100%;
+        column-count: 2;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-fill: auto;
+        column-gap: 1rem;
+        /*column-rule: dotted;*/
+        margin: 0;
+        padding-top: 20px;
     }
     aside.card .h-card {
         margin: 0 0 -15px 0;
@@ -62,19 +72,25 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        margin: 0;
     }
     .resume>dl>dt,
     .resume>dl>dd {
-        width: calc(50% - 10px);
+        /*width: calc(50% - 10px);*/
         margin-right: 10px;
         box-sizing: border-box;
+        break-inside: avoid-column;
     }
     .resume>dl>dt {
-        margin: 0;
+        margin-top: 0;
+        margin-bottom: 0;
         font-size: 18px;
     }
     .resume>dl>dd {
         font-size: 12px;
+    }
+    .skills-dt {
+        break-before: always !important;
     }
     .skills h2 {
         font-size: 15px;
