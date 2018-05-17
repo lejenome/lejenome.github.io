@@ -3,17 +3,17 @@ VERSION:4.0
 FN:Moez Bouhlel
 N:Bouhlel;Moez;;;
 NICKNAME:lejenome
-EMAIL:bmoez.j@gmail.com
+EMAIL:lejenome@tik.tn
 TEL;TYPE=cell:+216 23 274 587
 ADR;TYPE=home:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
 TITLE:Software Developer, CS Student
-URL;TYPE=home:https://lejenome.github.io/
-KEY;MEDIATYPE=application/pgp-keys:https://lejenome.github.io/key.pgp
+URL;TYPE=home:https://lejenome.tik.tn/
+KEY;MEDIATYPE=application/pgp-keys:https://lejenome.tik.tn/key.pgp
 NOTE:Self-taught programmer, CS student and FOSS contributor.\nHire me for 
- a part-time job or for an internship at https://lejenome.github.io/resume
-PHOTO;MEDIATYPE=image/jpeg:https://lejenome.github.io/photo.jpg
-LOGO;MEDIATYPE=image/png:https://lejenome.github.io/logo.png
-SOURCE;VALUE=uri:https://lejenome.github.io/vcard.vcf
+ a part-time job or for an internship at https://lejenome.tik.tn/resume
+PHOTO;MEDIATYPE=image/jpeg:https://lejenome.tik.tn/photo.jpg
+LOGO;MEDIATYPE=image/png:https://lejenome.tik.tn/logo.png
+SOURCE;VALUE=uri:https://lejenome.tik.tn/vcard.vcf
 KIND:individual
 GENDER:M
 TZ:Africa/Tunis

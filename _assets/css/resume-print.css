@@ -20,7 +20,7 @@
         box-sizing: border-box;
     }
     body:after {
-        content: "lejenome.github.io/resume";
+        content: "lejenome.tik.tn/resume";
         position: absolute;
         top: 20px;
         right: 20px;
