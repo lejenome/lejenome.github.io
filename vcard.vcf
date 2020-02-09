@@ -3,14 +3,21 @@ VERSION:4.0
 FN:Moez Bouhlel
 N:Bouhlel;Moez;;;
 NICKNAME:lejenome
-EMAIL:lejenome@tik.tn
-TEL;TYPE=cell:+216 23 274 587
-ADR;TYPE=home:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
-TITLE:Software Developer, CS Student
-URL;TYPE=home:https://lejenome.tik.tn/
+EMAIL;TYPE=INTERNET;TYPE=HOME:lejenome@tik.tn
+EMAIL;TYPE=INTERNET;TYPE=WORK:contact@tik.tn
+TEL;TYPE=HOME:+216 23 274 587
+TEL;TYPE=WORK:+216 27 780 792
+ADR;TYPE=HOME:;;Rt. Manzel Chacker;Sfax;Sfax;3072;Tunisie
+ADR;TYPE=WORK:;Immeuble Jaiem. Bloc A. Bureau 20;Avenue Yasser Arafat. Sahl
+ oul 1;Sousse;Sousse;4054;TN;Avenue Yasser Arafat. Sahloul 1\nImmeuble Jaie
+ m. Bloc A. Bureau 20\, Sousse\, Sousse 4054\nTN
+ORG:Technology Innovation Network
+TITLE:CEO at TIK & IT Consultant
+URL;TYPE=HOME:https://lejenome.tik.tn/
+URL;TYPE=WORK:https://tik-services.com/
 KEY;MEDIATYPE=application/pgp-keys:https://lejenome.tik.tn/key.pgp
-NOTE:Self-taught programmer, CS student and FOSS contributor.\nHire me for 
- a part-time job or for an internship at https://lejenome.tik.tn/resume
+NOTE:Tik is a global consulting agency and custom software development comp
+ any headquartered in Africa.
 PHOTO;MEDIATYPE=image/jpeg:https://lejenome.tik.tn/photo.jpg
 LOGO;MEDIATYPE=image/png:https://lejenome.tik.tn/logo.png
 SOURCE;VALUE=uri:https://lejenome.tik.tn/vcard.vcf
@@ -30,6 +37,8 @@ item3.URL:https://www.linkedin.com/in/lejenome
 item3.X-ABLabel:LinkedIn
 item3.X-LINKEDIN:lejenome
 item3.X-SOCIALPROFILE;TYPE=linkedin:https://www.linkedin.com/in/lejenome
-REV:20161016T200811Z
+item4.X-ABLabel:Skype
+item4.X-SKYPE:live\:lejenome
+REV:20200206T200811Z
 END:VCARD
 
