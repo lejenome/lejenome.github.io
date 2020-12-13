@@ -381,7 +381,7 @@
         <form id="feedback" name="feedback" action="#" method="post">
             <h6>Feedbacks</h6>
             <p>Thanks for sending your feedback. Do you have any note or advice? Did you find a typing error or compatibility issue?</p>
-            <textarea name="message" required></textarea>
+            <textarea name="message" required placeholder="Your feedback or message..."></textarea>
             <button type="submit"><i class="fa fa-send"></i> Send Feedback</button>
             <p id="feedback-msg"></p>
         </form>
@@ -389,16 +389,19 @@
             var form = document.getElementById("feedback");
             form.addEventListener("submit", function(e) {
                 e.preventDefault();
-                fetch("https://api.admin.tik.tn/feedback", {
+                fetch("https://api.admin.tik.website/feedbacks/notify", {
                     method: "POST",
                     redirect: "manual",
                     credentials: "omit",
                     refer: "",
                     body: JSON.stringify({
                         target: 'resume',
+                        subject: '/resume Feedback',
                         message: form.message.value,
                         from: 'self',
-                        subject: '/resume Feedback',
+                        name: '',
+                        phone: '',
+                        to: "lejenome@tik.tn",
                     }),
                     headers: {
                       "Content-Type": "application/json",
@@ -417,7 +420,7 @@
           _paq.push(['trackPageView']);
           _paq.push(['enableLinkTracking']);
           (function() {
-            var u="https://api.admin.tik.tn/p";
+            var u="https://p.tik.website/p";
             _paq.push(['setTrackerUrl', u]);
             _paq.push(['setSiteId', 1]);
             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
