@@ -1,5 +1,4 @@
 /* color schema */
-
 :root {
     --text-color: darkblue;
     --background-color: white;
@@ -47,7 +46,6 @@ svg g#Pattern rect {
 }
 
 /* struct style */
-
 html {
     background: #A6AB95;
     text-align: center;
@@ -97,7 +95,6 @@ body ul {
 }
 
 /* card */
-
 body>div {
     text-align: left;
     position: absolute;

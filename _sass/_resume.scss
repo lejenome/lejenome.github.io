@@ -3,11 +3,13 @@
         width: 35%;
         float: right;
     }
+
     section.resume,
     footer {
         width: 60%;
         float: left;
     }
+
     aside.card .h-card {
         margin-left: 0;
         margin-right: 0;
@@ -40,6 +42,7 @@
     .resume .title {
         margin-top: 50px;
     }
+
     .card .more ul li {
         display: inline-block;
         text-decoration: underline;
@@ -47,6 +50,7 @@
 }
 
 @media screen {
+
     .resume a,
     .resume a:hover,
     .resume a:active {
@@ -75,6 +79,7 @@
         padding-left: 20px;
         padding-right: 20px;
     }
+
     .resume>dl>dd {
         margin-left: 0;
     }
@@ -115,7 +120,6 @@ dd>ul>li {
 }
 
 /* dates */
-
 .dt-start:before {
     content: "(";
 }
@@ -133,7 +137,6 @@ dd>ul>li {
 }
 
 /* table */
-
 .notes .term,
 .notes .def,
 .languages .term,

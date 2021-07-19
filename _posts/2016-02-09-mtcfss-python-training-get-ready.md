@@ -1,7 +1,7 @@
 ---
-title: (MTCFSS) Python Training – Get Ready
+title: (FSSOTC) Python Training – Get Ready
 slug: python-101-training-get-ready
-tags: mtcfss, python, django
+tags: fssotc, python, django
 ---
 
 This is our checklist for any member interested to join the training:
@@ -58,7 +58,7 @@ Requirements
 
 We will use GitHub to host our projects code. To be able
 to join the development, every member is required to create a GitHub account and
-email his profile link to <mtcfss@outlook.com>.
+email his profile link to <fssotc@gmail.com>.
 
 Keep in mind that GitHub is #1 code hosting service and you will mostly keep
 using it outside our training on future.

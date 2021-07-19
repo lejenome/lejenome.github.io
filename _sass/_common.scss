@@ -1,5 +1,4 @@
 /* common */
-
 html {
     width: 100%;
 }
@@ -78,30 +77,31 @@ header nav ul.menu li:last-child {
     padding-right: 0;
 }
 
-
 .menu {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .menu li:nth-child(5) a {
-	position: relative;
-	display: inline-block;
-	animation: 0.3s ease 3s 1 resume-animation;
+    position: relative;
+    display: inline-block;
+    animation: 0.3s ease 3s 1 resume-animation;
 }
 
 .menu li:nth-child(5) a::before {
-	position: absolute;
-	top: 100%;
-	content: "Resume";
-	transform: translate3d(0,0,0);
+    position: absolute;
+    top: 100%;
+    content: "Resume";
+    transform: translate3d(0, 0, 0);
 }
 
 @keyframes resume-animation {
-	0% {
-	}
-	100% {
-		transform: translateY(-100%);
-	}
+    0% {
+        transform: translateY(0%);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
 }
 
 /*
@@ -110,7 +110,6 @@ header nav ul.menu li:last-child {
 	transform: translateY(-100%);
 }
 */
-
 header nav ul.icons {
     float: right;
 }

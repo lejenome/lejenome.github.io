@@ -1,7 +1,7 @@
 ---
-title: (MTCFSS) Recommendations For IT Students
+title: (FSSOTC) Recommendations For IT Students
 slug: useful-links
-tags: mtcfss, note
+tags: FSSOTC, note
 ---
 
 This is a list of useful websites and tools to check for Computer Science

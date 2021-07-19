@@ -1,14 +1,15 @@
 /* A4 to px: http://www.papersizes.org/a-sizes-in-pixels.htm */
-
 @media print {
     @print {
         margin: 0;
         size: A4 portrait;
     }
+
     html {
         /*height: 100vh !important;*/
         width: 100vw !important;
     }
+
     body,
     .container {
         padding: 25px;
@@ -19,6 +20,7 @@
         -webkit-font-smoothing: antialiased !important;
         box-sizing: border-box;
     }
+
     body:after {
         content: "lejenome.tik.tn/resume";
         position: absolute;
@@ -28,17 +30,21 @@
         color: grey;
         font-weight: 600;
     }
+
     .no-print {
         display: none !important;
     }
+
     header h1 {
         margin: 0 0 10px 0;
     }
+
     aside.card,
     section.resume {
         width: 100%;
         float: none;
     }
+
     .resume {
         height: calc(100% - 100px);
         width: 100%;
@@ -51,6 +57,7 @@
         margin: 0;
         padding-top: 20px;
     }
+
     aside.card .h-card {
         margin: 0 0 -15px 0;
         padding: 0;
@@ -60,13 +67,16 @@
         font-size: 10px;
         box-shadow: none;
     }
+
     .contact.vcard ul,
     .contact.h-card ul {
         text-align: center;
     }
+
     aside.card li {
         display: inline;
     }
+
     .resume>dl {
         height: 100%;
         display: flex;
@@ -74,6 +84,7 @@
         flex-wrap: wrap;
         margin: 0;
     }
+
     .resume>dl>dt,
     .resume>dl>dd {
         /*width: calc(50% - 10px);*/
@@ -81,21 +92,26 @@
         box-sizing: border-box;
         break-inside: avoid-column;
     }
+
     .resume>dl>dt {
         margin-top: 0;
         margin-bottom: 0;
         font-size: 18px;
     }
+
     .resume>dl>dd {
         font-size: 12px;
     }
+
     .skills-dt {
         break-before: always !important;
     }
+
     .skills h2 {
         font-size: 15px;
         margin: 8px 0;
     }
+
     .skills,
     .skills-dt,
     .educations-dt,
@@ -106,20 +122,24 @@
     .languages {
         order: 2;
     }
+
     abbr {
         text-decoration: none !important;
     }
+
     .skills abbr:after {
         display: block;
-        content: "Keywords: " attr(title);
+        content: "Keywords: "attr(title);
         padding: 5px 0 0 0;
     }
+
     .skills abbr:after,
     .portfolio .line2 {
         font-weight: 600;
         font-size: 10px;
         color: gray;
     }
+
     .def-note {
         font-size: 9px;
     }

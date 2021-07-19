@@ -5,6 +5,7 @@ set -x
 ENV=${1:-dev}
 
 if [ -e "Gemfile" ]; then
+	bundle config set --local path '.bundle/gems'
 	bundle install --path .bundle/gems
 fi
 
