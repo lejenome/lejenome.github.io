@@ -5,15 +5,15 @@
             <li itemprop="name"><a itemprop="url" href="/blog">Blog</a></li>
             <li><a href="https://github.com/{{ site.github.username }}">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/{{ site.linkedin.username }}">LinkedIn</a></li>
-            <li itemprop="name"><a itemprop="url" href="/resume" rel="author">Resume</a></li>
+            <li itemprop="name"><a itemprop="url" href="/resume.pdf" rel="author" type="application/pdf" onclick="javascript:_paq.push(['trackEvent', 'Download', 'resume.pdf']);">Resume</a></li>
             <li itemprop="name"><a itemprop="url" href="/contact">Contact</a></li>
         </ul>
-        {% if include.ignore %}
+        {% if include.icons %}
         <ul class="icons">
           {% if site.donate %}
             <li><a target="_blank" href="{{ site.donate }}" title="Donate"><img alt="Donate" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" /></a></li>
           {% endif %}
-          <!--<li><a rel="archives" title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>-->
+          <li><a rel="archives" title="Archive" href="archive"><i class="fa fa-folder-open"></i></a></li>
           <li><a title="Atom feeds" rel="alternate" type="application/atom+xml" href="feed.xml"><i class="fa fa-rss"></i></a></li>
         </ul>
         {% endif %}
