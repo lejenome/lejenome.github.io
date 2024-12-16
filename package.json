@@ -1,7 +1,7 @@
 {
   "private": true,
   "dependencies": {
-    "bootstrap": "^4.6.0",
+    "bootstrap": "^5.0.0",
     "font-awesome": "^4.7.0",
     "normalize.css": "^8.0.1"
   },
